@@ -1,0 +1,420 @@
+package commonproto;
+
+//前后端公用的结构体放在这里定义
+//eg:client向login拉online列表. login需要去switch请求列表1, 再将列表2发送给client
+//此时列表1和列表2的结构体格式应该是一样的. 不需要在online与switch之间 online与client
+//之间定义两个不同的结构体(需要进行数据转换 较麻烦) 使用通用的结构体定义即可
+
+//服务器类型
+enum server_type_t {
+    SERVER_TYPE_ALL             = 0; //all server
+    SERVER_TYPE_ONLINE          = 1; //online
+    SERVER_TYPE_BATTLE          = 2; //battle
+    SERVER_TYPE_LOGIN           = 3; //login
+    SERVER_TYPE_SWITCH          = 4; //switch
+    SERVER_TYPE_GM              = 5; //gm
+    SERVER_TYPE_DB              = 6; //db
+}
+
+//精灵位置
+enum pet_loc_type_t {
+    PET_LOC_STORE = 1; //普通仓库
+    PET_LOC_BAG = 2; //背包
+    PET_LOC_ELITE_STORE = 3; //精英仓库
+    PET_LOC_ROOM = 4; //小屋锻炼
+    PET_LOC_PRE_ABANDON_STORE = 5; //预放生仓库
+    PET_LOC_ALREADY_ABANDON_STORE = 6; //已放生(DB没删除)
+    PET_LOC_SYS_STORE = 7; //系统精灵(不在玩家背包仓库显示,只在活动面板看得到)
+}
+
+//每个位置可放精灵的数量限制
+enum pet_loc_limit_t {
+    option allow_alias = true;
+    MAX_PET_IN_STORE = 2000;
+    MAX_PET_IN_BAG = 10;
+    MAX_PET_ELITE_STORE = 100;
+    MAX_PET_IN_ROOM = 100;
+    MAX_PET_IN_SYS_STORE = 10;
+    MAX_PET_IN_PRE_ABANDON_STORE = 100000;
+}
+
+
+//其他常量数值
+enum pet_other_const_t {
+    option allow_alias = true;
+
+    MAX_EFFORT_VALUE    = 255; //单项学习力最大值
+    MAX_TOTAL_EFFORT_VALUE = 510; //五项学习力总和最大值
+    MAX_PET_LEVEL = 50; //精灵最大等级
+
+    FiveLevelTalentItemCnt  =   450; //四星到五星天赋需要消耗的道具
+    FourLevelTalentItemCnt  =   350; //三星天赋到四星天赋需要的道具
+    ThreeLevelTalentItemCnt  =   250; //二星天赋到三星天赋需要的道具
+    TwoLevelTalentItemCnt   =   150; //一星天赋到二星天赋需要的道具
+    OneLevelTalentItemCnt   =   50; //零星天赋到一星天赋需要消耗的道具
+}
+
+//奖励元素类型
+enum prize_elem_type_t {
+    PRIZE_ELEM_TYPE_ITEM = 1; //奖励物品
+    PRIZE_ELEM_TYPE_PET = 2; //奖励精灵
+    PRIZE_ELEM_TYPE_ATTR = 3; //奖励属性
+    PRIZE_ELEM_TYPE_TITLE = 4; //奖励称号
+}
+
+//奖励原因
+enum prize_reason_t {
+    PRIZE_REASON_LOGIN = 1; //登录奖励
+    PRIZE_REASON_LOTTERY = 2; //抽奖奖励
+    PRIZE_REASON_MON_DROP = 3; //打怪掉落
+    PRIZE_REASON_DUPLICATE = 4; //副本结算
+
+    PRIZE_REASON_NO_REASON = 1000;//默认，不做处理
+}
+
+//装备部位类型
+enum equip_body_pos_t {
+    EQUIP_BODY_POS_NONE = 0; //非装备
+	EQUIP_BODY_POS_HEAD = 1; //头部
+	EQUIP_BODY_POS_BODY = 2; //上身
+	EQUIP_BODY_POS_HAND = 3; //手持
+	EQUIP_BODY_POS_LEG = 4; //腿部
+	EQUIP_BODY_POS_FOOT = 5; //脚
+}
+
+//装备增加的属性类型
+enum equip_add_attr_t {
+    EQUIP_ADD_ATTR_NONE = 0; //什么都不加
+    EQUIP_ADD_ATTR_HP = 1; //生命
+    EQUIP_ADD_ATTR_NATK = 2; //普攻
+    EQUIP_ADD_ATTR_NDEF = 3; //普防
+    EQUIP_ADD_ATTR_SATK = 4; //技功
+    EQUIP_ADD_ATTR_SDEF = 5; //技防
+}
+
+//装备品级
+enum equip_quality_t {
+    EQUIP_QUALITY_NONE      = 0; //非装备
+    EQUIP_QUALITY_WHITE     = 1; //白色
+    EQUIP_QUALITY_GREEN     = 2; //绿色
+    EQUIP_QUALITY_GREEN1    = 3; //绿色+1
+    EQUIP_QUALITY_BLUE      = 4; //蓝色
+    EQUIP_QUALITY_BLUE1     = 5; //蓝色+1
+    EQUIP_QUALITY_BLUE2     = 6; //蓝色+2
+    EQUIP_QUALITY_PURPLE    = 7; //紫色
+    EQUIP_QUALITY_PURPEL1   = 8; //紫色+1
+    EQUIP_QUALITY_PURPLE2   = 9; //紫色+2
+    EQUIP_QUALITY_PURPLE3   = 10; //紫色+3
+    EQUIP_QUALITY_PINK      = 11; //粉色
+    EQUIP_QUALITY_PINK1     = 12; //粉色+1
+    EQUIP_QUALITY_PINK2     = 13; //粉色+2
+    EQUIP_QUALITY_PINK3     = 14; //粉色+3
+    EQUIP_QUALITY_PINK4     = 15; //粉色+4
+    EQUIP_QUALITY_ORANGE    = 16; //橙色
+    EQUIP_QUALITY_ORANGE1   = 17; //橙色+1
+    EQUIP_QUALITY_ORANGE2   = 18; //橙色+2
+    EQUIP_QUALITY_ORANGE3   = 19; //橙色+3
+    EQUIP_QUALITY_ORANGE4   = 20; //橙色+4
+    EQUIP_QUALITY_ORANGE5   = 21; //橙色+5
+    EQUIP_QUALITY_GOLD      = 22; //金色
+}
+
+//时装部位
+enum fashion_body_pos_t {
+    FASHION_BODY_POS_NONE   = 0; //非时装
+    FASHION_BODY_POS_HEAD   = 1; //头部
+    FASHION_BODY_POS_FACE   = 2; //脸部
+    FASHION_BODY_POS_CLOTH  = 3; //衣服
+    FASHION_BODY_POS_WEAPON = 4; //武器
+    FASHION_BODY_POS_WING   = 5; //翅膀
+}
+
+//时装附加的属性类型
+enum fashion_add_attr_t {
+    FASHION_ADD_ATTR_NONE   = 0; //什么都不加
+    FASHION_ADD_ATTR_HP     = 1; //生命
+    FASHION_ADD_ATTR_NATK   = 2; //普攻
+    FASHION_ADD_ATTR_NDEF   = 3; //普防
+    FASHION_ADD_ATTR_SATK   = 4; //技功
+    FASHION_ADD_ATTR_SDEF   = 5; //技防
+}
+
+//物品使用的功能类型
+enum item_function_type_t {
+    ITEM_FUNC_NONE              = 0; //没有使用功能
+    ITEM_FUNC_ADD_PLAYER_HP     = 1; //给玩家加血
+    ITEM_FUNC_ADD_PLAYER_EXP    = 2; //给玩家加经验
+    ITEM_FUNC_ADD_PET_HP        = 3; //给精灵加血
+    ITEM_FUNC_ADD_PET_EXP       = 4; //给精灵加经验
+    ITEM_FUNC_PET_EGG           = 5; //精灵蛋
+    ITEM_FUNC_IMPROVE_TALENT    = 6; //天赋升级道具
+    ITEM_FUNC_ADD_PET_EFFORT    = 7; //精灵学习力药水
+    ITEM_FUNC_EQUIP_ARM         = 8; //可装备道具
+}
+
+enum player_prof_type_t {
+    PROF_WARRIOR                = 1; //战士
+    PROF_WIZARD                 = 2; //法师
+    PROF_ARCHER                 = 3; //弓箭手
+}
+
+//----奖励
+message prize_elem_t {
+    required prize_elem_type_t type = 1;
+    required uint32 id = 2; //物品 属性 精灵的ID
+    optional int32 count = 3; //物品 属性使用  属性为+表示增加的数量  为-表示扣减的数量 为0表示清0
+    optional int32 level = 4; //精灵使用 表示奖励的精灵的等级
+}
+
+message svr_info_t
+{
+    required server_type_t type = 1;
+	required uint32 svr_id = 2;
+	required uint32 ip = 3;
+	required uint32 port = 4;
+	optional uint32 total_user_num = 5;
+    optional uint32 vip_user_num = 6;
+}
+
+//玩家基本信息
+message player_base_info_t
+{
+    //除了userid及create_tm是required 其他一概为optional
+    required uint32 user_id = 1; //玩家UID
+    optional uint32 create_tm = 2; //玩家的创建时间
+    optional string nick = 3; //昵称
+    optional uint32 cur_prof = 4; //职业
+    optional uint32 sex = 5;      // 性别
+    optional uint32 level = 6;   // 等级
+    optional uint32 exp = 7;   // 经验
+    optional uint32 vip_begin_time = 8; //vip起始时间
+    optional uint32 vip_end_time = 9; //vip结束时间
+    optional uint32 vip_level = 10; //vip等级
+    optional bool   is_yearly_vip = 11; //是否年费vip 
+    optional uint32 frozen_end_time = 12; //账号冻结的解冻时间
+    optional uint32 frozen_reason = 13; //被封原因
+    // //其他玩家属性
+    
+}
+
+//其他属性
+message attr_data_t {
+    required uint32 type  = 1;
+    required uint32 value = 2;    
+}
+
+message attr_data_list_t {
+    repeated attr_data_t attrs = 1;    
+}
+
+//装备可选属性 注:数据库序列化使用,不可改变字段值否则反序列出错
+message item_optional_attr_t {
+	optional uint32 level = 1; // 等级
+    optional uint32 exp = 2;
+	optional attr_data_list_t equip_attrs = 3;
+	optional equip_body_pos_t part = 4; //装备部位 
+}
+
+message item_info_t {
+    //物品固定属性
+    required uint32 item_id = 1; // 物品id
+    required uint32 slot_id = 2; // 所在背包的格子ID
+    required uint32 count = 3; // 物品数量
+    required uint32 using_count = 4; // 使用中物品数量
+    
+    optional uint32 expire_time = 10; // 过期时间
+   
+    //装备特有属性
+    optional item_optional_attr_t item_optional_attr = 100;
+}
+
+message item_list_t {
+    repeated item_info_t item_list = 1; 
+}
+
+message equip_list_t {
+    repeated item_info_t equips = 1;
+}
+
+//精灵学习力数值
+message pet_effort_value_t {
+    required uint32 hp = 1; //生命
+    required uint32 normal_atk = 2; //普攻
+    required uint32 normal_def = 3; //普防
+    required uint32 skill_atk = 4; //技功
+    required uint32 skill_def = 5; //技防
+}
+//精灵抗性数值
+message pet_anti_value_t {
+    required uint32 water = 1; //水抗
+    required uint32 fire = 2; //火抗
+    required uint32 grass = 3; //草抗
+    required uint32 light = 4; //光抗
+    required uint32 dark = 5; //暗抗
+    required uint32 ground = 6; //地抗
+    required uint32 force = 7; //武抗
+}
+//精灵战斗附加属性
+message pet_extra_battle_value_t {
+    required uint32 hp = 1; //当前血量
+    required uint32 max_hp = 2; //最大血量
+    required uint32 crit = 3; //暴击
+    required uint32 anti_crit = 4; //防暴
+    required uint32 hit = 5; //命中
+    required uint32 dodge = 6; //闪避
+    required uint32 block = 7; //格挡
+    required uint32 break_block = 8; //破格
+    optional uint32 atk_speed = 9; //攻速
+}
+
+//精灵技能等级
+message pet_skill_level_t {
+    required uint32 skill_1_level = 1; //1号技能等级
+    required uint32 skill_2_level = 2; //2号技能等级
+    optional uint32 skill_3_level = 3; //3号技能等级
+    optional uint32 skill_4_level = 4; //4号技能等级
+}
+
+//精灵战斗力
+message pet_power_t {
+    required uint32 create_tm = 1;
+    required uint32 power = 2;
+}
+
+//精灵基础信息
+message pet_base_info_t {
+    required uint32 pet_id = 1; //精灵配表ID
+    required uint32 create_tm = 2; //精灵获得时间
+    required uint32 level = 3; //当前等级
+    required uint32 exp = 4; //当前等级到下一级已经获得的经验
+    optional uint32 is_fight = 5 [default = 0]; //是否出战 
+    optional uint32 is_excercise = 6 [default = 0]; //是否锻炼
+    optional uint32 chisel_pos = 7 [default = 0]; //精灵所在的刻印位置(1,2,3,4,5,6)
+    optional pet_loc_type_t loc = 8 [default = PET_LOC_STORE]; //精灵在背包还是仓库
+}
+
+//精灵信息
+message pet_info_t {
+    required pet_base_info_t base_info = 1; //精灵基本信息
+    required uint32 talent_level = 2; //精灵天赋等级
+    required pet_effort_value_t effort = 3; //精灵学习力
+    required pet_anti_value_t anti = 4; //精灵抗性
+    required battle_info_t battle_info = 5; //精灵战斗属性
+    repeated uint32 rune_ids = 6; //精灵身上所带的符文ID(关联符文的实例ID)
+}
+
+message pet_list_t {
+    repeated pet_info_t pet_list = 1;
+}
+
+//地图精灵信息
+message map_pet_info_t {
+    required pet_base_info_t base_info = 1;
+    optional bytes state_bytes = 2; //精灵状态
+}
+
+message map_pet_list_t {
+    repeated map_pet_info_t pets = 1;
+}
+
+//地图玩家的基本信息
+message map_player_data_t {
+    required player_base_info_t base_info = 1;
+    required equip_list_t equip_list = 2; //穿上的装备信息
+    required map_pet_list_t pet_list = 3; //携带的精灵信息
+    optional bytes state_bytes = 4; //玩家状态
+}
+
+message offline_msg_t
+{
+    optional string msg = 1;
+}
+
+message skill_base_t
+{
+    required uint32 id = 1;
+    required uint32 lv = 2;
+}
+
+message skill_list_t
+{
+    repeated skill_base_t skills =1;
+}
+
+
+//---------- battle ---------------
+//战斗属性
+message battle_info_t
+{
+    required uint32 max_hp = 1; //最大血量
+    required uint32 cur_hp = 2; //当前血量
+    required uint32 normal_atk = 3; //普攻
+    required uint32 normal_def = 4; //普防
+    required uint32 skill_atk = 5; //技攻
+    required uint32 skill_def = 6; //技防
+    required uint32 crit = 7; //暴击
+    required uint32 anti_crit = 8; //防爆
+    required uint32 hit = 9; //命中
+    required uint32 dodge = 10; //闪避
+    required uint32 block = 11; //格挡
+    required uint32 break_block = 12; //破格
+    required uint32 crit_affect_rate = 13; //暴击加成
+    required uint32 block_affect_rate = 14; //格挡加成
+    required uint32 atk_speed = 15; //攻击速度
+}
+
+//战斗精灵的基本信息
+message battle_pet_data_t {
+    required pet_info_t pet_info = 1; //基础信息包含战斗信息
+    optional uint32 x_pos = 5; //地图坐标x
+    optional uint32 y_pos = 6; //地图坐标y
+	optional uint32 heading = 7;//精灵方向
+    optional bytes state_bytes = 8; //精灵状态
+}
+
+message battle_pet_list_t {
+    repeated battle_pet_data_t pet_list = 1;
+}
+
+//战斗玩家的基本信息
+message battle_player_data_t {
+    required player_base_info_t base_info = 1; //基础信息
+	required battle_info_t battle_info = 2; //算好的战斗数值
+    required equip_list_t equip_list = 3; //穿上的装备信息
+    required battle_pet_list_t pet_list = 4; //携带的精灵信息
+    required uint32 x_pos = 5; //地图坐标x
+    required uint32 y_pos = 6; //地图坐标y
+	required uint32 heading = 7;//人物方向
+    optional bytes state_bytes = 8; //人物状态
+}
+
+//符文数据
+message rune_data_t {
+	required uint32 runeid = 1;    // 符文id
+	required uint32 index = 2; // 配置表id
+	required uint32 exp = 3; // 经验值
+	required uint32 level = 4; // 等级    
+	required uint32 pack_type = 5; //背包类型
+	required uint32 pet_catch_time = 6; //装备的精灵id
+}
+
+message rune_list_t {
+	repeated rune_data_t rune_data = 1;
+}
+
+//---------- battle --------------
+
+
+//----------- task ------------
+message task_data_t
+{
+    required uint32 task_id = 1; //任务ID
+    required uint32 status = 2; //任务状态 从低到高第n个bit位表示第n步是否完成(1为完成)
+    required uint32 done_times = 3; // 已完成次数
+}
+
+message task_list_t {
+	repeated task_data_t task_list = 1;
+}
+//----------- task ------------
+

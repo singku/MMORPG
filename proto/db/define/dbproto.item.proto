@@ -1,0 +1,10 @@
+package dbproto;
+
+import "dbproto.data.proto";
+import "common.proto";
+
+// 更新背包
+message cs_change_items {
+    repeated commonproto.item_info_t item_info_list = 1;
+}
+message sc_change_items {}

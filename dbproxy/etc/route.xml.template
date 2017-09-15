@@ -1,0 +1,140 @@
+<root>
+<route_item  name="账号平台基础信息" db_type="1"  >
+	<cmd_bind>
+		<item cmdid="0x0000"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.47"  port="11014" />
+	</ip_bind>
+</route_item>
+<route_item  name="MAIN_LOGIN 主登录" db_type="1"  >
+	<cmd_bind>
+		<item cmdid="0xA000"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.47"  port="11014" />
+	</ip_bind>
+</route_item>
+<route_item name="db基础信息, game_db_xx" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x8200"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="15001" />
+	</ip_bind>
+</route_item>
+<route_item name="db家族信息, family_db_x" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x8400"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="15001" />
+	</ip_bind>
+</route_item>
+<route_item name="db其他信息, other_db" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x8600"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="15001" />
+	</ip_bind>
+</route_item>
+<route_item name="排名服务器, ranking_server" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x9200"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="17001" />
+	</ip_bind>
+</route_item>
+<route_item name="家族服务器, family_service" db_type="1">
+	<cmd_bind>
+		<item cmdid="0xB000"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="19001" />
+	</ip_bind>
+</route_item>
+<route_item name="小屋信息" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x8800"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="20025" />
+	</ip_bind>
+</route_item>
+<route_item name="online向cache_agent的命令" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x8A00"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="20030" />
+	</ip_bind>
+</route_item>
+<route_item name="cache_agent向cache_svr的命令" db_type="100">
+	<cmd_bind>
+		<item cmdid="0x8C00"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="49" ip="10.1.1.182"  port="20026" />
+		<item   db_startid="50"  db_endid="99" ip="10.1.1.182"  port="20027" />
+	</ip_bind>
+</route_item>
+<route_item name="log_db" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x8E00"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="15001" />
+	</ip_bind>
+</route_item>
+<route_item name="battle服务器" db_type="1">
+	<cmd_bind>
+		<item cmdid="0x9000"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="18001" />
+	</ip_bind>
+</route_item>
+<route_item name="family battle服务器" db_type="10">
+	<cmd_bind>
+		<item cmdid="0x9400"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.182"  port="19021" />
+		<item   db_startid="1"  db_endid="1" ip="10.1.1.182"  port="19022" />
+		<item   db_startid="2"  db_endid="2" ip="10.1.1.182"  port="19023" />
+		<item   db_startid="3"  db_endid="3" ip="10.1.1.182"  port="19024" />
+	</ip_bind>
+</route_item>
+
+<!-- 可用命令号范围:0x8000-0xBFFF, 
+如:0x8200 0x8400,0xBE00 ,每个区段间隔512个命令
+一共有32个区段,  0xA000 不要使用,已经分配给MAIN_LOGIN, SU也在0xA000
+
+8000=>8000-81FF
+8200=>8200-83FF
+BE00=>BE00-BFFF
+
+<route_item  name="XXX" db_type="10" >
+	<cmd_bind>
+		<item cmdid="0x8000"> </item>
+		<item cmdid="0x8200"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="9" ip="10.1.1.5"  port="30004" />
+	</ip_bind>
+</route_item>
+
+<route_item  name="XXX_CoNF" db_type="1" >
+	<cmd_bind>
+		<item cmdid="0x9200"> </item>
+	</cmd_bind>
+	<ip_bind>
+		<item   db_startid="0"  db_endid="0" ip="10.1.1.5"  port="210033" />
+	</ip_bind>
+</route_item>
+-->
+
+
+</root>

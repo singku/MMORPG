@@ -1,0 +1,60 @@
+package dbproto;
+
+enum action_log_type_t
+{
+    ActionTypeLogin             = 1; //登入
+    ActionTypeLogout            = 2; //登出
+    ActionTypeItemChange        = 3; //道具数量改变
+    ActionTypeItemAddExp        = 5; //道具加经验
+    ActionTypeItemLevelUp       = 6; //道具升级
+    ActionTypePetAdd            = 7; //新增精灵
+    ActionTypePetDel            = 8; //放生精灵
+    ActionTypePetAddExp         = 9; //精灵加经验
+    ActionTypePetLevelUp        = 10; //精灵升级
+    ActionTypeAttrChange        = 11; //属性改变
+    ActionTypeRuneChange        = 12; //符文改变
+    ActionTypeInstanceChange    = 13; //副本改变
+};
+
+message user_action_log_t
+{
+    required action_log_type_t type = 1; //action的种类
+    required uint32 target_id = 2; //action改变对象的标志id
+    required int32 value = 3; //改变的值
+    optional uint32 extra1 = 4 [default = 0];//预留其他字段 
+    optional uint32 extra2 = 5 [default = 0];//预留其他字段
+    optional uint32 extra3 = 6 [default = 0];//预留其他字段
+    required uint32 insert_time = 7;
+};
+
+message user_action_log_list_t {
+    repeated user_action_log_t  logs = 1;
+}
+message cs_insert_user_action_log
+{
+    repeated user_action_log_t log_list = 1;
+};
+message sc_insert_user_action_log {}
+
+//客服平台使用协议
+//客户端获得日志
+message cs_get_user_action_log
+{
+    required uint32 userid = 1; //米米号
+    required uint32 date = 2; //日期，格式如：20121212
+    required uint32 start_idx = 3; //分页
+    required uint32 num = 4; //需要数目
+	optional uint32 target_id = 5;	//指定要拉取的属性id,或者物品item_id
+	optional uint32 get_count_flag = 6;	//没有就不用传，有就传1
+};
+
+//服务器发送日志
+message sc_get_user_action_log
+{
+    required user_action_log_list_t log_list = 1;
+	optional uint32 log_list_count = 2;	//该玩家总量
+};
+
+//记一下，省的忘了
+//item_change action_id = item_id, value = 改变的值 extra为改变前的值+改变的原因
+//attr_change action_id = attr_id, value = 改变的值 extra为改变前的值

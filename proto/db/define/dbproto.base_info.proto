@@ -1,0 +1,54 @@
+package dbproto;
+
+import 'dbproto.data.proto';
+import 'common.proto';
+
+// 创建角色
+message cs_create_role
+{
+    required string nick = 1;
+    optional uint32 sex = 2;
+    required uint32 cur_prof = 3;
+    required uint32 cur_server_id = 4; //当前所在服务器ID
+    optional uint32 init_server_id = 5; //初始服务器ID
+}
+
+message sc_create_role{
+    required commonproto.player_base_info_t base_info = 1;
+}
+
+// 检查用户是否存在
+message cs_check_user_exist{
+    required uint32 server_id = 1; //所在的服务器ID
+    required bool is_init_server = 2; //上面的服务器ID是初始服务器ID还是当前服务器ID
+    //用户在登陆的时候查询用户是否存在 用的是初始服务器ID
+    //用户在查找好友的时候查询 用的是当前服务器ID (初始、当前是合服导致的)
+    //如果server_id为0 则直接根据包头的uid u_create_tm判定这个角色是否存在
+}
+
+message sc_check_user_exist
+{
+    required bool exist = 1; 
+}
+
+// 获取用户基本数据
+message cs_get_base_info { 
+    optional uint32 server_id = 1; 	//用户初始的服务器
+}
+message sc_get_base_info {
+    repeated commonproto.player_base_info_t base_info = 1;
+}
+
+message cs_get_cache_info {}
+message sc_get_cache_info {
+    required commonproto.battle_player_data_t cache_info = 1;
+}
+
+//用户在某时间段登录记录
+message cs_get_login_tm_info {
+    required uint32 from_tm = 1;
+    required uint32 to_tm = 2;
+}
+message sc_get_login_tm_info {
+    repeated uint32 login_tm = 3;
+}

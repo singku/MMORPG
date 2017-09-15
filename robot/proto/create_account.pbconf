@@ -1,0 +1,26 @@
+proto_path: "./svc_proto"
+proto_path: "../proto/db/define"
+group_config: {
+	name: "singku服务器进入测试"
+	peer_addr: "10.1.1.154:1901"
+	max_pkg_len: 32768
+	client_uid_start: 10001
+    client_uid_end: 10199
+	loop_count: 1
+	action: {
+		request_uniq_name: "create_account"
+		response: "dbproto.sc_create_role"
+		stop_loop_count: 1
+        timeout: 100
+	}
+}
+
+body: {
+	uniq_name: "create_account"
+	type_name: "dbproto.cs_create_role"
+	text: "nick: \"test\"" " "
+        "sex: 1 "
+        "cur_prof: 1 "
+        "cur_server_id: 1 "
+        "init_server_id: 1 "
+}

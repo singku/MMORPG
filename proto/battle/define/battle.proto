@@ -1,0 +1,122 @@
+package battleproto;
+
+import "common.proto";
+import "svr_common.proto";
+
+//online把客户端的包体消息直接传递给battle
+//包体信息在pkg中
+message cs_battle_relay
+{
+    required uint32 uid = 1;
+    required uint32 create_tm = 2;
+    required uint32 cmd = 3;
+    required bytes pkg = 4;
+}
+
+//battle把传递给客户端的消息打包好传给online
+message sc_battle_relay
+{
+    required uint32 uid = 1;
+    required uint32 create_tm = 2;
+    required uint32 cmd = 3;
+    required bytes pkg = 4;
+}
+
+message cs_battle_duplicate_enter_map
+{
+    required uint32 dup_id = 1; //副本id
+    required uint32 map_id = 2;//场景地图ID
+    required commonproto.battle_player_data_t player = 3; //1号玩家的战斗信息 必要
+    repeated commonproto.battle_player_data_t other_players = 4; //其他玩家的战斗信息 不必要(兼容ppve pvep rvpvp)
+    optional bool re_enter = 5[default = false]; //是否断线重新进入
+    required uint32 svr_id = 6; //玩家是几服的 告知btl_center(兼容PPVE)
+    optional uint32 btl_type = 7; //对战类型 告知btl_center对战的类型
+    optional string btl_name = 8; //进入匹配的时候 告知btl_center自己的对战服名字
+    
+    optional uint32 least_players = 10 [default =1]; //至少需要几人开打
+}
+
+message sc_battle_duplicate_enter_map
+{
+    required uint32 dup_id = 1; //副本id
+    required uint32 map_id = 2; //场景id
+    repeated commonproto.battle_player_data_t players = 3; //玩家列表（含自己）
+    repeated commonproto.battle_pet_data_t monsters = 4; //怪列列表 包含敌/友/非敌非友(不计杀死)的怪 NPC等
+    repeated commonproto.battle_pet_data_t builders = 5; //物件列表 包含敌/友/非敌非友(不计杀死)的机关 阻挡等
+    optional bool re_enter = 6[default = false];
+
+    //匹配需要
+    optional bool match_result = 7 [default = true];
+}
+
+message cs_battle_duplicate_trig
+{
+    required uint32 dup_id = 1;     // 副本id
+    required uint32 map_id = 2;     // 地图id
+    required uint32 trig_type = 3;  // 触发条件类型
+    repeated uint32 args  = 4;      // 触发参数
+}
+message sc_battle_duplicate_trig
+{
+}
+
+/* relay
+message cs_battle_duplicate_leave_map{}
+message sc_battle_duplicate_leave_map{}
+message cs_battle_duplicate_notify_leave_map{}
+message sc_battle_duplicate_notify_leave_map{}
+message cs_battle_duplicate_battle_ready{}
+message sc_battle_duplicate_battle_ready{}
+message cs_battle_duplicate_notify_battle_ready{}
+message sc_battle_duplicate_notify_battle_ready{}
+message cs_battle_duplicate_notify_battle_start{}
+message sc_battle_duplicate_notify_battle_start{}
+message cs_battle_duplicate_exit{}
+message sc_battle_duplicate_exit{}
+message cs_battle_duplicate_notify_exit{}
+message sc_battle_duplicate_notify_exit{}
+message cs_battle_duplicate_hit_character {}
+message sc_battle_duplicate_hit_character{}
+message cs_battle_duplicate_notify_hit_character{}
+message sc_battle_duplicate_notify_hit_character{}
+message cs_battle_duplicate_notify_actor_born{}
+message sc_battle_duplicate_notify_actor_born{}
+message cs_battle_duplicate_notify_battle_end{}
+message sc_battle_duplicate_notify_battle_end{}
+message cs_battle_duplicate_sync_change_state{}
+*/
+
+//battle告知online自己杀死了野怪(可能要爆装备)
+message cs_battle_duplicate_notify_kill_character{}
+message sc_battle_duplicate_notify_kill_character{
+    required uint32 def_type = 1; //杀死的人的类型
+    required uint32 def_id = 2; //id
+    required uint32 def_create_tm = 3; //创建时间
+    required uint32 pos_x = 4;
+    required uint32 pos_y = 5;
+    optional bool is_player_dead = 6 [default = false];
+}
+
+//玩家复活
+message cs_battle_duplicate_revival{
+    required uint32 type = 1;
+    required uint32 id = 2;
+    required uint32 create_tm = 3;
+}
+message sc_battle_duplicate_revival{
+    required uint32 type = 1;
+    required uint32 id = 2;
+    required uint32 create_tm = 3;
+}
+
+//最后副本结束的包battle应该告知online做一些处理
+message cs_battle_duplicate_notify_end {}
+message sc_battle_duplicate_notify_end {
+    required bool win = 1;
+}
+
+message cs_battle_give_up_match {}
+message sc_battle_give_up_match {}
+
+message cs_battle_notify_battle_down{}
+message sc_battle_notify_battle_down{}

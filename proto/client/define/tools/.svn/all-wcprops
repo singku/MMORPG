@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dolphin/client/!svn/ver/684/trunk/program/common/tools
+END
+gen_cmd.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/dolphin/client/!svn/ver/684/trunk/program/common/tools/gen_cmd.php
+END
+gen_errno.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dolphin/client/!svn/ver/500/trunk/program/common/tools/gen_errno.php
+END
+gen_cmd_msg.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/dolphin/client/!svn/ver/684/trunk/program/common/tools/gen_cmd_msg.php
+END
+gen_attr.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dolphin/client/!svn/ver/342/trunk/program/common/tools/gen_attr.php
+END

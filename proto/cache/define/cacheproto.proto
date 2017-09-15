@@ -1,0 +1,45 @@
+package cacheproto;
+
+import "common.proto";
+
+//online向cache agent批量获取用户信息
+//cache agent也用此协议批量向cache_svr获取用户信息
+//注意 cache agent发起协议的时候 由于不知道uid的路由信息 所以一次只会发一个到cache svr
+message cs_batch_get_users_info {
+    repeated commonproto.role_info_t roles = 1;
+}
+
+message uid_errcode_t {
+    required uint32 errcode = 1;
+    required commonproto.role_info_t role = 2;
+}
+//cache svr对 cache agent回这个包 cache svr给cache agent回包的时候 要么只有一个数据 要么回错误码
+//cache agent对 online也回这个包 当cache_agent回包不完整时 会包含针对每个uid的错误码
+message sc_batch_get_users_info {
+    repeated uid_errcode_t errs = 1; //批量拉取时 错误的玩家的信息
+    repeated commonproto.battle_player_data_t user_infos = 2; //正确的信息
+}
+
+//online通知cache玩家信息失效
+message cs_set_user_info_outdate{};
+message sc_set_user_info_outdate{};
+
+message cs_set_cache {
+    required bytes key = 1;
+    required bytes value = 2;
+    optional uint32 ttl = 3 [default = 1000000]; //缓存的保留时间,默认12天左右
+}
+message sc_set_cache {}
+
+message cache_key_value_t {
+    required bytes key = 1;
+    required bytes value = 2;
+}
+
+message cs_get_cache {
+    repeated bytes keys = 1;
+}
+
+message sc_get_cache {
+    repeated cache_key_value_t key_values = 1;
+}

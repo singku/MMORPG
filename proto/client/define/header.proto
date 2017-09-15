@@ -1,0 +1,12 @@
+package onlineproto;
+
+// 前后端协议格式 //
+//total_len(4) + head_len(2) + cmd(2) + proto_header_t + proto_body
+
+message proto_header_t
+{
+    required uint32 seque  = 1;//序列号
+    optional uint32 uid = 2;//米米号
+    optional uint32 ret = 3;//返回值
+}
+

@@ -1,0 +1,49 @@
+package onlineproto;
+
+import "common.proto";
+
+//任务相关协议
+//接取任务
+message cs_0x0401_accept_task
+{
+	required uint32 task_id = 1; //接取的任务ID
+}
+
+message sc_0x0401_accept_task
+{
+	required uint32 task_id = 1; //接取的任务ID
+}
+
+//放弃任务
+message cs_0x0402_abandon_task
+{
+	required uint32 task_id = 1; //放弃的任务ID
+}
+
+message sc_0x0402_abandon_task
+{
+	required uint32 task_id = 1; //放弃的任务ID
+}
+
+//完成任务
+message cs_0x0403_complete_task
+{
+	required uint32 task_id = 1; // 完成的任务ID
+	required uint32 step = 2; // 任务步骤
+}
+
+message sc_0x0403_complete_task
+{
+	required uint32 task_id = 1; //完成的任务ID
+}
+
+//同步任务状态信息
+message cs_0x0404_sync_task
+{
+	
+}
+
+message sc_0x0404_sync_task
+{
+	repeated commonproto.task_data_t task_list = 1; //同步的任务列表
+}

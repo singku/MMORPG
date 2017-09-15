@@ -1,0 +1,111 @@
+package dbproto;
+
+enum constant_t {
+    USER_NICK_NAME_MAX_LEN      = 64;
+}
+
+enum product_type_t {
+    PRODUCT_TYPE_FOREVER        = 1;//永久
+    PRODUCT_TYPE_INSTANT        = 2;//即时消耗
+    PRODUCT_TYPE_RELET          = 3;//续期
+    PRODUCT_TYPE_LIMITED        = 4;//不可续期
+    PRODUCT_TYPE_CLICK_USE      = 5;//点击使用消耗
+	PRODUCT_TYPE_VIP			= 6;//钻石购买vip
+}
+
+enum channel_type_t {
+    CHANNEL_TYPE_DEPOSIT        = 0;//货币充值
+    CHANNEL_TYPE_GAIN           = 1;//游戏货币产出
+    CHANNEL_TYPE_SERVICE_ADD    = 2;//客服添加
+    CHANNEL_TYPE_BUY_REDUCE     = 3;//购买消耗
+    CHANNEL_TYPE_SERVICE_DEL    = 4;//客服扣减
+
+    CHANNEL_TYPE_ALCHEMY        = 5;//炼金消耗
+    CHANNEL_TYPE_CALL_RUNE      = 6;//召唤符文
+    CHANNEL_TYPE_REFRESH_TOWER  = 7;//刷塔
+    CHANNEL_TYPE_ESCORT_REFRESH_BOAT  = 8;//运宝系统中刷飞艇
+    CHANNEL_TYPE_PET_TALENT_ADVANCED_IMPROVE  = 9;//精灵天赋高级改造
+    CHANNEL_TYPE_FINISH_AUTO_CHALLENGE_TOWER  = 10;// 立即完成自动打塔
+    CHANNEL_TYPE_FAST_RECLAIM_FARM = 11; //快速开垦农场
+    CHANNEL_TYPE_DUPLICATE          = 12; //打副本消耗
+   
+    CHANNEL_TYPE_SAY_CMD  = 999;//测试时手动添加精灵币使用
+}
+
+message mail_data_t
+{
+	required uint32 mailid = 1; //邮件id
+	required uint32 status = 2; //0 未查看 1 查看邮件但未领取附件 2 已查看且领取附件 3 亿删除
+	required uint32 mail_type = 3; //0 配置文件邮件 1 系统邮件
+	required uint32 attach_flag = 4; //0不带附件 1 带附件
+	optional string sender = 5; // 发送者称呼
+	optional string title = 6; // 邮件标题
+	optional string content = 7; //邮件内容
+	optional string attachment = 8; //邮件附件
+	optional uint32 time = 9; // 邮件时间
+	optional uint32 mail_index = 10; //邮件配置 配置 id
+}
+
+enum user_raw_data_type_t 
+{
+	SEND_GIFT_FRIEND_ID     = 1; //好友送礼
+	ACHIEVE_INFO            = 2; //成就信息
+    BUFF_INFO               = 3; //玩家从后台获得的buff(双倍经验\双倍金币等)
+	FAMILY_OFFLINE_MESSAGE			= 4; //家族离线消息
+    FAMILY_APPLY_RECORD     = 5; // 玩家申请的家族列表记录 
+    EXPED_PETS_INFO = 6;	//玩家此次远征所pk过的玩家伙伴信息
+    ELEM_DUP_SHOP_PRODUCT   = 7; // 元素挑战商店刷新物品
+    ARENA_SHOP_PRODUCT   = 8; // 排位赛商店刷新物品
+	EXPED_CUR_CARD_PETS = 9;	//远征中，当前关卡的精灵信息
+	EXPED_SHOP_PRODUCT = 10;	//伙伴激战远征挑战商店刷新商品
+    FAMILY_SHOP_PRODUCT   = 11; // 家族商店刷新物品
+    DAILY_SHOP_PRODUCT = 12; //每日商店
+    NIGHT_RAID_PLAYER_BASE_INF = 13; //夜袭pk过的玩家基本信息
+    NIGHT_RAID_PLAYER_BATTLE_INF = 14; //夜袭的玩家战斗信息
+	EXPED_TOTAL_PRIZE = 15;	//远征累积奖励
+	NIGHT_RAID_SHOP_PRODUCT = 16;	//夜袭商店刷新商品
+	NIGHT_RAID_TOTAL_PRIZE = 17;	//夜袭累计奖励
+    CHARGE_DIAMOND_DRAW_PRIZE_ACTIVITY = 18; //充钻抽奖活动
+	TITLE_INFO	= 19;	//称号信息
+    SURVEY_DATA = 20; //问卷调查类型
+	MINE_IDS = 21;	//我所拥有的矿的id号
+	NEW_MINE_INFO = 22;	//今日我刷新到新矿的数据
+	OPPONENT_MINE_IDS = 23;	//今日匹配到的对手的矿id
+	MINE_FIGHT_DEF_PET_HP = 24;	//一轮矿战中，该矿中所有对手精灵的血量
+	SMELTER_MONEY = 25;	//熔炼普通货币
+	SMELTER_GOLD = 26;	//熔炼高级货币
+}
+
+// 全服属性
+message global_attr_info_t
+{
+    required uint32 type = 1;//全服属性 对应time_config id
+    required uint32 subtype = 2;//time_config tid
+    required uint32 value = 3;
+}
+
+message global_attr_list_t
+{
+    repeated global_attr_info_t attr_list = 1;
+}
+
+enum global_attr_op_type_t {
+    GLOBAL_ATTR_OP_ADD = 0;
+    GLOBAL_ATTR_OP_MINUS = 1;
+    GLOBAL_ATTR_OP_SET = 2;
+    GLOBAL_ATTR_OP_ADD_WITH_LIMIT = 3;
+}
+
+message global_attr_op_info_t
+{
+    required uint32 type = 1;
+    required uint32 subtype = 2;
+    required uint32 value = 3;
+    required global_attr_op_type_t op = 4;
+	optional uint32 limit = 5; //增加全服数据的上限
+}
+
+message global_attr_op_list_t
+{
+    repeated global_attr_op_info_t op_list = 1;
+}

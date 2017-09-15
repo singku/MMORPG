@@ -1,0 +1,64 @@
+proto_path: "./svc_proto"
+group_config: {
+	name: "singku服务器进入测试"
+	peer_addr: "10.1.1.154:1701"
+	max_pkg_len: 32768
+<<<<<<< .mine
+	client_uid_start: 10001
+    client_uid_end: 10001
+	loop_count: 1
+=======
+	client_uid_start: 10003
+    client_uid_end: 10012
+	loop_count: 10000
+>>>>>>> .r3679
+	action: {
+		request_uniq_name: "login"
+		response: "onlineproto.sc_0x0101_enter_svr"
+		stop_loop_count: 1
+        timeout: 10
+	}
+    action: {
+        request_uniq_name: "enter_map"
+        response: "onlineproto.sc_0x0102_enter_map"
+        stop_loop_count: 1
+        timeout: 10
+        min_duration: 10
+    }
+    action: {
+        request_uniq_name: "Move"
+        timeout: 10
+        min_duration: 500
+    }
+}
+
+body: {
+	uniq_name: "login"
+	type_name: "onlineproto.cs_0x0101_enter_svr"
+<<<<<<< .mine
+	text: "uid: 10000" " "
+          "session: \"aaaaaaaa\"" " "
+          "u_create_tm: 0"
+=======
+	text: "uid: 10003 "
+          "session: \"aaaaaaaa\" "
+          "u_create_tm: 1428063771"
+>>>>>>> .r3679
+}
+
+body: {
+	uniq_name: "enter_map"
+	type_name: "onlineproto.cs_0x0102_enter_map"
+	text: "mapId: 14" " "
+        "x_pos: 1408" " "
+        "y_pos: 643" " "
+        "heading: 0"
+}
+
+body: {
+    uniq_name: "Move"
+    type_name: "onlineproto.cs_0x0106_player_change_state"
+    text: "type: 1 "
+        "create_tm: 1428063771 "
+        "state_bytes: \"\""
+}

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dolphin/client/!svn/ver/2079/trunk/program/common
+END
+pb0x04.proto
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dolphin/client/!svn/ver/1709/trunk/program/common/pb0x04.proto
+END
+proto_standard
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dolphin/client/!svn/ver/513/trunk/program/common/proto_standard
+END
+errno.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/dolphin/client/!svn/ver/2079/trunk/program/common/errno.txt
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/dolphin/client/!svn/ver/315/trunk/program/common/.project
+END
+common.proto
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dolphin/client/!svn/ver/2079/trunk/program/common/common.proto
+END
+header.proto
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dolphin/client/!svn/ver/444/trunk/program/common/header.proto
+END
+pb0x00.proto
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dolphin/client/!svn/ver/901/trunk/program/common/pb0x00.proto
+END
+pb0x01.proto
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dolphin/client/!svn/ver/2079/trunk/program/common/pb0x01.proto
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/dolphin/client/!svn/ver/1545/trunk/program/common/Makefile
+END
+pb0x02.proto
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dolphin/client/!svn/ver/1783/trunk/program/common/pb0x02.proto
+END
+pb0x03.proto
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/dolphin/client/!svn/ver/2079/trunk/program/common/pb0x03.proto
+END

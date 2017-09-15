@@ -1,0 +1,427 @@
+package rankproto;
+import "common.proto";
+
+// redis hset域
+message hset_field_t 
+{
+    // 合服时同名项怎么处理?
+    required string  name = 1;
+    optional bytes  value = 2;
+}
+
+// hash表信息
+message hset_info_t
+{
+    required string key         = 1;
+    repeated hset_field_t fields    = 2;
+}
+
+// 对redis的操作类型
+enum redis_field_operation_t
+{
+    REDIS_INSERT_OR_UPDATE = 1; // 覆盖更新或者插入 
+    REDIS_CHANGE_INT_VALUE = 2; // 增量更新整型值
+    REDIS_INSERT = 3;           // 插入新值，已存在不更新
+    REDIS_DELETE = 4;           // 删除
+}
+
+enum redis_key_prefix_type_t
+{
+    REDIS_KEY_TYPE_ZSET     = 0;
+    REDIS_KEY_TYPE_HASHSET  = 1;
+    REDIS_KEY_TYPE_SET      = 2;
+    REDIS_KEY_TYPE_STRING   = 3;
+    REDIS_KEY_TYPE_LIST   = 4;
+	REDIS_KEY_TYPE_DUMP_RANK = 5;
+}
+
+enum hashset_type_t
+{
+    HASHSET_FAMILY_NAME_ID_MAP    = 4;            //家族名字id映射表
+    HASHSET_FAMILY_ID_NAME_MAP    = 5;            //家族id名字映射表
+    HASHSET_BLESS_PET_TEAM_MAP    = 6;                //伙伴祈福队伍表
+    HASHSET_STAR_LOTTERY_INFO_MAP = 7;                //伙伴祈福队伍表
+	HASHSET_MINE_ID_TEAM_INFO_MAP = 8;			//挖矿,伙伴的基础信息
+	HASHSET_MINE_DEFEND_USER_BTL_DATA = 9;			//挖矿，被揍玩家的战斗信息
+}
+
+enum string_type_t
+{
+    STRING_FAMILY_DEAL_LOCK = 1;   // 家族操作锁集合
+}
+
+enum set_type_t
+{
+    SET_FAMILY_ONLINE_USERIDS = 1;   // 家族在线用户id集合
+    SET_FAMILY_ALL_USERIDS = 2;   // 家族所有用户id集合
+    SET_FAMILY_NAME = 3;        // 家族名称集合
+    SET_FAMILY_ID = 4;              // 家族id集合
+}
+
+//获取玩家排行数据(可以获取多个玩家的排行)
+message cs_get_user_rank
+{
+	required string rank_key = 1; //不包括server_id
+	required uint32 order = 2;
+	repeated commonproto.role_info_t roles = 3;
+	required uint32 server_id = 4;
+}
+
+//返回多个玩家的同一排名
+message sc_get_user_rank
+{
+	repeated commonproto.rank_player_info_t  rank_info = 1;
+	required uint32 total_users = 2;
+}
+
+message rank_key_order_t {
+    required string rank_key = 1;
+    required uint32 order = 2;
+}
+//获取一个玩家多个排行榜的排名
+message cs_get_user_multi_rank {
+    repeated rank_key_order_t rank_keys = 1;
+	required commonproto.role_info_t role = 2;
+	required uint32 server_id = 3;
+}
+//返回一个玩家的多个排名
+message sc_get_user_multi_rank {
+    repeated commonproto.rank_player_info_t rank_info = 1;
+}
+
+//根据分数插入一行排名
+message cs_rank_user_add
+{
+	required string rank_key  =1;
+	required uint64 score = 2;
+	optional uint32 ttl = 3;	//该排行过期的时间
+	required uint32 server_id = 4;
+}
+message sc_rank_user_add{}
+
+//把玩家插入到最后一名
+message cs_rank_insert_last{
+	required string rank_key = 1;
+    required uint32 order = 2;
+	required uint32 server_id = 3;
+}
+message sc_rank_insert_last{
+    required commonproto.rank_player_info_t rank_info = 2;
+}
+
+//根据玩家的排名rank拉取出该玩家的id号
+message cs_get_rank_userid
+{
+	required string rank_key = 1;
+	repeated uint32 rank = 2;
+	required uint32 server_id = 3;
+}
+
+message sc_get_rank_userid
+{
+	repeated commonproto.rank_player_info_t  player_info = 1;
+}
+
+//拉取指定范围内的排行玩家列表
+message cs_get_rank_list
+{
+	required string rank_key = 1;
+	required uint32 start = 2;
+	required uint32 end = 3;
+	required uint32 order = 4;
+	required uint32 server_id = 5;
+}
+message sc_get_rank_list
+{
+	required uint32 count = 1;	//拉取出的排行榜数量
+	required uint32 total = 2;	//排行榜总量
+	repeated commonproto.rank_player_info_t user_info = 3;
+	optional commonproto.rank_player_info_t self_info = 4;	//玩家自己的排名情况
+}
+
+//交换玩家竞技场排行榜名次(包括排行榜总榜和日榜)
+message cs_rank_switch_arena_user_rank
+{
+	required string rank_key = 1;
+	required string daily_rank_key = 2;
+	required commonproto.role_info_t atk_role = 3;
+	required commonproto.role_info_t def_role = 4;
+	required uint32 server_id = 5;
+}
+
+message sc_rank_switch_arena_user_rank{}
+
+message cs_get_users_by_score_range
+{
+	required string rank_key = 1;
+	required uint64 low_score = 2;
+	required uint64 high_score = 3;
+	repeated commonproto.role_info_t role_list = 4;	//当前已经匹配过的对手id
+	required uint64 unit_power = 5;	 //玩家自己战斗力的百分之一
+	required uint32 server_id = 6;
+}
+
+message sc_get_users_by_score_range
+{
+	required commonproto.rank_player_info_t player_info = 1;
+}
+
+message dump_rank_keys_info_t {
+    required commonproto.rank_keys_info_t orig_key = 1;
+    required commonproto.rank_keys_info_t new_key = 2;
+    optional bool del_orig_key = 3[default = false];
+}
+message cs_dump_rank_info
+{
+	repeated dump_rank_keys_info_t  keys_info = 1;
+	required uint32 server_id = 2;
+}
+
+message sc_dump_rank_info {}
+
+//Confirm kevin测试用 非业务协议
+message cs_test_for_zjun
+{
+	required uint32 key = 1;
+	required uint32 sub_key = 2;
+}
+
+//Confirm kevin测试用 非业务协议
+message sc_test_for_zjun {}
+
+
+
+///==========================缓存相关协议==========================///
+//保存战报
+message cs_save_battle_report {
+	required commonproto.role_info_t role = 1;
+	required bytes pkg = 2;	//序列化好的两个玩家的战斗数据
+	required uint32 type = 3;	//战报类型
+	required uint32 timestamp = 4;	//保存战报时的时间戳
+	required uint32 btl_key_ttl = 5;	//战报key的ttl
+	required uint32 btl_key_list_ttl = 6;	//保存战报链表的ttl
+	required uint32 server_id = 7;
+}
+message sc_save_battle_report {}
+
+//获取战报
+message cs_get_battle_report{
+	required string key = 1;
+}
+message sc_get_battle_report{
+	required bytes pkg = 1;	//玩家战斗数据
+	optional uint32 flag = 2;	//0 战报不存在；1 战报存在
+}
+
+message btl_report_info {
+	required string key = 1;
+	optional bytes pkg = 2;
+}
+
+//获得战报key
+message cs_get_battle_report_key{
+	required uint32 type = 1; //战报类型（eg: onlineproto::RANKING_ARENA为竞技场战报）
+	required uint32 count = 2;	//战报key的数量
+	required commonproto.role_info_t role = 3;	//玩家role_key;
+	optional uint32 flag = 4 [default = 0];	//拉取key的时候，是否顺带着拉取出战报:0：不拉取；1: 拉取
+	required uint32 server_id = 5;
+}
+message sc_get_battle_report_key{
+	repeated btl_report_info  btl_inf = 1;
+}
+
+//  新增hash表或更新hash表域值
+message cs_hset_insert_or_update
+{
+    required uint32 oper_type = 1;                      // redis操作类型 redis_field_operation_t     
+    required string key = 2;
+    repeated hset_field_t fields = 3;    // field键值对
+    required uint32 server_id = 4;
+	optional uint32  key_ttl = 5 [default = 0];//key 的ttl，默认永久
+}
+message sc_hset_insert_or_update{}
+
+//  新增string值(值已存在时新增失败)
+message cs_string_insert
+{
+	required string key     = 1;                                   
+    required string value   = 2;
+    required uint32 expire  = 3;                                    // 超时时间，单位s
+    required uint32 server_id = 4;
+}
+message sc_string_insert
+{
+    required bool flag = 1;     // true 新增成功 false 新增失败
+}
+
+// 查询hash表信息
+message cs_hset_get_info
+{
+    repeated string keys = 1;
+    required uint32 server_id = 2;
+}
+message sc_hset_get_info
+{
+    repeated hset_info_t  hset_infos = 1;    // hash表所有信息
+}
+
+// 查询hash表field信息
+message cs_hset_get_field_info
+{
+    required string     key = 1;
+    repeated string     field_names = 2; 
+    required uint32     server_id = 3;
+}
+message sc_hset_get_field_info
+{
+    repeated hset_field_t fields = 1;    // field键值对
+}
+
+// 插入set成员记录
+message cs_set_insert_member
+{
+    required string key = 1;    
+    repeated string values = 3; 
+    required uint32 server_id = 4;
+}
+message sc_set_insert_member
+{
+}
+
+// 删除set成员记录
+message cs_set_del_member
+{
+    required string key = 1;        
+    repeated string values = 3;
+    required uint32 server_id = 4;
+}
+message sc_set_del_member
+{
+}
+
+// 拉取set集合
+message cs_set_get_all_member
+{
+    required string key = 1;        // set_type_t 
+    required uint32 server_id = 3;
+}
+message sc_set_get_all_member
+{
+    repeated string members = 1;
+}
+
+// 判断是否是set成员
+message cs_set_is_member
+{
+    required string key = 1; 
+    repeated string values = 3;
+    required uint32 server_id = 4;
+}
+message sc_set_is_member
+{
+    repeated bool flags = 1; // true 是set成员; false 不是set成员
+}
+
+// 删除redis key集合
+// TODO toby del
+message cs_redis_del_key
+{
+    required string prefix = 1; 
+    required string key = 2;        
+    required uint32 server_id = 4;
+}
+message sc_redis_del_key
+{
+}
+
+// 删除redis key集合
+message cs_redis_del_key_str
+{
+    required string key = 1;        
+    required uint32 type = 2; // redis_key_prefix_type_t
+    required uint32 server_id = 3;
+}
+message sc_redis_del_key_str
+{
+}
+
+message cs_del_user_rank
+{
+    required string key = 1;
+    required commonproto.role_info_t role = 2;
+}
+message sc_del_user_rank
+{
+}
+
+
+// 清空家族信息
+message cs_clear_family_info
+{
+    repeated uint32 family_ids = 1;
+    required uint32 server_id = 2;             // 家族所在服id
+}
+message sc_clear_family_info
+{
+}
+
+enum list_type_t
+{
+    LIST_TYPE_BLESS_PET       = 1;            //伙伴祈福队伍field key
+}
+
+//redis list操作
+message cs_list_lpush_member
+{
+	required string key = 1;
+	repeated bytes  value = 2;
+	required uint32 server_id = 3;
+	required uint32 max = 4; //list的大小，0表示无限制
+}
+
+message sc_list_lpush_member
+{
+}
+
+message cs_list_lpop_member
+{
+	required string key = 1;
+	required uint32 server_id = 2;
+}
+message sc_list_lpop_member
+{
+}
+message cs_list_get_range_member
+{
+	required string key = 1;
+	required int32 start = 2;
+	required int32 end = 3;
+	required uint32 server_id = 4;
+}
+message sc_list_get_range_member
+{
+	required string key = 1;
+	repeated bytes  value = 2;
+}
+
+message cs_save_btl_report
+{
+	repeated commonproto.btl_report_pkg_t  btl_report = 1;
+	required uint32 server_id = 2;
+}
+
+message sc_save_btl_report {}
+
+message cs_get_btl_report
+{
+	required uint32 userid = 1;
+	required uint32 create_tm = 2;
+	required uint32 server_id = 3;
+	required commonproto.pvp_type_t type = 4;
+	optional uint32 count = 5 [default=5];
+}
+
+message sc_get_btl_report
+{
+	repeated btl_report_info  btl_inf = 1;	
+}

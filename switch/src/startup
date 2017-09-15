@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BIN_DIR="./bin"
+BIN_NAME="switch"
+BIN="$BIN_DIR/$BIN_NAME"
+CONF="../etc/bench.conf"
+
+rm -f core.*
+pkill -SIGTERM $BIN_NAME ; sleep 1; pkill -9 $BIN_NAME
+
+case "$1" in
+	"c" | "C" | "clean" | "Clean" ) rm -rf log/* ;;
+	* ) ;;
+esac
+
+$BIN $CONF

@@ -1,0 +1,194 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BINDIR	Makefile	/^BINDIR = $(WORKDIR)\/bin$/;"	m
+BtlEnterCmdProcessor	player_processor.h	/^class BtlEnterCmdProcessor : public CmdProcessorInterface {$/;"	c
+BtlQuitMatchCmdProcessor	player_processor.h	/^class BtlQuitMatchCmdProcessor : public CmdProcessorInterface {$/;"	c
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Werror -fPIC -ggdb  \\$/;"	m
+CLEAR_CMD	common.h	/^    CLEAR_CMD           = 1,$/;"	e	enum:cmd_finished_t
+CmdProcessorInterface	cmd_processor_interface.h	/^class CmdProcessorInterface$/;"	c
+DEPDIR	Makefile	/^DEPDIR = $(WORKDIR)\/obj$/;"	m
+DEPS	Makefile	/^DEPS := $(patsubst %.cpp,%.d,$(subst $(SRCDIR),$(DEPDIR),$(SRCS)))$/;"	m
+DONT_CLEAR_CMD	common.h	/^    DONT_CLEAR_CMD      = 0,$/;"	e	enum:cmd_finished_t
+DUP_BTL_TYPE_PPVE	player_processor.cpp	/^    DUP_BTL_TYPE_PPVE = 2,  \/\/多人打野$/;"	e	enum:btl_type_t	file:
+DUP_BTL_TYPE_RPVP	player_processor.cpp	/^    DUP_BTL_TYPE_RPVP = 5,  \/\/实时PVP竞技场$/;"	e	enum:btl_type_t	file:
+FOREACH	macro_utils.h	4;"	d
+FOREACH_NOINCR_ITER	macro_utils.h	10;"	d
+HEADERS	Makefile	/^HEADERS = $(wildcard $(INCLUDEDIR)\/*.h)$/;"	m
+INCLUDEDIR	Makefile	/^INCLUDEDIR = $(WORKDIR)\/src$/;"	m
+LFLAGS	Makefile	/^LFLAGS = -Wall -Werror -ggdb \\$/;"	m
+LIBDIR	Makefile	/^LIBDIR = $(WORKDIR)\/lib$/;"	m
+LIB_BTL_DIR	Makefile	/^LIB_BTL_DIR = $(PROTODIR)\/battle$/;"	m
+LIB_BTL_MAKEFILE_DIR	Makefile	/^LIB_BTL_MAKEFILE_DIR = $(LIB_BTL_DIR)\/define$/;"	m
+LIB_BTL_PROTO	Makefile	/^LIB_BTL_PROTO = $(LIB_DB_DIR)\/libbattleproto.a$/;"	m
+LIB_CLIENT_DIR	Makefile	/^LIB_CLIENT_DIR = $(PROTODIR)\/client$/;"	m
+LIB_CLIENT_MAKEFILE_DIR	Makefile	/^LIB_CLIENT_MAKEFILE_DIR = $(LIB_CLIENT_DIR)\/define$/;"	m
+LIB_CLIENT_PROTO	Makefile	/^LIB_CLIENT_PROTO = $(LIB_CLIENT_DIR)\/libclientproto.a$/;"	m
+LIB_COMMON_DIR	Makefile	/^LIB_COMMON_DIR=$(PROTODIR)\/client$/;"	m
+LIB_COMMON_MAKEFILE_DIR	Makefile	/^LIB_COMMON_MAKEFILE_DIR=$(LIB_COMMON_DIR)\/common_make$/;"	m
+LIB_COMMON_PROTO	Makefile	/^LIB_COMMON_PROTO=$(LIB_COMMON_DIR)\/libcommonproto.a$/;"	m
+LIB_SVR_COMMON_DIR	Makefile	/^LIB_SVR_COMMON_DIR=$(PROTODIR)\/common$/;"	m
+LIB_SVR_COMMON_MAKEFILE_DIR	Makefile	/^LIB_SVR_COMMON_MAKEFILE_DIR=$(LIB_SVR_COMMON_DIR)\/define$/;"	m
+LIB_SVR_COMMON_PROTO	Makefile	/^LIB_SVR_COMMON_PROTO=$(LIB_SVR_COMMON_DIR)\/libsvr_commonproto.a$/;"	m
+MATCH_TIME	player_manager.h	7;"	d
+NOW	macro_utils.h	17;"	d
+NO_WAIT_SRV_BACK	common.h	/^    NO_WAIT_SRV_BACK    = 0,$/;"	e	enum:cmd_finished_t
+OBJDIR	Makefile	/^OBJDIR = $(WORKDIR)\/obj$/;"	m
+OBJS	Makefile	/^OBJS := $(patsubst %.cpp,%.o,$(subst $(SRCDIR),$(OBJDIR),$(SRCS)))$/;"	m
+PLAYER_MGR	player_manager.h	97;"	d
+PROTODIR	Makefile	/^PROTODIR = $(WORKDIR)\/..\/proto$/;"	m
+PROTO_FROM_CLIENT	proto_processor.h	/^    PROTO_FROM_CLIENT = 0,$/;"	e	enum:__anon1
+PROTO_FROM_SERV	proto_processor.h	/^    PROTO_FROM_SERV = 1,$/;"	e	enum:__anon1
+PROTO_H	proto.h	2;"	d
+ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::ProtoProcessor() { }$/;"	f	class:ProtoProcessor
+ProtoProcessor	proto_processor.h	/^class ProtoProcessor$/;"	c
+REGISTER_TIMER_TYPE	timer_procs.cpp	7;"	d	file:
+REVERSE_FOREACH	macro_utils.h	7;"	d
+REVERSE_FOREACH_NOINCR_ITER	macro_utils.h	13;"	d
+SERVER_MGR	server_manager.h	92;"	d
+SRCDIR	Makefile	/^SRCDIR = $(WORKDIR)\/src$/;"	m
+SRCS	Makefile	/^SRCS = $(wildcard $(SRCDIR)\/*.cpp)$/;"	m
+SqlDB	singleton.h	/^typedef singleton_default<SqlDB_t> SqlDB;$/;"	t
+SqlDB_t	singleton.h	/^class SqlDB_t  $/;"	c
+TARGET	Makefile	/^TARGET = $(BINDIR)\/libbtlcenter.so$/;"	m
+WAIT_SRV_BACK	common.h	/^    WAIT_SRV_BACK       = 1,$/;"	e	enum:cmd_finished_t
+WORKDIR	Makefile	/^WORKDIR = ..\/$/;"	m
+__CMD_PROCESSOR_INTERFACE_H__	cmd_processor_interface.h	2;"	d
+__COMMON_H__	common.h	2;"	d
+__MACRO_UTILS_H__	macro_utils.h	2;"	d
+__PLAYER_MANAGER_H__	player_manager.h	2;"	d
+__PLAYER_PROCESSOR_H__	player_processor.h	2;"	d
+__PROTO_PROCESSOR_H__	proto_processor.h	2;"	d
+__SERVER_MANAGER_H__	server_manager.h	2;"	d
+__SINGLETON_H__	singleton.h	2;"	d
+__TIMER_PROCS_H__	timer_procs.h	2;"	d
+add_player	server_manager.h	/^    inline void add_player(player_t *player) {$/;"	f	class:server_t
+add_player_to_ppve_match	player_manager.cpp	/^void player_manager_t::add_player_to_ppve_match(player_t *p, uint32_t svr_id, uint32_t dup_id)$/;"	f	class:player_manager_t
+add_player_to_rpvp_match	player_manager.cpp	/^void player_manager_t::add_player_to_rpvp_match(player_t *p)$/;"	f	class:player_manager_t
+all_players_on_me	server_manager.h	/^    inline std::set<player_t *> &all_players_on_me() {$/;"	f	class:server_t
+all_players_on_me_	server_manager.h	/^    std::set<player_t*> all_players_on_me_;$/;"	m	class:server_t
+all_server_map	server_manager.h	/^    const svrnm_to_server_map_t &all_server_map() {return svrnm_to_server_map_;}$/;"	f	class:server_manager_t
+batch_destroy_players	player_manager.cpp	/^void player_manager_t::batch_destroy_players(int fd)$/;"	f	class:player_manager_t
+battle_match_timely	timer_procs.cpp	/^int battle_match_timely(void *owner, void *data)$/;"	f
+btl	player_manager.h	/^    server_t *btl; \/\/所连接到的btl服务$/;"	m	struct:player_t
+btl_in_	player_processor.h	/^    battleproto::cs_battle_duplicate_enter_map btl_in_;$/;"	m	class:BtlEnterCmdProcessor
+btl_info	player_manager.h	/^    string btl_info;$/;"	m	struct:player_t
+btl_name	player_manager.h	/^    string btl_name; \/\/btl的名字$/;"	m	struct:player_t
+btl_start	player_manager.h	/^    bool btl_start;$/;"	m	struct:player_t
+btl_type_t	player_processor.cpp	/^enum btl_type_t {$/;"	g	file:
+clear_players_on_me	server_manager.h	/^    inline void clear_players_on_me() {$/;"	f	class:server_t
+close	server_manager.cpp	/^int server_t::close()$/;"	f	class:server_t
+cmd_finished_t	common.h	/^enum cmd_finished_t {$/;"	g
+cmd_processors_	proto_processor.h	/^    std::map<uint32_t, CmdProcessorInterface*> cmd_processors_;$/;"	m	class:ProtoProcessor
+connect	server_manager.cpp	/^int server_t::connect()$/;"	f	class:server_t
+connect	singleton.h	/^	void connect() { cout << "connect db" << endl; }$/;"	f	class:SqlDB_t
+create_new_player	player_manager.cpp	/^player_t* player_manager_t::create_new_player(player_t &player)$/;"	f	class:player_manager_t
+create_new_server	server_manager.cpp	/^server_t *server_manager_t::create_new_server(string server_name)$/;"	f	class:server_manager_t
+create_object	singleton.h	/^	static object_creator create_object;$/;"	m	struct:singleton_default
+create_object	singleton.h	/^singleton_default<T>::create_object;$/;"	m	class:singleton_default
+del_player	server_manager.h	/^    inline void del_player(player_t *player) {$/;"	f	class:server_t
+del_server	server_manager.cpp	/^void server_manager_t::del_server(server_t *svr)$/;"	f	class:server_manager_t
+destroy_player	player_manager.cpp	/^void player_manager_t::destroy_player(player_t *p)$/;"	f	class:player_manager_t
+do_nothing	singleton.h	/^		inline void do_nothing() const { }$/;"	f	struct:singleton_default::object_creator
+do_ppve_match	player_manager.cpp	/^void player_manager_t::do_ppve_match()$/;"	f	class:player_manager_t
+do_rpvp_match	player_manager.cpp	/^void player_manager_t::do_rpvp_match()$/;"	f	class:player_manager_t
+dup_id	player_manager.h	/^    uint32_t dup_id;$/;"	m	struct:player_t
+dupid_to_players_map_t	player_manager.h	/^    typedef std::map<uint32_t, id_to_player_map_t> dupid_to_players_map_t;$/;"	t	class:player_manager_t
+exec	singleton.h	/^	void exec(const char *sqlstr) { cout << "exec insert\/update\/delete :" << sqlstr << endl; }$/;"	f	class:SqlDB_t
+fd	server_manager.h	/^    inline int fd() const {$/;"	f	class:server_t
+fd_	server_manager.h	/^    int fd_;$/;"	m	class:server_t
+fd_to_server_map_	server_manager.h	/^    fd_to_server_map_t fd_to_server_map_;$/;"	m	class:server_manager_t
+fd_to_server_map_iter_t	server_manager.h	/^    typedef std::map<int, server_t*>::iterator fd_to_server_map_iter_t;$/;"	t	class:server_manager_t
+fd_to_server_map_t	server_manager.h	/^    typedef std::map<int, server_t*> fd_to_server_map_t;$/;"	t	class:server_manager_t
+fdsess	player_manager.h	/^    fdsession_t *fdsess; \/\/online的fdsess.$/;"	m	struct:player_t
+fini_service	dll_iface.cpp	/^extern "C" int  fini_service(int isparent)$/;"	f
+g_match_timer	timer_procs.cpp	/^timer_head_t g_match_timer;$/;"	v
+g_proto_processor	proto_processor.cpp	/^ProtoProcessor* g_proto_processor;$/;"	v
+g_reconnect_timer	timer_procs.cpp	/^timer_head_t g_reconnect_timer;$/;"	v
+g_send_buf	dll_iface.cpp	/^char g_send_buf[1000000];$/;"	v
+gen_uuid	common.h	/^static inline std::string gen_uuid(void)$/;"	f
+get_pkg_len	dll_iface.cpp	/^extern "C" int get_pkg_len(int fd, const void* avail_data, int avail_len, int isparent)$/;"	f
+get_pkg_len	proto_processor.cpp	/^int ProtoProcessor::get_pkg_len(int fd, const void* avail_data, $/;"	f	class:ProtoProcessor
+get_player_by_uid	player_manager.h	/^	inline player_t *get_player_by_uid(uint32_t uid) {$/;"	f	class:player_manager_t
+get_server_by_fd	server_manager.h	/^    inline server_t *get_server_by_fd(int fd) {$/;"	f	class:server_manager_t
+get_server_by_name	server_manager.h	/^    inline server_t *get_server_by_name(string name) {$/;"	f	class:server_manager_t
+id_to_player_map_iter_t	player_manager.h	/^	typedef id_to_player_map_t::iterator id_to_player_map_iter_t;$/;"	t	class:player_manager_t
+id_to_player_map_t	player_manager.h	/^	typedef std::map<uint32_t, player_t*> id_to_player_map_t;$/;"	t	class:player_manager_t
+index	player_manager.h	/^    uint32_t index; \/\/进入服务器的序号$/;"	m	struct:player_t
+index	player_manager.h	/^    uint32_t index;$/;"	m	class:player_manager_t
+init_processors	dll_iface.cpp	/^int init_processors()$/;"	f
+init_service	dll_iface.cpp	/^extern "C" int  init_service(int isparent)$/;"	f
+instance	singleton.h	/^	static object_type & instance() {$/;"	f	struct:singleton_default
+is_connected	server_manager.h	/^    inline bool is_connected() {$/;"	f	class:server_t
+kTimerIntervalMatchTimely	timer_procs.h	/^    kTimerIntervalMatchTimely = 1, \/\/每隔1秒钟尝试匹配一次$/;"	e	enum:timer_interval_t
+kTimerIntervalReconnectServiceTimely	timer_procs.h	/^    kTimerIntervalReconnectServiceTimely = 1, \/\/ 重连service服务器间隔$/;"	e	enum:timer_interval_t
+kTimerTypeBattleMatch	timer_procs.h	/^    kTimerTypeBattleMatch = 2, \/\/战斗匹配定时器$/;"	e	enum:timer_type_t
+kTimerTypeReconnectServiceTimely	timer_procs.h	/^    kTimerTypeReconnectServiceTimely = 1, \/\/ 重连service服务器$/;"	e	enum:timer_type_t
+main	singleton.h	/^int main()  $/;"	f
+map_id	player_manager.h	/^    uint32_t map_id;$/;"	m	struct:player_t
+max_incoming_packets_len	proto_processor.cpp	/^uint32_t max_incoming_packets_len = 8192;$/;"	v
+need_team_members	player_manager.h	/^    uint32_t need_team_members; \/\/至少需要匹配到的人数$/;"	m	struct:player_t
+object_creator	singleton.h	/^		object_creator() { singleton_default<T>::instance(); }$/;"	f	struct:singleton_default::object_creator
+object_creator	singleton.h	/^	struct object_creator {$/;"	s	struct:singleton_default
+object_type	singleton.h	/^	typedef T object_type;$/;"	t	struct:singleton_default
+on_client_conn_closed	dll_iface.cpp	/^extern "C" void on_client_conn_closed(int fd)$/;"	f
+on_fd_closed	dll_iface.cpp	/^extern "C" void on_fd_closed(int fd)$/;"	f
+parse_message	cmd_processor_interface.h	/^inline int parse_message($/;"	f
+pb_log_handler	dll_iface.cpp	/^void pb_log_handler(google::protobuf::LogLevel level,$/;"	f
+player_manager_singleton_t	player_manager.h	/^typedef singleton_default<player_manager_t> player_manager_singleton_t;$/;"	t
+player_manager_t	player_manager.h	/^    player_manager_t() {$/;"	f	class:player_manager_t
+player_manager_t	player_manager.h	/^class player_manager_t {$/;"	c
+player_t	player_manager.h	/^    player_t () {$/;"	f	struct:player_t
+player_t	player_manager.h	/^struct player_t {$/;"	s
+ppve_players_map_	player_manager.h	/^    svrid_dupid_players_map_t ppve_players_map_;$/;"	m	class:player_manager_t
+proc_errno_from_serv	cmd_processor_interface.h	/^    virtual uint32_t proc_errno_from_serv($/;"	f	class:CmdProcessorInterface
+proc_events	dll_iface.cpp	/^extern "C" void proc_events()$/;"	f
+proc_pkg_from_client	cmd_processor_interface.h	/^    virtual int proc_pkg_from_client($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_client	dll_iface.cpp	/^extern "C" int  proc_pkg_from_client(void* data, int len, fdsession_t* fdsess)$/;"	f
+proc_pkg_from_client	player_processor.cpp	/^int BtlEnterCmdProcessor::proc_pkg_from_client($/;"	f	class:BtlEnterCmdProcessor
+proc_pkg_from_client	player_processor.cpp	/^int BtlQuitMatchCmdProcessor::proc_pkg_from_client($/;"	f	class:BtlQuitMatchCmdProcessor
+proc_pkg_from_client	proto_processor.cpp	/^int ProtoProcessor::proc_pkg_from_client(void* data, int len,$/;"	f	class:ProtoProcessor
+proc_pkg_from_serv	cmd_processor_interface.h	/^    virtual int proc_pkg_from_serv($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_serv	dll_iface.cpp	/^extern "C" void proc_pkg_from_serv(int fd, void* data, int len)$/;"	f
+proc_pkg_from_serv	proto_processor.cpp	/^void ProtoProcessor::proc_pkg_from_serv(int fd, void* data, int len)$/;"	f	class:ProtoProcessor
+query	singleton.h	/^	void query(const char *sqlstr) { cout << "exec select " << sqlstr << endl; }$/;"	f	class:SqlDB_t
+reconnect_service_timely	timer_procs.cpp	/^int reconnect_service_timely(void* owner, void* data)$/;"	f
+register_command	proto_processor.cpp	/^int ProtoProcessor::register_command($/;"	f	class:ProtoProcessor
+register_timers	timer_procs.cpp	/^int register_timers()$/;"	f
+relay_to_player	player_manager.cpp	/^int player_t::relay_to_player(void *data, uint32_t cmd, uint32_t data_len)$/;"	f	class:player_t
+relay_to_svr	player_manager.cpp	/^int player_t::relay_to_svr(void *data, uint32_t cmd, uint32_t data_len)$/;"	f	class:player_t
+request_tm	player_manager.h	/^    uint32_t request_tm; \/\/发起连接的起始时间$/;"	m	struct:player_t
+rpvp_index_to_player_map_	player_manager.h	/^    id_to_player_map_t rpvp_index_to_player_map_;$/;"	m	class:player_manager_t
+score	player_manager.h	/^    uint32_t score; \/\/积分$/;"	m	struct:player_t
+send_buf_to_svr	server_manager.cpp	/^int server_t::send_buf_to_svr(uint32_t userid, uint16_t cmd, void *data, uint32_t data_len)$/;"	f	class:server_t
+send_err_to_fdsess	player_manager.cpp	/^int send_err_to_fdsess(fdsession_t *fdsess, uint32_t cmd, int err, uint32_t seq, uint32_t uid)$/;"	f
+send_err_to_player	player_manager.cpp	/^int player_t::send_err_to_player(uint32_t cmd, int err)$/;"	f	class:player_t
+send_msg_to_player	player_manager.cpp	/^int player_t::send_msg_to_player(uint32_t cmd, const google::protobuf::Message &msg)$/;"	f	class:player_t
+send_msg_to_svr	server_manager.cpp	/^int server_t::send_msg_to_svr(uint32_t userid, uint16_t cmd,$/;"	f	class:server_t
+seq	player_manager.h	/^    uint32_t seq;$/;"	m	struct:player_t
+server_manager_singleton_t	server_manager.h	/^typedef singleton_default<server_manager_t> server_manager_singleton_t;$/;"	t
+server_manager_t	server_manager.h	/^class server_manager_t {$/;"	c
+server_name	server_manager.h	/^    inline const std::string& server_name() const {$/;"	f	class:server_t
+server_name_	server_manager.h	/^    std::string server_name_;$/;"	m	class:server_t
+server_t	server_manager.h	/^    server_t(const std::string& server_name) {$/;"	f	class:server_t
+server_t	server_manager.h	/^class server_t$/;"	c
+set_fd	server_manager.h	/^    inline void set_fd(int fd) {$/;"	f	class:server_t
+singleton_default	singleton.h	/^struct singleton_default {$/;"	s
+svr_id	player_manager.h	/^    uint32_t svr_id; \/\/所在服的ID$/;"	m	struct:player_t
+svrid_dupid_players_map_t	player_manager.h	/^    typedef std::map<uint32_t, dupid_to_players_map_t> svrid_dupid_players_map_t;$/;"	t	class:player_manager_t
+svrnm_to_server_map_	server_manager.h	/^	svrnm_to_server_map_t svrnm_to_server_map_;$/;"	m	class:server_manager_t
+svrnm_to_server_map_const_iter_t	server_manager.h	/^    typedef svrnm_to_server_map_t::const_iterator svrnm_to_server_map_const_iter_t;$/;"	t	class:server_manager_t
+svrnm_to_server_map_iter_t	server_manager.h	/^	typedef svrnm_to_server_map_t::iterator svrnm_to_server_map_iter_t;$/;"	t	class:server_manager_t
+svrnm_to_server_map_t	server_manager.h	/^	typedef std::map<string, server_t*> svrnm_to_server_map_t;$/;"	t	class:server_manager_t
+timer_head_t	timer_procs.h	/^struct timer_head_t {$/;"	s
+timer_interval_t	timer_procs.h	/^enum timer_interval_t {$/;"	g
+timer_list	timer_procs.h	/^    list_head_t timer_list;$/;"	m	struct:timer_head_t
+timer_type_t	timer_procs.h	/^enum timer_type_t {$/;"	g
+uid	player_manager.h	/^    uint32_t uid; \/\/uid$/;"	m	struct:player_t
+uid_to_player_map_	player_manager.h	/^	id_to_player_map_t uid_to_player_map_;$/;"	m	class:player_manager_t
+~ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::~ProtoProcessor() { }$/;"	f	class:ProtoProcessor
+~server_t	server_manager.h	/^    ~server_t() {$/;"	f	class:server_t

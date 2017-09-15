@@ -1,0 +1,44 @@
+package dbproto;
+
+import "dbproto.data.proto";
+import "common.proto";
+
+//保存新邮件
+message cs_mail_new
+{
+	required commonproto.mail_data_t mail_data = 1;
+}
+message sc_mail_new{
+	required commonproto.mail_data_t mail_data = 1;
+}
+
+//拉取所有邮件
+message cs_mail_get_all{}
+message sc_mail_get_all
+{
+	repeated commonproto.mail_data_t mail_datas = 1;
+}
+
+//根据id列表删除邮件
+message cs_mail_del_by_ids
+{
+	repeated string mailids = 1;
+}
+message sc_mail_del_by_ids{}
+
+//根据多个id拉取多个邮件
+message cs_mail_get_by_ids
+{
+	repeated string mailids = 1;
+}
+message sc_mail_get_by_ids
+{
+	repeated commonproto.mail_data_t mail_datas = 1;
+}
+
+//设置邮件状态(已读/未领附件/已领附件)
+message cs_mail_set_status{
+    required string mailid = 1;
+    required commonproto.mail_status_t status = 2;
+}
+message sc_mail_set_status{}

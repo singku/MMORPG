@@ -1,0 +1,23 @@
+package dbproto;
+import "dbproto.data.proto";
+import "common.proto";
+
+message cs_show_item
+{
+	required uint32 slot_id = 1;
+}
+
+message sc_show_item
+{
+   optional commonproto.item_info_t item_data = 2;
+}
+
+message cs_show_pet
+{
+	required uint32 pet_id = 1;
+}
+
+message sc_show_pet
+{
+   optional commonproto.pet_info_t pet_data = 2;
+}

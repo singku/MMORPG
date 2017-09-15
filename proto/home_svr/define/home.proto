@@ -1,0 +1,124 @@
+package homeproto;
+import "common.proto";
+
+//精灵相关的协议
+enum set_fight_pet_status_t {
+    PET_STATUS_FIGHT = 0; //出战
+    PET_STATUS_CALLBACK = 1; //收回
+    PET_STATUS_UPDATE = 2;// 更新
+}
+
+
+
+//online向home请求房主的小屋信息
+message cs_enter_home {
+	//房主的ID
+	required uint32 host_id = 1;
+	//进入房间的人的个人信息
+	required commonproto.map_player_data_t player_info = 2;
+	optional uint32 x_pos = 3;
+	optional uint32 y_pos = 4;
+	optional uint32 server_id = 5;
+
+    //房主的u_create_tm
+    optional uint32 u_create_tm = 6;
+}
+//home向online返回房主的小屋信息
+message sc_enter_home {
+    required uint32 hostid = 1;
+    required uint32 hometype = 2; //房型
+    repeated commonproto.map_player_data_t players = 3; //目前在小屋的玩家列表
+	optional string name = 4;//屋主名字
+    optional uint32 u_create_tm = 5;
+	optional uint32 x_pos = 6;
+	optional uint32 y_pos = 7;
+}
+
+//online向home请求离开小屋
+message cs_exit_home {
+	required uint32 userid = 1;
+	required uint32 create_tm = 2;
+}
+
+message cs_home_pet_exercise_notify {
+	required uint32 userid = 1;
+	required uint32 create_tm = 2;
+	required uint32 cmd = 3;
+	required bytes pkg = 4;
+}
+ 
+//其实不回包
+message sc_exit_home { } 
+
+//同步玩家状态(装备 精灵 个人信息)
+message cs_sync_map_player_info { 
+    required commonproto.map_player_data_t player_info = 1;
+    required commonproto.map_player_change_reason_t reason = 2;
+	required uint32 userid = 3;	//玩家自己的uid
+	required uint32 create_tm = 4;	//玩家自己的create_tm
+}
+message sc_sync_map_player_info{}
+
+//地图玩家改变坐标
+message cs_change_state{
+    required uint32 type = 1; //type=1玩家 2精灵
+    required uint32 userid = 2; //玩家id
+    required uint32 create_tm = 3; //玩家create_tm
+    required bytes state_bytes = 4; //二进制状态流
+	optional uint32 pet_create_tm = 5;//若type = 2 则此字段为精灵的create_tm
+}
+message sc_change_state{}
+
+message cs_gen_home_visit_log {
+	required bytes pkg = 1;
+	required uint32 userid = 2; //玩家自己的id
+	required uint32 create_tm = 3; //玩家自己的create_tm
+	required uint32 dest_uid = 4;	//被访问的玩家uid
+	required uint32 dest_create_tm =5;	//被访问的玩家create_tm
+}
+message sc_gen_home_visit_log {
+}
+
+// TODO toby
+// 家族大厅同步玩家状态(装备 精灵 个人信息)
+message cs_family_hall_sync_map_player_info { 
+    required commonproto.map_player_data_t player_info = 1;
+    required commonproto.map_player_change_reason_t reason = 2;
+    required uint32 family_id = 3;
+    required uint32 family_hall_line_id = 4;
+}
+message sc_family_hall_sync_map_player_info{}
+
+
+// 家族大厅玩家改变坐标
+message cs_family_hall_change_state{
+    required uint32 type = 1; //type=1玩家 2金精灵
+    required uint32 userid = 2; //玩家id
+    required uint32 create_tm = 3; //精灵的话 给出出生时间
+    required bytes state_bytes = 4; //二进制状态流
+    required uint32 family_id = 5;
+    required uint32 family_hall_line_id = 6;
+}
+message sc_family_hall_change_state{}
+
+// 进入家族大厅
+message cs_enter_family_hall {
+    required uint32 map_id          = 1;
+    required uint32 x_pos           = 2;
+    required uint32 y_pos           = 3;
+    required uint32 heading         = 4;
+    required commonproto.map_player_data_t player = 6;  
+}
+message sc_enter_family_hall {
+    required uint32 line_id         = 1;
+    repeated commonproto.map_player_data_t players = 2;  
+}
+
+// 离开家族大厅
+message cs_leave_family_hall {
+    required uint32 family_id       = 1;
+    required uint32 line_id         = 2;
+}
+message sc_leave_family_hall {
+}
+

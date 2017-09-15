@@ -1,0 +1,225 @@
+package dbproto;
+
+import "common.proto";
+import "dbproto.table.proto";
+
+// 更新db字段,不存在时是否插入新行
+enum db_update_flag_t 
+{
+    DB_UPDATE_AND_INESRT    = 1;
+    DB_UPDATE_NO_INSERT     = 2;
+}
+
+enum db_family_get_info_flag_t
+{
+    DB_FAMILY_GET_INFO_NO_MEMBER_LIST = 0;
+    DB_FAMILY_GET_INFO_WITH_MEMBER_LIST = 1;
+}
+
+message cs_family_create
+{
+    required uint32 server_id = 1; // 所在服务器ID
+}
+message sc_family_create
+{
+    required uint32 family_id = 1;      // 家族id
+}
+
+message cs_family_get_info
+{
+    optional uint32 flag = 1;              // 0 不拉取家族成员列表 1 取家族成员列表
+}
+message sc_family_get_info
+{
+    required commonproto.family_info_t family_info = 1;
+    repeated commonproto.role_info_t members = 2;
+}
+
+
+message cs_family_update_info
+{
+    required dbproto.family_info_table_t family_info = 1;
+    required uint32 flag = 2; // db_update_flag_t
+}
+message sc_family_update_info
+{
+}
+
+message cs_family_change_info
+{
+    required family_info_change_data_t change_info = 1;
+}
+message sc_family_change_info
+{
+}
+
+message cs_family_get_member_info
+{
+    repeated commonproto.role_info_t users = 1;
+}
+message sc_family_get_member_info
+{
+    repeated commonproto.family_member_info_t member_infos = 1;
+}
+
+message cs_family_update_member_info
+{
+    required dbproto.family_member_table_t member_info = 1;
+    required uint32 flag = 2; // db_update_flag_t
+}
+message sc_family_update_member_info
+{
+}
+
+message cs_family_change_member_info
+{
+    required family_member_change_data_t change_member_info = 1;
+}
+message sc_family_change_member_info
+{
+}
+
+message cs_family_get_member_list
+{
+    required commonproto.family_get_member_list_in_t list_in = 1;
+}
+message sc_family_get_member_list
+{
+    required commonproto.family_get_member_list_out_t list_out = 1;
+}
+
+message cs_family_quit
+{
+    required uint32 userid = 1;
+    required uint32 u_create_tm = 2;
+}
+message sc_family_quit
+{
+}
+
+message cs_family_dismiss_family
+{
+}
+message sc_family_dismiss_family
+{
+}
+
+message cs_family_update_event
+{
+    required dbproto.family_event_table_t family_event = 1;
+}
+message sc_family_update_event
+{
+}
+
+message cs_family_get_event_info
+{
+    required uint32 family_id = 1;
+    required uint32 userid = 2;
+    required uint32 u_create_tm = 3;
+    required uint32 type = 4;
+}
+message sc_family_get_event_info
+{
+    required commonproto.family_event_t family_event = 1;
+}
+
+message cs_family_get_event_list
+{
+    required uint32 family_id = 1;
+    required uint32 userid = 2; // 0 表示拉取所有用户事件 >0 拉取指定用户事件
+    optional uint32 u_create_tm = 3;
+    required uint32 type = 4; // 1 申请列表 2 邀请列表
+    required uint32 page_no = 5;
+    required uint32 page_size = 6;
+}
+message sc_family_get_event_list
+{
+    required uint32 total_num = 1;
+    required uint32 page_num = 2;
+    repeated commonproto.family_event_t event_infos = 3;
+}
+
+message cs_family_del_event
+{
+    required uint32 family_id = 1;
+    required uint32 userid = 2;
+    required uint32 u_create_tm = 3;
+    required uint32 type = 4;
+}
+message sc_family_del_event
+{
+}
+
+message cs_family_update_log
+{
+    required dbproto.family_log_table_t family_log = 1;
+}
+message sc_family_update_log
+{
+}
+
+message cs_family_get_log_list
+{
+    required uint32 family_id = 1;
+    required commonproto.family_log_type_t type = 2;
+    required uint32 page_no = 3;
+    required uint32 page_size = 4;
+}
+message sc_family_get_log_list
+{
+    required uint32 total_num = 1;
+    required uint32 page_num = 2;
+    repeated commonproto.family_log_t log_infos = 3;
+}
+
+
+// 拉取族长退出时，自动转让的新族长uid
+message cs_family_get_next_leader
+{
+    required uint32 leader_id = 1;
+    required uint32 leader_create_tm = 2;
+}
+message sc_family_get_next_leader
+{
+    required uint32 next_leader_id = 1;
+    required uint32 next_leader_create_tm = 2;
+}
+
+// 拉取推荐家族列表
+message cs_family_get_recommend_list
+{
+    required uint32 battle_value      = 1; // 玩家战力
+    required uint32 low_percent       = 2; // 推荐家族平均战力最低百分比
+    required uint32 high_percent      = 3; // 推荐家族平均战力最高百分比
+    required uint32 recommend_num               = 4; // 推荐数量
+    required uint32 server_id                      = 5;    // 服id
+}
+message sc_family_get_recommend_list
+{
+    repeated commonproto.family_rank_info_t family_list= 1; // 推荐家族列表
+}
+
+message cs_family_update_match_info
+{
+    required dbproto.family_match_info_table_t match_info = 1;
+}
+message sc_family_update_match_info
+{
+}
+
+message cs_family_change_match_info
+{
+    required dbproto.family_match_info_table_change_data_t change_match_info = 1;
+}
+message sc_family_change_match_info
+{
+}
+
+message cs_family_del_match_info
+{
+    required uint32 family_id = 1;
+}
+message sc_family_del_match_info
+{
+}

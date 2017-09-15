@@ -1,0 +1,1 @@
+link ../proto/client/pb0x00.pb.cc

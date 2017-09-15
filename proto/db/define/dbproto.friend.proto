@@ -1,0 +1,55 @@
+package dbproto;
+import "common.proto";
+
+//message cs_check_user_exist
+//{
+//	required uint32 userid = 1;
+//}
+//
+//message sc_check_user_exist
+//{
+//	required bool is_exist = 1;
+//}
+
+message cs_save_friend
+{
+    required commonproto.friend_data_t finf = 1;
+	optional uint32 gift_count = 2;
+
+}
+
+message sc_save_friend
+{
+}
+
+//小屋好友：更新今日送礼次数
+message cs_update_gift_count
+{
+	required uint32 userid = 1;
+	required uint32 friendid = 2;
+	required uint32 gift_count = 3;
+}
+
+message sc_update_gift_count {
+}
+
+message cs_remove_friend
+{
+    required commonproto.friend_data_t finf = 1;
+}
+
+
+message sc_remove_friend
+{
+}
+
+
+message cs_get_recommendation
+{
+
+}
+
+message sc_get_recommendation
+{
+	repeated uint32 userid = 1;
+}

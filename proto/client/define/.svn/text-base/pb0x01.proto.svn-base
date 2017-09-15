@@ -1,0 +1,204 @@
+package onlineproto;
+
+import "common.proto";
+
+enum sync_item_reason_t {
+    SYNC_REASON_NONE = 0;
+    SYNC_REASON_USE = 1;
+    SYNC_REASON_CLEAN_EXPIRED_ITEM = 2;
+    SYNC_REASON_USE_ITEM = 3;
+    SYNC_REASON_PRIZE_ITEM = 4;
+	SYNC_REASON_EQUIP_LEVELP_UP = 5;
+	SYNC_REASON_EQUIP_ARM = 6;
+}
+
+
+//属性值同步的理由
+enum syn_attr_reason_t {
+    ATTR_OTHER_REASON = 1; //其他原因
+    SYNC_EXP_FROM_DRUGS = 2;
+    SYNC_HP_FROM_DRUGS = 3;
+    SYNC_EXP_FROM_BATTLE = 4;
+    SYNC_LEVELUP_FROM_BATTLE = 5;
+    SYNC_LEVELUP_FROM_OTHER = 6;	
+}
+
+//登陆服务器
+message cs_0x0101_enter_svr
+{
+    required uint32 uid = 1; // 登录米米号
+    required string session = 2; // 登录session
+    optional string tad = 3; // 推广渠道, 用于统计
+    optional string browse = 4 [default=""]; // 浏览器信息，用于统计
+    optional string version = 5 [default=""]; // 客户端版本,用于统计
+    optional string device = 6 [default=""]; // 设备号，用于手机端统计
+    optional string os = 7 [default=""]; // 使用的操作系统，用于手机端统计
+    optional string resolution = 8 [default=""]; // 用户屏幕的分辨率，用于手机端统计
+    optional string network = 9 [default=""]; // 用户使用的网络，用于手机端统计
+}
+
+message sc_0x0101_enter_svr
+{
+    required commonproto.player_base_info_t user_info = 1; //玩家基础信息
+    repeated commonproto.skill_base_t skill_info = 2; //技能信息
+    optional commonproto.attr_data_list_t attr_list = 3; //玩家其他属性
+    required commonproto.pet_list_t bag_pet_list = 4; //背包里的精灵(一定包含出战的跟随精灵)
+	optional commonproto.item_list_t item_list = 5; //玩家物品信息
+	optional commonproto.task_list_t task_list = 6; //玩家任务信息
+	optional commonproto.rune_list_t rune_list = 7; //符文信息
+
+    optional uint32 xPos = 10; //角色X
+    optional uint32 yPos = 11; //角色Y
+    optional uint32 mapId = 12; //角色所在地图ID
+    optional uint32 duplicateId = 13; //角色所在副本
+}
+
+
+//进入地图
+message cs_0x0102_enter_map
+{
+    required uint32 mapId = 1;//地画ID
+    optional uint32 x_pos = 2;//x坐标
+    optional uint32 y_pos = 3;//y坐标
+    optional uint32 heading = 4;//人物方向
+}
+message sc_0x0102_enter_map
+{
+    repeated commonproto.map_player_data_t players = 1; //地图上的其他玩家列表(不包含玩家自己)
+    optional uint32 x_pos = 2;//x坐标
+    optional uint32 y_pos = 3;//y坐标
+    optional uint32 heading = 4;//人物方向
+}
+//通知其他玩家某玩家进入
+message cs_0x0103_notify_enter_map { }
+message sc_0x0103_notify_enter_map
+{
+    required commonproto.map_player_data_t player = 1;
+    optional uint32 x_pos = 2;//x坐标
+    optional uint32 y_pos = 3;//y坐标
+    optional uint32 heading = 4;//人物方向
+}
+
+//离开地图
+message cs_0x0104_leave_map {}
+message sc_0x0104_leave_map {
+
+}
+//通知某玩家离开
+message cs_0x0105_notify_leave_map {}
+message sc_0x0105_notify_leave_map {
+    repeated uint32 userid_list = 1;
+}
+
+//玩家改变状态(改变自身状态或精灵状态)
+//包括玩家的移动也通过这个协议
+message cs_0x0106_player_change_state {
+    required uint32 type = 1; //type=1玩家 type=2精灵
+    required uint32 create_tm = 2; //玩家创建时间/精灵创建时间
+    required bytes state_bytes = 3; //状态信息 二进制流
+}
+message sc_0x0106_player_change_state {}
+
+//上面包的同步通知包
+message cs_0x0107_notify_player_change_state {}
+message sc_0x0107_notify_player_change_state {
+    required uint32 type = 1; //同步玩家还是精灵(1玩家 2精灵)
+    required uint32 userid = 2; //玩家ID
+    required uint32 create_tm = 3; //玩家/精灵的创建时间
+    required bytes state_bytes = 4; //状态信息 二进制流
+}
+
+message cs_0x010B_sync_change_item {
+
+}
+
+message sc_0x010B_sync_change_item {
+    repeated commonproto.item_info_t items = 1;
+    required sync_item_reason_t reason = 2;
+}
+
+message cs_0x010C_use_item {
+    required uint32 item_id = 1;
+    required uint32 slot_id = 2;
+    optional uint32 count = 3;
+    optional uint32 create_tm = 4; //给精灵使用的时候给个创建时间
+}
+
+//使用完后有同步包
+message sc_0x010C_use_item {}
+
+//客户端告诉服务器 已经登录准备完毕该拉的数据都拉了
+//服务器可以做后续的奖励处理了什么的
+message cs_0x0110_login_complete {}
+message sc_0x0110_login_complete {}
+
+//同步属性值
+message cs_0x0111_sync_attr {}
+message sc_0x0111_sync_attr {
+    repeated commonproto.attr_data_t attr_list = 1; // 属性数组
+    optional syn_attr_reason_t reason = 2; // 同步原因
+}
+
+//服务器通知客户端获得XX奖励 奖励的内容分别由物品包 精灵包 属性包同步
+//这里的通知包使得客户端可以根据内容展示获得的奖励物品
+message cs_0x0112_notify_get_prize{ }
+message sc_0x0112_notify_get_prize {
+    //下面两项的size之和应该是prize.xml中display_count + rand_mode之和
+    repeated commonproto.prize_elem_t award_elems = 1; //获得的奖励
+    repeated commonproto.prize_elem_t display_elems = 2; //展示的未获得的奖励(翻牌子可以用到)
+    required commonproto.prize_reason_t reason = 3; //奖励的原因 使得客户端可以根据该字段展示不同的效果
+}
+
+//客户端主动要求获取XX类型的奖励 服务器根据奖励的类型找到对应的奖励ID
+//通过message sc_notify_get_prize{}回通知包
+message cs_0x0113_require_prize { 
+    required commonproto.prize_reason_t reason = 1;
+    optional uint32 prize_id = 2; //奖励的ID 后台根据reason和prize_id需要判定能否领奖
+}
+message sc_0x0113_require_prize { }
+
+//客户端请求同步服务器时间
+message cs_0x0114_require_server_time {}
+message sc_0x0114_require_server_time
+{
+    required uint64 msec = 1; //毫秒
+}
+
+//客户端请求测试服务器往返时延
+message cs_0x0115_rtt_test {
+    required uint64 msec = 1; //毫秒
+}
+message sc_0x0115_rtt_test {
+    required uint64 msec = 1; //原样返回毫秒
+}
+//客户端心跳
+message cs_0x0116_heart_beat {}
+message sc_0x0116_heart_beat {}
+
+
+//装备升级
+message cs_0x0117_equip_level_up {
+	required commonproto.item_info_t equip = 1;
+	required uint32 add_level = 2;
+}
+
+message sc_0x0117_equip_level_up {
+	
+}
+
+message cs_0x0118_equip_stamp {
+	required commonproto.item_info_t equip = 1;
+}
+
+message sc_0x0118_equip_stamp {
+	
+}
+
+
+// message cs_0x0119_equip_arm {
+// 	required commonproto.item_info_t equip = 1;
+// }
+
+// message sc_0x0119_equip_arm {
+	
+// }

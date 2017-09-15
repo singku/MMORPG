@@ -1,0 +1,12 @@
+package dbproto;
+
+message cs_use_gift_code
+{
+    required string code = 1;
+    required uint32 svr_id = 2;
+}
+
+message sc_use_gift_code{
+    required uint32 status = 1; //status为0表示可用 1表示已用 2表示不存在 3被删除 4过期
+    required uint32 prize_id = 2; //可用时返回对应的奖励ID
+}

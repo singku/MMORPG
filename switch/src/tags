@@ -1,0 +1,410 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ActGetRoleInfoCmdProcessor	switch_proto.h	/^class ActGetRoleInfoCmdProcessor : public CmdProcessorInterface$/;"	c
+ActRechargeDiamondCmdProcessor	switch_proto.h	/^class ActRechargeDiamondCmdProcessor : public CmdProcessorInterface$/;"	c
+BINDIR	Makefile	/^BINDIR = $(WORKDIR)\/bin$/;"	m
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Werror -fPIC -ggdb  \\$/;"	m
+CLEAR_CMD	common.h	/^    CLEAR_CMD           = 1,$/;"	e	enum:cmd_finished_t
+CLEAR_WAITING_CMD	switch.h	/^    CLEAR_WAITING_CMD           = 1,$/;"	e	enum:__anon2
+ChangeOtherAttrCmdProcessor	switch_proto.h	/^class ChangeOtherAttrCmdProcessor : public CmdProcessorInterface$/;"	c
+CmdProcessorInterface	cmd_processor_interface.h	/^class CmdProcessorInterface$/;"	c
+DEPDIR	Makefile	/^DEPDIR = $(WORKDIR)\/obj$/;"	m
+DEPS	Makefile	/^DEPS := $(patsubst %.cpp,%.d,$(subst $(SRCDIR),$(DEPDIR),$(SRCS)))$/;"	m
+DONT_CLEAR_CMD	common.h	/^    DONT_CLEAR_CMD      = 0,$/;"	e	enum:cmd_finished_t
+DONT_CLEAR_WAITING_CMD	switch.h	/^    DONT_CLEAR_WAITING_CMD     = 0,$/;"	e	enum:__anon2
+DONT_SKIP_SELF	switch.h	/^    DONT_SKIP_SELF              = 0,$/;"	e	enum:__anon2
+EraseEscortInfoCmdProcessor	switch_proto.h	/^class EraseEscortInfoCmdProcessor : public CmdProcessorInterface$/;"	c
+FOREACH	macro_utils.h	4;"	d
+FOREACH_NOINCR_ITER	macro_utils.h	10;"	d
+FrozenAccountCmdProcessor	switch_proto.h	/^class FrozenAccountCmdProcessor : public CmdProcessorInterface$/;"	c
+GetSvrListCmdProcessor	switch_proto.h	/^class GetSvrListCmdProcessor : public CmdProcessorInterface$/;"	c
+GetUseridListCmdProcessor	switch_proto.h	/^class GetUseridListCmdProcessor : public CmdProcessorInterface$/;"	c
+GmNewMailCmdProcessor	switch_proto.h	/^class GmNewMailCmdProcessor : public CmdProcessorInterface$/;"	c
+GmNewMailToSvrCmdProcessor	switch_proto.h	/^class GmNewMailToSvrCmdProcessor : public CmdProcessorInterface$/;"	c
+HEADERS	Makefile	/^HEADERS = $(wildcard $(INCLUDEDIR)\/*.h)$/;"	m
+INCLUDEDIR	Makefile	/^INCLUDEDIR = $(WORKDIR)\/src$/;"	m
+IsPlayerOnlineCmdProcessor	switch_proto.h	/^class IsPlayerOnlineCmdProcessor : public CmdProcessorInterface$/;"	c
+LFLAGS	Makefile	/^LFLAGS = -Wall -Werror -ggdb \\$/;"	m
+LIBDIR	Makefile	/^LIBDIR = $(WORKDIR)\/lib$/;"	m
+LIB_COMMON_DIR	Makefile	/^LIB_COMMON_DIR=$(PROTODIR)\/client$/;"	m
+LIB_COMMON_MAKEFILE_DIR	Makefile	/^LIB_COMMON_MAKEFILE_DIR=$(LIB_COMMON_DIR)\/common_make$/;"	m
+LIB_COMMON_PROTO	Makefile	/^LIB_COMMON_PROTO=$(LIB_COMMON_DIR)\/libcommonproto.a$/;"	m
+LIB_DB_DIR	Makefile	/^LIB_DB_DIR = $(PROTODIR)\/db$/;"	m
+LIB_DB_MAKEFILE_DIR	Makefile	/^LIB_DB_MAKEFILE_DIR = $(LIB_DB_DIR)\/define$/;"	m
+LIB_DB_PROTO	Makefile	/^LIB_DB_PROTO = $(LIB_DB_DIR)\/libdbproto.a$/;"	m
+LIB_SVR_COMMON_DIR	Makefile	/^LIB_SVR_COMMON_DIR=$(PROTODIR)\/common$/;"	m
+LIB_SVR_COMMON_MAKEFILE_DIR	Makefile	/^LIB_SVR_COMMON_MAKEFILE_DIR=$(LIB_SVR_COMMON_DIR)\/define$/;"	m
+LIB_SVR_COMMON_PROTO	Makefile	/^LIB_SVR_COMMON_PROTO=$(LIB_SVR_COMMON_DIR)\/libsvr_commonproto.a$/;"	m
+LIB_SWITCH_DIR	Makefile	/^LIB_SWITCH_DIR = $(PROTODIR)\/switch$/;"	m
+LIB_SWITCH_MAKEFILE_DIR	Makefile	/^LIB_SWITCH_MAKEFILE_DIR = $(LIB_SWITCH_DIR)\/define$/;"	m
+LIB_SWITCH_PROTO	Makefile	/^LIB_SWITCH_PROTO = $(LIB_SWITCH_DIR)\/libswitchproto.a$/;"	m
+MAX_CACHED_PKG	switch.h	/^    MAX_CACHED_PKG             = 50,$/;"	e	enum:__anon2
+MAX_CACHE_PROTO	server.h	10;"	d
+MAX_USER_ID	player_manager.cpp	5;"	d	file:
+NETCOM	server.h	8;"	d
+NOW	macro_utils.h	17;"	d
+NO_WAIT_SRV_BACK	common.h	/^    NO_WAIT_SRV_BACK    = 0,$/;"	e	enum:cmd_finished_t
+OBJDIR	Makefile	/^OBJDIR = $(WORKDIR)\/obj$/;"	m
+OBJS	Makefile	/^OBJS := $(patsubst %.cpp,%.o,$(subst $(SRCDIR),$(OBJDIR),$(SRCS)))$/;"	m
+OnlineReportPlayerStateCmdProcessor	switch_proto.h	/^class OnlineReportPlayerStateCmdProcessor : public CmdProcessorInterface$/;"	c
+OnlineSyncPlayerInfoCmdProcessor	switch_proto.h	/^class OnlineSyncPlayerInfoCmdProcessor : public CmdProcessorInterface$/;"	c
+PARSE_MSG	cmd_processor_interface.h	73;"	d
+PARSE_SVR_MSG	cmd_processor_interface.h	85;"	d
+PLAYER_MGR	player_manager.h	110;"	d
+PROTODIR	Makefile	/^PROTODIR = $(WORKDIR)\/..\/proto$/;"	m
+PROTO_FROM_CLIENT	proto_processor.h	/^    PROTO_FROM_CLIENT = 0,$/;"	e	enum:__anon1
+PROTO_FROM_SERV	proto_processor.h	/^    PROTO_FROM_SERV = 1,$/;"	e	enum:__anon1
+PROTO_H	proto.h	2;"	d
+PROTO_QUEUE_H	proto_queue.h	3;"	d
+PlatformGetRoleInfoExCmdProcessor	switch_proto.h	/^class PlatformGetRoleInfoExCmdProcessor : public CmdProcessorInterface$/;"	c
+PlatformIfRoleLoginDuringTmCmdProcessor	switch_proto.h	/^class PlatformIfRoleLoginDuringTmCmdProcessor : public CmdProcessorInterface$/;"	c
+ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::ProtoProcessor() { }$/;"	f	class:ProtoProcessor
+ProtoProcessor	proto_processor.h	/^class ProtoProcessor$/;"	c
+ProtoQueue	proto_queue.h	/^    ProtoQueue(uint32_t max_num)$/;"	f	class:ProtoQueue
+ProtoQueue	proto_queue.h	/^class ProtoQueue$/;"	c
+REGISTER_TIMER_TYPE	timer_procs.cpp	9;"	d	file:
+REVERSE_FOREACH	macro_utils.h	7;"	d
+REVERSE_FOREACH_NOINCR_ITER	macro_utils.h	13;"	d
+SERVER_MGR	server_manager.h	60;"	d
+SKIP_SELF	switch.h	/^    SKIP_SELF                   = 1,$/;"	e	enum:__anon2
+SRCDIR	Makefile	/^SRCDIR = $(WORKDIR)\/src$/;"	m
+SRCS	Makefile	/^SRCS = $(wildcard $(SRCDIR)\/*.cpp)$/;"	m
+STATLOGGER_DIR	Makefile	/^STATLOGGER_DIR = $(WORKDIR)\/..\/statlogger$/;"	m
+ServerRegCmdProcessor	switch_proto.h	/^class ServerRegCmdProcessor : public CmdProcessorInterface$/;"	c
+Service	service.cpp	/^Service::Service(const std::string& service_name)$/;"	f	class:Service
+Service	service.h	/^class Service$/;"	c
+SqlDB	singleton.h	/^typedef singleton_default<SqlDB_t> SqlDB;$/;"	t
+SqlDB_t	singleton.h	/^class SqlDB_t  $/;"	c
+StopWaiting	timer_procs.cpp	/^int StopWaiting(void* owner, void* data)$/;"	f
+TARGET	Makefile	/^TARGET = $(BINDIR)\/libswitch.so$/;"	m
+TELCOM	server.h	7;"	d
+TEMP_SVR_TYPE	server_manager.cpp	/^const uint32_t TEMP_SVR_TYPE = 0xFFFFFFFF;$/;"	v
+TransmitMsgCmdProcessor	switch_proto.h	/^class TransmitMsgCmdProcessor : public CmdProcessorInterface$/;"	c
+WAIT_SRV_BACK	common.h	/^    WAIT_SRV_BACK       = 1,$/;"	e	enum:cmd_finished_t
+WORKDIR	Makefile	/^WORKDIR = ..\/$/;"	m
+__CMD_PROCESSOR_INTERFACE_H__	cmd_processor_interface.h	2;"	d
+__COMMON_H__	common.h	2;"	d
+__MACRO_UTILS_H__	macro_utils.h	2;"	d
+__PLAYER_H__	player.h	2;"	d
+__PLAYER_MANAGER_H__	player_manager.h	2;"	d
+__PROTO_PROCESSOR_H__	proto_processor.h	2;"	d
+__SERVER_H__	server.h	2;"	d
+__SERVER_MANAGER_H__	server_manager.h	2;"	d
+__SERVICE_H__	service.h	2;"	d
+__SINGLETON_H__	singleton.h	2;"	d
+__SWITCH_H__	switch.h	2;"	d
+__SWITCH_PROTO_H__	switch_proto.h	2;"	d
+__TIMER_PROCS_H__	timer_procs.h	2;"	d
+add_data_2	proto.h	/^    uint32_t add_data_2; \/\/ 附加信息2 $/;"	m	struct:platform_recharge_diamond_req_t
+add_player	player_manager.cpp	/^void player_manager_t::add_player(player_t *p, uint32_t in_server_id, uint32_t in_online_id)$/;"	f	class:player_manager_t
+add_server	server_manager.cpp	/^void server_manager_t::add_server(server_t *svr)$/;"	f	class:server_manager_t
+all_server_map	server_manager.h	/^    const svrid_to_server_map_t &all_server_map() {return svrid_to_server_map_;}$/;"	f	class:server_manager_t
+basic_	player.h	/^	player_basic_t		basic_;$/;"	m	class:player_t
+basic_	server.h	/^    server_basic_info_t basic_;$/;"	m	class:server_t
+batch_del_players	player_manager.cpp	/^void player_manager_t::batch_del_players(uint32_t online_id)$/;"	f	class:player_manager_t
+cache_string	server.h	/^    string cache_string;$/;"	m	class:server_t
+clean_proto_by_fd	proto_queue.h	/^    inline void clean_proto_by_fd(int fd)$/;"	f	class:ProtoQueue
+clear_player_num	server.h	/^    inline void clear_player_num() {$/;"	f	class:server_t
+clear_waiting_cmd	server.h	/^    inline void clear_waiting_cmd() { basic_.waiting_cmd_ = 0; }$/;"	f	class:server_t
+clear_waiting_serv_cmd	server.h	/^    inline void clear_waiting_serv_cmd() { basic_.waiting_serv_cmd_ = 0; }$/;"	f	class:server_t
+close	service.cpp	/^int Service::close()$/;"	f	class:Service
+cmd_finished_t	common.h	/^enum cmd_finished_t {$/;"	g
+cmd_processors_	proto_processor.h	/^    std::map<uint32_t, CmdProcessorInterface*> cmd_processors_;$/;"	m	class:ProtoProcessor
+connect	service.cpp	/^int Service::connect()$/;"	f	class:Service
+connect	singleton.h	/^	void connect() { cout << "connect db" << endl; }$/;"	f	class:SqlDB_t
+count	proto.h	/^    uint32_t count; \/\/角色的数量$/;"	m	struct:platform_get_role_info_rsp_t
+create_new_player	player_manager.cpp	/^player_t *player_manager_t::create_new_player(player_basic_t *basic)$/;"	f	class:player_manager_t
+create_new_server	server_manager.cpp	/^server_t *server_manager_t::create_new_server(server_basic_info_t *info)$/;"	f	class:server_manager_t
+create_object	singleton.h	/^	static object_creator create_object;$/;"	m	struct:singleton_default
+create_object	singleton.h	/^singleton_default<T>::create_object;$/;"	m	class:singleton_default
+create_temp_server	server_manager.cpp	/^server_t *server_manager_t::create_temp_server(fdsession_t *fdsess)$/;"	f	class:server_manager_t
+create_tm	player.h	/^    inline int32_t create_tm() { return basic_.create_tm_; }$/;"	f	class:player_t
+create_tm_	player.h	/^	int32_t				create_tm_;$/;"	m	class:player_basic_t
+cur_server_id	proto.h	/^    uint32_t cur_server_id; \/\/当前服务器ID$/;"	m	struct:plat_role_info_t
+data	proto_queue.h	/^        char* data; $/;"	m	struct:ProtoQueue::proto_t
+db_chg_value_	switch_proto.h	/^	dbproto::sc_change_attr_value db_chg_value_;$/;"	m	class:ActRechargeDiamondCmdProcessor
+db_in_	switch_proto.h	/^    dbproto::cs_get_base_info db_in_;$/;"	m	class:PlatformGetRoleInfoExCmdProcessor
+db_in_	switch_proto.h	/^    dbproto::cs_get_login_tm_info db_in_;$/;"	m	class:PlatformIfRoleLoginDuringTmCmdProcessor
+db_out_	switch_proto.h	/^	dbproto::sc_get_attr db_out_;$/;"	m	class:FrozenAccountCmdProcessor
+db_out_	switch_proto.h	/^	dbproto::sc_get_base_info db_out_;$/;"	m	class:ActGetRoleInfoCmdProcessor
+db_out_	switch_proto.h	/^	dbproto::sc_get_base_info db_out_;$/;"	m	class:ActRechargeDiamondCmdProcessor
+db_out_	switch_proto.h	/^	dbproto::sc_mail_new db_out_;$/;"	m	class:GmNewMailCmdProcessor
+db_out_	switch_proto.h	/^    dbproto::sc_get_base_info db_out_;$/;"	m	class:PlatformGetRoleInfoExCmdProcessor
+db_out_	switch_proto.h	/^    dbproto::sc_get_login_tm_info db_out_;$/;"	m	class:PlatformIfRoleLoginDuringTmCmdProcessor
+dec_player_num	player_manager.h	/^    inline void dec_player_num(bool is_vip, uint32_t svr_id, uint32_t net = TELCOM) {$/;"	f	class:player_manager_t
+dec_player_num	server.h	/^    inline void dec_player_num(bool is_vip) {$/;"	f	class:server_t
+default_svr_	proto_processor.h	/^    server_t default_svr_;$/;"	m	class:ProtoProcessor
+del_player	player_manager.cpp	/^void player_manager_t::del_player(player_t *p)$/;"	f	class:player_manager_t
+del_server	server_manager.cpp	/^void server_manager_t::del_server(server_t *svr)$/;"	f	class:server_manager_t
+dest_create_tm	proto.h	/^    uint32_t dest_create_tm; \/\/ 用户的create_tm $/;"	m	struct:platform_recharge_diamond_req_t
+dest_server_id	proto.h	/^    uint32_t dest_server_id; \/\/区服号$/;"	m	struct:platform_recharge_diamond_req_t
+dest_user	proto.h	/^    uint32_t dest_user; \/\/充值目标用户米米号$/;"	m	struct:platform_recharge_diamond_req_t
+dest_user	proto.h	/^    uint32_t dest_user; \/\/用户的米米号$/;"	m	struct:platform_get_role_info_req_t
+diamond_cnt	proto.h	/^    uint32_t diamond_cnt;  \/\/充值增加的钻石数量$/;"	m	struct:platform_recharge_diamond_req_t
+do_nothing	singleton.h	/^		inline void do_nothing() const { }$/;"	f	struct:singleton_default::object_creator
+empty	proto_queue.h	/^    inline bool empty()$/;"	f	class:ProtoQueue
+exec	singleton.h	/^	void exec(const char *sqlstr) { cout << "exec insert\/update\/delete :" << sqlstr << endl; }$/;"	f	class:SqlDB_t
+fd	service.h	/^    inline int fd() const$/;"	f	class:Service
+fd_	service.h	/^    int fd_;$/;"	m	class:Service
+fd_to_server_map_	server_manager.h	/^    fd_to_server_map_t fd_to_server_map_;$/;"	m	class:server_manager_t
+fd_to_server_map_iter_t	server_manager.h	/^    typedef std::map<int, server_t*>::iterator fd_to_server_map_iter_t;$/;"	t	class:server_manager_t
+fd_to_server_map_t	server_manager.h	/^    typedef std::map<int, server_t*> fd_to_server_map_t;$/;"	t	class:server_manager_t
+fdsess	server.h	/^    inline fdsession_t *fdsess() { return basic_.fdsess_; }$/;"	f	class:server_t
+fdsess_	server.h	/^    fdsession_t *fdsess_;$/;"	m	class:server_basic_info_t
+fdsession	proto_queue.h	/^        fdsession_t* fdsession; \/\/ 客户端session $/;"	m	struct:ProtoQueue::proto_t
+fini_service	dll_iface.cpp	/^extern "C" int  fini_service(int isparent)$/;"	f
+from_tm	proto.h	/^    uint32_t from_tm; \/\/从tm unix_timestamp$/;"	m	struct:platform_if_role_login_req_t
+frozen_end_time	switch_proto.h	/^	uint32_t frozen_end_time;$/;"	m	class:FrozenAccountCmdProcessor
+full	proto_queue.h	/^    inline bool full()$/;"	f	class:ProtoQueue
+g_dbproxy	service.cpp	/^Service *g_dbproxy;$/;"	v
+g_global_timer	timer_procs.cpp	/^timer_head_t g_global_timer;$/;"	v
+g_pending_proto_svrs	server_manager.cpp	/^std::map<int, server_t*> g_pending_proto_svrs;$/;"	v
+g_proto_processor	proto_processor.cpp	/^ProtoProcessor* g_proto_processor;$/;"	v
+g_reconnect_timer	timer_procs.cpp	/^timer_head_t g_reconnect_timer;$/;"	v
+g_send_buf	switch.cpp	/^static char g_send_buf[10000000];$/;"	v	file:
+g_stat_logger_map	server_manager.cpp	/^std::map<uint32_t, StatLogger*> g_stat_logger_map;$/;"	v
+g_waiting_rsp_timer	timer_procs.cpp	/^timer_head_t g_waiting_rsp_timer;$/;"	v
+gen_uuid	common.h	/^static inline std::string gen_uuid(void)$/;"	f
+get_onlines_by_svrid	server_manager.h	/^    inline std::set<server_t*> get_onlines_by_svrid(uint32_t svr_id) {$/;"	f	class:server_manager_t
+get_pkg_len	dll_iface.cpp	/^extern "C" int get_pkg_len(int fd, const void* avail_data, int avail_len, int isparent)$/;"	f
+get_pkg_len	proto_processor.cpp	/^int ProtoProcessor::get_pkg_len(int fd, const void* avail_data, $/;"	f	class:ProtoProcessor
+get_player_by_uid	player_manager.h	/^	inline player_t *get_player_by_uid(uint32_t uid) {$/;"	f	class:player_manager_t
+get_player_list	player_manager.cpp	/^void player_manager_t::get_player_list(std::vector<role_info_t> &players, uint32_t server_id)$/;"	f	class:player_manager_t
+get_server_by_fd	server_manager.h	/^    inline server_t *get_server_by_fd(int fd) {$/;"	f	class:server_manager_t
+get_server_by_olid	server_manager.h	/^    inline server_t *get_server_by_olid(uint32_t olid) {$/;"	f	class:server_manager_t
+get_stat_logger	server_manager.cpp	/^StatLogger *get_stat_logger(uint32_t svr_id)$/;"	f
+get_total_net_player_num	player_manager.h	/^    inline uint32_t get_total_net_player_num(uint32_t svr_id) {$/;"	f	class:player_manager_t
+get_total_player_num	player_manager.h	/^    inline uint32_t get_total_player_num(uint32_t svr_id) {$/;"	f	class:player_manager_t
+get_total_player_num	server.h	/^    inline uint32_t get_total_player_num() {$/;"	f	class:server_t
+get_total_tel_player_num	player_manager.h	/^    inline uint32_t get_total_tel_player_num(uint32_t svr_id) {$/;"	f	class:player_manager_t
+get_total_vip_player_num	player_manager.h	/^    inline uint32_t get_total_vip_player_num(uint32_t svr_id) {$/;"	f	class:player_manager_t
+get_total_vip_player_num	server.h	/^    inline uint32_t get_total_vip_player_num() {$/;"	f	class:server_t
+host_ip	server.h	/^    inline uint32_t host_ip() { return basic_.host_ip_; }$/;"	f	class:server_t
+host_ip_	server.h	/^    uint32_t host_ip_;$/;"	m	class:server_basic_info_t
+idc_zone	server.h	/^    inline uint32_t idc_zone() { return basic_.idc_zone_; }$/;"	f	class:server_t
+idc_zone_	server.h	/^    uint32_t idc_zone_;$/;"	m	class:server_basic_info_t
+in_	switch_proto.h	/^	switchproto::cs_sw_gm_frozen_account in_;$/;"	m	class:FrozenAccountCmdProcessor
+in_	switch_proto.h	/^	switchproto::cs_sw_gm_new_mail  in_;$/;"	m	class:GmNewMailCmdProcessor
+in_	switch_proto.h	/^	switchproto::cs_sw_gm_new_mail_to_svr in_;$/;"	m	class:GmNewMailToSvrCmdProcessor
+in_	switch_proto.h	/^	switchproto::platform_recharge_diamond in_;$/;"	m	class:ActRechargeDiamondCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_get_server_list in_;$/;"	m	class:GetSvrListCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_online_report_player_onoff in_;$/;"	m	class:OnlineReportPlayerStateCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_online_sync_player_info in_;$/;"	m	class:OnlineSyncPlayerInfoCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_register_server in_;$/;"	m	class:ServerRegCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_sw_get_userid_list in_;$/;"	m	class:GetUseridListCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_sw_is_online in_;$/;"	m	class:IsPlayerOnlineCmdProcessor
+in_	switch_proto.h	/^    switchproto::cs_sw_transmit_only in_;$/;"	m	class:TransmitMsgCmdProcessor
+inc_player_num	player_manager.h	/^    inline void inc_player_num(bool is_vip, uint32_t svr_id, uint32_t net = TELCOM) {$/;"	f	class:player_manager_t
+inc_player_num	server.h	/^    inline void inc_player_num(bool is_vip) {$/;"	f	class:server_t
+init_connections	dll_iface.cpp	/^int init_connections()$/;"	f
+init_processors	dll_iface.cpp	/^int init_processors()$/;"	f
+init_report_timer	dll_iface.cpp	/^int init_report_timer()$/;"	f
+init_server_id	proto.h	/^    uint32_t init_server_id; \/\/初始服ID 传0则拉取米米号在各服的所有角色$/;"	m	struct:platform_get_role_info_req_ex_t
+init_server_id	proto.h	/^    uint32_t init_server_id; \/\/初始服务器ID$/;"	m	struct:plat_role_info_t
+init_service	dll_iface.cpp	/^extern "C" int  init_service(int isparent)$/;"	f
+instance	singleton.h	/^	static object_type & instance() {$/;"	f	struct:singleton_default
+is_vip	player.h	/^    inline uint8_t is_vip() { return basic_.is_vip_; }$/;"	f	class:player_t
+is_vip_	player.h	/^    uint8_t             is_vip_;$/;"	m	class:player_basic_t
+kTimerInterValReport	timer_procs.h	/^    kTimerInterValReport                = 10, \/\/ 每10秒上报一次$/;"	e	enum:timer_interval_t
+kTimerIntervalReconnectServiceTimely	timer_procs.h	/^    kTimerIntervalReconnectServiceTimely = 1, \/\/ 重连service服务器间隔$/;"	e	enum:timer_interval_t
+kTimerIntervalWaitingRsp	timer_procs.h	/^    kTimerIntervalWaitingRsp             = 2, \/\/ 拉取时间不超过2S$/;"	e	enum:timer_interval_t
+kTimerTypeOnlineReport	timer_procs.h	/^    kTimerTypeOnlineReport          = 3, \/\/ 在线人数上报$/;"	e	enum:timer_type_t
+kTimerTypeReconnectServiceTimely	timer_procs.h	/^    kTimerTypeReconnectServiceTimely = 1, \/\/ 重连service服务器$/;"	e	enum:timer_type_t
+kTimerTypeWaitingRsp	timer_procs.h	/^    kTimerTypeWaitingRsp             = 2, \/\/ 等待服务器响应定时器 gm更新db用到$/;"	e	enum:timer_type_t
+len	proto_queue.h	/^        int len;$/;"	m	struct:ProtoQueue::proto_t
+level	proto.h	/^	uint32_t level;$/;"	m	struct:platform_get_role_info_ack_t
+level	proto.h	/^    uint32_t level; \/\/等级$/;"	m	struct:plat_role_info_t
+listen_port	server.h	/^    inline uint16_t listen_port() { return basic_.listen_port_; }$/;"	f	class:server_t
+listen_port_	server.h	/^    uint16_t listen_port_;$/;"	m	class:server_basic_info_t
+main	singleton.h	/^int main()  $/;"	f
+max_incoming_packets_len	proto_processor.cpp	/^uint32_t max_incoming_packets_len = 8192;$/;"	v
+max_num_	proto_queue.h	/^    uint32_t max_num_;$/;"	m	class:ProtoQueue
+name	proto.h	/^	char name[150];$/;"	m	struct:platform_get_role_info_ack_t
+name	server.h	/^    inline string name() { return basic_.name_; }$/;"	f	class:server_t
+name_	server.h	/^    string name_;$/;"	m	class:server_basic_info_t
+noti_out_	switch_proto.h	/^	switchproto::sc_sw_notify_attr_changed_by_other noti_out_;$/;"	m	class:ActRechargeDiamondCmdProcessor
+noti_out_	switch_proto.h	/^	switchproto::sc_sw_notify_attr_changed_by_other noti_out_;$/;"	m	class:ChangeOtherAttrCmdProcessor
+noti_out_	switch_proto.h	/^	switchproto::sc_sw_notify_svr_erase_player_escort_info noti_out_;$/;"	m	class:EraseEscortInfoCmdProcessor
+object_creator	singleton.h	/^		object_creator() { singleton_default<T>::instance(); }$/;"	f	struct:singleton_default::object_creator
+object_creator	singleton.h	/^	struct object_creator {$/;"	s	struct:singleton_default
+object_type	singleton.h	/^	typedef T object_type;$/;"	t	struct:singleton_default
+on_client_conn_closed	dll_iface.cpp	/^extern "C" void on_client_conn_closed(int fd)$/;"	f
+on_connect_callback	service.cpp	/^void Service::on_connect_callback(int fd, void* args)$/;"	f	class:Service
+on_fd_closed	dll_iface.cpp	/^extern "C" void on_fd_closed(int fd)$/;"	f
+online_id	player.h	/^    inline uint32_t online_id() { return online_id_; }$/;"	f	class:player_t
+online_id	server.h	/^    inline uint32_t online_id() { return basic_.online_id_; }$/;"	f	class:server_t
+online_id_	player.h	/^    uint32_t            online_id_;$/;"	m	class:player_t
+online_id_	server.h	/^    uint32_t online_id_;$/;"	m	class:server_basic_info_t
+out_	switch_proto.h	/^	switchproto::sc_sw_gm_frozen_account out_;$/;"	m	class:FrozenAccountCmdProcessor
+out_	switch_proto.h	/^	switchproto::sc_sw_gm_new_mail  out_;$/;"	m	class:GmNewMailCmdProcessor
+out_	switch_proto.h	/^	switchproto::sc_sw_gm_new_mail_to_svr out_;$/;"	m	class:GmNewMailToSvrCmdProcessor
+out_	switch_proto.h	/^    switchproto::sc_get_server_list out_;$/;"	m	class:GetSvrListCmdProcessor
+out_	switch_proto.h	/^    switchproto::sc_register_server out_;$/;"	m	class:ServerRegCmdProcessor
+out_	switch_proto.h	/^    switchproto::sc_sw_get_userid_list out_;$/;"	m	class:GetUseridListCmdProcessor
+out_	switch_proto.h	/^    switchproto::sc_sw_is_online out_;$/;"	m	class:IsPlayerOnlineCmdProcessor
+out_	switch_proto.h	/^    switchproto::sc_sw_transmit_only out_;$/;"	m	class:TransmitMsgCmdProcessor
+pack_server_list	switch_proto.cpp	/^void pack_server_list(uint32_t server_type, uint32_t server_id, $/;"	f
+parse_message	cmd_processor_interface.h	/^inline int parse_message($/;"	f
+pb_log_handler	dll_iface.cpp	/^void pb_log_handler(google::protobuf::LogLevel level,$/;"	f
+plat_role_info_t	proto.h	/^struct plat_role_info_t {$/;"	s
+platform_get_role_info_ack_t	proto.h	/^struct platform_get_role_info_ack_t {$/;"	s
+platform_get_role_info_req_ex_t	proto.h	/^struct platform_get_role_info_req_ex_t {$/;"	s
+platform_get_role_info_req_t	proto.h	/^struct platform_get_role_info_req_t {$/;"	s
+platform_get_role_info_rsp_t	proto.h	/^struct platform_get_role_info_rsp_t {$/;"	s
+platform_if_role_login_req_t	proto.h	/^struct platform_if_role_login_req_t {$/;"	s
+platform_if_role_login_rsp_t	proto.h	/^struct platform_if_role_login_rsp_t {$/;"	s
+platform_recharge_diamond_ack_t	proto.h	/^struct platform_recharge_diamond_ack_t {$/;"	s
+platform_recharge_diamond_req_t	proto.h	/^struct platform_recharge_diamond_req_t {$/;"	s
+player_basic_t	player.h	/^class player_basic_t {$/;"	c
+player_manager_singleton_t	player_manager.h	/^typedef singleton_default<player_manager_t> player_manager_singleton_t;$/;"	t
+player_manager_t	player_manager.h	/^	player_manager_t(void){$/;"	f	class:player_manager_t
+player_manager_t	player_manager.h	/^class player_manager_t {$/;"	c
+player_t	player.h	/^    player_t() {};$/;"	f	class:player_t
+player_t	player.h	/^class player_t {$/;"	c
+pop_proto	proto_queue.h	/^    inline int pop_proto(ProtoQueue::proto_t& proto)$/;"	f	class:ProtoQueue
+prepare_dup_reg	switch.cpp	/^server_t *prepare_dup_reg(server_t *svr, fdsession_t *fdsess, $/;"	f
+prepare_player_basic	switch.cpp	/^void prepare_player_basic(const switchproto::sw_player_basic_info_t &msg, $/;"	f
+prepare_server_basic	switch.cpp	/^void prepare_server_basic(const switchproto::cs_register_server &msg, $/;"	f
+proc_cached_proto	dll_iface.cpp	/^void proc_cached_proto()$/;"	f
+proc_errno_from_serv	cmd_processor_interface.h	/^    virtual uint32_t proc_errno_from_serv($/;"	f	class:CmdProcessorInterface
+proc_events	dll_iface.cpp	/^extern "C" void proc_events()$/;"	f
+proc_pkg_from_change_other_attr	switch_proto.cpp	/^int FrozenAccountCmdProcessor::proc_pkg_from_change_other_attr($/;"	f	class:FrozenAccountCmdProcessor
+proc_pkg_from_client	cmd_processor_interface.h	/^    virtual int proc_pkg_from_client($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_client	dll_iface.cpp	/^extern "C" int  proc_pkg_from_client(void* data, int len, fdsession_t* fdsess)$/;"	f
+proc_pkg_from_client	proto_processor.cpp	/^int ProtoProcessor::proc_pkg_from_client(void* data, int len,$/;"	f	class:ProtoProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int ActGetRoleInfoCmdProcessor::proc_pkg_from_client(server_t *svr,$/;"	f	class:ActGetRoleInfoCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int ActRechargeDiamondCmdProcessor::proc_pkg_from_client($/;"	f	class:ActRechargeDiamondCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int ChangeOtherAttrCmdProcessor::proc_pkg_from_client($/;"	f	class:ChangeOtherAttrCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int EraseEscortInfoCmdProcessor::proc_pkg_from_client($/;"	f	class:EraseEscortInfoCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int FrozenAccountCmdProcessor::proc_pkg_from_client($/;"	f	class:FrozenAccountCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int GetSvrListCmdProcessor::proc_pkg_from_client($/;"	f	class:GetSvrListCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int GetUseridListCmdProcessor::proc_pkg_from_client($/;"	f	class:GetUseridListCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int GmNewMailCmdProcessor::proc_pkg_from_client($/;"	f	class:GmNewMailCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int GmNewMailToSvrCmdProcessor::proc_pkg_from_client($/;"	f	class:GmNewMailToSvrCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int IsPlayerOnlineCmdProcessor::proc_pkg_from_client($/;"	f	class:IsPlayerOnlineCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int OnlineReportPlayerStateCmdProcessor::proc_pkg_from_client($/;"	f	class:OnlineReportPlayerStateCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int OnlineSyncPlayerInfoCmdProcessor::proc_pkg_from_client($/;"	f	class:OnlineSyncPlayerInfoCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int PlatformIfRoleLoginDuringTmCmdProcessor::proc_pkg_from_client($/;"	f	class:PlatformIfRoleLoginDuringTmCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int ServerRegCmdProcessor::proc_pkg_from_client($/;"	f	class:ServerRegCmdProcessor
+proc_pkg_from_client	switch_proto.cpp	/^int TransmitMsgCmdProcessor::proc_pkg_from_client($/;"	f	class:TransmitMsgCmdProcessor
+proc_pkg_from_serv	cmd_processor_interface.h	/^    virtual int proc_pkg_from_serv($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_serv	dll_iface.cpp	/^extern "C" void proc_pkg_from_serv(int fd, void* data, int len)$/;"	f
+proc_pkg_from_serv	proto_processor.cpp	/^void ProtoProcessor::proc_pkg_from_serv(int fd, void* data, int len)$/;"	f	class:ProtoProcessor
+proc_pkg_from_serv	switch_proto.cpp	/^int ActGetRoleInfoCmdProcessor::proc_pkg_from_serv(server_t *svr,$/;"	f	class:ActGetRoleInfoCmdProcessor
+proc_pkg_from_serv	switch_proto.cpp	/^int ActRechargeDiamondCmdProcessor::proc_pkg_from_serv($/;"	f	class:ActRechargeDiamondCmdProcessor
+proc_pkg_from_serv	switch_proto.cpp	/^int FrozenAccountCmdProcessor::proc_pkg_from_serv($/;"	f	class:FrozenAccountCmdProcessor
+proc_pkg_from_serv	switch_proto.cpp	/^int GmNewMailCmdProcessor::proc_pkg_from_serv($/;"	f	class:GmNewMailCmdProcessor
+proc_pkg_from_serv	switch_proto.cpp	/^int PlatformIfRoleLoginDuringTmCmdProcessor::proc_pkg_from_serv($/;"	f	class:PlatformIfRoleLoginDuringTmCmdProcessor
+proc_pkg_from_svr_after_get_base_info	switch_proto.cpp	/^int ActRechargeDiamondCmdProcessor::proc_pkg_from_svr_after_get_base_info($/;"	f	class:ActRechargeDiamondCmdProcessor
+proc_pkg_from_svr_after_insert_new_trans	switch_proto.cpp	/^int ActRechargeDiamondCmdProcessor::proc_pkg_from_svr_after_insert_new_trans($/;"	f	class:ActRechargeDiamondCmdProcessor
+proc_pkg_from_svr_after_recharge_diamond	switch_proto.cpp	/^int ActRechargeDiamondCmdProcessor::proc_pkg_from_svr_after_recharge_diamond($/;"	f	class:ActRechargeDiamondCmdProcessor
+process_seq	server.h	/^    uint32_t process_seq;$/;"	m	class:server_t
+process_u_create_tm	server.h	/^    uint32_t process_u_create_tm;$/;"	m	class:server_t
+process_uid	server.h	/^    uint32_t process_uid;$/;"	m	class:server_t
+proto_queue	server.h	/^    ProtoQueue* proto_queue;$/;"	m	class:server_t
+proto_t	proto_queue.h	/^    struct proto_t$/;"	s	class:ProtoQueue
+push_proto	proto_queue.h	/^    inline int push_proto(const char* data, int data_len, fdsession_t* fdsession)$/;"	f	class:ProtoQueue
+query	singleton.h	/^	void query(const char *sqlstr) { cout << "exec select " << sqlstr << endl; }$/;"	f	class:SqlDB_t
+queue_	proto_queue.h	/^    std::queue<ProtoQueue::proto_t> queue_;$/;"	m	class:ProtoQueue
+reconnect_service_timely	timer_procs.cpp	/^int reconnect_service_timely(void* owner, void* data)$/;"	f
+register_command	proto_processor.cpp	/^int ProtoProcessor::register_command($/;"	f	class:ProtoProcessor
+register_timers	timer_procs.cpp	/^int register_timers()$/;"	f
+report_stat_online	timer_procs.cpp	/^int report_stat_online(void *owner, void *data)$/;"	f
+req_in_	switch_proto.h	/^	switchproto::cs_sw_change_other_attr req_in_;$/;"	m	class:ChangeOtherAttrCmdProcessor
+req_in_	switch_proto.h	/^	switchproto::cs_sw_req_svr_erase_player_escort_info req_in_;$/;"	m	class:EraseEscortInfoCmdProcessor
+result	proto.h	/^    uint8_t result;\/\/0 否 1是$/;"	m	struct:platform_if_role_login_rsp_t
+role_name	proto.h	/^    char role_name[64]; \/\/名字$/;"	m	struct:plat_role_info_t
+send_buf	service.cpp	/^int Service::send_buf(server_t *svr, uint32_t userid, uint32_t u_create_tm, uint16_t cmd, $/;"	f	class:Service
+send_buf_	service.h	/^    char send_buf_[1000000];$/;"	m	class:Service
+send_err_to_act	switch.cpp	/^int send_err_to_act(fdsession_t *fdsess, uint32_t cmd,$/;"	f
+send_err_to_fdsess	switch.cpp	/^int send_err_to_fdsess(fdsession_t *fdsess, uint32_t cmd, $/;"	f
+send_err_to_server	switch.cpp	/^int send_err_to_server(server_t *svr, uint32_t cmd, int32_t err, $/;"	f
+send_kick_noti_to_server	switch_proto.cpp	/^int send_kick_noti_to_server(server_t *svr, uint32_t uid, int32_t create_tm)$/;"	f
+send_msg	service.cpp	/^int Service::send_msg(server_t *svr, uint32_t userid, uint32_t u_create_tm, uint16_t cmd,$/;"	f	class:Service
+send_msg_to_act	switch.cpp	/^int send_msg_to_act(server_t *svr, uint32_t cmd, const char* body, int bodylen, int ret)$/;"	f
+send_msg_to_server	switch.cpp	/^int send_msg_to_server(server_t *svr, uint32_t cmd, Message &msg, bool clear_waiting_cmd)$/;"	f
+serv_cmd	server.h	/^	inline uint32_t serv_cmd() { return basic_.serv_cmd_; }$/;"	f	class:server_t
+serv_cmd_	server.h	/^	uint32_t serv_cmd_;$/;"	m	class:server_basic_info_t
+server_basic_info_t	server.h	/^    server_basic_info_t() {$/;"	f	class:server_basic_info_t
+server_basic_info_t	server.h	/^class server_basic_info_t {$/;"	c
+server_id	player.h	/^    inline uint32_t server_id() { return server_id_; }$/;"	f	class:player_t
+server_id	proto.h	/^    uint32_t server_id; \/\/指定的区服(合服前玩家所在的服务器)$/;"	m	struct:platform_get_role_info_req_t
+server_id	server.h	/^    inline uint32_t server_id() { return basic_.server_id_; }$/;"	f	class:server_t
+server_id_	player.h	/^    uint32_t            server_id_;$/;"	m	class:player_t
+server_id_	server.h	/^    uint32_t server_id_;$/;"	m	class:server_basic_info_t
+server_manager_singleton_t	server_manager.h	/^typedef singleton_default<server_manager_t> server_manager_singleton_t;$/;"	t
+server_manager_t	server_manager.h	/^class server_manager_t {$/;"	c
+server_t	server.h	/^    server_t() {$/;"	f	class:server_t
+server_t	server.h	/^class server_t {$/;"	c
+server_type	server.h	/^    inline uint32_t server_type() { return basic_.server_type_; }$/;"	f	class:server_t
+server_type_	server.h	/^    uint32_t server_type_;$/;"	m	class:server_basic_info_t
+service_name	service.h	/^    inline const std::string& service_name() const$/;"	f	class:Service
+service_name_	service.h	/^    std::string service_name_;$/;"	m	class:Service
+set_create_tm	player.h	/^    inline void set_create_tm(int32_t create_tm) { basic_.create_tm_ = create_tm; }$/;"	f	class:player_t
+set_fd	service.h	/^    inline void set_fd(int fd) {$/;"	f	class:Service
+set_fdsess	server.h	/^    inline void set_fdsess(fdsession_t *fdsess) { basic_.fdsess_ = fdsess; }$/;"	f	class:server_t
+set_host_ip	server.h	/^    inline void set_host_ip(uint32_t ip) { basic_.host_ip_ = ip; }$/;"	f	class:server_t
+set_idc_zone	server.h	/^    inline void set_idc_zone(uint32_t zone) { basic_.idc_zone_ = zone; }$/;"	f	class:server_t
+set_is_vip	player.h	/^    inline void set_is_vip(uint8_t is_vip) { basic_.is_vip_ = is_vip; }$/;"	f	class:player_t
+set_listen_port	server.h	/^    inline void set_listen_port(uint16_t port) { basic_.listen_port_ = port; }$/;"	f	class:server_t
+set_name	server.h	/^    inline void set_name(string name) { basic_.name_ = name; }$/;"	f	class:server_t
+set_online_id	player.h	/^    inline void set_online_id(uint32_t onlineid) { online_id_ = onlineid; }$/;"	f	class:player_t
+set_online_id	server.h	/^    inline void set_online_id(uint32_t olid) { basic_.online_id_ = olid; }$/;"	f	class:server_t
+set_serv_cmd	server.h	/^	inline void set_serv_cmd(uint32_t cmd) {basic_.serv_cmd_ = cmd; }$/;"	f	class:server_t
+set_server_id	player.h	/^    inline void set_server_id(uint32_t svrid) { server_id_ = svrid; }$/;"	f	class:player_t
+set_server_id	server.h	/^    inline void set_server_id(uint32_t svrid) { basic_.server_id_ = svrid; }$/;"	f	class:server_t
+set_server_type	server.h	/^    inline void set_server_type(uint32_t type) { basic_.server_type_ = type; }$/;"	f	class:server_t
+set_uid	player.h	/^    inline void set_uid(uint32_t uid) { basic_.uid_ = uid; }$/;"	f	class:player_t
+set_waiting_cmd	server.h	/^    inline void set_waiting_cmd(uint32_t cmd) { basic_.waiting_cmd_ = cmd; }$/;"	f	class:server_t
+set_waiting_serv_cmd	server.h	/^    inline void set_waiting_serv_cmd(uint32_t cmd) { basic_.waiting_serv_cmd_ = cmd; }$/;"	f	class:server_t
+sign	proto.h	/^    char sign[32];$/;"	m	struct:platform_get_role_info_req_t
+singleton_default	singleton.h	/^struct singleton_default {$/;"	s
+size	proto_queue.h	/^    inline uint32_t size()$/;"	f	class:ProtoQueue
+svr_timer	server.h	/^    timer_struct_t *svr_timer;$/;"	m	class:server_t
+svrid_to_server_map_	server_manager.h	/^	svrid_to_server_map_t svrid_to_server_map_;$/;"	m	class:server_manager_t
+svrid_to_server_map_const_iter_t	server_manager.h	/^    typedef svrid_to_server_map_t::const_iterator svrid_to_server_map_const_iter_t;$/;"	t	class:server_manager_t
+svrid_to_server_map_iter_t	server_manager.h	/^	typedef svrid_to_server_map_t::iterator svrid_to_server_map_iter_t;$/;"	t	class:server_manager_t
+svrid_to_server_map_t	server_manager.h	/^	typedef std::map<uint32_t, server_t*> svrid_to_server_map_t;$/;"	t	class:server_manager_t
+time	proto.h	/^    uint32_t time; \/\/请求的时间（如果没有配置key的该字段为空）$/;"	m	struct:platform_get_role_info_req_t
+timer_head_t	timer_procs.h	/^struct timer_head_t {$/;"	s
+timer_interval_t	timer_procs.h	/^enum timer_interval_t {$/;"	g
+timer_list	timer_procs.h	/^    list_head_t timer_list;$/;"	m	struct:timer_head_t
+timer_type_t	timer_procs.h	/^enum timer_type_t {$/;"	g
+to_string	switch_proto.cpp	/^static std::string to_string(uint32_t n)$/;"	f	file:
+to_tm	proto.h	/^    uint32_t to_tm; \/\/至tm unix_timestamp$/;"	m	struct:platform_if_role_login_req_t
+total_net_player_num_of_svrs_	player_manager.h	/^    std::map<uint32_t, uint32_t> total_net_player_num_of_svrs_; \/\/<svr_id, players_cnt>$/;"	m	class:player_manager_t
+total_player_num_	player_manager.h	/^	int32_t total_player_num_; \/\/ 总人数$/;"	m	class:player_manager_t
+total_player_num_	server.h	/^    uint32_t total_player_num_;$/;"	m	class:server_t
+total_player_num_of_svrs_	player_manager.h	/^    std::map<uint32_t, uint32_t> total_player_num_of_svrs_; \/\/<svr_id, players_cnt>$/;"	m	class:player_manager_t
+total_player_on_net_	player_manager.h	/^    int32_t total_player_on_net_; \/\/网通总人数$/;"	m	class:player_manager_t
+total_player_on_tel_	player_manager.h	/^    int32_t total_player_on_tel_; \/\/电信总人数$/;"	m	class:player_manager_t
+total_tel_player_num_of_svrs_	player_manager.h	/^    std::map<uint32_t, uint32_t> total_tel_player_num_of_svrs_; \/\/<svr_id, players_cnt>$/;"	m	class:player_manager_t
+total_vip_player_num_of_svrs_	player_manager.h	/^    std::map<uint32_t, uint32_t> total_vip_player_num_of_svrs_; \/\/<svr_id, players_cnt> $/;"	m	class:player_manager_t
+trans_id	proto.h	/^	uint32_t trans_id; \/\/充值交易号(原样返回)$/;"	m	struct:platform_recharge_diamond_ack_t
+trans_id	proto.h	/^    uint32_t trans_id; \/\/充值交易号$/;"	m	struct:platform_recharge_diamond_req_t
+transmit_msg_to_dest_svr	server_manager.cpp	/^uint32_t server_manager_t::transmit_msg_to_dest_svr($/;"	f	class:server_manager_t
+type	proto.h	/^    uint32_t type;   \/\/消费类型$/;"	m	struct:platform_recharge_diamond_req_t
+u_create_tm	proto.h	/^    uint32_t u_create_tm;   \/\/角色创建时间戳$/;"	m	struct:plat_role_info_t
+uid	player.h	/^    inline uint32_t uid() { return basic_.uid_; }$/;"	f	class:player_t
+uid_	player.h	/^	uint32_t			uid_;$/;"	m	class:player_basic_t
+uid_to_player_map_	player_manager.h	/^	uid_to_player_map_t uid_to_player_map_;$/;"	m	class:player_manager_t
+uid_to_player_map_iter_t	player_manager.h	/^	typedef uid_to_player_map_t::iterator uid_to_player_map_iter_t;$/;"	t	class:player_manager_t
+uid_to_player_map_t	player_manager.h	/^	typedef std::map<uint32_t, player_t*> uid_to_player_map_t;$/;"	t	class:player_manager_t
+verify_passwd	switch_proto.cpp	/^static inline bool verify_passwd(const char *passwd)$/;"	f	file:
+vip_player_num_	player_manager.h	/^    int32_t vip_player_num_; \/\/VIP总人数$/;"	m	class:player_manager_t
+vip_player_num_	server.h	/^    uint32_t vip_player_num_;$/;"	m	class:server_t
+waiting_cmd	server.h	/^    inline uint32_t waiting_cmd() { return basic_.waiting_cmd_; }$/;"	f	class:server_t
+waiting_cmd_	server.h	/^    uint32_t waiting_cmd_;$/;"	m	class:server_basic_info_t
+waiting_serv_cmd	server.h	/^    inline uint32_t waiting_serv_cmd() { return basic_.waiting_serv_cmd_; }$/;"	f	class:server_t
+waiting_serv_cmd_	server.h	/^    uint32_t waiting_serv_cmd_;$/;"	m	class:server_basic_info_t
+wanted_server_type	switch_proto.cpp	/^static inline bool wanted_server_type(server_t *svr, uint32_t type)$/;"	f	file:
+~ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::~ProtoProcessor() { }$/;"	f	class:ProtoProcessor
+~ProtoQueue	proto_queue.h	/^    ~ProtoQueue()$/;"	f	class:ProtoQueue
+~Service	service.cpp	/^Service::~Service()$/;"	f	class:Service
+~player_t	player.h	/^    ~player_t() {}; $/;"	f	class:player_t
+~server_t	server.h	/^    ~server_t() {$/;"	f	class:server_t

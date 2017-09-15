@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BIN="./robot"
+LOG_DIR="./log"
+
+mkdir -p $LOG_DIR
+
+${BIN} $1 $2

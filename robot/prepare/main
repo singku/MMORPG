@@ -1,0 +1,35 @@
+#!/bin/bash
+
+DB="dplan_db"
+HOST_LIST="10.1.1.97:5506 10.1.1.107:5506"
+CTRL_HOST="10.1.1.97"
+CTRL_PORT="5506"
+PASSWD="eTSoomNQ"
+USER="iseer20"
+        
+EXEC_SQL="mysql -u$USER -p$PASSWD -h$CTRL_HOST -P$CTRL_PORT -A -t"
+        
+DIR_TABLES="./tables"
+DEF_SELECT_LIMIT=10
+MAX_SELECT_LIMIT=1000
+
+function exec_sqlfile() {   
+	if [ $# -ne 1 ] ; then
+		echo "$0 Error: invalid param($*), should be: exec_sqlfile <sqlfile(fullpath)>"
+		return 1
+	fi
+
+	local lsqlfile="$1" 
+	if [ ! -r $lsqlfile ] ; then
+		echo "$0 Error, sqlfile not exist: $lsqlfile"
+		return 1
+	fi
+	$EXEC_SQL < $lsqlfile
+} 
+
+if [ $# -ne 1 ] ; then
+	echo "Usage $0 <prepare_file.sql>"
+	exit 1
+fi
+
+exec_sqlfile $1

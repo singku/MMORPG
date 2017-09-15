@@ -1,0 +1,11 @@
+package dbproto;
+
+message cs_set_client_soft
+{
+    optional string soft1_v = 1;
+    optional string soft2_v = 2;
+    optional string soft3_v = 3;
+    optional string soft4_v = 4;
+}
+
+message sc_set_client_soft{}

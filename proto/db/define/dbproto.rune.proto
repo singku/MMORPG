@@ -1,0 +1,18 @@
+package dbproto;
+
+import "common.proto";
+
+//保存符文信息
+message cs_rune_save
+{
+	required commonproto.rune_data_t rune_data = 1;
+}
+
+message sc_rune_save {}
+
+//删除符文
+message cs_rune_del {
+	required uint32 runeid = 1;
+}
+
+message sc_rune_del {}

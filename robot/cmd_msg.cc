@@ -1,0 +1,1 @@
+link ../proto/client/cmd_msg.cpp

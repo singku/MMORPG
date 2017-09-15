@@ -1,0 +1,47 @@
+package dbproto;
+import "dbproto.data.proto";
+import "common.proto";
+
+
+message hm_visit_log_list_t {
+    repeated hm_visit_log_info_t visit = 1;
+}
+
+message hm_visit_log_info_t
+{
+    required uint32 hostid = 1; // 主人ID
+    required uint32 guestid = 2; //访客ID
+    required string guestname = 3; // 访客名字
+    required uint32 date = 4; // 记录日期
+    required uint32 logtype = 5; // 记录类型
+    required bytes detail = 6; // 记录的细节，可为空字符串(通常保存留言内容) 
+}
+
+// 拉取小屋信息
+message cs_get_home_info {
+    optional uint32 getter_id = 1; //拉取人的ID
+}
+
+message sc_get_home_info {
+    required uint32 host_id = 1; //应该和包头ID一致 主人ID(提供这个字段因为可能拉取别人的小屋信息)
+    required  uint32 host_u_create_tm = 2;
+    required bytes host_nick = 3; //主人昵称
+    required uint32 home_type = 4; //房型
+    optional uint32 getter_id = 5; //拉取人的ID
+}
+
+//新增访问日志
+message cs_add_visit_log {
+	required commonproto.visit_log_info_t log_info = 1;
+}
+
+message sc_add_visit_log {}
+
+//获取小屋访问日志
+message cs_get_visit_log {}
+
+message sc_get_visit_log {
+	required commonproto.visit_log_list_t log_list = 1;	//小屋访客行为日志列表
+	optional bytes buff = 2;
+}
+

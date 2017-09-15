@@ -1,0 +1,8 @@
+ps aux | grep dplan_db | grep -v grep | awk '{print $2}' | xargs kill -9  
+sleep 1
+
+case "$1" in
+    ( "c" | "C" | "clean" | "Clean" ) rm -rf ../log/* ; rm -f core core.* ;;
+esac
+
+../bin/dplan_db ../etc/bench.lua ../bin/libdb.so

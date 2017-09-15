@@ -1,0 +1,56 @@
+proto_path: "./svc_proto"
+group_config: {
+	name: "singku登录功能测试"
+	peer_addr: "10.1.1.154:20223"
+	max_pkg_len: 32768
+	client_uid_start: 6036751
+    client_uid_end: 6036751
+	loop_count: 1
+    action: {
+        request_uniq_name: "require_nick"
+        response: "onlineproto.sc_0x0002_require_random_nick"
+        stop_loop_count: 1
+        timeout: 10
+    }
+	action: {
+		request_uniq_name: "login"
+		response: "onlineproto.sc_0x0001_login"
+		stop_loop_count: 1
+        timeout: 10
+	}
+   	action: {
+		request_uniq_name: "get_svr_list"
+		response: "onlineproto.sc_0x0004_get_svr_list"
+		stop_loop_count: 1
+        timeout: 10
+	}
+}
+
+body: {
+	uniq_name: "login"
+	type_name: "onlineproto.cs_0x0001_login"
+	text: "uid: 6036751" " "
+          "passwd: \"8bde073316d452c91d3ec4728bc5a7a6\""
+}
+
+body: {
+	uniq_name: "require_nick"
+	type_name: "onlineproto.cs_0x0002_require_random_nick"
+    text: "sex: 0"
+}
+
+body: {
+	uniq_name: "create_role"
+	type_name: "onlineproto.cs_0x0003_create_role"
+	text: "prof: 1" " "
+          "sex: 0" " "
+          "nick: \"dplan\"" " "
+          "session: \"aa\""
+}
+
+body: {
+	uniq_name: "get_svr_list"
+	type_name: "onlineproto.cs_0x0004_get_svr_list"
+	text: "session: \"aaa\"" " "
+          "svr_recommend: true"
+}

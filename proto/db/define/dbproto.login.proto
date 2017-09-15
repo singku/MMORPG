@@ -1,0 +1,38 @@
+package dbproto;
+
+import "dbproto.data.proto";
+import "dbproto.home.proto";
+import "common.proto";
+
+// 获取用户登录信息
+message cs_get_login_info
+{
+
+}
+
+message sc_get_login_info
+{
+    optional commonproto.player_base_info_t base_info = 1; // 基础信息
+    optional commonproto.item_list_t item_list = 2;  // 物品背包信息
+    required commonproto.pet_list_t  pet_list = 3; // 精灵信息
+    optional commonproto.attr_data_list_t  attr_list = 4; // 用户属性信息
+	optional commonproto.task_list_t task_list = 5;//任务列表
+	optional commonproto.rune_list_t rune_list = 6; //符文信息
+	optional commonproto.friend_list_t friend_list = 7; //好友
+    optional commonproto.user_buffs_t user_buff = 8; //玩家购买的后台buff
+    repeated commonproto.family_msg_t family_msgs = 9; // 玩家的家族消息
+    optional commonproto.family_apply_record_t family_apply_record = 10; // 玩家申请的家族记录
+    optional commonproto.market_item_info_t elem_dup_shop_info = 11; //元素挑战商店刷新物品
+    optional commonproto.market_item_info_t arena_shop_info = 12; //竞技场商店刷新物品
+    optional commonproto.market_item_info_t family_shop_info = 13; //家族商店刷新物品
+    optional commonproto.market_item_info_t exped_shop_info = 14; //远征商店刷新物品
+    optional commonproto.market_item_info_t daily_shop_info = 15; //每日商店刷新物品
+    optional commonproto.market_item_info_t night_raid_shop_info = 16; //夜袭商店刷新物品
+	optional commonproto.title_info_list_t title_list = 17;	//称号信息
+	optional commonproto.mine_id_list_t  mine_id_list = 18;	//矿id集合 
+	optional commonproto.mine_info_list_t mine_info_list = 19;	//搜索到的新矿的信息
+	optional commonproto.mine_id_list_t  opponent_mine_ids = 20;	//竞争对手的矿的信息
+
+	optional commonproto.market_item_info_t smelter_money_info = 21;	//
+	optional commonproto.market_item_info_t smelter_gold_info = 22;	//
+}

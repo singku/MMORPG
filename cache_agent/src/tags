@@ -1,0 +1,153 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BINDIR	Makefile	/^BINDIR = $(WORKDIR)\/bin$/;"	m
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Werror -fPIC -ggdb  \\$/;"	m
+CONN_DETECT	conn_manager.cpp	6;"	d	file:
+CONN_MGR	conn_manager.h	113;"	d
+CmdProcessorInterface	cmd_processor_interface.h	/^class CmdProcessorInterface$/;"	c
+FOREACH	macro_utils.h	4;"	d
+FOREACH_NOINCR_ITER	macro_utils.h	10;"	d
+GetPlayerBaseCacheCmdProcessor	cache_processor.h	/^class GetPlayerBaseCacheCmdProcessor : public CmdProcessorInterface$/;"	c
+GetPlayerBaseInfoCmdProcessor	cache_processor.h	/^class GetPlayerBaseInfoCmdProcessor : public CmdProcessorInterface$/;"	c
+HEADERS	Makefile	/^HEADERS = $(wildcard $(INCLUDEDIR)\/*.h)$/;"	m
+INCLUDEDIR	Makefile	/^INCLUDEDIR = $(WORKDIR)\/src$/;"	m
+LFLAGS	Makefile	/^LFLAGS = -Wall -Werror -ggdb \\$/;"	m
+LIBDIR	Makefile	/^LIBDIR = $(WORKDIR)\/lib$/;"	m
+LIB_CACHE_DIR	Makefile	/^LIB_CACHE_DIR = $(PROTODIR)\/cache$/;"	m
+LIB_CACHE_MAKEFILE_DIR	Makefile	/^LIB_CACHE_MAKEFILE_DIR = $(LIB_CACHE_DIR)\/define$/;"	m
+LIB_CACHE_PROTO	Makefile	/^LIB_CACHE_PROTO = $(LIB_CACHE_DIR)\/libcacheproto.a$/;"	m
+NOW	macro_utils.h	17;"	d
+OBJDIR	Makefile	/^OBJDIR = $(WORKDIR)\/obj$/;"	m
+OBJS	Makefile	/^OBJS := $(patsubst %.cpp,%.o,$(subst $(SRCDIR),$(OBJDIR),$(SRCS)))$/;"	m
+PROTOBUF_CFLAGS	Makefile	/^PROTOBUF_CFLAGS = $(shell pkg-config --cflags protobuf)$/;"	m
+PROTOBUF_LFLAGS	Makefile	/^PROTOBUF_LFLAGS = $(shell pkg-config --libs protobuf)$/;"	m
+PROTODIR	Makefile	/^PROTODIR = $(WORKDIR)\/..\/proto$/;"	m
+PROTO_FROM_CLIENT	proto_processor.h	/^    PROTO_FROM_CLIENT = 0,$/;"	e	enum:__anon1
+PROTO_FROM_SERV	proto_processor.h	/^    PROTO_FROM_SERV = 1,$/;"	e	enum:__anon1
+PROTO_H	proto.h	2;"	d
+ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::ProtoProcessor()$/;"	f	class:ProtoProcessor
+ProtoProcessor	proto_processor.h	/^class ProtoProcessor$/;"	c
+REGISTER_TIMER_TYPE	timer_procs.cpp	6;"	d	file:
+REVERSE_FOREACH	macro_utils.h	7;"	d
+REVERSE_FOREACH_NOINCR_ITER	macro_utils.h	13;"	d
+SRCDIR	Makefile	/^SRCDIR = $(WORKDIR)\/src$/;"	m
+SRCS	Makefile	/^SRCS = $(wildcard $(SRCDIR)\/*.cpp)$/;"	m
+Service	service.cpp	/^Service::Service(const std::string& service_name)$/;"	f	class:Service
+Service	service.h	/^class Service$/;"	c
+SqlDB	singleton.h	/^typedef singleton_default<SqlDB_t> SqlDB;$/;"	t
+SqlDB_t	singleton.h	/^class SqlDB_t  $/;"	c
+StopWaiting	timer_procs.cpp	/^int StopWaiting(void* owner, void* data)$/;"	f
+TARGET	Makefile	/^TARGET = $(BINDIR)\/libcache_agent.so$/;"	m
+WORKDIR	Makefile	/^WORKDIR = ..\/$/;"	m
+__CACHE_PROCESSOR_H__	cache_processor.h	2;"	d
+__CMD_PROCESSOR_INTERFACE_H__	cmd_processor_interface.h	2;"	d
+__COMMON_H__	common.h	2;"	d
+__CONN_MANAGER_H__	conn_manager.h	2;"	d
+__MACRO_UTILS_H__	macro_utils.h	2;"	d
+__PROTO_PROCESSOR_H__	proto_processor.h	2;"	d
+__SERVICE_H__	service.h	2;"	d
+__SINGLETON_H__	singleton.h	2;"	d
+__TIMER_PROCS_H__	timer_procs.h	2;"	d
+add_to_wait_map	conn_manager.h	/^    inline void add_to_wait_map(conn_info_t &conn) {$/;"	f	class:conn_manager_t
+close	service.cpp	/^int Service::close()$/;"	f	class:Service
+cmd	proto.h	/^    uint16_t cmd;$/;"	m	struct:db_proto_header_t
+cmd_processors_	proto_processor.h	/^    std::map<uint32_t, CmdProcessorInterface*> cmd_processors_;$/;"	m	class:ProtoProcessor
+conn_info_t	conn_manager.h	/^    conn_info_t() {$/;"	f	struct:conn_info_t
+conn_info_t	conn_manager.h	/^struct conn_info_t {$/;"	s
+conn_manager_singleton_t	conn_manager.h	/^typedef singleton_default<conn_manager_t> conn_manager_singleton_t;$/;"	t
+conn_manager_t	conn_manager.h	/^    conn_manager_t() { $/;"	f	class:conn_manager_t
+conn_manager_t	conn_manager.h	/^class conn_manager_t {$/;"	c
+connect	service.cpp	/^int Service::connect()$/;"	f	class:Service
+connect	singleton.h	/^	void connect() { cout << "connect db" << endl; }$/;"	f	class:SqlDB_t
+create_new_conn	conn_manager.h	/^    inline conn_info_t *create_new_conn(fdsession_t *fdsess, $/;"	f	class:conn_manager_t
+create_object	singleton.h	/^	static object_creator create_object;$/;"	m	struct:singleton_default
+create_object	singleton.h	/^singleton_default<T>::create_object;$/;"	m	class:singleton_default
+cur_seq	conn_manager.h	/^    uint32_t cur_seq;$/;"	m	struct:conn_info_t
+db_proto_header_t	proto.h	/^struct db_proto_header_t$/;"	s
+del_conn_when_fd_closed	conn_manager.h	/^    inline void del_conn_when_fd_closed(int fd) {$/;"	f	class:conn_manager_t
+del_from_wait_map	conn_manager.h	/^    inline conn_info_t *del_from_wait_map(uint32_t uid) {$/;"	f	class:conn_manager_t
+delete_conn	conn_manager.h	/^    inline void delete_conn(conn_info_t **conn) {$/;"	f	class:conn_manager_t
+do_nothing	singleton.h	/^		inline void do_nothing() const { }$/;"	f	struct:singleton_default::object_creator
+err_info_vec	conn_manager.h	/^    std::vector<cacheproto::uid_errcode_t> err_info_vec;$/;"	m	struct:conn_info_t
+exec	singleton.h	/^	void exec(const char *sqlstr) { cout << "exec insert\/update\/delete :" << sqlstr << endl; }$/;"	f	class:SqlDB_t
+fd	service.h	/^    inline int fd() const$/;"	f	class:Service
+fd_	service.h	/^    int fd_;$/;"	m	class:Service
+fdsess	conn_manager.h	/^    fdsession_t *fdsess;$/;"	m	struct:conn_info_t
+fini_service	dll_iface.cpp	/^extern "C" int  fini_service(int isparent)$/;"	f
+finish_conn_msg	conn_manager.cpp	/^int finish_conn_msg(conn_info_t *conn)$/;"	f
+g_dbproxy	service.cpp	/^Service *g_dbproxy;$/;"	v
+g_proto_processor	proto_processor.cpp	/^ProtoProcessor* g_proto_processor;$/;"	v
+g_reconnect_timer	timer_procs.cpp	/^timer_head_t g_reconnect_timer;$/;"	v
+g_waiting_rsp_timer	timer_procs.cpp	/^timer_head_t g_waiting_rsp_timer;$/;"	v
+get_conn_by_uid	conn_manager.h	/^    inline conn_info_t *get_conn_by_uid(uint32_t uid) {$/;"	f	class:conn_manager_t
+get_pkg_len	dll_iface.cpp	/^extern "C" int get_pkg_len(int fd, const void* avail_data, int avail_len, int isparent)$/;"	f
+get_pkg_len	proto_processor.cpp	/^int ProtoProcessor::get_pkg_len(int fd, const void* avail_data, $/;"	f	class:ProtoProcessor
+in_	cache_processor.h	/^    cacheproto::cs_batch_get_users_info in_;$/;"	m	class:GetPlayerBaseInfoCmdProcessor
+init_connections	dll_iface.cpp	/^int init_connections()$/;"	f
+init_processors	dll_iface.cpp	/^int init_processors()$/;"	f
+init_service	dll_iface.cpp	/^extern "C" int  init_service(int isparent)$/;"	f
+instance	singleton.h	/^	static object_type & instance() {$/;"	f	struct:singleton_default
+is_uid_waiting	conn_manager.h	/^    inline bool is_uid_waiting(uint32_t uid) {$/;"	f	class:conn_manager_t
+kTimerIntervalReconnectServiceTimely	timer_procs.h	/^    kTimerIntervalReconnectServiceTimely = 1, \/\/ 重连service服务器间隔$/;"	e	enum:timer_interval_t
+kTimerIntervalWaitingRsp	timer_procs.h	/^    kTimerIntervalWaitingRsp             = 2, \/\/ 请求缓存数据 最多延迟2秒$/;"	e	enum:timer_interval_t
+kTimerTypeReconnectServiceTimely	timer_procs.h	/^    kTimerTypeReconnectServiceTimely    = 1, \/\/ 重连service服务器$/;"	e	enum:timer_type_t
+kTimerTypeWaitingRsp	timer_procs.h	/^    kTimerTypeWaitingRsp                = 2, \/\/ 发出请求后进入超时等待过程$/;"	e	enum:timer_type_t
+len	proto.h	/^    uint32_t len;   $/;"	m	struct:db_proto_header_t
+main	singleton.h	/^int main()  $/;"	f
+object_creator	singleton.h	/^		object_creator() { singleton_default<T>::instance(); }$/;"	f	struct:singleton_default::object_creator
+object_creator	singleton.h	/^	struct object_creator {$/;"	s	struct:singleton_default
+object_type	singleton.h	/^	typedef T object_type;$/;"	t	struct:singleton_default
+ok_info_vec	conn_manager.h	/^    std::vector<cacheproto::base_info_t> ok_info_vec;$/;"	m	struct:conn_info_t
+on_client_conn_closed	dll_iface.cpp	/^extern "C" void on_client_conn_closed(int fd)$/;"	f
+on_connect_callback	service.cpp	/^void Service::on_connect_callback(int fd, void* args)$/;"	f	class:Service
+on_fd_closed	dll_iface.cpp	/^extern "C" void on_fd_closed(int fd)$/;"	f
+parse_message	cmd_processor_interface.h	/^inline int parse_message($/;"	f
+pb_log_handler	dll_iface.cpp	/^void pb_log_handler(google::protobuf::LogLevel level,$/;"	f
+proc_errno_from_serv	cmd_processor_interface.h	/^    virtual uint32_t proc_errno_from_serv($/;"	f	class:CmdProcessorInterface
+proc_events	dll_iface.cpp	/^extern "C" void proc_events()$/;"	f
+proc_pkg_from_client	cache_processor.cpp	/^int GetPlayerBaseInfoCmdProcessor::proc_pkg_from_client($/;"	f	class:GetPlayerBaseInfoCmdProcessor
+proc_pkg_from_client	cache_processor.h	/^    int proc_pkg_from_client(conn_info_t *conn, const char* body, int bodylen) {$/;"	f	class:GetPlayerBaseCacheCmdProcessor
+proc_pkg_from_client	dll_iface.cpp	/^extern "C" int  proc_pkg_from_client(void* data, int len, fdsession_t* fdsess)$/;"	f
+proc_pkg_from_client	proto_processor.cpp	/^int ProtoProcessor::proc_pkg_from_client(void* data, int len,$/;"	f	class:ProtoProcessor
+proc_pkg_from_serv	cache_processor.cpp	/^int GetPlayerBaseCacheCmdProcessor::proc_pkg_from_serv($/;"	f	class:GetPlayerBaseCacheCmdProcessor
+proc_pkg_from_serv	cache_processor.h	/^    int proc_pkg_from_serv(conn_info_t *conn, const char* body, int bodylen, db_proto_header_t *header) {$/;"	f	class:GetPlayerBaseInfoCmdProcessor
+proc_pkg_from_serv	dll_iface.cpp	/^extern "C" void proc_pkg_from_serv(int fd, void* data, int len)$/;"	f
+proc_pkg_from_serv	proto_processor.cpp	/^void ProtoProcessor::proc_pkg_from_serv(int fd, void* data, int len)$/;"	f	class:ProtoProcessor
+query	singleton.h	/^	void query(const char *sqlstr) { cout << "exec select " << sqlstr << endl; }$/;"	f	class:SqlDB_t
+reconnect_service_timely	timer_procs.cpp	/^int reconnect_service_timely(void* owner, void* data)$/;"	f
+register_command	proto_processor.cpp	/^int ProtoProcessor::register_command($/;"	f	class:ProtoProcessor
+register_timers	timer_procs.cpp	/^int register_timers()$/;"	f
+ret	proto.h	/^    uint32_t ret;$/;"	m	struct:db_proto_header_t
+send_buf	conn_manager.cpp	/^static char send_buf[65536 * 32];$/;"	v	file:
+send_buf	service.cpp	/^int Service::send_buf(uint32_t userid, uint16_t cmd, uint32_t seq,$/;"	f	class:Service
+send_buf_	service.h	/^    char send_buf_[10000];$/;"	m	class:Service
+send_cmsg	service.cpp	/^int Service::send_cmsg(uint32_t userid, uint16_t cmd,$/;"	f	class:Service
+send_err_to_conn	conn_manager.cpp	/^int send_err_to_conn(conn_info_t *conn, uint32_t ret)$/;"	f
+send_err_to_fdsess	conn_manager.cpp	/^int send_err_to_fdsess(const fdsession_t *fdsess, uint32_t uid, uint32_t cmd, uint32_t seq, uint32_t ret)$/;"	f
+send_msg	service.cpp	/^int Service::send_msg(uint32_t userid, uint16_t cmd, uint32_t seq,$/;"	f	class:Service
+send_msg_to_conn	conn_manager.cpp	/^int send_msg_to_conn(conn_info_t *conn, const google::protobuf::Message& msg)$/;"	f
+seq	proto.h	/^    uint32_t seq;$/;"	m	struct:db_proto_header_t
+service_name	service.h	/^    inline const std::string& service_name() const$/;"	f	class:Service
+service_name_	service.h	/^    std::string service_name_;$/;"	m	class:Service
+set_fd	service.h	/^    inline void set_fd(int fd) {$/;"	f	class:Service
+singleton_default	singleton.h	/^struct singleton_default {$/;"	s
+svr_out_	cache_processor.h	/^    cacheproto::sc_batch_get_users_info svr_out_;   \/\/cache_svr的回包$/;"	m	class:GetPlayerBaseCacheCmdProcessor
+timer_head_t	timer_procs.h	/^struct timer_head_t {$/;"	s
+timer_interval_t	timer_procs.h	/^enum timer_interval_t {$/;"	g
+timer_list	timer_procs.h	/^    list_head_t timer_list;$/;"	m	struct:timer_head_t
+timer_type_t	timer_procs.h	/^enum timer_type_t {$/;"	g
+uid	conn_manager.h	/^    uint32_t uid; $/;"	m	struct:conn_info_t
+uid	proto.h	/^    uint32_t uid;$/;"	m	struct:db_proto_header_t
+wait_cmd	conn_manager.h	/^    uint16_t wait_cmd;$/;"	m	struct:conn_info_t
+wait_map_iter_t	conn_manager.h	/^    typedef std::map<uint32_t, conn_info_t*>::iterator wait_map_iter_t;$/;"	t	class:conn_manager_t
+wait_map_t	conn_manager.h	/^    typedef std::map<uint32_t, conn_info_t*> wait_map_t;$/;"	t	class:conn_manager_t
+wait_uid_map_	conn_manager.h	/^    wait_map_t wait_uid_map_;$/;"	m	class:conn_manager_t
+wait_uid_set	conn_manager.h	/^    std::set<uint32_t> wait_uid_set;$/;"	m	struct:conn_info_t
+~ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::~ProtoProcessor()$/;"	f	class:ProtoProcessor
+~Service	service.cpp	/^Service::~Service()$/;"	f	class:Service
+~conn_manager_t	conn_manager.h	/^    ~conn_manager_t() {$/;"	f	class:conn_manager_t

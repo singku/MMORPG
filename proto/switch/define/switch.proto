@@ -1,0 +1,338 @@
+/*
+1. 包格式:
+    包头:
+        len(u32) + seq(u32) + cmd(16) + ret(32) + uid(32)
+    包体:
+        msgbody
+
+2. 使用规则:
+    (1) 字段只能加, 不能减;
+    (2) 增加的字段只能是 optional 类型, 且必须给出 default 值, 最好还有相关说明;
+*/
+
+/* switch 协议 */
+package switchproto;
+
+import "common.proto";
+import "svr_common.proto";
+
+/* 包体 (只有 cs_/sc_ 的 message 才是用于通信的, 否则就是在 cs_/sc_ 里被用到的结构体) */
+
+enum switch_transmit_type_t {
+    SWITCH_TRANSMIT_USERS       = 1; //传递给玩家
+    SWITCH_TRANSMIT_SERVERS     = 2; //传递给服务器
+    SWITCH_TRANSMIT_WORLD       = 3; //传递给全世界
+    SWITCH_TRANSMIT_SYSNOTI     = 4; //第三方传递系统公告
+}
+
+enum report_player_stat_t {
+    PLAYER_LOGIN                = 0;
+    PLAYER_LOGOUT               = 1;
+}
+
+enum register_mode_t {
+    SERVER_REG_MODE_FAKE_REPEAT = 0; //online重复发送注册协议
+    SERVER_REG_MODE_WAIT        = 1; //已被注册则等待
+    SERVER_REG_MODE_FORCE       = 2; //强制替换
+}
+
+/*玩家基本信息*/
+message sw_player_basic_info_t {
+    required uint32 userid = 1; //uid
+    required int32 create_tm = 2; //角色创建时间 唯一标识一个角色
+    optional int32 is_vip = 3; //是否vip
+    optional uint32 server_id = 4; //所在服务器id
+    optional uint32 online_id = 5; //所在的线ID
+}
+
+
+//-----------------------------------------------------//
+//------------------协议部分---------------------------//
+//-----------------------------------------------------//
+/* server(online) 启动上报 */
+message cs_register_server {
+	required uint32 server_id = 1; /* 服务器编号 */
+	required commonproto.server_type_t server_type = 2; /* 类型 (其中可能包含域/服务客户端类型等信息) */
+    required register_mode_t reg_mode = 3;/*注册模式, 0:不填表示REPEAT, 1:等待模式 有则不注册，2:抢占模式, 替换原有的svr*/
+    required uint32 listen_port = 4;/*服务器的监听端口 服务器的IP已经在fdsession中有了*/
+    required uint32 idc_zone = 5; /*该server属于哪个区*/
+    required uint32 host_ip = 6; //监听的外网地址
+    optional string svr_name = 7; //服务的名字
+    required uint32 online_id = 8; //线的ID
+}
+/*上报成功后,对于online,成功回包才可以接受用户登录*/
+message sc_register_server { }
+
+message cs_notify_server_stat{}
+message sc_notify_server_stat{
+    required commonproto.svr_info_t svr = 1;
+    required bool up_or_done = 2; //up: true done: false
+}
+
+/*上报成功后,假如online此时已经有玩家连线(online断线后重连sw)需要同步玩家数据 不需要回包*/
+/*目前只有online可以发送这个协议*/
+message cs_online_sync_player_info {
+    repeated sw_player_basic_info_t player_list = 1;/*如果是重新连接到sw,则需上报已在online上的玩家信息*/
+}
+message sc_online_sync_player_info { }
+
+/*拉取服务器信息 不需要在sw注册的服务器都可以发送这条协议*/
+message cs_get_server_list {
+    required commonproto.server_type_t server_type = 1;
+    required uint32 idc_zone = 2; //需要哪个zone的server 0:都可以 1:电信 2:网通
+    optional bool svr_recommend = 3; //是否需要服务器推荐(服务器推荐人少的服)
+    optional uint32 my_server_id = 4; //根据我所在的服拉取线的列表
+}
+message sc_get_server_list {
+    repeated commonproto.svr_info_t server_list = 1;
+}
+
+/*玩家登录/下线时上报 不需要回包*/
+message cs_online_report_player_onoff {
+    required sw_player_basic_info_t basic = 1;
+    required uint32 login_or_logout = 2;//0上线 1下线
+}
+message sc_online_report_player_onoff { }
+
+/*踢人下线通知包(一个uid 全区只能同时有一个create_tm在线)*/
+message cs_sw_notify_kick_player_off {}
+message sc_sw_notify_kick_player_off {
+    required sw_player_basic_info_t basic = 1;
+}
+
+/*服务器之间通过sw转发消息*/
+message cs_sw_transmit_only {
+    //传递给指定的某些玩家
+    repeated sw_player_basic_info_t receivers = 1;//发给指定的某些玩家
+    //传递给指定的某些服务器
+    repeated commonproto.svr_info_t servers = 2;//发给指定的某些服务器
+    //传递类型(某些玩家、某些服务器、全世界)
+    required switch_transmit_type_t transmit_type = 3;
+    //如果是通过第三方广播系统通告 可能需要密码验证(SWITCH_TRANSMIT_SYSNOTI)
+    optional string passwd = 4;
+    //命令号
+    required uint32 cmd = 5;
+    //传递的数据(打包好的包体数据)
+    required bytes pkg = 6;
+}
+message sc_sw_transmit_only {
+    //传递给的某些玩家
+    repeated sw_player_basic_info_t receivers = 1;
+    //传递的类型(发给某些玩家、还是发给该服务器)
+    required uint32 transmit_type = 2;
+    //包体信息名称
+    required uint32 cmd = 3;
+    //传递的数据(打包好的包体数据)
+    required bytes pkg = 4;
+}
+
+/* 玩家是否在线*/
+message sw_player_online_info_t {
+	required uint32 userid = 1; //玩家id
+	required bool is_online = 2; //是否在线, 0 不在线， 1在线
+	required uint32 team = 3; // 0 好友,1 黑名单
+    required uint32 u_create_tm = 4; //玩家的角色创建时间
+}
+
+message cs_sw_is_online {
+	repeated sw_player_online_info_t ol_info = 1; //玩家id和是否在线信息
+}
+
+message sc_sw_is_online {
+	repeated sw_player_online_info_t ol_info = 1; //玩家id和是否在线信息
+}
+
+/* 拉取一定数量的用户id*/
+message cs_sw_get_userid_list {
+    required uint32 server_id = 1; //要同服的
+}
+
+message sc_sw_get_userid_list {
+    repeated commonproto.role_info_t users = 1;
+}
+
+//GM工具
+//禁止聊天请求
+message cs_sw_gm_forbid_talk {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    required int32 dur = 3;
+}
+message sc_sw_gm_forbid_talk {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    required int32 dur = 3;
+}
+//sw告知online玩家被禁言sw同时会通知到DB
+message cs_sw_notify_player_forbid_talk {}
+message sc_sw_notify_player_forbid_talk {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    required int32 dur = 3;//禁言时长
+}
+
+//封停账号请求
+message cs_sw_gm_frozen_account {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    required int32 dur = 3;
+	optional commonproto.act_frozen_type_t frozen_reason = 4; //封号原因
+	optional commonproto.act_unfreeze_type_t unfreeze_reason = 5;  //解封原因
+	optional commonproto.act_frozen_time_type_t frozen_tm_type = 6;	//封号类型
+}
+message sc_sw_gm_frozen_account {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    required int32 dur = 3;
+	optional commonproto.act_frozen_type_t frozen_reason = 4; //封号原因
+	optional commonproto.act_unfreeze_type_t unfreeze_reason = 5;  //解封原因
+	optional commonproto.act_frozen_time_type_t frozen_tm_type = 6;	//封号类型
+}
+//sw告知online玩家被封禁(online需要T玩家下线) sw同时会给DB发设置封禁的消息
+message cs_sw_notify_player_frozen_account {}
+message sc_sw_notify_player_frozen_account {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    required int32 dur = 3; //封禁时长
+	optional commonproto.act_frozen_type_t frozen_reason = 4; //封号原因
+	optional commonproto.act_unfreeze_type_t unfreeze_reason = 5;  //解封原因
+	optional commonproto.act_frozen_time_type_t frozen_tm_type = 6;	//封号类型
+}
+
+//拉取玩家全量信息
+message cs_sw_gm_get_player_total {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+}
+//sw拉取玩家的全量信息
+message sc_sw_gm_get_player_total {
+    //各种数据
+}
+
+//第三方公告
+message cs_sw_gm_send_noti {
+    repeated uint32 server_id =1; //不指定则发给全部
+    optional commonproto.server_type_t server_type = 2 [default = SERVER_TYPE_ONLINE];//默认只给online发
+    required bytes content = 3;
+}
+message sc_sw_gm_send_noti {}
+message cs_sw_notify_gm_noti {}
+message sc_sw_notify_gm_noti {
+    required bytes content = 1;
+}
+
+message cs_sw_gm_new_mail {
+    required uint32 userid = 1;
+    required uint32 u_create_tm = 2;
+	required commonproto.mail_data_t mail_data = 3;
+	optional bool wait_cmd = 4 [default = true];//是否等回调
+}
+
+//邮件补偿到DB 离线时用户重新登录后有效
+message sc_sw_gm_new_mail {
+    required uint32 userid = 1;
+    required uint32 u_create_tm = 2;
+	required commonproto.mail_data_t mail_data = 3;
+}
+
+message cs_sw_gm_new_mail_to_svr {
+	required commonproto.mail_data_t mail_data = 1;
+	repeated uint32 svr_ids = 2; 	//指定的服(如果填写0，则默认是全服)
+}
+
+message sc_sw_gm_new_mail_to_svr {
+}
+
+//online补偿通知
+message cs_sw_notify_new_mail {}
+message sc_sw_notify_new_mail {
+    required commonproto.mail_data_t mail_data = 1;
+    optional uint32 userid = 2;
+    optional uint32 u_create_tm = 3;
+}
+
+//属性设置
+message cs_sw_gm_change_attr {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    //下面是要设置的各种属性
+    //optional uint32 coin = 3;
+}
+//设置到DB 离线时上线生效
+message sc_sw_gm_change_attr {}
+//online设置通知
+message cs_sw_notify_change_attr {}
+message sc_sw_notify_change_attr {
+    required uint32 userid = 1;
+    required int32 u_create_tm = 2;
+    //optional uint32 coin = 3;
+}
+
+//客服修改vip时间
+message cs_sw_gm_modify_vip_time 
+{
+	required commonproto.player_vip_type_t vip_type = 1;
+	required int32 modify_month = 2; 	//正数表示加30天的数量；负数表示减30天的数量
+}
+
+message sc_sw_gm_modify_vip_time {}
+
+//拉取角色列表
+message cs_sw_gm_get_role_list {
+    required uint32 userid = 1;
+}
+
+message sc_sw_gm_get_role_list {
+    required uint32 userid = 1;
+    repeated commonproto.player_base_info_t role_list = 2;
+}
+
+//请求指定的服务器删除该玩家的运宝信息
+message cs_sw_req_svr_erase_player_escort_info
+{
+	required uint32 old_online_id = 1;	//玩家旧服的id
+	required uint32 uid = 2;	//要删除运宝信息的玩家id
+    required uint32 u_create_tm = 3;
+}
+message sc_sw_req_svr_erase_player_escor_info{}
+//通知删除
+message cs_sw_nofity_svr_erase_player_escort_info{}
+message sc_sw_notify_svr_erase_player_escort_info
+{
+	required uint32 uid = 1;
+    required uint32 u_create_tm = 2;
+}
+
+//跨服设置玩家的属性
+message cs_sw_change_other_attr
+{
+	required uint32 uid = 1;
+    required uint32 u_create_tm = 2;
+	repeated commonproto.attr_data_change_t attr_list = 3;
+}
+message sc_sw_change_other_attr{}
+
+//通知玩家属性被别人更改 (在玩家所在的online修改玩家的属性)
+message cs_sw_notify_attr_changed_by_other{}
+message sc_sw_notify_attr_changed_by_other
+{
+	required uint32 uid = 1;	//属性被改变的玩家id
+    required uint32 u_create_tm = 2;
+	repeated commonproto.attr_data_change_t attr_list = 3;
+}
+
+//通知玩家属性被更改,仅仅通知
+message cs_sw_only_notify_attr_changed {}
+message sc_sw_only_notify_attr_changed {
+	required uint32 uid = 1;
+	required uint32 u_create_tm = 2;
+	repeated commonproto.attr_data_t attr = 3;
+}
+
+message platform_recharge_diamond
+{
+	required uint32 dest_userid = 1;
+	required uint32 diamond_cnt = 2;
+	required uint32 trans_id = 3;
+	required uint32 server_id = 4;
+}

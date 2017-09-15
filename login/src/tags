@@ -1,0 +1,437 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ACTIVE_ACK_FLAG_ACCOUNT_UNSAFE	proto.h	147;"	d
+ACTIVE_ACK_FLAG_OK	proto.h	146;"	d
+ACTIVE_ACK_FLAG_WRONG_ACTIVE_CODE_TOO_MUCH	proto.h	149;"	d
+ACTIVE_ACK_FLAG_WRONG_VERIFY_CODE	proto.h	148;"	d
+ACT_LOGIN_ACK_FLAG_ACCOUNT_UNSAFE	proto.h	77;"	d
+ACT_LOGIN_ACK_FLAG_LOGIN_IN_DIFF_CITY	proto.h	74;"	d
+ACT_LOGIN_ACK_FLAG_LOGIN_IN_DIFF_CITY_TOO_MUCH	proto.h	75;"	d
+ACT_LOGIN_ACK_FLAG_SUCC	proto.h	72;"	d
+ACT_LOGIN_ACK_FLAG_WRONG_PASSWD_TOO_MUCH	proto.h	73;"	d
+ACT_LOGIN_ACK_FLAG_WRONG_VERIFY_CODE	proto.h	76;"	d
+ActiveUserCmdProcessor	login_cmd_processor.h	/^class ActiveUserCmdProcessor : public CmdProcessorInterface$/;"	c
+BINDIR	Makefile	/^BINDIR = $(WORKDIR)\/bin$/;"	m
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Werror -fPIC -ggdb \\$/;"	m
+CLIENT_H	client.h	3;"	d
+CMD_PROCESSOR_INTERFACE_H	cmd_processor_interface.h	3;"	d
+CONFIG_READ_INTVAL	dll_iface.cpp	43;"	d	file:
+CONFIG_READ_STRVAL	dll_iface.cpp	56;"	d	file:
+ChooseServerCmdProcessor	login_cmd_processor.h	/^class ChooseServerCmdProcessor : public CmdProcessorInterface$/;"	c
+CmdProcessorInterface	cmd_processor_interface.h	/^class CmdProcessorInterface$/;"	c
+CreateRoleCmdProcessor	login_cmd_processor.h	/^class CreateRoleCmdProcessor : public CmdProcessorInterface$/;"	c
+DECODE_XML_PROP	xmlutils.h	36;"	d
+DECODE_XML_PROP_ARR_INT	xmlutils.h	106;"	d
+DECODE_XML_PROP_INT	xmlutils.h	79;"	d
+DECODE_XML_PROP_INT_DEFAULT	xmlutils.h	49;"	d
+DECODE_XML_PROP_INT_DEFAULT_HEX	xmlutils.h	64;"	d
+DECODE_XML_PROP_STR	xmlutils.h	120;"	d
+DECODE_XML_PROP_STR_DEFAULT	xmlutils.h	131;"	d
+DECODE_XML_PROP_UINT32	xmlutils.h	90;"	d
+DEPDIR	Makefile	/^DEPDIR = $(WORKDIR)\/obj$/;"	m
+DEPS	Makefile	/^DEPS := $(patsubst %.cpp,%.d,$(subst $(SRCDIR),$(DEPDIR),$(SRCS)))$/;"	m
+GetKeyNum	mencrypt.cpp	/^static inline u8 GetKeyNum(const u8 * key, int len, int * index) $/;"	f	file:
+GetSvrListCmdProcessor	login_cmd_processor.h	/^class GetSvrListCmdProcessor : public CmdProcessorInterface$/;"	c
+GetVerifyImageCmdProcessor	login_cmd_processor.h	/^class GetVerifyImageCmdProcessor : public CmdProcessorInterface$/;"	c
+HEADERS	Makefile	/^HEADERS = $(wildcard $(INCLUDEDIR)\/*.h)$/;"	m
+INCLUDEDIR	Makefile	/^INCLUDEDIR = $(WORKDIR)\/src$/;"	m
+LFLAGS	Makefile	/^LFLAGS = -Wall -Werror -ggdb \\$/;"	m
+LIBDIR	Makefile	/^LIBDIR = $(WORKDIR)\/lib$/;"	m
+LIB_CLIENT_DIR	Makefile	/^LIB_CLIENT_DIR = $(PROTODIR)\/client$/;"	m
+LIB_CLIENT_MAKEFILE_DIR	Makefile	/^LIB_CLIENT_MAKEFILE_DIR = $(LIB_CLIENT_DIR)\/define$/;"	m
+LIB_CLIENT_PROTO	Makefile	/^LIB_CLIENT_PROTO = $(LIB_CLIENT_DIR)\/libclientproto.a$/;"	m
+LIB_COMMON_DIR	Makefile	/^LIB_COMMON_DIR=$(PROTODIR)\/client$/;"	m
+LIB_COMMON_MAKEFILE_DIR	Makefile	/^LIB_COMMON_MAKEFILE_DIR=$(LIB_COMMON_DIR)\/common_make$/;"	m
+LIB_COMMON_PROTO	Makefile	/^LIB_COMMON_PROTO=$(LIB_COMMON_DIR)\/libcommonproto.a$/;"	m
+LIB_DB_DIR	Makefile	/^LIB_DB_DIR = $(PROTODIR)\/db$/;"	m
+LIB_DB_MAKEFILE_DIR	Makefile	/^LIB_DB_MAKEFILE_DIR = $(LIB_DB_DIR)\/define$/;"	m
+LIB_DB_PROTO	Makefile	/^LIB_DB_PROTO = $(LIB_DB_DIR)\/libdbproto.a$/;"	m
+LIB_SVR_COMMON_DIR	Makefile	/^LIB_SVR_COMMON_DIR=$(PROTODIR)\/common$/;"	m
+LIB_SVR_COMMON_MAKEFILE_DIR	Makefile	/^LIB_SVR_COMMON_MAKEFILE_DIR=$(LIB_SVR_COMMON_DIR)\/define$/;"	m
+LIB_SVR_COMMON_PROTO	Makefile	/^LIB_SVR_COMMON_PROTO=$(LIB_SVR_COMMON_DIR)\/libsvr_commonproto.a$/;"	m
+LIB_SWITCH_DIR	Makefile	/^LIB_SWITCH_DIR = $(PROTODIR)\/switch\/$/;"	m
+LIB_SWITCH_MAKEFILE_DIR	Makefile	/^LIB_SWITCH_MAKEFILE_DIR = $(LIB_SWITCH_DIR)\/define$/;"	m
+LIB_SWITCH_PROTO	Makefile	/^LIB_SWITCH_PROTO = $(LIB_SWITCH_DIR)\/libswitchproto.a$/;"	m
+LOGIN_CMD_PROCESSOR_H	login_cmd_processor.h	3;"	d
+LoginCmdProcessor	login_cmd_processor.h	/^class LoginCmdProcessor : public CmdProcessorInterface$/;"	c
+MAX_HASH_BUFFER_LENGTH	auth.h	12;"	d
+MCheckCode_x86_32	mencrypt.cpp	/^int MCheckCode_x86_32 (const u8 * bytes_in, int bytes_in_len, int checkCodeIndex)$/;"	f
+MGetCheckCode_x86_32	mencrypt.cpp	/^void MGetCheckCode_x86_32 (const u8 * bytes_in, int bytes_in_len, int checkCodeIndex, u8* checkCodes)$/;"	f
+OBJDIR	Makefile	/^OBJDIR = $(WORKDIR)\/obj$/;"	m
+OBJS	Makefile	/^OBJS := $(patsubst %.cpp,%.o,$(subst $(SRCDIR),$(OBJDIR),$(SRCS)))$/;"	m
+PROTOBUF_CFLAGS	Makefile	/^PROTOBUF_CFLAGS = $(shell pkg-config --cflags protobuf)$/;"	m
+PROTOBUF_LFLAGS	Makefile	/^PROTOBUF_LFLAGS = $(shell pkg-config --libs protobuf)$/;"	m
+PROTODIR	Makefile	/^PROTODIR = $(WORKDIR)\/..\/proto$/;"	m
+PROTO_FROM_CLIENT	proto_processor.h	/^    PROTO_FROM_CLIENT = 0,$/;"	e	enum:__anon3
+PROTO_FROM_SERV	proto_processor.h	/^    PROTO_FROM_SERV = 1,$/;"	e	enum:__anon3
+PROTO_H	proto.h	3;"	d
+PROTO_PROCESSOR_H	proto_processor.h	3;"	d
+PROTO_QUEUE_H	proto_queue.h	3;"	d
+ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::ProtoProcessor() {}$/;"	f	class:ProtoProcessor
+ProtoProcessor	proto_processor.h	/^class ProtoProcessor$/;"	c
+ProtoQueue	proto_queue.h	/^    ProtoQueue(uint32_t max_num)$/;"	f	class:ProtoQueue
+ProtoQueue	proto_queue.h	/^class ProtoQueue$/;"	c
+REGISTER_TIMER_TYPE	timer_procs.cpp	13;"	d	file:
+RandomNickCmdProcessor	login_cmd_processor.h	/^class RandomNickCmdProcessor : public CmdProcessorInterface$/;"	c
+SERVER_H	dll_iface.h	3;"	d
+SERVICE_H	service.h	3;"	d
+SESSION_LEN	proto.h	8;"	d
+SRCDIR	Makefile	/^SRCDIR = $(WORKDIR)\/src$/;"	m
+SRCS	Makefile	/^SRCS = $(wildcard $(SRCDIR)\/*.cpp)$/;"	m
+STATLOGGER_DIR	Makefile	/^STATLOGGER_DIR = $(WORKDIR)\/..\/statlogger$/;"	m
+Service	service.cpp	/^Service::Service(const std::string& service_name)$/;"	f	class:Service
+Service	service.h	/^class Service$/;"	c
+SessionLoginCmdProcessor	login_cmd_processor.h	/^class SessionLoginCmdProcessor : public CmdProcessorInterface$/;"	c
+StatCmdProcessor	login_cmd_processor.h	/^class StatCmdProcessor : public CmdProcessorInterface$/;"	c
+T1	xmlutils.h	/^size_t decode_xml_prop_arr_default(T1 (&arr)[len], xmlNodePtr cur, const void* prop, const T2& def)$/;"	v
+TARGET	Makefile	/^TARGET = $(BINDIR)\/liblogin.so$/;"	m
+TIMER_PROCS_H	timer_procs.h	3;"	d
+WORKDIR	Makefile	/^WORKDIR = ..\/$/;"	m
+XMLUTILS_H_	xmlutils.h	17;"	d
+_MENCRYPT_	mencrypt.h	8;"	d
+__AUTH_H__	auth.h	10;"	d
+act_active_need_verify_image_ack_t	proto.h	/^struct act_active_need_verify_image_ack_t$/;"	s
+act_active_user_ack_t	proto.h	/^struct act_active_user_ack_t$/;"	s
+act_active_user_req_t	proto.h	/^struct act_active_user_req_t$/;"	s
+act_add_gameflag_req_t	proto.h	/^struct act_add_gameflag_req_t$/;"	s
+act_add_session_ack_t	proto.h	/^struct act_add_session_ack_t$/;"	s
+act_add_session_req_t	proto.h	/^struct act_add_session_req_t$/;"	s
+act_check_session_req_t	proto.h	/^struct act_check_session_req_t$/;"	s
+act_cmd_active_user	proto.h	/^    act_cmd_active_user = 0xA128,$/;"	e	enum:__anon2
+act_cmd_add_gameflag	proto.h	/^    act_cmd_add_gameflag = 0xA13B,$/;"	e	enum:__anon2
+act_cmd_add_session	proto.h	/^    act_cmd_add_session = 0xA122,$/;"	e	enum:__anon2
+act_cmd_check_session	proto.h	/^    act_cmd_check_session = 0xA03A,$/;"	e	enum:__anon2
+act_cmd_get_verify_image	proto.h	/^    act_cmd_get_verify_image = 0xA031,$/;"	e	enum:__anon2
+act_cmd_is_active	proto.h	/^    act_cmd_is_active = 0xA029,$/;"	e	enum:__anon2
+act_cmd_login_with_verify_code	proto.h	/^    act_cmd_login_with_verify_code = 0xA039,$/;"	e	enum:__anon2
+act_err_active_code_err	proto.h	/^    act_err_active_code_err = 3001,$/;"	e	enum:__anon2
+act_err_check_session_failed	proto.h	/^    act_err_check_session_failed = 4331,$/;"	e	enum:__anon2
+act_get_verify_image_ack_t	proto.h	/^struct act_get_verify_image_ack_t$/;"	s
+act_get_verify_image_req_t	proto.h	/^struct act_get_verify_image_req_t$/;"	s
+act_is_active_ack_t	proto.h	/^struct act_is_active_ack_t$/;"	s
+act_is_active_req_t	proto.h	/^struct act_is_active_req_t$/;"	s
+act_login_in_diff_city_ack_t	proto.h	/^struct act_login_in_diff_city_ack_t$/;"	s
+act_login_need_verify_image_ack_t	proto.h	/^struct act_login_need_verify_image_ack_t$/;"	s
+act_login_succ_ack_t	proto.h	/^struct act_login_succ_ack_t$/;"	s
+act_login_with_verify_code_ack_t	proto.h	/^struct act_login_with_verify_code_ack_t$/;"	s
+act_login_with_verify_code_req_t	proto.h	/^struct act_login_with_verify_code_req_t$/;"	s
+active_code	proto.h	/^    char active_code[10];$/;"	m	struct:act_active_user_req_t
+cache_msg	client.h	/^    string *cache_msg;$/;"	m	struct:client_info_t
+channel	proto.h	/^    uint16_t channel;$/;"	m	struct:act_add_gameflag_req_t
+check_db_timeout	timer_procs.cpp	/^int check_db_timeout(void* owner, void* data)$/;"	f
+check_sum	proto.h	/^    uint32_t check_sum;$/;"	m	struct:cli_proto_header_t
+chnl_id	auth.h	/^    uint16_t chnl_id;$/;"	m	struct:__anon1
+chnlhash32_t	auth.h	/^}__attribute__((packed)) chnlhash32_t;$/;"	t	typeref:struct:__anon1
+cli_cmd	client.h	/^    uint32_t cli_cmd;$/;"	m	struct:client_info_t
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0001_login cli_in_;$/;"	m	class:LoginCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0002_require_random_nick cli_in_;$/;"	m	class:RandomNickCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0003_create_role cli_in_;$/;"	m	class:CreateRoleCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0004_get_svr_list cli_in_;$/;"	m	class:GetSvrListCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0006_session_login cli_in_;$/;"	m	class:SessionLoginCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0007_active_user cli_in_;$/;"	m	class:ActiveUserCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x0009_cli_stat cli_in_;$/;"	m	class:StatCmdProcessor
+cli_in_	login_cmd_processor.h	/^    onlineproto::cs_0x000B_cli_choose_server cli_in_;$/;"	m	class:ChooseServerCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0001_login cli_out_;$/;"	m	class:LoginCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0002_require_random_nick cli_out_;$/;"	m	class:RandomNickCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0003_create_role cli_out_;$/;"	m	class:CreateRoleCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0004_get_svr_list cli_out_;$/;"	m	class:GetSvrListCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0005_get_verify_image cli_out_;$/;"	m	class:GetVerifyImageCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0006_session_login cli_out_;$/;"	m	class:SessionLoginCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x0007_active_user cli_out_;$/;"	m	class:ActiveUserCmdProcessor
+cli_out_	login_cmd_processor.h	/^    onlineproto::sc_0x000B_cli_choose_server cli_out_;$/;"	m	class:ChooseServerCmdProcessor
+cli_proto_encrypt	dll_iface.cpp	/^bool cli_proto_encrypt = config_get_intval("cli_proto_encrypt", 0);$/;"	v
+cli_proto_header_t	proto.h	/^struct cli_proto_header_t$/;"	s
+cli_seq	client.h	/^    uint32_t cli_seq;$/;"	m	struct:client_info_t
+client_info_t	client.h	/^struct client_info_t$/;"	s
+clients	client.cpp	/^static std::map<int, client_info_t*> clients;$/;"	v	file:
+close	service.cpp	/^int Service::close()$/;"	f	class:Service
+cmd	proto.h	/^    uint16_t cmd;$/;"	m	struct:cli_proto_header_t
+conf_path	dll_iface.h	/^    char conf_path[256];$/;"	m	struct:server_config_t
+connect	service.cpp	/^int Service::connect()$/;"	f	class:Service
+create_role_session_t	login_cmd_processor.h	/^    struct create_role_session_t {$/;"	s	class:CreateRoleCmdProcessor
+csvr_info_t	dll_iface.h	/^struct csvr_info_t {$/;"	s
+cur	xmlutils.h	/^size_t decode_xml_prop_arr_default(T1 (&arr)[len], xmlNodePtr cur, const void* prop, const T2& def)$/;"	v
+cur_serv_cmd	client.h	/^    uint32_t cur_serv_cmd;$/;"	m	struct:client_info_t
+cur_svr_id	dll_iface.h	/^    uint32_t cur_svr_id; \/\/当前服务器ID$/;"	m	struct:csvr_info_t
+current_login_city	proto.h	/^    char current_login_city[64];$/;"	m	struct:act_login_in_diff_city_ack_t
+data	proto_queue.h	/^        char* data; $/;"	m	struct:ProtoQueue::proto_t
+db_cr_in_	login_cmd_processor.h	/^    dbproto::cs_create_role db_cr_in_;$/;"	m	class:CreateRoleCmdProcessor
+db_cr_out_	login_cmd_processor.h	/^    dbproto::sc_create_role db_cr_out_;$/;"	m	class:CreateRoleCmdProcessor
+db_cue_in_	login_cmd_processor.h	/^    dbproto::cs_check_user_exist db_cue_in_;$/;"	m	class:CreateRoleCmdProcessor
+db_cue_in_	login_cmd_processor.h	/^    dbproto::cs_check_user_exist db_cue_in_;$/;"	m	class:LoginCmdProcessor
+db_cue_out_	login_cmd_processor.h	/^    dbproto::sc_check_user_exist db_cue_out_;$/;"	m	class:CreateRoleCmdProcessor
+db_cue_out_	login_cmd_processor.h	/^    dbproto::sc_check_user_exist db_cue_out_;$/;"	m	class:LoginCmdProcessor
+db_gbi_in_	login_cmd_processor.h	/^    dbproto::cs_get_base_info db_gbi_in_;$/;"	m	class:ChooseServerCmdProcessor
+db_gbi_in_	login_cmd_processor.h	/^    dbproto::cs_get_base_info db_gbi_in_;$/;"	m	class:LoginCmdProcessor
+db_gbi_out_	login_cmd_processor.h	/^    dbproto::sc_get_base_info db_gbi_out_;$/;"	m	class:ChooseServerCmdProcessor
+db_gbi_out_	login_cmd_processor.h	/^    dbproto::sc_get_base_info db_gbi_out_;$/;"	m	class:LoginCmdProcessor
+db_gubn_in_	login_cmd_processor.h	/^    dbproto::cs_get_user_by_nick db_gubn_in_;$/;"	m	class:LoginCmdProcessor
+db_gubn_out_	login_cmd_processor.h	/^    dbproto::sc_get_user_by_nick db_gubn_out_;$/;"	m	class:LoginCmdProcessor
+db_in_	login_cmd_processor.h	/^    dbproto::cs_get_attr db_in_;$/;"	m	class:GetSvrListCmdProcessor
+db_in_	login_cmd_processor.h	/^    dbproto::cs_get_base_info db_in_;$/;"	m	class:SessionLoginCmdProcessor
+db_in_	login_cmd_processor.h	/^    dbproto::cs_get_user_by_nick db_in_;$/;"	m	class:RandomNickCmdProcessor
+db_inau_in_	login_cmd_processor.h	/^    dbproto::cs_insert_nick_and_user db_inau_in_;$/;"	m	class:CreateRoleCmdProcessor
+db_out_	login_cmd_processor.h	/^    dbproto::sc_get_attr db_out_;$/;"	m	class:GetSvrListCmdProcessor
+db_out_	login_cmd_processor.h	/^    dbproto::sc_get_base_info db_out_;$/;"	m	class:SessionLoginCmdProcessor
+db_out_	login_cmd_processor.h	/^    dbproto::sc_get_user_by_nick db_out_;$/;"	m	class:RandomNickCmdProcessor
+db_request_timer	client.h	/^    timer_struct_t* db_request_timer;$/;"	m	struct:client_info_t
+dbproxy_name	dll_iface.h	/^    char dbproxy_name[256];$/;"	m	struct:server_config_t
+decode_xml_prop_default	xmlutils.h	/^void decode_xml_prop_default(T1& val, xmlNodePtr cur, const void* prop, const T2& def)$/;"	f
+decode_xml_prop_float_default	xmlutils.h	/^static inline void decode_xml_prop_float_default(float* val, xmlNodePtr cur, const void* prop, float def)$/;"	f
+decode_xml_prop_uint32_default	xmlutils.h	/^static inline void decode_xml_prop_uint32_default(uint32_t* val, xmlNodePtr cur, const void* prop, uint32_t def)$/;"	f
+decode_xml_prop_vct	xmlutils.h	/^size_t decode_xml_prop_vct(std::vector<T>& vct, xmlNodePtr cur, const void* prop)$/;"	f
+decrypt_des	auth.cpp	/^int decrypt_des(void *key, void *ciphertext, void *plaintext, int n_8bytes)$/;"	f
+del_flag	proto.h	/^    uint32_t del_flag;$/;"	m	struct:act_check_session_req_t
+destroy_client	client.cpp	/^void destroy_client(int fd)$/;"	f
+do_MDecrypt_x86_32	mencrypt.cpp	/^u8* do_MDecrypt_x86_32 (u8 * bytes_in, int bytes_in_len, const u8 * key, int key_len, int * bytes_out_len)$/;"	f
+do_MEncrypt_x86_32	mencrypt.cpp	/^u8* do_MEncrypt_x86_32 (u8 * bytes_in, int bytes_in_len, const u8 * key, int key_len, int * bytes_out_len)$/;"	f
+email	client.h	/^    char email[64];\/\/缓存用户传过来的email$/;"	m	struct:client_info_t
+email	proto.h	/^    char email[64];$/;"	m	struct:act_login_with_verify_code_req_t
+empty	proto_queue.h	/^    inline bool empty()$/;"	f	class:ProtoQueue
+encrypt_code	dll_iface.cpp	/^const char *encrypt_code = config_get_strval("cli_proto_encrypt_code");$/;"	v
+encrypt_code_len	dll_iface.cpp	/^uint32_t encrypt_code_len = strlen(encrypt_code);$/;"	v
+encrypt_des	auth.cpp	/^int encrypt_des(void *key, void *plaintext, void *ciphertext, int n_8bytes)$/;"	f
+enter_game	proto.h	/^    uint8_t enter_game;$/;"	m	struct:act_check_session_req_t
+fd	client.h	/^    int fd;$/;"	m	struct:client_info_t
+fd	service.h	/^    inline int fd() const$/;"	f	class:Service
+fd_	service.h	/^    int fd_;$/;"	m	class:Service
+fdsession	client.h	/^    fdsession_t* fdsession;$/;"	m	struct:client_info_t
+fini_service	dll_iface.cpp	/^extern "C" int  fini_service(int isparent)$/;"	f
+flag	proto.h	/^    uint32_t flag; $/;"	m	struct:act_get_verify_image_ack_t
+flag	proto.h	/^    uint32_t flag; $/;"	m	struct:act_login_with_verify_code_ack_t
+flag	proto.h	/^    uint32_t flag;$/;"	m	struct:act_active_user_ack_t
+from_game	proto.h	/^    uint32_t from_game;$/;"	m	struct:act_check_session_req_t
+from_gameid	login_cmd_processor.h	/^        uint32_t from_gameid;$/;"	m	struct:SessionLoginCmdProcessor::session_login_session_t
+full	proto_queue.h	/^    inline bool full()$/;"	f	class:ProtoQueue
+g_dbproxy	dll_iface.cpp	/^Service* g_dbproxy;$/;"	v
+g_need_active_code	dll_iface.cpp	/^uint32_t g_need_active_code = config_get_intval("need_active_code", 0);$/;"	v
+g_pending_proto_clients	proto_processor.cpp	/^std::map<int, client_info_t*> g_pending_proto_clients; $/;"	v
+g_proto_processor	dll_iface.cpp	/^ProtoProcessor* g_proto_processor;$/;"	v
+g_reconnect_timer	dll_iface.cpp	/^timer_head_t g_reconnect_timer;$/;"	v
+g_server_config	dll_iface.cpp	/^server_config_t g_server_config;$/;"	v
+g_servers_map	dll_iface.cpp	/^std::map<uint32_t, csvr_info_t> g_servers_map; \/\/当前有哪些服$/;"	v
+gameflag	proto.h	/^    uint32_t gameflag; $/;"	m	struct:act_login_succ_ack_t
+gameflag	proto.h	/^    uint32_t gameflag;$/;"	m	struct:act_login_in_diff_city_ack_t
+gameid	dll_iface.h	/^    uint32_t gameid; $/;"	m	struct:server_config_t
+gameid	proto.h	/^    uint16_t gameid;$/;"	m	struct:act_login_with_verify_code_req_t
+gameid	proto.h	/^    uint32_t gameid; $/;"	m	struct:act_add_session_req_t
+gameid	proto.h	/^    uint32_t gameid;$/;"	m	struct:act_add_gameflag_req_t
+gameid	proto.h	/^    uint8_t gameid;  $/;"	m	struct:act_active_user_req_t
+gameid	proto.h	/^    uint8_t gameid;$/;"	m	struct:act_is_active_req_t
+gen_chnlhash32	auth.cpp	/^int gen_chnlhash32(int chnl_id,$/;"	f
+get_client	client.cpp	/^client_info_t* get_client(int fd)$/;"	f
+get_or_alloc_client	client.cpp	/^client_info_t* get_or_alloc_client(int fd)$/;"	f
+get_pkg_len	dll_iface.cpp	/^extern "C" int get_pkg_len(int fd, const void* avail_data, int avail_len, int isparent)$/;"	f
+get_pkg_len	proto_processor.cpp	/^int ProtoProcessor::get_pkg_len(int fd, const void* avail_data, int avail_len, int from)$/;"	f	class:ProtoProcessor
+get_random_nick	login_cmd_processor.cpp	/^std::string RandomNickCmdProcessor::get_random_nick(uint32_t sex)$/;"	f	class:RandomNickCmdProcessor
+has_email	client.h	/^    bool has_email;$/;"	m	struct:client_info_t
+has_nick	client.h	/^    bool has_nick;$/;"	m	struct:client_info_t
+has_uid	client.h	/^    bool has_uid;$/;"	m	struct:client_info_t
+head_len	proto.h	/^    uint16_t head_len;$/;"	m	struct:cli_proto_header_t
+i16	mencrypt.h	/^typedef short i16;$/;"	t
+i32	mencrypt.h	/^typedef int i32;$/;"	t
+i8	mencrypt.h	/^typedef char i8;$/;"	t
+idc_zone	dll_iface.h	/^    uint32_t idc_zone;$/;"	m	struct:server_config_t
+idc_zone	proto.h	/^    uint32_t idc_zone; $/;"	m	struct:act_add_gameflag_req_t
+image	proto.h	/^    char image[0]; $/;"	m	struct:act_active_need_verify_image_ack_t
+image	proto.h	/^    char image[0]; $/;"	m	struct:act_login_need_verify_image_ack_t
+image	proto.h	/^    char image[0];$/;"	m	struct:act_get_verify_image_ack_t
+image_size	proto.h	/^    uint32_t image_size;$/;"	m	struct:act_active_need_verify_image_ack_t
+image_size	proto.h	/^    uint32_t image_size;$/;"	m	struct:act_get_verify_image_ack_t
+image_size	proto.h	/^    uint32_t image_size;$/;"	m	struct:act_login_need_verify_image_ack_t
+incoming_packet_max_size	dll_iface.cpp	/^uint32_t incoming_packet_max_size = 8192;$/;"	v
+init_connections	dll_iface.cpp	/^int init_connections()$/;"	f
+init_processors	dll_iface.cpp	/^int init_processors()$/;"	f
+init_service	dll_iface.cpp	/^extern "C" int  init_service(int isparent)$/;"	f
+init_svr_id	dll_iface.h	/^    uint32_t init_svr_id; \/\/初始服务器ID$/;"	m	struct:csvr_info_t
+ip	proto.h	/^    uint32_t ip;$/;"	m	struct:act_active_user_req_t
+ip	proto.h	/^    uint32_t ip;$/;"	m	struct:act_add_session_req_t
+ip	proto.h	/^    uint32_t ip;$/;"	m	struct:act_check_session_req_t
+ip	proto.h	/^    uint32_t ip;$/;"	m	struct:act_get_verify_image_req_t
+ip	proto.h	/^    uint32_t ip;$/;"	m	struct:act_login_with_verify_code_req_t
+is_active	login_cmd_processor.h	/^        bool is_active; $/;"	m	struct:SessionLoginCmdProcessor::session_login_session_t
+is_active	login_cmd_processor.h	/^        bool is_active;$/;"	m	struct:LoginCmdProcessor::login_session_t
+is_active	proto.h	/^    uint8_t is_active;$/;"	m	struct:act_is_active_ack_t
+kMaxProtoQueueNum	client.cpp	/^static uint32_t kMaxProtoQueueNum = 30;$/;"	v	file:
+kTimerIntervalCheckDbTimeout	timer_procs.h	/^    kTimerIntervalCheckDbTimeout = 3, \/\/ db超时通知$/;"	e	enum:timer_interval_t
+kTimerIntervalReconnectServiceTimely	timer_procs.h	/^    kTimerIntervalReconnectServiceTimely = 1, \/\/ 重连service服务器间隔$/;"	e	enum:timer_interval_t
+kTimerTypeCheckDbTimeout	timer_procs.h	/^    kTimerTypeCheckDbTimeout = 2, \/\/ db超时$/;"	e	enum:timer_type_t
+kTimerTypeReconnectServiceTimely	timer_procs.h	/^    kTimerTypeReconnectServiceTimely = 1, \/\/ 重连service服务器$/;"	e	enum:timer_type_t
+last_login_city	proto.h	/^    char last_login_city[64];$/;"	m	struct:act_login_in_diff_city_ack_t
+last_login_ip	proto.h	/^    uint32_t last_login_ip;$/;"	m	struct:act_login_in_diff_city_ack_t
+last_login_time	proto.h	/^    uint32_t last_login_time;$/;"	m	struct:act_login_in_diff_city_ack_t
+len	proto.h	/^    uint32_t len;$/;"	m	struct:cli_proto_header_t
+len	proto_queue.h	/^        int len;$/;"	m	struct:ProtoQueue::proto_t
+load_nick_config	dll_iface.cpp	/^int load_nick_config(xmlNodePtr root)$/;"	f
+load_server_config	dll_iface.cpp	/^int load_server_config(xmlNodePtr root)$/;"	f
+load_xmlconf	xmlutils.h	/^static inline int load_xmlconf(const char* file, int (*parser)(xmlNodePtr cur_node))$/;"	f
+login_buf	login_cmd_processor.h	/^        char login_buf[8000]; $/;"	m	struct:LoginCmdProcessor::login_session_t
+login_buflen	login_cmd_processor.h	/^        int login_buflen;$/;"	m	struct:LoginCmdProcessor::login_session_t
+login_channel	proto.h	/^    uint16_t login_channel;$/;"	m	struct:act_login_with_verify_code_req_t
+login_promot_tag	proto.h	/^    char login_promot_tag[128];$/;"	m	struct:act_login_with_verify_code_req_t
+login_session	client.h	/^    char login_session[33];$/;"	m	struct:client_info_t
+login_session_check_pwd_t	login_cmd_processor.h	/^    struct login_session_check_pwd_t {$/;"	s	class:LoginCmdProcessor
+login_session_t	login_cmd_processor.h	/^    struct login_session_t {$/;"	s	class:LoginCmdProcessor
+m_cmd_processors	proto_processor.h	/^    std::map<uint32_t, CmdProcessorInterface*> m_cmd_processors;$/;"	m	class:ProtoProcessor
+m_send_buf	login_cmd_processor.h	/^    char m_send_buf[4096];$/;"	m	class:CreateRoleCmdProcessor
+m_send_buf	login_cmd_processor.h	/^    char m_send_buf[4096];$/;"	m	class:GetSvrListCmdProcessor
+max_num_	proto_queue.h	/^    uint32_t max_num_;$/;"	m	class:ProtoQueue
+md5_16to32	auth.cpp	/^void md5_16to32(const unsigned char *p_md5_buffer_16,$/;"	f
+msg_decrypt	mencrypt.cpp	/^void *msg_decrypt(void *buff_in, uint32_t buff_in_len, uint32_t *buff_out_len)$/;"	f
+msg_encrypt	mencrypt.cpp	/^void *msg_encrypt (void *buff_in, uint32_t buff_in_len, uint32_t *buff_out_len)$/;"	f
+nick	client.h	/^    char nick[64];\/\/缓存用户传过来的昵称$/;"	m	struct:client_info_t
+nick	login_cmd_processor.h	/^        char nick[64];$/;"	m	struct:CreateRoleCmdProcessor::create_role_session_t
+nick	login_cmd_processor.h	/^        char nick[64];$/;"	m	struct:RandomNickCmdProcessor::random_nick_session_t
+on_client_conn_closed	dll_iface.cpp	/^extern "C" void on_client_conn_closed(int fd)$/;"	f
+on_connect_callback	service.cpp	/^void Service::on_connect_callback(int fd, void* args)$/;"	f	class:Service
+on_fd_closed	dll_iface.cpp	/^extern "C" void on_fd_closed(int fd)$/;"	f
+on_server_create_tm	client.h	/^    uint32_t on_server_create_tm;$/;"	m	struct:client_info_t
+on_server_id	client.h	/^    uint32_t on_server_id;$/;"	m	struct:client_info_t
+online_proto_encrypt_pkgbuf_max_len	mencrypt.h	20;"	d
+parse_cmessage	cmd_processor_interface.h	/^inline int parse_cmessage($/;"	f
+parse_message	cmd_processor_interface.h	/^inline int parse_message($/;"	f
+passwd_md5_two	proto.h	/^    char passwd_md5_two[16];$/;"	m	struct:act_login_with_verify_code_req_t
+pb_log_handler	dll_iface.cpp	/^void pb_log_handler(google::protobuf::LogLevel level,$/;"	f
+pkg_idx	client.h	/^    uint32_t pkg_idx;$/;"	m	struct:client_info_t
+pop_proto	proto_queue.h	/^    inline int pop_proto(ProtoQueue::proto_t& proto)$/;"	f	class:ProtoQueue
+proc_cached_proto	dll_iface.cpp	/^void proc_cached_proto()$/;"	f
+proc_errno_from_serv	cmd_processor_interface.h	/^    virtual int proc_errno_from_serv($/;"	f	class:CmdProcessorInterface
+proc_errno_from_serv	login_cmd_processor.cpp	/^int ActiveUserCmdProcessor::proc_errno_from_serv($/;"	f	class:ActiveUserCmdProcessor
+proc_errno_from_serv	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_errno_from_serv($/;"	f	class:CreateRoleCmdProcessor
+proc_errno_from_serv	login_cmd_processor.cpp	/^int GetSvrListCmdProcessor::proc_errno_from_serv($/;"	f	class:GetSvrListCmdProcessor
+proc_errno_from_serv	login_cmd_processor.cpp	/^int GetVerifyImageCmdProcessor::proc_errno_from_serv($/;"	f	class:GetVerifyImageCmdProcessor
+proc_errno_from_serv	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_errno_from_serv($/;"	f	class:LoginCmdProcessor
+proc_errno_from_serv	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::proc_errno_from_serv(client_info_t *client, int ret)$/;"	f	class:SessionLoginCmdProcessor
+proc_events	dll_iface.cpp	/^extern "C" void proc_events()$/;"	f
+proc_pkg_from_client	dll_iface.cpp	/^extern "C" int  proc_pkg_from_client(void* data, int len, fdsession_t* fdsess)$/;"	f
+proc_pkg_from_client	login_cmd_processor.cpp	/^int ActiveUserCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:ActiveUserCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int ChooseServerCmdProcessor::proc_pkg_from_client($/;"	f	class:ChooseServerCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int GetSvrListCmdProcessor::proc_pkg_from_client($/;"	f	class:GetSvrListCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int GetVerifyImageCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:GetVerifyImageCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:LoginCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int RandomNickCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:RandomNickCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:SessionLoginCmdProcessor
+proc_pkg_from_client	login_cmd_processor.cpp	/^int StatCmdProcessor::proc_pkg_from_client(client_info_t* client,$/;"	f	class:StatCmdProcessor
+proc_pkg_from_client	proto_processor.cpp	/^int ProtoProcessor::proc_pkg_from_client(void* data, int len, $/;"	f	class:ProtoProcessor
+proc_pkg_from_serv	cmd_processor_interface.h	/^    virtual int proc_pkg_from_serv($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_serv	dll_iface.cpp	/^extern "C" void proc_pkg_from_serv(int fd, void* data, int len)$/;"	f
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int ActiveUserCmdProcessor::proc_pkg_from_serv(client_info_t* client,$/;"	f	class:ActiveUserCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int ChooseServerCmdProcessor::proc_pkg_from_serv($/;"	f	class:ChooseServerCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_serv(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int GetSvrListCmdProcessor::proc_pkg_from_serv(client_info_t* client, $/;"	f	class:GetSvrListCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int GetVerifyImageCmdProcessor::proc_pkg_from_serv(client_info_t* client,$/;"	f	class:GetVerifyImageCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_pkg_from_serv(client_info_t* client,$/;"	f	class:LoginCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int RandomNickCmdProcessor::proc_pkg_from_serv(client_info_t* client,$/;"	f	class:RandomNickCmdProcessor
+proc_pkg_from_serv	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::proc_pkg_from_serv(client_info_t* client,$/;"	f	class:SessionLoginCmdProcessor
+proc_pkg_from_serv	proto_processor.cpp	/^void ProtoProcessor::proc_pkg_from_serv(int fd, void* data, int len)$/;"	f	class:ProtoProcessor
+proc_pkg_from_serv_aft_add_gameflag	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_serv_aft_add_gameflag(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+proc_pkg_from_serv_aft_add_session	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::proc_pkg_from_serv_aft_add_session($/;"	f	class:SessionLoginCmdProcessor
+proc_pkg_from_serv_aft_check_exist	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_serv_aft_check_exist(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+proc_pkg_from_serv_aft_check_passwd	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_pkg_from_serv_aft_check_passwd(client_info_t* client,$/;"	f	class:LoginCmdProcessor
+proc_pkg_from_serv_aft_check_session	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_serv_aft_check_session(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+proc_pkg_from_serv_aft_check_session	login_cmd_processor.cpp	/^int GetSvrListCmdProcessor::proc_pkg_from_serv_aft_check_session(client_info_t* client, $/;"	f	class:GetSvrListCmdProcessor
+proc_pkg_from_serv_aft_check_session	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::proc_pkg_from_serv_aft_check_session($/;"	f	class:SessionLoginCmdProcessor
+proc_pkg_from_serv_aft_create_role	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_serv_aft_create_role(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+proc_pkg_from_serv_aft_get_base_info	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_pkg_from_serv_aft_get_base_info(client_info_t* client,$/;"	f	class:LoginCmdProcessor
+proc_pkg_from_serv_aft_get_base_info	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::proc_pkg_from_serv_aft_get_base_info($/;"	f	class:SessionLoginCmdProcessor
+proc_pkg_from_serv_aft_get_is_active	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_pkg_from_serv_aft_get_is_active( client_info_t* client,$/;"	f	class:LoginCmdProcessor
+proc_pkg_from_serv_aft_get_pre_online	login_cmd_processor.cpp	/^int GetSvrListCmdProcessor::proc_pkg_from_serv_aft_get_pre_online($/;"	f	class:GetSvrListCmdProcessor
+proc_pkg_from_serv_aft_get_server_list	login_cmd_processor.cpp	/^int GetSvrListCmdProcessor::proc_pkg_from_serv_aft_get_server_list(client_info_t* client,$/;"	f	class:GetSvrListCmdProcessor
+proc_pkg_from_serv_aft_get_userid	login_cmd_processor.cpp	/^int LoginCmdProcessor::proc_pkg_from_serv_aft_get_userid(client_info_t* client,$/;"	f	class:LoginCmdProcessor
+proc_pkg_from_serv_aft_insert_nick	login_cmd_processor.cpp	/^int CreateRoleCmdProcessor::proc_pkg_from_serv_aft_insert_nick(client_info_t* client,$/;"	f	class:CreateRoleCmdProcessor
+prof	login_cmd_processor.h	/^        int prof;$/;"	m	struct:CreateRoleCmdProcessor::create_role_session_t
+prop	xmlutils.h	/^size_t decode_xml_prop_arr_default(T1 (&arr)[len], xmlNodePtr cur, const void* prop, const T2& def)$/;"	v
+proto_queue	client.h	/^    ProtoQueue* proto_queue;$/;"	m	struct:client_info_t
+proto_t	proto_queue.h	/^    struct proto_t$/;"	s	class:ProtoQueue
+push_proto	proto_queue.h	/^    inline int push_proto(const char* data, int data_len)$/;"	f	class:ProtoQueue
+queue_	proto_queue.h	/^    std::queue<ProtoQueue::proto_t> queue_;$/;"	m	class:ProtoQueue
+rand_nick_item_t	dll_iface.h	/^struct rand_nick_item_t$/;"	s
+rand_nick_pos1	dll_iface.cpp	/^std::vector<std::string> rand_nick_pos1[2]; \/\/ 性别区分$/;"	v
+rand_nick_pos2	dll_iface.cpp	/^std::vector<std::string> rand_nick_pos2;$/;"	v
+rand_nick_pos3	dll_iface.cpp	/^std::vector<std::string> rand_nick_pos3;$/;"	v
+random_nick_session_t	login_cmd_processor.h	/^    struct random_nick_session_t{$/;"	s	class:RandomNickCmdProcessor
+reconnect_service_timely	timer_procs.cpp	/^int reconnect_service_timely(void* owner, void* data)$/;"	f
+region	proto.h	/^    uint16_t region;$/;"	m	struct:act_check_session_req_t
+region	proto.h	/^    uint16_t region;$/;"	m	struct:act_login_with_verify_code_req_t
+register_cmd	proto_processor.cpp	/^int ProtoProcessor::register_cmd($/;"	f	class:ProtoProcessor
+register_timers	timer_procs.cpp	/^int register_timers()$/;"	f
+reload_xmlconf	xmlutils.h	/^static inline void reload_xmlconf(const char* file, int (*parser)(xmlNodePtr cur_node))$/;"	f
+req_body	login_cmd_processor.h	/^        act_login_with_verify_code_req_t req_body;$/;"	m	struct:LoginCmdProcessor::login_session_check_pwd_t
+response_to_client	login_cmd_processor.cpp	/^int LoginCmdProcessor::response_to_client(client_info_t* client, $/;"	f	class:LoginCmdProcessor
+response_to_client	login_cmd_processor.cpp	/^int SessionLoginCmdProcessor::response_to_client(client_info_t* client, $/;"	f	class:SessionLoginCmdProcessor
+security_code	dll_iface.h	/^    char security_code[10];$/;"	m	struct:server_config_t
+send_buf	client.cpp	/^static char send_buf[65536];$/;"	v	file:
+send_buf	service.cpp	/^int Service::send_buf(client_info_t* client, userid_t userid, uint32_t u_create_tm, uint16_t cmd, $/;"	f	class:Service
+send_buf_	login_cmd_processor.h	/^    char send_buf_[4096];$/;"	m	class:ActiveUserCmdProcessor
+send_buf_	login_cmd_processor.h	/^    char send_buf_[4096];$/;"	m	class:SessionLoginCmdProcessor
+send_buf_	service.h	/^    char send_buf_[10000];$/;"	m	class:Service
+send_cmsg	service.cpp	/^int Service::send_cmsg(client_info_t* client, userid_t userid, uint32_t u_create_tm,$/;"	f	class:Service
+send_err_to_client	client.cpp	/^int send_err_to_client(client_info_t *client, int32_t err, uint32_t seq)$/;"	f
+send_err_to_fdsess	client.cpp	/^int send_err_to_fdsess(fdsession_t *fdsess, uint32_t cmd, int32_t err, uint32_t seq)$/;"	f
+send_msg	service.cpp	/^int Service::send_msg(client_info_t* client, userid_t userid, uint32_t u_create_tm, uint16_t cmd,$/;"	f	class:Service
+send_msg_to_client	client.cpp	/^int send_msg_to_client(client_info_t* client, uint32_t cmd, $/;"	f
+send_to_act	service.cpp	/^int Service::send_to_act(client_info_t* client, userid_t userid, uint16_t cmd, $/;"	f	class:Service
+send_to_client	client.cpp	/^int send_to_client(client_info_t* client, uint32_t cmd, $/;"	f
+send_to_fdsess	client.cpp	/^int send_to_fdsess(fdsession_t *fdsess, uint32_t cmd, $/;"	f
+server_config_t	dll_iface.h	/^struct server_config_t$/;"	s
+server_id	login_cmd_processor.h	/^        int server_id; $/;"	m	struct:CreateRoleCmdProcessor::create_role_session_t
+service_name	service.h	/^    inline const std::string& service_name() const$/;"	f	class:Service
+service_name_	service.h	/^    std::string service_name_;$/;"	m	class:Service
+session	client.h	/^    char session[4096 * 3];        $/;"	m	struct:client_info_t
+session	login_cmd_processor.h	/^        char session[16];$/;"	m	struct:SessionLoginCmdProcessor::session_login_session_t
+session	proto.h	/^    char session[16];$/;"	m	struct:act_add_session_ack_t
+session	proto.h	/^    char session[16];$/;"	m	struct:act_check_session_req_t
+session	proto.h	/^    char session[16];$/;"	m	struct:act_login_in_diff_city_ack_t
+session	proto.h	/^    char session[16];$/;"	m	struct:act_login_succ_ack_t
+session_login_session_t	login_cmd_processor.h	/^    struct session_login_session_t {$/;"	s	class:SessionLoginCmdProcessor
+set_fd	service.h	/^    inline void set_fd(int fd) $/;"	f	class:Service
+sex	login_cmd_processor.h	/^        int sex;$/;"	m	struct:CreateRoleCmdProcessor::create_role_session_t
+sex	login_cmd_processor.h	/^        uint32_t sex; $/;"	m	struct:RandomNickCmdProcessor::random_nick_session_t
+size	proto_queue.h	/^    inline uint32_t size()$/;"	f	class:ProtoQueue
+statistic_file	dll_iface.h	/^    char statistic_file[256];$/;"	m	struct:server_config_t
+svr_create_tm_map	client.h	/^    std::map<uint32_t, uint32_t> *svr_create_tm_map;$/;"	m	struct:client_info_t
+switch_name	dll_iface.h	/^    char switch_name[256];$/;"	m	struct:server_config_t
+tad	login_cmd_processor.h	/^        char tad[128]; $/;"	m	struct:LoginCmdProcessor::login_session_check_pwd_t
+tad	login_cmd_processor.h	/^        char tad[256];$/;"	m	struct:CreateRoleCmdProcessor::create_role_session_t
+tad	proto.h	/^    char tad[128];$/;"	m	struct:act_add_gameflag_req_t
+tad	proto.h	/^    char tad[128];$/;"	m	struct:act_check_session_req_t
+tag	dll_iface.h	/^    std::string tag; $/;"	m	struct:rand_nick_item_t
+timer_head_t	dll_iface.h	/^struct timer_head_t {      $/;"	s
+timer_interval_t	timer_procs.h	/^enum timer_interval_t$/;"	g
+timer_list	client.h	/^    list_head_t timer_list;$/;"	m	struct:client_info_t
+timer_list	dll_iface.h	/^    list_head_t timer_list;$/;"	m	struct:timer_head_t
+timer_type_t	timer_procs.h	/^enum timer_type_t$/;"	g
+to_game	proto.h	/^    uint32_t to_game;$/;"	m	struct:act_check_session_req_t
+to_string	client.cpp	/^std::string to_string(uint32_t n)$/;"	f
+u16	mencrypt.h	/^typedef unsigned short u16;$/;"	t
+u32	mencrypt.h	/^typedef unsigned int u32;$/;"	t
+u8	mencrypt.h	/^typedef unsigned char u8;$/;"	t
+userid	client.h	/^    userid_t userid;$/;"	m	struct:client_info_t
+userid	login_cmd_processor.h	/^        userid_t userid;$/;"	m	struct:LoginCmdProcessor::login_session_t
+verify_chnlhash32	auth.cpp	/^int verify_chnlhash32(const chnlhash32_t *p_chnlhash32,$/;"	f
+verify_code	proto.h	/^    char verify_code[6];$/;"	m	struct:act_active_user_req_t
+verify_code	proto.h	/^    char verify_code[6];$/;"	m	struct:act_login_with_verify_code_req_t
+verify_id	proto.h	/^    uint16_t verify_id; $/;"	m	struct:act_get_verify_image_req_t
+verify_image_session	proto.h	/^    char verify_image_session[16];$/;"	m	struct:act_active_need_verify_image_ack_t
+verify_image_session	proto.h	/^    char verify_image_session[16];$/;"	m	struct:act_get_verify_image_ack_t
+verify_image_session	proto.h	/^    char verify_image_session[16];$/;"	m	struct:act_login_need_verify_image_ack_t
+verify_session	proto.h	/^    char verify_session[16];$/;"	m	struct:act_active_user_req_t
+verify_session	proto.h	/^    char verify_session[16];$/;"	m	struct:act_get_verify_image_req_t
+verify_session	proto.h	/^    char verify_session[16];$/;"	m	struct:act_login_with_verify_code_req_t
+verifyid	dll_iface.h	/^    uint32_t verifyid;$/;"	m	struct:server_config_t
+verifyid	proto.h	/^    uint16_t verifyid;$/;"	m	struct:act_login_with_verify_code_req_t
+vfy_code	auth.h	/^    uint8_t vfy_code[32];$/;"	m	struct:__anon1
+wait_serv_cmd	client.h	/^    uint32_t wait_serv_cmd;$/;"	m	struct:client_info_t
+write_msglog_new	client.cpp	/^void write_msglog_new(const char *user, $/;"	f
+write_msglog_new	client.cpp	/^void write_msglog_new(const std::string &user, $/;"	f
+write_msglog_new	client.cpp	/^void write_msglog_new(userid_t userid, $/;"	f
+~CmdProcessorInterface	cmd_processor_interface.h	/^    virtual ~CmdProcessorInterface() {}$/;"	f	class:CmdProcessorInterface
+~ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::~ProtoProcessor() {}$/;"	f	class:ProtoProcessor
+~ProtoQueue	proto_queue.h	/^    ~ProtoQueue()$/;"	f	class:ProtoQueue
+~Service	service.cpp	/^Service::~Service()$/;"	f	class:Service

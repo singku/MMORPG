@@ -1,0 +1,283 @@
+package onlineproto;
+
+import "common.proto";
+
+//精灵相关的协议
+enum set_fight_pet_status_t {
+    PET_STATUS_SHOW = 0; //展示
+    PET_STATUS_CALLBACK = 1; //收回
+    PET_STATUS_SWITCH = 2; //替换
+    PET_STATUS_UPDATE = 3;// 更新
+}
+
+enum evolution_reason_t {
+    EVOLUTION_FROM_BATTLE = 1;  //战斗
+    EVOLUTION_FROM_OTHER = 2; //其他
+}
+
+enum level_up_reason_t {
+    LEVELUP_FROM_BATTLE = 1; //战斗
+    LEVELUP_FROM_OTHER = 2; //其他
+}
+
+enum exp_reason_t {
+    EXP_FROM_BATTLE = 1; // 战斗
+    EXP_FROM_OTHER = 2; // 其他
+    EXP_FROM_DRUGS = 3; //嗑药
+}
+
+enum synpower_reason_t {
+    POWER_CHANGE_FROM_LEVELUP = 1; //升级
+    POWER_CHANGE_FROM_EVOLUTION = 2; //进化
+    POWER_CHANGE_FROM_OTHER = 3; //其他
+    POWER_CHANGE_FROM_BATTLE = 4; //战斗升级
+}
+
+enum conditional_pet_add_exp_reason_t {
+    PET_COND_ADD_EXP_DEFAULT = 0;
+}
+
+enum conditional_pet_add_effort_reason_t {
+    PET_COND_ADD_EFFORT_DEFAULT = 0;
+}
+
+enum conditional_pet_set_talent_reason_t {
+    PET_COND_SET_TALENT_DEFAULT = 0;
+}
+
+enum condtional_pet_level_up_reason_t {
+    PET_COND_LEVEL_UP_DEFAULT = 0;
+}
+
+enum conditional_evolution_reason_t {
+    EVOLUTION_NORMAL = 0; //正常条件进化
+}
+
+// c->s 同步精灵
+message cs_0x0301_sync_pet { }
+
+// s->c 同步精灵
+message sc_0x0301_sync_pet {
+    required commonproto.pet_info_t pet_info = 1; 	// 精灵信息
+}
+
+// c->s 同步战斗力
+message cs_0x0302_sync_power { }
+// s->c 同步战斗力
+message sc_0x0302_sync_power {
+	repeated commonproto.pet_power_t power_list = 2;	// 精灵战斗力同步
+	optional synpower_reason_t reason = 3; // 同步原因 
+}
+
+// c->s 提升精灵天赋
+message cs_0x0303_improve_pet_talent {
+    required uint32 create_tm = 1;	//精灵捕获时间
+}
+// s->c 提升精灵天赋
+message sc_0x0303_improve_pet_talent {}
+
+// 精灵进化
+message cs_0x0305_pet_evolution {}
+message sc_0x0305_pet_evolution {
+    required uint32 create_tm = 1;
+    required commonproto.pet_info_t old_pet_info = 2; //进化前的精灵数据
+    required commonproto.pet_info_t new_pet_info = 3; //进化后的精灵数据
+    optional evolution_reason_t reason = 4; //进化原因
+}
+
+// 精灵升级通知
+message cs_0x0306_pet_level_up_notify { }
+message sc_0x0306_pet_level_up_notify {
+    required uint32 create_tm = 1;
+    required commonproto.pet_info_t old_pet_info = 2; //升级前的精灵数据
+    required commonproto.pet_info_t new_pet_info = 3; //升级后的精灵数据
+    optional level_up_reason_t reason = 4; //升级原因
+}
+
+// 更换精灵位置
+message cs_0x0307_change_pet_location {
+    required uint32 create_tm = 1;		// 要更换位置的精灵的捕获时间
+    required commonproto.pet_loc_type_t target_location = 2;	// 目标位置
+    optional uint32 target_create_tm = 3;		// 被替换的精灵的捕获时间
+}
+message sc_0x0307_change_pet_location { }
+
+// 设置精灵出战
+message cs_0x0309_set_fight_pet_status {
+    required uint32 create_tm = 1; //要出战的精灵的捕获时间
+    required set_fight_pet_status_t direction = 2; //操作的方向(0展示，1收回, 2替换)
+}
+message sc_0x0309_set_fight_pet_status {}
+
+//通知跟随精灵更新
+message cs_0x030A_fight_pet_change_notify {}
+message sc_0x030A_fight_pet_change_notify {
+    required uint32 userid = 1; //跟随精灵状态发生改变的玩家id
+    optional commonproto.pet_info_t	pet_info = 2; //跟随精灵信息
+    required set_fight_pet_status_t direction = 3; //操作的方向(0展示，1收回, 2替换)
+}
+
+//同步经验值变化
+message cs_0x030B_pet_exp_notify {}
+message sc_0x030B_pet_exp_notify {
+    required uint32 create_tm = 1; //单个用户精灵唯一id--捕捉时间
+    required uint32 exp_change = 2; //精灵经验值变化
+}
+
+// 精灵主动进行条件进化
+message cs_0x030C_conditional_pet_evolution {
+    required uint32 create_tm = 1; // 精灵捕捉时间
+    optional conditional_evolution_reason_t reason = 2 [default = EVOLUTION_NORMAL]; // 条件进化原因
+}
+message sc_0x030C_conditional_pet_evolution {
+    required uint32 create_tm = 1; // 精灵捕捉时间
+    optional conditional_evolution_reason_t reason = 2 [default = EVOLUTION_NORMAL]; // 条件进化原因
+}
+
+//条件升级
+message cs_0x030D_conditional_pet_level_up{
+    required uint32 create_tm = 1; //精灵捕捉时间
+    required condtional_pet_level_up_reason_t reason = 2; //升级理由
+}
+//回包 sc_pet_level_up
+message sc_0x030D_conditional_pet_level_up{}
+
+//精灵条件获取经验
+message cs_0x030E_conditional_pet_add_exp {
+    required uint32 create_tm = 1; //精灵捕捉时间
+    required conditional_pet_add_exp_reason_t reason = 2; //获取经验的途径
+}
+message sc_0x030E_conditional_pet_add_exp {}
+
+//条件设置天赋
+message cs_0x030F_conditional_pet_set_talent{
+    required uint32 create_tm = 1; //精灵捕捉时间作为ID
+    required conditional_pet_set_talent_reason_t reason = 2; //理由
+}
+message sc_0x030F_conditional_pet_set_talent {}
+
+message effort_alloc_data_t {
+    required uint32 hp = 1;
+    required uint32 normal_atk = 2;
+    required uint32 normal_def = 3;
+    required uint32 skill_atk = 4;
+    required uint32 skill_def = 5;
+}
+//精灵条件获取学习力
+message cs_0x0310_conditional_pet_add_effort {
+    required uint32 create_tm = 1; //精灵ID
+    required conditional_pet_add_effort_reason_t reason = 2; //理由
+    optional effort_alloc_data_t alloc_data = 3; //待分配的数据
+}
+message sc_0x0310_conditional_pet_add_effort{}
+
+//获取精灵信息
+message cs_0x031A_get_pets{
+    optional commonproto.pet_loc_type_t loc = 1 [default = PET_LOC_BAG];
+}
+message sc_0x031A_get_pets {
+    required commonproto.pet_list_t pet_list = 2;
+}
+
+//升级符文 c -> s 协议号：795
+message cs_0x031B_uprune_by_exp {
+	required uint32 runeid = 1;//符文id
+	required uint32 exp = 2; //消耗经验瓶中的经验值
+}
+
+message sc_0x031B_uprune_by_exp {
+	required commonproto.rune_data_t rune_data = 1;//升级后的符文
+	required uint32 exp = 2;//经验瓶所剩经验值
+}
+
+//符文吞噬  协议号：796
+message cs_0x031C_swallow_rune {
+	required uint32 mov_runeid = 1;
+	required uint32 stand_runeid = 2;
+}
+
+message sc_0x031C_swallow_rune {
+	required commonproto.rune_data_t rune_data = 1;//新的符文
+	required uint32 sec_runeid = 2;	//被吞噬的符文id
+}
+
+//装备符文 c -> s 协议号：813
+message cs_0x031D_equip_rune {
+	required uint32 petid = 1;//精灵id
+	required uint32 runeid = 2; //符文id
+	required uint32 pos = 3; //位置
+}
+
+//装备符文 s -> c
+message sc_0x031D_equip_rune {
+    required uint32 bagtype = 1;//符文原来所在的背包类型
+}
+
+//1.收藏背包 -> 转化背包; 
+//2.转化背包 -> 收藏背包  协议号：815
+message cs_0x031E_chgrune_pack {
+	required uint32 runeid = 1; //符文id
+	optional uint32 type = 2; //1： 收藏背包 -> 转化背包 ； 2： 转化背包 -> 收藏背包
+}
+
+message sc_0x031E_chgrune_pack {}
+
+//符文转经验 c->s
+message cs_0x031F_rune_to_bottleexp {
+	required uint32 runeid = 1; //符文id
+}
+
+//符文转经验 s->c
+message sc_0x031F_rune_to_bottleexp {
+	required uint32 bottleexp = 1; //经验瓶中的经验
+}
+
+//符文召唤
+message cs_0x0320_rune_call {
+	required uint32 level = 1;	//时空之门层次
+}
+
+//符文召唤
+message sc_0x0320_rune_call {
+	required commonproto.rune_data_t rune_data = 1;		//获得的符文
+	repeated uint32 call_level_list = 2;	//召唤阵列
+}
+
+//一键拾取
+message cs_0x0321_get_rune_from_runepack_to_tranpack {
+}
+
+message sc_0x0321_get_rune_from_runepack_to_tranpack {
+	repeated uint32 rune_id_list = 1;
+}
+
+//卖出符文碎片
+message cs_0x0322_sell_gray_rune {
+}
+
+//
+message sc_0x0322_sell_gray_rune {
+	required uint32 money = 1;		//获得的钱
+}
+
+//装上刻印 或者 卸下刻印
+message cs_0x0323_chisel_on {
+	required uint32 type = 1;   //0-->卸下；1-->装上
+	required uint32 position = 2;   //刻印位置
+	required uint32 create_tm = 3;   //精灵的出生时间
+}
+
+//装上刻印  -->  sc_0x0301_sync_pet后台推送背包中的精灵信息
+message sc_0x0323_chisel_on {
+    required uint32 type = 1;   //0-->卸下；1-->装上
+    required uint32 position = 2;   //刻印位置
+    required uint32 create_tm = 3;   //精灵的出生时间
+}
+
+//一键转化为经验
+message cs_0x0324_one_key_to_bottleexp {
+}
+
+message sc_0x0324_one_key_to_bottleexp {
+	required uint32 bottleexp = 1; //经验瓶中的经验
+}

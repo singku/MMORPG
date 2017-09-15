@@ -1,0 +1,35 @@
+package dbproto;
+
+import "dbproto.data.proto";
+import "common.proto";
+
+// 存储精灵数据
+message cs_pet_save
+{
+    required commonproto.pet_info_t pet_info = 1;
+}
+
+message sc_pet_save
+{
+
+}
+
+//删除精灵所需数据
+message cs_pet_del_info
+{
+    required uint32 create_tm = 1;   
+}
+
+message sc_pet_del_info
+{
+
+}
+
+message cs_pet_list_get_info
+{
+}
+
+message sc_pet_list_get_info
+{
+	required commonproto.pet_list_t pet_list = 1;
+}

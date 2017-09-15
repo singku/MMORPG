@@ -1,0 +1,1031 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ADD_A	macro_utils.h	10;"	d
+BINDIR	Makefile	/^BINDIR = $(WORKDIR)\/bin$/;"	m
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Werror -fPIC -ggdb \\$/;"	m
+CHECK_ARTIFACIAL	player.cpp	9;"	d	file:
+CMD_PROCESSOR_INTERFACE_H	cmd_processor_interface.h	3;"	d
+CONFIG_READ_INTVAL	dll_iface.cpp	16;"	d	file:
+CONFIG_READ_STRVAL	dll_iface.cpp	27;"	d	file:
+CREATE_BUILDER	duplicate_trigger.cpp	940;"	d	file:
+CREATE_OBJ	duplicate_trigger.cpp	886;"	d	file:
+CREATE_PET	duplicate_trigger.cpp	923;"	d	file:
+CmdProcessorInterface	cmd_processor_interface.h	/^class CmdProcessorInterface$/;"	c
+DATA_OBJS	Makefile	/^DATA_OBJS := $(patsubst %.cpp,%.o,$(subst $(SRCDIR),$(OBJDIR),$(DATA_SRCS)))$/;"	m
+DATA_PROTO_UTILS_H	data_proto_utils.h	10;"	d
+DATA_SRCS	Makefile	/^DATA_SRCS = $(SRCDIR)\/global_data.cpp$/;"	m
+DATA_TARGET	Makefile	/^DATA_TARGET = $(BINDIR)\/libdata.so$/;"	m
+DAY_ADJ	time_utils.h	13;"	d
+DAY_SECS	time_utils.h	12;"	d
+DECODE_XML_PROP	xmlutils.h	38;"	d
+DECODE_XML_PROP_ARR_INT	xmlutils.h	124;"	d
+DECODE_XML_PROP_ARR_UINT32	xmlutils.h	144;"	d
+DECODE_XML_PROP_INT	xmlutils.h	81;"	d
+DECODE_XML_PROP_INT_DEFAULT	xmlutils.h	51;"	d
+DECODE_XML_PROP_INT_DEFAULT_HEX	xmlutils.h	66;"	d
+DECODE_XML_PROP_STR	xmlutils.h	159;"	d
+DECODE_XML_PROP_STR_DEFAULT	xmlutils.h	170;"	d
+DECODE_XML_PROP_UINT32	xmlutils.h	92;"	d
+DECODE_XML_PROP_UINT32_DEFAULT	xmlutils.h	105;"	d
+DEPDIR	Makefile	/^DEPDIR = $(WORKDIR)\/obj$/;"	m
+DEPS	Makefile	/^DEPS := $(patsubst %.cpp,%.d,$(subst $(SRCDIR),$(DEPDIR),$(SRCS)))$/;"	m
+DUPLICATE_STATE_ALL_LEAVE	duplicate_entity.h	/^    DUPLICATE_STATE_ALL_LEAVE               = 6, \/\/所有人都离开了$/;"	e	enum:duplicate_entity_status_t
+DUPLICATE_STATE_ALL_READY	duplicate_entity.h	/^    DUPLICATE_STATE_ALL_READY               = 3, \/\/所有人都准备好了$/;"	e	enum:duplicate_entity_status_t
+DUPLICATE_STATE_CAN_END	duplicate_entity.h	/^    DUPLICATE_STATE_CAN_END                 = 7, \/\/副本可以结束了$/;"	e	enum:duplicate_entity_status_t
+DUPLICATE_STATE_CLEAR	duplicate_entity.h	/^    DUPLICATE_STATE_CLEAR                   = 5, \/\/副本怪全清了$/;"	e	enum:duplicate_entity_status_t
+DUPLICATE_STATE_CREATE	duplicate_entity.h	/^    DUPLICATE_STATE_CREATE                  = 1, \/\/副本被创建$/;"	e	enum:duplicate_entity_status_t
+DUPLICATE_STATE_START	duplicate_entity.h	/^    DUPLICATE_STATE_START                   = 4, \/\/副本开始了$/;"	e	enum:duplicate_entity_status_t
+DUPLICATE_STATE_WAIT_PLAYER_READY	duplicate_entity.h	/^    DUPLICATE_STATE_WAIT_PLAYER_READY       = 2, \/\/等待玩家准备$/;"	e	enum:duplicate_entity_status_t
+DUP_ACTOR_TEAM_ENEMY	duplicate_conf.h	/^    DUP_ACTOR_TEAM_ENEMY = 0, \/\/敌军$/;"	e	enum:duplicate_actor_team_t
+DUP_ACTOR_TEAM_FRIEND	duplicate_conf.h	/^    DUP_ACTOR_TEAM_FRIEND = 1, \/\/友军$/;"	e	enum:duplicate_actor_team_t
+DUP_ACTOR_TEAM_NON_COUNT	duplicate_conf.h	/^    DUP_ACTOR_TEAM_NON_COUNT = 2, \/\/非敌非友，可以打，但打死不计入杀怪$/;"	e	enum:duplicate_actor_team_t
+DUP_ACTOR_TYPE_BUILDER	duplicate_conf.h	/^    DUP_ACTOR_TYPE_BUILDER = 3, \/\/builder$/;"	e	enum:duplicate_actor_type_t
+DUP_ACTOR_TYPE_NPC	duplicate_conf.h	/^    DUP_ACTOR_TYPE_NPC = 2, \/\/NPC$/;"	e	enum:duplicate_actor_type_t
+DUP_ACTOR_TYPE_PET	duplicate_conf.h	/^    DUP_ACTOR_TYPE_PET = 0, \/\/精灵$/;"	e	enum:duplicate_actor_type_t
+DUP_ACTOR_TYPE_PLAYER	duplicate_conf.h	/^    DUP_ACTOR_TYPE_PLAYER = 1, \/\/角色$/;"	e	enum:duplicate_actor_type_t
+DUP_BTL_TYPE_ERR	duplicate_conf.h	/^    DUP_BTL_TYPE_ERR = 0,$/;"	e	enum:duplicate_battle_type_t
+DUP_BTL_TYPE_PPVE	duplicate_conf.h	/^    DUP_BTL_TYPE_PPVE = 2, \/\/多人pve$/;"	e	enum:duplicate_battle_type_t
+DUP_BTL_TYPE_PVE	duplicate_conf.h	/^    DUP_BTL_TYPE_PVE = 1,   \/\/pve$/;"	e	enum:duplicate_battle_type_t
+DUP_BTL_TYPE_PVEP	duplicate_conf.h	/^    DUP_BTL_TYPE_PVEP = 6, \/\/手动pvep$/;"	e	enum:duplicate_battle_type_t
+DUP_BTL_TYPE_PVP	duplicate_conf.h	/^    DUP_BTL_TYPE_PVP = 3, \/\/pvp$/;"	e	enum:duplicate_battle_type_t
+DUP_BTL_TYPE_RPVP	duplicate_conf.h	/^    DUP_BTL_TYPE_RPVP = 5, \/\/手动竞技场$/;"	e	enum:duplicate_battle_type_t
+DUP_DIF_TYPE_ELITE	duplicate_conf.h	/^    DUP_DIF_TYPE_ELITE  = 2, \/\/精英$/;"	e	enum:duplicate_difficulty_type_t
+DUP_DIF_TYPE_NORMAL	duplicate_conf.h	/^    DUP_DIF_TYPE_NORMAL = 1, \/\/普通$/;"	e	enum:duplicate_difficulty_type_t
+DUP_OBJ_TYPE_BUILDER	duplicate_entity.h	9;"	d
+DUP_OBJ_TYPE_MON	duplicate_entity.h	8;"	d
+DUP_OBJ_TYPE_PET	duplicate_entity.h	7;"	d
+DUP_OBJ_TYPE_PLAYER	duplicate_entity.h	6;"	d
+DUP_OPEN_TYPE_ALL	duplicate_conf.h	/^    DUP_OPEN_TYPE_ALL = 0, \/\/开放$/;"	e	enum:duplicate_open_type_t
+DUP_OPEN_TYPE_DATE	duplicate_conf.h	/^    DUP_OPEN_TYPE_DATE = 1, \/\/日期内开放$/;"	e	enum:duplicate_open_type_t
+DUP_OPEN_TYPE_PHASE	duplicate_conf.h	/^    DUP_OPEN_TYPE_PHASE = 2, \/\/每日几点到几点开放$/;"	e	enum:duplicate_open_type_t
+DUP_PET_FLUSH_TRIG_TYPE_CLI	duplicate_conf.h	/^    DUP_PET_FLUSH_TRIG_TYPE_CLI = 1, \/\/前端请求刷怪$/;"	e	enum:duplicate_pet_flush_trigger_t
+DUP_PET_FLUSH_TRIG_TYPE_SVR	duplicate_conf.h	/^    DUP_PET_FLUSH_TRIG_TYPE_SVR = 0, \/\/服务器自动刷怪$/;"	e	enum:duplicate_pet_flush_trigger_t
+DUP_PET_FLUSH_TYPE_DEFAULT	duplicate_conf.h	/^    DUP_PET_FLUSH_TYPE_DEFAULT = 0, \/\/不按波刷怪$/;"	e	enum:duplicate_pet_flush_type_t
+DUP_PET_FLUSH_TYPE_PHASE	duplicate_conf.h	/^    DUP_PET_FLUSH_TYPE_PHASE = 1, \/\/按波刷怪$/;"	e	enum:duplicate_pet_flush_type_t
+DUP_REVIVAL_TYPE_ALL	duplicate_entity.h	13;"	d
+DUP_REVIVAL_TYPE_PET	duplicate_entity.h	12;"	d
+DUP_REVIVAL_TYPE_PLAYER	duplicate_entity.h	11;"	d
+DataProtoUtils	data_proto_utils.h	/^class DataProtoUtils$/;"	c
+DupActionActorBorn	duplicate_trigger.h	/^    DupActionActorBorn() $/;"	f	class:DupActionActorBorn
+DupActionActorBorn	duplicate_trigger.h	/^class DupActionActorBorn : public DupActionBase {$/;"	c
+DupActionBase	duplicate_trigger.h	/^    DupActionBase(dup_action_type_t type) {$/;"	f	class:DupActionBase
+DupActionBase	duplicate_trigger.h	/^class DupActionBase {$/;"	c
+DupActionEndDup	duplicate_trigger.h	/^    DupActionEndDup() $/;"	f	class:DupActionEndDup
+DupActionEndDup	duplicate_trigger.h	/^class DupActionEndDup : public DupActionBase {$/;"	c
+DupActionEndPhase	duplicate_trigger.h	/^    DupActionEndPhase() $/;"	f	class:DupActionEndPhase
+DupActionEndPhase	duplicate_trigger.h	/^class DupActionEndPhase : public DupActionBase {$/;"	c
+DupActionEndScene	duplicate_trigger.h	/^    DupActionEndScene() $/;"	f	class:DupActionEndScene
+DupActionEndScene	duplicate_trigger.h	/^class DupActionEndScene : public DupActionBase {$/;"	c
+DupActionReadyScene	duplicate_trigger.h	/^    DupActionReadyScene() $/;"	f	class:DupActionReadyScene
+DupActionReadyScene	duplicate_trigger.h	/^class DupActionReadyScene : public DupActionBase {$/;"	c
+DupActionRoleRecover	duplicate_trigger.h	/^    DupActionRoleRecover() $/;"	f	class:DupActionRoleRecover
+DupActionRoleRecover	duplicate_trigger.h	/^class DupActionRoleRecover : public DupActionBase {$/;"	c
+DupActionStartDup	duplicate_trigger.h	/^    DupActionStartDup() $/;"	f	class:DupActionStartDup
+DupActionStartDup	duplicate_trigger.h	/^class DupActionStartDup : public DupActionBase {$/;"	c
+DupActionStartPhase	duplicate_trigger.h	/^    DupActionStartPhase() $/;"	f	class:DupActionStartPhase
+DupActionStartPhase	duplicate_trigger.h	/^class DupActionStartPhase : public DupActionBase {$/;"	c
+DupActionStartScene	duplicate_trigger.h	/^    DupActionStartScene() $/;"	f	class:DupActionStartScene
+DupActionStartScene	duplicate_trigger.h	/^class DupActionStartScene : public DupActionBase {$/;"	c
+DupCondAllPlayerDead	duplicate_trigger.h	/^    DupCondAllPlayerDead()$/;"	f	class:DupCondAllPlayerDead
+DupCondAllPlayerDead	duplicate_trigger.h	/^class DupCondAllPlayerDead : public DupCondBase {$/;"	c
+DupCondAllReady	duplicate_trigger.h	/^    DupCondAllReady()$/;"	f	class:DupCondAllReady
+DupCondAllReady	duplicate_trigger.h	/^class DupCondAllReady : public DupCondBase {$/;"	c
+DupCondAtPhase	duplicate_trigger.h	/^    DupCondAtPhase()$/;"	f	class:DupCondAtPhase
+DupCondAtPhase	duplicate_trigger.h	/^class DupCondAtPhase : public DupCondBase {$/;"	c
+DupCondAtScene	duplicate_trigger.h	/^    DupCondAtScene()$/;"	f	class:DupCondAtScene
+DupCondAtScene	duplicate_trigger.h	/^class DupCondAtScene : public DupCondBase {$/;"	c
+DupCondBase	duplicate_trigger.h	/^    DupCondBase(dup_cond_type_t type) {$/;"	f	class:DupCondBase
+DupCondBase	duplicate_trigger.h	/^class DupCondBase {$/;"	c
+DupCondBossHpLess	duplicate_trigger.h	/^    DupCondBossHpLess()$/;"	f	class:DupCondBossHpLess
+DupCondBossHpLess	duplicate_trigger.h	/^class DupCondBossHpLess : public DupCondBase {$/;"	c
+DupCondBossShowTimeUp	duplicate_trigger.h	/^    DupCondBossShowTimeUp()$/;"	f	class:DupCondBossShowTimeUp
+DupCondBossShowTimeUp	duplicate_trigger.h	/^class DupCondBossShowTimeUp : public DupCondBase {$/;"	c
+DupCondEndPhase	duplicate_trigger.h	/^    DupCondEndPhase()$/;"	f	class:DupCondEndPhase
+DupCondEndPhase	duplicate_trigger.h	/^class DupCondEndPhase : public DupCondBase {$/;"	c
+DupCondEndScene	duplicate_trigger.h	/^    DupCondEndScene()$/;"	f	class:DupCondEndScene
+DupCondEndScene	duplicate_trigger.h	/^class DupCondEndScene : public DupCondBase {$/;"	c
+DupCondFrontMonFlushReq	duplicate_trigger.h	/^    DupCondFrontMonFlushReq()$/;"	f	class:DupCondFrontMonFlushReq
+DupCondFrontMonFlushReq	duplicate_trigger.h	/^class DupCondFrontMonFlushReq : public DupCondBase {$/;"	c
+DupCondIntoArea	duplicate_trigger.h	/^    DupCondIntoArea()$/;"	f	class:DupCondIntoArea
+DupCondIntoArea	duplicate_trigger.h	/^class DupCondIntoArea : public DupCondBase {$/;"	c
+DupCondIntoScene	duplicate_trigger.h	/^    DupCondIntoScene()$/;"	f	class:DupCondIntoScene
+DupCondIntoScene	duplicate_trigger.h	/^class DupCondIntoScene : public DupCondBase {$/;"	c
+DupCondMonFlushTimerUp	duplicate_trigger.h	/^    DupCondMonFlushTimerUp()$/;"	f	class:DupCondMonFlushTimerUp
+DupCondMonFlushTimerUp	duplicate_trigger.h	/^class DupCondMonFlushTimerUp : public DupCondBase {$/;"	c
+DupCondMonsterCountLow	duplicate_trigger.h	/^    DupCondMonsterCountLow()$/;"	f	class:DupCondMonsterCountLow
+DupCondMonsterCountLow	duplicate_trigger.h	/^class DupCondMonsterCountLow : public DupCondBase {$/;"	c
+DupCondMonsterKilled	duplicate_trigger.h	/^    DupCondMonsterKilled()$/;"	f	class:DupCondMonsterKilled
+DupCondMonsterKilled	duplicate_trigger.h	/^class DupCondMonsterKilled : public DupCondBase {$/;"	c
+DupCondPhaseKillBossMonster	duplicate_trigger.h	/^    DupCondPhaseKillBossMonster()$/;"	f	class:DupCondPhaseKillBossMonster
+DupCondPhaseKillBossMonster	duplicate_trigger.h	/^class DupCondPhaseKillBossMonster : public DupCondBase {$/;"	c
+DupCondPhaseKillMonsterCount	duplicate_trigger.h	/^    DupCondPhaseKillMonsterCount()$/;"	f	class:DupCondPhaseKillMonsterCount
+DupCondPhaseKillMonsterCount	duplicate_trigger.h	/^class DupCondPhaseKillMonsterCount : public DupCondBase {$/;"	c
+DupCondPhaseTimerUp	duplicate_trigger.h	/^    DupCondPhaseTimerUp()$/;"	f	class:DupCondPhaseTimerUp
+DupCondPhaseTimerUp	duplicate_trigger.h	/^class DupCondPhaseTimerUp : public DupCondBase {$/;"	c
+DupCondPlayerDead	duplicate_trigger.h	/^    DupCondPlayerDead()$/;"	f	class:DupCondPlayerDead
+DupCondPlayerDead	duplicate_trigger.h	/^class DupCondPlayerDead : public DupCondBase {$/;"	c
+DupCondPlayerHpLess	duplicate_trigger.h	/^    DupCondPlayerHpLess()$/;"	f	class:DupCondPlayerHpLess
+DupCondPlayerHpLess	duplicate_trigger.h	/^class DupCondPlayerHpLess : public DupCondBase {$/;"	c
+DupCondReadyScene	duplicate_trigger.h	/^    DupCondReadyScene()$/;"	f	class:DupCondReadyScene
+DupCondReadyScene	duplicate_trigger.h	/^class DupCondReadyScene : public DupCondBase {$/;"	c
+DupCondStartPhase	duplicate_trigger.h	/^    DupCondStartPhase()$/;"	f	class:DupCondStartPhase
+DupCondStartPhase	duplicate_trigger.h	/^class DupCondStartPhase : public DupCondBase {$/;"	c
+DupCondStartScene	duplicate_trigger.h	/^    DupCondStartScene()$/;"	f	class:DupCondStartScene
+DupCondStartScene	duplicate_trigger.h	/^class DupCondStartScene : public DupCondBase {$/;"	c
+DupCondTimeUp	duplicate_trigger.h	/^    DupCondTimeUp()$/;"	f	class:DupCondTimeUp
+DupCondTimeUp	duplicate_trigger.h	/^class DupCondTimeUp : public DupCondBase {$/;"	c
+DupCondUseSkill	duplicate_trigger.h	/^    DupCondUseSkill()$/;"	f	class:DupCondUseSkill
+DupCondUseSkill	duplicate_trigger.h	/^class DupCondUseSkill : public DupCondBase {$/;"	c
+DuplicateRelayCmdProcessor	duplicate_processor.h	/^class DuplicateRelayCmdProcessor : public CmdProcessorInterface {$/;"	c
+DuplicateTrigCmdProcessor	duplicate_processor.h	/^class DuplicateTrigCmdProcessor : public CmdProcessorInterface {$/;"	c
+ERR_RT	xml_configs.cpp	21;"	d	file:
+EnterDuplicateCmdProcessor	duplicate_processor.h	/^class EnterDuplicateCmdProcessor : public CmdProcessorInterface {$/;"	c
+FLUSH_TYPE_SELF_CONTROL	duplicate_trigger.cpp	14;"	d	file:
+FLUSH_TYPE_SELF_CONTROLLED	duplicate_trigger.cpp	17;"	d	file:
+FLUSH_TYPE_TOTAL_CONTROL	duplicate_trigger.cpp	15;"	d	file:
+FLUSH_TYPE_TOTAL_RAND	duplicate_trigger.cpp	16;"	d	file:
+FOREACH	macro_utils.h	21;"	d
+FOREACH_NOINCR_ITER	macro_utils.h	27;"	d
+GET_A	macro_utils.h	4;"	d
+GLOBAL_DATA_H	global_data.h	2;"	d
+HASH_RANDOM_MASK	utils.h	13;"	d
+HASH_RANDOM_MASK2	utils.h	14;"	d
+HEADERS	Makefile	/^HEADERS = $(wildcard $(INCLUDEDIR)\/*.h)$/;"	m
+INCLUDEDIR	Makefile	/^INCLUDEDIR = $(WORKDIR)\/src$/;"	m
+INCR_A_TO	macro_utils.h	19;"	d
+LFLAGS	Makefile	/^LFLAGS = -Wall -Werror -ggdb \\$/;"	m
+LIB_BATTLE_DIR	Makefile	/^LIB_BATTLE_DIR = $(PROTODIR)\/battle$/;"	m
+LIB_BATTLE_MAKEFILE_DIR	Makefile	/^LIB_BATTLE_MAKEFILE_DIR = $(LIB_BATTLE_DIR)\/define$/;"	m
+LIB_BATTLE_PROTO	Makefile	/^LIB_BATTLE_PROTO = $(LIB_BATTLE_DIR)\/libbattleproto.a$/;"	m
+LIB_CLIENT_DIR	Makefile	/^LIB_CLIENT_DIR = $(PROTODIR)\/client$/;"	m
+LIB_CLIENT_MAKEFILE_DIR	Makefile	/^LIB_CLIENT_MAKEFILE_DIR = $(LIB_CLIENT_DIR)\/define$/;"	m
+LIB_CLIENT_PROTO	Makefile	/^LIB_CLIENT_PROTO = $(LIB_CLIENT_DIR)\/libclientproto.a$/;"	m
+LIB_COMMON_DIR	Makefile	/^LIB_COMMON_DIR=$(PROTODIR)\/client$/;"	m
+LIB_COMMON_MAKEFILE_DIR	Makefile	/^LIB_COMMON_MAKEFILE_DIR=$(LIB_COMMON_DIR)\/common_make$/;"	m
+LIB_COMMON_PROTO	Makefile	/^LIB_COMMON_PROTO=$(LIB_COMMON_DIR)\/libcommonproto.a$/;"	m
+LIB_SVR_COMMON_DIR	Makefile	/^LIB_SVR_COMMON_DIR=$(PROTODIR)\/common$/;"	m
+LIB_SVR_COMMON_MAKEFILE_DIR	Makefile	/^LIB_SVR_COMMON_MAKEFILE_DIR=$(LIB_SVR_COMMON_DIR)\/define$/;"	m
+LIB_SVR_COMMON_PROTO	Makefile	/^LIB_SVR_COMMON_PROTO=$(LIB_SVR_COMMON_DIR)\/libsvr_commonproto.a$/;"	m
+MAX_ACTION_CONDS	duplicate_conf.h	7;"	d
+MCAST_UTILS_H	mcast_utils.h	2;"	d
+MON_MUST_ALIVE	duplicate_processor.cpp	279;"	d	file:
+MON_TYPE_BOSS	pet_conf.h	/^    MON_TYPE_BOSS   = 2,$/;"	e	enum:mon_type_t
+MON_TYPE_ELITE	pet_conf.h	/^    MON_TYPE_ELITE  = 1,$/;"	e	enum:mon_type_t
+MON_TYPE_NORMAL	pet_conf.h	/^    MON_TYPE_NORMAL = 0,$/;"	e	enum:mon_type_t
+MUST_DIFF_TEAM	duplicate_processor.cpp	290;"	d	file:
+MY_ASSERT	utils.h	16;"	d
+McastUtils	mcast_utils.h	/^class McastUtils {$/;"	c
+NOW	macro_utils.h	34;"	d
+OBJDIR	Makefile	/^OBJDIR = $(WORKDIR)\/obj$/;"	m
+OBJS	Makefile	/^OBJS := $(patsubst %.cpp,%.o,$(subst $(SRCDIR),$(OBJDIR),$(SRCS)))$/;"	m
+OBJS	Makefile	/^OBJS := $(subst $(OBJDIR)\/global_data.o,,$(OBJS))$/;"	m
+OL_REVISION	dll_iface.h	6;"	d
+PARSE_MSG	cmd_processor_interface.h	105;"	d
+PET_MUST_ALIVE	duplicate_processor.cpp	263;"	d	file:
+PET_MUST_EXIST	duplicate_processor.cpp	254;"	d	file:
+PLAYER_DEAD	duplicate_entity.h	/^    PLAYER_DEAD         = 4, \/\/死亡$/;"	e	enum:player_duplicate_status_t
+PLAYER_EXIT	duplicate_entity.h	/^    PLAYER_EXIT         = 5, \/\/退出$/;"	e	enum:player_duplicate_status_t
+PLAYER_IN	duplicate_entity.h	/^    PLAYER_IN           = 1, \/\/进入$/;"	e	enum:player_duplicate_status_t
+PLAYER_LEAVE	duplicate_entity.h	/^    PLAYER_LEAVE        = 6, \/\/离开地图(有可能离线)$/;"	e	enum:player_duplicate_status_t
+PLAYER_MGR	player_manager.h	58;"	d
+PLAYER_MUST_ALIVE	duplicate_processor.cpp	239;"	d	file:
+PLAYER_NOTHING	duplicate_entity.h	/^    PLAYER_NOTHING      = 0, \/\/啥也没干$/;"	e	enum:player_duplicate_status_t
+PLAYER_PLAY	duplicate_entity.h	/^    PLAYER_PLAY         = 3, \/\/进行$/;"	e	enum:player_duplicate_status_t
+PLAYER_READY	duplicate_entity.h	/^    PLAYER_READY        = 2, \/\/准备$/;"	e	enum:player_duplicate_status_t
+PROTOBUF_CFLAGS	Makefile	/^PROTOBUF_CFLAGS = $(shell pkg-config --cflags protobuf)$/;"	m
+PROTOBUF_LFLAGS	Makefile	/^PROTOBUF_LFLAGS = $(shell pkg-config --libs protobuf)$/;"	m
+PROTODIR	Makefile	/^PROTODIR = $(WORKDIR)\/..\/proto$/;"	m
+PROTO_FROM_CLIENT	proto_processor.h	/^    PROTO_FROM_CLIENT = 0,$/;"	e	enum:__anon1
+PROTO_FROM_SERV	proto_processor.h	/^    PROTO_FROM_SERV = 1,$/;"	e	enum:__anon1
+PROTO_H	proto.h	2;"	d
+PROTO_PROCESSOR_H	proto_processor.h	2;"	d
+Pet	pet.h	/^    inline Pet() { clear(); }$/;"	f	class:Pet
+Pet	pet.h	/^class Pet$/;"	c
+ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::ProtoProcessor()$/;"	f	class:ProtoProcessor
+ProtoProcessor	proto_processor.h	/^class ProtoProcessor$/;"	c
+REGISTER_TIMER_TYPE	timer_procs.cpp	10;"	d	file:
+RETURN_ERR	macro_utils.h	36;"	d
+REVERSE_FOREACH	macro_utils.h	24;"	d
+REVERSE_FOREACH_NOINCR_ITER	macro_utils.h	30;"	d
+RevivalDuplicateCmdProcessor	duplicate_processor.h	/^class RevivalDuplicateCmdProcessor : public CmdProcessorInterface {$/;"	c
+SERVER_H	dll_iface.h	3;"	d
+SET_A	macro_utils.h	7;"	d
+SET_BIT	macro_utils.h	17;"	d
+SIDE0	duplicate_entity.h	/^    SIDE0           = 0, \/\/没有边$/;"	e	enum:player_duplicate_side_t
+SIDE1	duplicate_entity.h	/^    SIDE1           = 1,$/;"	e	enum:player_duplicate_side_t
+SIDE2	duplicate_entity.h	/^    SIDE2           = 2,$/;"	e	enum:player_duplicate_side_t
+SRCDIR	Makefile	/^SRCDIR = $(WORKDIR)\/src$/;"	m
+SRCS	Makefile	/^SRCS = $(shell ls -I "global_data*" $(SRCDIR)\/*.cpp)$/;"	m
+STRCPY_SAFE	utils.h	6;"	d
+SUB_A	macro_utils.h	13;"	d
+SqlDB	singleton.h	/^typedef singleton_default<SqlDB_t> SqlDB;$/;"	t
+SqlDB_t	singleton.h	/^class SqlDB_t  $/;"	c
+T1	xmlutils.h	/^size_t decode_xml_prop_arr_default(T1 (&arr)[len], xmlNodePtr cur, const void* prop, const T2& def)$/;"	v
+TARGET	Makefile	/^TARGET = $(BINDIR)\/libbattle.so$/;"	m
+TIMER_PROCS_H	timer_procs.h	2;"	d
+TimeUtils	time_utils.h	/^class TimeUtils {$/;"	c
+UTILS_H	utils.h	2;"	d
+Utils	utils.h	/^class Utils$/;"	c
+WORKDIR	Makefile	/^WORKDIR = ..$/;"	m
+XMLUTILS_H_	xmlutils.h	17;"	d
+XML_CONFIGS_H	xml_configs.h	2;"	d
+__AFFIX_H__	affix_conf.h	2;"	d
+__BATTLE_ENTITY_H__	duplicate_entity.h	2;"	d
+__BUILDER_CONF_H__	builder_conf.h	2;"	d
+__COMMON_H__	common.h	2;"	d
+__DUPLICATE_H__	duplicate_conf.h	2;"	d
+__DUPLICATE_PROCESSOR_H__	duplicate_processor.h	2;"	d
+__DUP_TRIGGER_H__	duplicate_trigger.h	2;"	d
+__MACRO_UTILS_H__	macro_utils.h	2;"	d
+__MAP_CONF_H__	map_conf.h	2;"	d
+__PET_CONF_H__	pet_conf.h	2;"	d
+__PET_H__	pet.h	2;"	d
+__PLAYER_H__	player.h	2;"	d
+__PLAYER_MANAGER_H__	player_manager.h	2;"	d
+__SINGLETON_H__	singleton.h	2;"	d
+__SKILL_CONF_H__	skill_conf.h	2;"	d
+__TIME_UTILS_H__	time_utils.h	2;"	d
+act	duplicate_trigger.cpp	/^int DupActionActorBorn::act(duplicate_entity_t *entity)$/;"	f	class:DupActionActorBorn
+act	duplicate_trigger.cpp	/^int DupActionEndDup::act(duplicate_entity_t *entity)$/;"	f	class:DupActionEndDup
+act	duplicate_trigger.cpp	/^int DupActionEndPhase::act(duplicate_entity_t *entity)$/;"	f	class:DupActionEndPhase
+act	duplicate_trigger.cpp	/^int DupActionEndScene::act(duplicate_entity_t *entity)$/;"	f	class:DupActionEndScene
+act	duplicate_trigger.cpp	/^int DupActionReadyScene::act(duplicate_entity_t *entity)$/;"	f	class:DupActionReadyScene
+act	duplicate_trigger.cpp	/^int DupActionRoleRecover::act(duplicate_entity_t *entity)$/;"	f	class:DupActionRoleRecover
+act	duplicate_trigger.cpp	/^int DupActionStartDup::act(duplicate_entity_t *entity)$/;"	f	class:DupActionStartDup
+act	duplicate_trigger.cpp	/^int DupActionStartPhase::act(duplicate_entity_t *entity)$/;"	f	class:DupActionStartPhase
+act	duplicate_trigger.cpp	/^int DupActionStartScene::act(duplicate_entity_t *entity)$/;"	f	class:DupActionStartScene
+actable	duplicate_trigger.cpp	/^bool DupActionBase::actable(duplicate_entity_t *entity)$/;"	f	class:DupActionBase
+action_vec	duplicate_conf.h	/^    std::vector<DupActionBase*> action_vec; \/\/该副本所有的行为$/;"	m	struct:duplicate_t
+add_affix_conf	affix_conf.h	/^    inline bool add_affix_conf(affix_conf_t &affix_conf) {$/;"	f	class:affix_conf_manager_t
+add_battle_player	duplicate_entity.cpp	/^uint32_t dup_entity_mgr_t::add_battle_player($/;"	f	class:dup_entity_mgr_t
+add_builder_conf	builder_conf.h	/^    inline bool add_builder_conf(builder_conf_t &builder_conf) {$/;"	f	class:builder_conf_manager_t
+add_duplicate	duplicate_conf.h	/^    inline bool add_duplicate(duplicate_t &dup) {$/;"	f	class:duplicate_conf_manager_t
+add_map_conf	map_conf.h	/^    inline bool add_map_conf(const map_conf_t &map) {$/;"	f	class:map_conf_manager_t
+add_pet_conf	pet_conf.h	/^    inline bool add_pet_conf(pet_conf_t &pet_conf) {$/;"	f	class:pet_conf_manager_t
+add_player	player_manager.cpp	/^void player_manager_t::add_player(player_t *p)$/;"	f	class:player_manager_t
+add_skill_conf	skill_conf.h	/^    inline bool add_skill_conf(skill_conf_t &skill_conf) {$/;"	f	class:skill_conf_manager_t
+affix_conf_exist	affix_conf.h	/^    inline bool affix_conf_exist(uint32_t affix_id) {$/;"	f	class:affix_conf_manager_t
+affix_conf_manager_t	affix_conf.h	/^    affix_conf_manager_t() {$/;"	f	class:affix_conf_manager_t
+affix_conf_manager_t	affix_conf.h	/^class affix_conf_manager_t {$/;"	c
+affix_conf_map_	affix_conf.h	/^    std::map<uint32_t, affix_conf_t> affix_conf_map_;$/;"	m	class:affix_conf_manager_t
+affix_conf_t	affix_conf.h	/^    affix_conf_t() {$/;"	f	struct:affix_conf_t
+affix_conf_t	affix_conf.h	/^struct affix_conf_t {$/;"	s
+affix_id	affix_conf.h	/^    uint32_t affix_id;$/;"	m	struct:affix_conf_t
+affix_list	duplicate_entity.h	/^    std::set<uint32_t> affix_list; \/\/ 词缀列表$/;"	m	struct:duplicate_map_pet_t
+affix_list_pool	pet_conf.h	/^    std::vector<std::vector<uint32_t> > affix_list_pool; \/\/ 怪物词缀库$/;"	m	struct:pet_conf_t
+affix_type_exist	affix_conf.h	/^    inline bool affix_type_exist(uint32_t type) {$/;"	f	class:affix_conf_manager_t
+affix_type_map_	affix_conf.h	/^    std::map<uint32_t, std::vector<affix_conf_t> > affix_type_map_;$/;"	m	class:affix_conf_manager_t
+ai_start_delay	duplicate_conf.h	/^    uint32_t ai_start_delay; \/\/出生后ai延迟行动的时间(毫秒)$/;"	m	struct:duplicate_actor_t
+ai_start_delay	duplicate_entity.h	/^    uint32_t ai_start_delay; \/\/出生后ai延迟行动的时间(毫秒)$/;"	m	struct:duplicate_map_pet_t
+anti_type_t	pet_conf.h	/^enum anti_type_t {$/;"	g
+anti_value	pet.h	/^    inline int anti_value(int idx) const {$/;"	f	class:Pet
+anti_values_	pet.h	/^    int anti_values_[kMaxAntiNum]; \/\/抗性$/;"	m	class:Pet
+args	duplicate_trigger.h	/^    std::vector<uint32_t> args;$/;"	m	class:DupActionBase
+args	duplicate_trigger.h	/^    std::vector<uint32_t> args;$/;"	m	class:DupCondBase
+args_match	duplicate_trigger.cpp	/^bool DupCondBase::args_match(std::vector<uint32_t> &args)$/;"	f	class:DupCondBase
+around_create_tm	duplicate_entity.h	/^    uint32_t around_create_tm;$/;"	m	struct:duplicate_map_pet_t
+around_radius	duplicate_entity.h	/^    uint32_t around_radius;$/;"	m	struct:duplicate_map_pet_t
+around_type	duplicate_entity.h	/^    uint32_t around_type;$/;"	m	struct:duplicate_map_pet_t
+basic_hide_battle_values	builder_conf.h	/^    uint32_t basic_hide_battle_values[kMaxBattleValueHideTypeNum]; \/\/基础的隐藏战斗属性值$/;"	m	struct:builder_conf_t
+basic_hide_battle_values	pet_conf.h	/^    uint32_t basic_hide_battle_values[kMaxBattleValueHideTypeNum]; \/\/基础的隐藏战斗属性值$/;"	m	struct:pet_conf_t
+basic_hide_battle_values_grow	builder_conf.h	/^    uint32_t basic_hide_battle_values_grow[kMaxBattleValueHideTypeNum]; \/\/基础的隐藏战斗属性按等级的成长率$/;"	m	struct:builder_conf_t
+basic_hide_battle_values_grow	pet_conf.h	/^    uint32_t basic_hide_battle_values_grow[kMaxBattleValueHideTypeNum]; \/\/基础的隐藏战斗属性按等级的成长率$/;"	m	struct:pet_conf_t
+basic_normal_battle_values	builder_conf.h	/^    uint32_t basic_normal_battle_values[kMaxBattleValueTypeNum]; \/\/ 基础战斗属性$/;"	m	struct:builder_conf_t
+basic_normal_battle_values	pet_conf.h	/^    uint32_t basic_normal_battle_values[kMaxBattleValueTypeNum]; \/\/ 基础战斗属性$/;"	m	struct:pet_conf_t
+basic_normal_battle_values_grow	builder_conf.h	/^    uint32_t basic_normal_battle_values_grow[kMaxBattleValueTypeNum]; \/\/基础战斗属性的等级成长率$/;"	m	struct:builder_conf_t
+basic_normal_battle_values_grow	pet_conf.h	/^    uint32_t basic_normal_battle_values_grow[kMaxBattleValueTypeNum]; \/\/基础战斗属性的等级成长率$/;"	m	struct:pet_conf_t
+batch_del_players	player_manager.cpp	/^void player_manager_t::batch_del_players(int fd)$/;"	f	class:player_manager_t
+battle_players	duplicate_entity.h	/^    std::map<uint32_t, std::set<player_t*> > *battle_players; \/\/当前副本上所有玩家的信息$/;"	m	struct:duplicate_entity_t
+battle_side_players_t	duplicate_entity.h	/^struct  battle_side_players_t{$/;"	s
+battle_type	duplicate_conf.h	/^    duplicate_battle_type_t battle_type; \/\/副本战斗类型 pvp pve ppve$/;"	m	struct:duplicate_t
+battle_value	pet.h	/^    inline uint32_t battle_value(int type) const {$/;"	f	class:Pet
+battle_value_hide	pet.h	/^    inline uint32_t battle_value_hide(int type) const {$/;"	f	class:Pet
+battle_value_hide_type_t	pet_conf.h	/^enum battle_value_hide_type_t {$/;"	g
+battle_value_normal_type_t	pet_conf.h	/^enum battle_value_normal_type_t {$/;"	g
+battle_values_	pet.h	/^    int battle_values_[kMaxBattleValueTypeNum]; \/\/ 战斗数值 - 精灵天生数值(等级决定) + 符文 + 天赋 +学习力$/;"	m	class:Pet
+battle_values_hide_	pet.h	/^    int battle_values_hide_[kMaxBattleValueHideTypeNum];\/\/精灵隐藏属性。$/;"	m	class:Pet
+before_reload	dll_iface.cpp	/^extern "C" int before_reload(int isparent)$/;"	f
+bin2hex	utils.cpp	/^std::string Utils::bin2hex(const std::string& bin) $/;"	f	class:Utils
+born_action	duplicate_conf.h	/^    uint32_t born_action; \/\/出生后的行为$/;"	m	struct:duplicate_actor_t
+born_action	duplicate_entity.h	/^    uint32_t born_action;$/;"	m	struct:duplicate_map_pet_t
+born_action_args	duplicate_conf.h	/^    std::string born_action_args; \/\/出生后的行为参数$/;"	m	struct:duplicate_actor_t
+born_action_args	duplicate_entity.h	/^    std::string born_action_args; \/\/出生后的行为参数$/;"	m	struct:duplicate_map_pet_t
+born_actors	duplicate_conf.h	/^    std::vector<duplicate_actor_t> born_actors; \/\/该出生点下的怪$/;"	m	struct:duplicate_born_area_t
+born_area_born_record	duplicate_entity.h	/^    std::map<uint32_t, uint32_t> *born_area_born_record; \/\/记录每阶段出生点的怪物刷出来的数量$/;"	m	struct:duplicate_entity_t
+born_area_dead_record	duplicate_entity.h	/^    std::map<uint32_t, uint32_t> *born_area_dead_record; \/\/记录每阶段出生点的怪物刷出来的数量$/;"	m	struct:duplicate_entity_t
+born_area_idx	duplicate_entity.h	/^    uint32_t born_area_idx; \/\/记录是哪个出生点的,死亡之后判定是否要刷怪$/;"	m	struct:duplicate_map_pet_t
+born_areas	duplicate_trigger.h	/^    std::map<uint32_t, duplicate_born_area_t> born_areas;$/;"	m	class:DupActionActorBorn
+born_effect	duplicate_conf.h	/^    uint32_t born_effect; \/\/出生特效$/;"	m	struct:duplicate_actor_t
+born_effect	duplicate_entity.h	/^    uint32_t born_effect;$/;"	m	struct:duplicate_map_pet_t
+born_radius	duplicate_conf.h	/^    uint32_t born_radius; \/\/出生点半径$/;"	m	struct:duplicate_born_area_t
+born_rate	duplicate_conf.h	/^    uint32_t born_rate; \/\/刷怪概率 10000为基数$/;"	m	struct:duplicate_born_area_t
+born_x	duplicate_conf.h	/^    uint32_t born_x; \/\/出生点x$/;"	m	struct:duplicate_born_area_t
+born_y	duplicate_conf.h	/^    uint32_t born_y; \/\/出生点y$/;"	m	struct:duplicate_born_area_t
+boss_show_time_limit	duplicate_conf.h	/^    uint32_t boss_show_time_limit; \/\/boss出现的时长$/;"	m	struct:duplicate_t
+boss_show_timer	duplicate_entity.h	/^    timer_struct_t *boss_show_timer;$/;"	m	struct:duplicate_entity_t
+boss_show_timer_up	timer_procs.cpp	/^int boss_show_timer_up(void *owner, void *data) $/;"	f
+buff_id	affix_conf.h	/^    uint32_t buff_id;$/;"	m	struct:affix_conf_t
+builder_conf_exist	builder_conf.h	/^    inline bool builder_conf_exist(uint32_t builder_id) {$/;"	f	class:builder_conf_manager_t
+builder_conf_manager_t	builder_conf.h	/^    builder_conf_manager_t() {$/;"	f	class:builder_conf_manager_t
+builder_conf_manager_t	builder_conf.h	/^class builder_conf_manager_t {$/;"	c
+builder_conf_map_	builder_conf.h	/^    std::map<uint32_t, builder_conf_t> builder_conf_map_;$/;"	m	class:builder_conf_manager_t
+builder_conf_t	builder_conf.h	/^    builder_conf_t() {$/;"	f	struct:builder_conf_t
+builder_conf_t	builder_conf.h	/^struct builder_conf_t {$/;"	s
+builder_vec	duplicate_conf.h	/^    std::vector<uint32_t> builder_vec;$/;"	m	struct:duplicate_t
+calc_battle_value	pet.cpp	/^void Pet::calc_battle_value()$/;"	f	class:Pet
+calc_power	pet.cpp	/^int Pet::calc_power()$/;"	f	class:Pet
+card_id	player.h	/^	uint32_t card_id;$/;"	m	struct:player_t
+cd	skill_conf.h	/^    uint32_t cd; \/\/技能cd$/;"	m	struct:skill_conf_t
+change_hp	pet.h	/^    inline void change_hp(int hp) {$/;"	f	class:Pet
+check_is_month_past	time_utils.cpp	/^bool TimeUtils::check_is_month_past(time_t start, time_t end)$/;"	f	class:TimeUtils
+check_is_week_past	time_utils.cpp	/^bool TimeUtils::check_is_week_past(time_t start, time_t end)$/;"	f	class:TimeUtils
+chisel_pets	player.h	/^    std::map<uint32_t, Pet> chisel_pets; \/\/刻印的精灵$/;"	m	struct:player_t
+chisel_pos	pet.h	/^    inline uint32_t chisel_pos() { return chisel_pos_;}$/;"	f	class:Pet
+chisel_pos_	pet.h	/^    uint32_t chisel_pos_;$/;"	m	class:Pet
+clear	builder_conf.h	/^    void clear() {$/;"	f	struct:builder_conf_t
+clear	duplicate_conf.h	/^    void clear() {$/;"	f	class:duplicate_conf_manager_t
+clear	duplicate_entity.cpp	/^void dup_entity_mgr_t::clear()$/;"	f	class:dup_entity_mgr_t
+clear	duplicate_entity.h	/^    void clear() {$/;"	f	struct:duplicate_map_pet_t
+clear	map_conf.h	/^    inline void clear() {$/;"	f	class:map_conf_manager_t
+clear	pet.h	/^    inline void clear() {$/;"	f	class:Pet
+clear	pet_conf.h	/^    void clear() {$/;"	f	struct:pet_conf_t
+clear	player.h	/^    void clear() {$/;"	f	struct:player_t
+cli_in_	duplicate_processor.h	/^    battleproto::cs_battle_duplicate_enter_map cli_in_;$/;"	m	class:EnterDuplicateCmdProcessor
+cli_in_	duplicate_processor.h	/^    battleproto::cs_battle_duplicate_revival cli_in_;$/;"	m	class:RevivalDuplicateCmdProcessor
+cli_in_	duplicate_processor.h	/^    battleproto::cs_battle_duplicate_trig cli_in_;$/;"	m	class:DuplicateTrigCmdProcessor
+cli_in_	duplicate_processor.h	/^    battleproto::cs_battle_relay cli_in_;$/;"	m	class:DuplicateRelayCmdProcessor
+cli_out_	duplicate_processor.h	/^    battleproto::sc_battle_duplicate_enter_map cli_out_;$/;"	m	class:EnterDuplicateCmdProcessor
+cli_out_	duplicate_processor.h	/^    battleproto::sc_battle_duplicate_revival cli_out_;$/;"	m	class:RevivalDuplicateCmdProcessor
+cli_out_	duplicate_processor.h	/^    battleproto::sc_battle_duplicate_trig cli_out_;$/;"	m	class:DuplicateTrigCmdProcessor
+cli_out_	duplicate_processor.h	/^    battleproto::sc_battle_relay cli_out_;$/;"	m	class:DuplicateRelayCmdProcessor
+cmd_processors_	proto_processor.h	/^    std::map<uint32_t, CmdProcessorInterface*> cmd_processors_;$/;"	m	class:ProtoProcessor
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondAllPlayerDead::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondAllPlayerDead
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondAllReady::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondAllReady
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondAtPhase::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondAtPhase
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondAtScene::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondAtScene
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondBase::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondBase
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondBossHpLess::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondBossHpLess
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondEndPhase::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondEndPhase
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondEndScene::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondEndScene
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondIntoArea::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondIntoArea
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondIntoScene::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondIntoScene
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondMonsterCountLow::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondMonsterCountLow
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondMonsterKilled::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondMonsterKilled
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondPhaseKillBossMonster::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondPhaseKillBossMonster
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondPhaseKillMonsterCount::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondPhaseKillMonsterCount
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondPlayerDead::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondPlayerDead
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondPlayerHpLess::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondPlayerHpLess
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondReadyScene::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondReadyScene
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondStartPhase::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondStartPhase
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondStartScene::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondStartScene
+cond_fulfill	duplicate_trigger.cpp	/^bool DupCondTimeUp::cond_fulfill(duplicate_entity_t *entity)$/;"	f	class:DupCondTimeUp
+cond_group	duplicate_trigger.h	/^    cond_group_t cond_group;$/;"	m	class:DupActionBase
+cond_group_t	duplicate_trigger.h	/^    typedef std::vector<cond_vec_t> cond_group_t;$/;"	t	class:DupActionBase
+cond_map	duplicate_conf.h	/^    std::map<uint32_t, std::vector<DupCondBase*> > cond_map;$/;"	m	struct:duplicate_t
+cond_vec_t	duplicate_trigger.h	/^    typedef std::vector<DupCondBase*> cond_vec_t;$/;"	t	class:DupActionBase
+conf_path	dll_iface.h	/^    char conf_path[256];$/;"	m	struct:server_config_t
+connect	singleton.h	/^	void connect() { cout << "connect db" << endl; }$/;"	f	class:SqlDB_t
+const_builder_conf_map	builder_conf.h	/^    const inline std::map<uint32_t, builder_conf_t>& const_builder_conf_map() const{$/;"	f	class:builder_conf_manager_t
+const_dup_map	duplicate_conf.h	/^    const inline std::map<uint32_t, duplicate_t>& const_dup_map() const{$/;"	f	class:duplicate_conf_manager_t
+const_map_conf_map	map_conf.h	/^    inline const std::map<uint32_t, map_conf_t> &const_map_conf_map() const {$/;"	f	class:map_conf_manager_t
+const_pet_conf_map	pet_conf.h	/^    const inline std::map<uint32_t, pet_conf_t>& const_pet_conf_map() const{$/;"	f	class:pet_conf_manager_t
+const_skill_conf_map	skill_conf.h	/^    const inline std::map<uint32_t, skill_conf_t>& const_skill_conf_map() const{$/;"	f	class:skill_conf_manager_t
+copy_from	builder_conf.h	/^    inline void copy_from(const builder_conf_manager_t &m) {$/;"	f	class:builder_conf_manager_t
+copy_from	duplicate_conf.h	/^    inline void copy_from(const duplicate_conf_manager_t &m) {$/;"	f	class:duplicate_conf_manager_t
+copy_from	map_conf.h	/^    inline void copy_from(const map_conf_manager_t &m) {$/;"	f	class:map_conf_manager_t
+copy_from	pet_conf.h	/^    inline void copy_from(const pet_conf_manager_t &m) {$/;"	f	class:pet_conf_manager_t
+copy_from	skill_conf.h	/^    inline void copy_from(const skill_conf_manager_t &m) {$/;"	f	class:skill_conf_manager_t
+create_action_by_name	duplicate_trigger.cpp	/^DupActionBase* create_action_by_name(string action_name)$/;"	f
+create_artifacial_player	player_manager.cpp	/^player_t *player_manager_t::create_artifacial_player(uint32_t uid, fdsession_t *fdsess)$/;"	f	class:player_manager_t
+create_cond_by_name	duplicate_trigger.cpp	/^DupCondBase* create_cond_by_name(string cond_name)$/;"	f
+create_entity	duplicate_entity.cpp	/^duplicate_entity_t* dup_entity_mgr_t::create_entity(uint32_t dup_id, uint32_t init_map_id)$/;"	f	class:dup_entity_mgr_t
+create_new_player	player_manager.cpp	/^player_t *player_manager_t::create_new_player(uint32_t uid, fdsession_t *fdsess)$/;"	f	class:player_manager_t
+create_object	singleton.h	/^	static object_creator create_object;$/;"	m	struct:singleton_default
+create_object	singleton.h	/^singleton_default<T>::create_object;$/;"	m	class:singleton_default
+create_tm	duplicate_entity.h	/^    uint32_t create_tm;$/;"	m	struct:duplicate_map_pet_t
+create_tm	pet.h	/^    inline uint32_t create_tm() const { return create_tm_; }$/;"	f	class:Pet
+create_tm	player.h	/^    uint32_t create_tm;$/;"	m	struct:player_t
+create_tm_	pet.h	/^    uint32_t create_tm_; \/\/捕获时间$/;"	m	class:Pet
+cur	xmlutils.h	/^size_t decode_xml_prop_arr_default(T1 (&arr)[len], xmlNodePtr cur, const void* prop, const T2& def)$/;"	v
+cur_dead_obj_idx	duplicate_entity.h	/^    uint32_t cur_dead_obj_idx;$/;"	m	struct:duplicate_entity_t
+cur_dead_obj_key	duplicate_entity.h	/^    uint32_t cur_dead_obj_key;$/;"	m	struct:duplicate_entity_t
+cur_hp	duplicate_entity.h	/^    uint32_t cur_hp;$/;"	m	struct:duplicate_map_pet_t
+cur_hp	player.h	/^    uint32_t cur_hp; \/\/当前血量在battle_info中有 但会实时改变$/;"	m	struct:player_t
+cur_map_dead_boss_set	duplicate_entity.h	/^    std::set<uint32_t> *cur_map_dead_boss_set; \/\/当前场景bosss是否被打死$/;"	m	struct:duplicate_entity_t
+cur_map_enemy	duplicate_entity.h	/^    std::map<uint32_t, duplicate_map_pet_t> *cur_map_enemy; \/\/当前场景中残余的敌人 NPC.野怪等$/;"	m	struct:duplicate_entity_t
+cur_map_id	duplicate_entity.h	/^    uint32_t cur_map_id; \/\/当前场景地图ID(副本里的场景是按顺序进行)$/;"	m	struct:duplicate_entity_t
+cur_map_non_enemy	duplicate_entity.h	/^    std::map<uint32_t, duplicate_map_pet_t> *cur_map_non_enemy; \/\/当前场景中的非敌人 机关,阻挡等$/;"	m	struct:duplicate_entity_t
+cur_map_phase	duplicate_entity.h	/^    uint32_t cur_map_phase; \/\/当前场景所处的阶段$/;"	m	struct:duplicate_entity_t
+cur_phase_born_obj_cnt	duplicate_entity.h	/^    uint32_t cur_phase_born_obj_cnt; \/\/当前阶段刷了多少对象出来$/;"	m	struct:duplicate_entity_t
+cur_phase_boss_out	duplicate_entity.h	/^    uint32_t cur_phase_boss_out; \/\/当前阶段的boss有没有刷出来$/;"	m	struct:duplicate_entity_t
+cur_phase_dead_pet_num	duplicate_entity.h	/^    uint32_t cur_phase_dead_pet_num; \/\/当前阶段打死敌人的怪的数量$/;"	m	struct:duplicate_entity_t
+cur_phase_enemy_num	duplicate_entity.h	/^    uint32_t cur_phase_enemy_num; \/\/当前阶段场景上存活的敌人数量$/;"	m	struct:duplicate_entity_t
+cur_seq	player.h	/^    uint32_t cur_seq;$/;"	m	struct:player_t
+cur_tp	player.h	/^    uint32_t cur_tp;$/;"	m	struct:player_t
+date_to_time	time_utils.cpp	/^time_t TimeUtils::date_to_time(uint32_t date)$/;"	f	class:TimeUtils
+day_align_high	time_utils.cpp	/^time_t TimeUtils::day_align_high(time_t time)$/;"	f	class:TimeUtils
+day_align_low	time_utils.cpp	/^time_t TimeUtils::day_align_low(time_t time)$/;"	f	class:TimeUtils
+day_str_to_long	time_utils.cpp	/^int TimeUtils:: day_str_to_long(const char* time_str, uint32_t& time_value)$/;"	f	class:TimeUtils
+dec_player_num	player_manager.h	/^    inline void dec_player_num() {$/;"	f	class:player_manager_t
+decode_xml_prop_default	xmlutils.h	/^void decode_xml_prop_default(T1& val, xmlNodePtr cur, const void* prop, const T2& def)$/;"	f
+decode_xml_prop_float_default	xmlutils.h	/^static inline void decode_xml_prop_float_default(float* val, xmlNodePtr cur, const void* prop, float def)$/;"	f
+decode_xml_prop_uint32_default	xmlutils.h	/^static inline void decode_xml_prop_uint32_default(uint32_t* val, xmlNodePtr cur, const void* prop, uint32_t def)$/;"	f
+decode_xml_prop_vct	xmlutils.h	/^size_t decode_xml_prop_vct(std::vector<T>& vct, xmlNodePtr cur, const void* prop)$/;"	f
+del_player	player_manager.cpp	/^void player_manager_t::del_player(player_t *p)$/;"	f	class:player_manager_t
+destroy_dup	timer_procs.cpp	/^int destroy_dup(void *owner, void *data)$/;"	f
+destroy_dup_timer	duplicate_entity.h	/^    timer_struct_t *destroy_dup_timer;$/;"	m	struct:duplicate_entity_t
+destroy_entity	duplicate_entity.cpp	/^void dup_entity_mgr_t::destroy_entity(duplicate_entity_t *dup_entity)$/;"	f	class:dup_entity_mgr_t
+do_nothing	singleton.h	/^		inline void do_nothing() const { }$/;"	f	struct:singleton_default::object_creator
+dup_action_type_actor_born	duplicate_trigger.h	/^    dup_action_type_actor_born          = 4,$/;"	e	enum:dup_action_type_t
+dup_action_type_end_dup	duplicate_trigger.h	/^    dup_action_type_end_dup             = 7,$/;"	e	enum:dup_action_type_t
+dup_action_type_end_phase	duplicate_trigger.h	/^    dup_action_type_end_phase           = 5,$/;"	e	enum:dup_action_type_t
+dup_action_type_end_scene	duplicate_trigger.h	/^    dup_action_type_end_scene           = 6,$/;"	e	enum:dup_action_type_t
+dup_action_type_max	duplicate_trigger.h	/^    dup_action_type_max,$/;"	e	enum:dup_action_type_t
+dup_action_type_ready_scene	duplicate_trigger.h	/^    dup_action_type_ready_scene         = 8,$/;"	e	enum:dup_action_type_t
+dup_action_type_role_recover	duplicate_trigger.h	/^    dup_action_type_role_recover        = 9,$/;"	e	enum:dup_action_type_t
+dup_action_type_start_dup	duplicate_trigger.h	/^    dup_action_type_start_dup           = 1,$/;"	e	enum:dup_action_type_t
+dup_action_type_start_phase	duplicate_trigger.h	/^    dup_action_type_start_phase         = 3,$/;"	e	enum:dup_action_type_t
+dup_action_type_start_scene	duplicate_trigger.h	/^    dup_action_type_start_scene         = 2,$/;"	e	enum:dup_action_type_t
+dup_action_type_t	duplicate_trigger.h	/^enum dup_action_type_t {$/;"	g
+dup_cond_type_all_player_dead	duplicate_trigger.h	/^    dup_cond_type_all_player_dead       = 13,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_all_ready	duplicate_trigger.h	/^    dup_cond_type_all_ready             = 12,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_at_phase	duplicate_trigger.h	/^    dup_cond_type_at_phase              = 4,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_at_scene	duplicate_trigger.h	/^    dup_cond_type_at_scene              = 5,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_boss_hp_less	duplicate_trigger.h	/^    dup_cond_type_boss_hp_less          = 19, \/\/boss血量少于xx$/;"	e	enum:dup_cond_type_t
+dup_cond_type_boss_show_time_up	duplicate_trigger.h	/^    dup_cond_type_boss_show_time_up     = 24, \/\/BOSS展示时间到期$/;"	e	enum:dup_cond_type_t
+dup_cond_type_end_phase	duplicate_trigger.h	/^    dup_cond_type_end_phase             = 10,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_end_scene	duplicate_trigger.h	/^    dup_cond_type_end_scene             = 11,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_front_mon_flush_req	duplicate_trigger.h	/^    dup_cond_type_front_mon_flush_req   = 21, \/\/前端请求刷怪$/;"	e	enum:dup_cond_type_t
+dup_cond_type_into_area	duplicate_trigger.h	/^    dup_cond_type_into_area             = 1,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_into_scene	duplicate_trigger.h	/^    dup_cond_type_into_scene            = 6,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_max	duplicate_trigger.h	/^    dup_cond_type_max,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_mon_count_low	duplicate_trigger.h	/^    dup_cond_type_mon_count_low         = 9, \/\/废弃$/;"	e	enum:dup_cond_type_t
+dup_cond_type_mon_flush_timer_up	duplicate_trigger.h	/^    dup_cond_type_mon_flush_timer_up    = 17, \/\/刷怪定时器到时$/;"	e	enum:dup_cond_type_t
+dup_cond_type_mon_killed	duplicate_trigger.h	/^    dup_cond_type_mon_killed            = 16, \/\/怪被杀死$/;"	e	enum:dup_cond_type_t
+dup_cond_type_phase_kill	duplicate_trigger.h	/^    dup_cond_type_phase_kill            = 2,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_phase_kill_boss	duplicate_trigger.h	/^    dup_cond_type_phase_kill_boss       = 3,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_phase_timer_up	duplicate_trigger.h	/^    dup_cond_type_phase_timer_up        = 18, \/\/阶段定时器到$/;"	e	enum:dup_cond_type_t
+dup_cond_type_player_dead	duplicate_trigger.h	/^    dup_cond_type_player_dead           = 23, \/\/有玩家死亡$/;"	e	enum:dup_cond_type_t
+dup_cond_type_player_hp_less	duplicate_trigger.h	/^    dup_cond_type_player_hp_less        = 20, \/\/player血量少于xx$/;"	e	enum:dup_cond_type_t
+dup_cond_type_ready_scene	duplicate_trigger.h	/^    dup_cond_type_ready_scene           = 14,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_start_phase	duplicate_trigger.h	/^    dup_cond_type_start_phase           = 8,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_start_scene	duplicate_trigger.h	/^    dup_cond_type_start_scene           = 7,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_t	duplicate_trigger.h	/^enum dup_cond_type_t {$/;"	g
+dup_cond_type_time_up	duplicate_trigger.h	/^    dup_cond_type_time_up               = 15,$/;"	e	enum:dup_cond_type_t
+dup_cond_type_use_skill	duplicate_trigger.h	/^    dup_cond_type_use_skill             = 22, \/\/释放某个技能$/;"	e	enum:dup_cond_type_t
+dup_count_down	timer_procs.cpp	/^int dup_count_down(void *owner, void *data)$/;"	f
+dup_entity	player.h	/^    duplicate_entity_t *dup_entity; \/\/玩家在副本的实例$/;"	m	struct:player_t
+dup_entity_mgr_t	duplicate_entity.h	/^    dup_entity_mgr_t() {$/;"	f	class:dup_entity_mgr_t
+dup_entity_mgr_t	duplicate_entity.h	/^class dup_entity_mgr_t {$/;"	c
+dup_has_map	duplicate_conf.h	/^    inline bool dup_has_map(uint32_t dup_id, uint32_t map_id) {$/;"	f	class:duplicate_conf_manager_t
+dup_id	duplicate_entity.h	/^    uint32_t dup_id;$/;"	m	struct:duplicate_entity_t
+dup_map_	duplicate_conf.h	/^    std::map<uint32_t, duplicate_t> dup_map_;$/;"	m	class:duplicate_conf_manager_t
+dup_mon_flush_trigger	timer_procs.cpp	/^int dup_mon_flush_trigger(void *owner, void *data)$/;"	f
+dup_phase_end	timer_procs.cpp	/^int dup_phase_end(void *owner, void *data)$/;"	f
+dup_time_limit_timer	duplicate_entity.h	/^    timer_struct_t *dup_time_limit_timer;$/;"	m	struct:duplicate_entity_t
+duplicate_actor_t	duplicate_conf.h	/^struct duplicate_actor_t {$/;"	s
+duplicate_actor_team_t	duplicate_conf.h	/^enum duplicate_actor_team_t {$/;"	g
+duplicate_actor_type_t	duplicate_conf.h	/^enum duplicate_actor_type_t {$/;"	g
+duplicate_battle_type_t	duplicate_conf.h	/^enum duplicate_battle_type_t {$/;"	g
+duplicate_born_area_t	duplicate_conf.h	/^struct duplicate_born_area_t {$/;"	s
+duplicate_conf_manager_t	duplicate_conf.h	/^    duplicate_conf_manager_t() {$/;"	f	class:duplicate_conf_manager_t
+duplicate_conf_manager_t	duplicate_conf.h	/^class duplicate_conf_manager_t {$/;"	c
+duplicate_difficulty_type_t	duplicate_conf.h	/^enum duplicate_difficulty_type_t {$/;"	g
+duplicate_entity_del_player	duplicate_entity.cpp	/^void duplicate_entity_del_player(duplicate_entity_t *entity, player_t *player)$/;"	f
+duplicate_entity_status_t	duplicate_entity.h	/^enum duplicate_entity_status_t {$/;"	g
+duplicate_entity_t	duplicate_entity.h	/^struct duplicate_entity_t {$/;"	s
+duplicate_entity_trig	duplicate_entity.cpp	/^int duplicate_entity_trig(duplicate_entity_t *entity, uint32_t type, std::vector<uint32_t> *args)$/;"	f
+duplicate_entity_win_side	duplicate_entity.cpp	/^uint32_t duplicate_entity_win_side(duplicate_entity_t *entity)$/;"	f
+duplicate_exist	duplicate_conf.h	/^    inline bool duplicate_exist(uint32_t dup_id) {$/;"	f	class:duplicate_conf_manager_t
+duplicate_id	duplicate_conf.h	/^    uint32_t duplicate_id; \/\/副本id$/;"	m	struct:duplicate_t
+duplicate_map_pet_t	duplicate_entity.h	/^    duplicate_map_pet_t() {$/;"	f	struct:duplicate_map_pet_t
+duplicate_map_pet_t	duplicate_entity.h	/^struct duplicate_map_pet_t {$/;"	s
+duplicate_open_type_t	duplicate_conf.h	/^enum duplicate_open_type_t {$/;"	g
+duplicate_pet_flush_trigger_t	duplicate_conf.h	/^enum duplicate_pet_flush_trigger_t {$/;"	g
+duplicate_pet_flush_type_t	duplicate_conf.h	/^enum duplicate_pet_flush_type_t {$/;"	g
+duplicate_t	duplicate_conf.h	/^    duplicate_t() {$/;"	f	struct:duplicate_t
+duplicate_t	duplicate_conf.h	/^struct duplicate_t {$/;"	s
+dynamic_params	duplicate_conf.h	/^    std::string dynamic_params; \/\/前端用的解析参数$/;"	m	struct:duplicate_actor_t
+dynamic_params	duplicate_entity.h	/^    std::string dynamic_params; \/\/前端用的解析参数$/;"	m	struct:duplicate_map_pet_t
+effort_lv	pet.h	/^	inline uint32_t effort_lv(int idx) const {$/;"	f	class:Pet
+effort_lv_	pet.h	/^	uint32_t effort_lv_[kMaxEffortNum];	\/\/特训等级$/;"	m	class:Pet
+effort_type_t	pet_conf.h	/^enum effort_type_t {$/;"	g
+effort_value	pet.h	/^    inline int effort_value(int idx) const {$/;"	f	class:Pet
+effort_values_	pet.h	/^    int effort_values_[kMaxEffortNum]; \/\/学习力$/;"	m	class:Pet
+elem_type	builder_conf.h	/^    pet_elem_type_t elem_type; \/\/元素属性: 水、火...$/;"	m	struct:builder_conf_t
+elem_type	pet.h	/^    inline pet_elem_type_t elem_type() { return elem_type_; }$/;"	f	class:Pet
+elem_type	pet_conf.h	/^    pet_elem_type_t elem_type; \/\/元素属性: 水、火...$/;"	m	struct:pet_conf_t
+elem_type_	pet.h	/^    pet_elem_type_t elem_type_;$/;"	m	class:Pet
+entity_map_	duplicate_entity.h	/^    std::set<duplicate_entity_t*> entity_map_;$/;"	m	class:dup_entity_mgr_t
+exec	singleton.h	/^	void exec(const char *sqlstr) { cout << "exec insert\/update\/delete :" << sqlstr << endl; }$/;"	f	class:SqlDB_t
+exercise_pos	pet.h	/^    inline uint32_t exercise_pos() { return exercise_pos_;}$/;"	f	class:Pet
+exercise_pos_	pet.h	/^    uint32_t exercise_pos_;$/;"	m	class:Pet
+exercise_tm	pet.h	/^    inline uint32_t exercise_tm() { return exercise_tm_;}$/;"	f	class:Pet
+exercise_tm_	pet.h	/^    uint32_t exercise_tm_;$/;"	m	class:Pet
+exp	pet.h	/^    inline uint32_t exp() { return exp_;}$/;"	f	class:Pet
+exp_	pet.h	/^    uint32_t exp_;$/;"	m	class:Pet
+exped_cur_hp	pet.h	/^    inline uint32_t exped_cur_hp() { return exped_cur_hp_;}$/;"	f	class:Pet
+exped_cur_hp_	pet.h	/^    uint32_t exped_cur_hp_;$/;"	m	class:Pet
+exped_flag	pet.h	/^    inline uint32_t exped_flag() { return exped_flag_;}$/;"	f	class:Pet
+exped_flag_	pet.h	/^    uint32_t exped_flag_;$/;"	m	class:Pet
+family_dup_boss_hp	player.h	/^    uint32_t family_dup_boss_hp;    \/\/ 家族副本boss当前血量$/;"	m	struct:player_t
+family_dup_boss_lv	player.h	/^    uint32_t family_dup_boss_lv;    \/\/ 家族副本boss等级$/;"	m	struct:player_t
+family_dup_boss_maxhp	player.h	/^    uint32_t family_dup_boss_maxhp;    \/\/ 家族副本boss最大血量$/;"	m	struct:player_t
+fdsess	player.h	/^    fdsession_t *fdsess;$/;"	m	struct:player_t
+fight_pets	player.h	/^    std::map<uint32_t, Pet> fight_pets; \/\/出战精灵$/;"	m	struct:player_t
+fight_pos	pet.h	/^    inline uint32_t fight_pos() const { return fight_pos_;  }$/;"	f	class:Pet
+fight_pos_	pet.h	/^    uint32_t fight_pos_; \/\/出战位$/;"	m	class:Pet
+find_affix_conf	affix_conf.h	/^    const inline affix_conf_t *find_affix_conf(uint32_t affix_id) {$/;"	f	class:affix_conf_manager_t
+find_builder_conf	builder_conf.h	/^    const inline builder_conf_t *find_builder_conf(uint32_t builder_id) {$/;"	f	class:builder_conf_manager_t
+find_duplicate	duplicate_conf.h	/^    const inline duplicate_t *find_duplicate(uint32_t dup_id) {$/;"	f	class:duplicate_conf_manager_t
+find_first_one	utils.cpp	/^bool Utils::find_first_one(uint32_t var, uint32_t &idx)$/;"	f	class:Utils
+find_first_zero	utils.cpp	/^bool Utils::find_first_zero(uint32_t var, uint32_t &idx)$/;"	f	class:Utils
+find_map_conf	map_conf.h	/^    inline const map_conf_t *find_map_conf(uint32_t map_id) {$/;"	f	class:map_conf_manager_t
+find_mutable_skill_conf	skill_conf.h	/^    inline skill_conf_t *find_mutable_skill_conf(uint32_t skill_id) {$/;"	f	class:skill_conf_manager_t
+find_pet_conf	pet_conf.h	/^    const inline pet_conf_t *find_pet_conf(uint32_t pet_id) {$/;"	f	class:pet_conf_manager_t
+find_skill_conf	skill_conf.h	/^    const inline skill_conf_t *find_skill_conf(uint32_t skill_id) {$/;"	f	class:skill_conf_manager_t
+fini_map_id	duplicate_entity.h	/^    std::set<uint32_t> *fini_map_id; \/\/当前副本已经通过的场景$/;"	m	struct:duplicate_entity_t
+fini_service	dll_iface.cpp	/^extern "C" int  fini_service(int isparent)$/;"	f
+float_height	duplicate_conf.h	/^    uint32_t float_height; \/\/漂浮高度$/;"	m	struct:duplicate_actor_t
+float_height	duplicate_entity.h	/^    uint32_t float_height;$/;"	m	struct:duplicate_map_pet_t
+flush_max	duplicate_conf.h	/^    uint32_t flush_max; \/\/如果flush_method为1 则flush_max被忽略$/;"	m	struct:duplicate_born_area_t
+flush_method	duplicate_conf.h	/^    uint32_t flush_method; \/\/0表示死一个随机刷一个 1表示死一个顺序刷下一个$/;"	m	struct:duplicate_born_area_t
+flush_mon_timer	duplicate_entity.h	/^    timer_struct_t *flush_mon_timer;$/;"	m	struct:duplicate_entity_t
+fold_binary	utils.h	/^    static inline uint32_t fold_binary(const uint8_t* str, int len)$/;"	f	class:Utils
+fold_uint_pair	utils.h	/^    static inline uint32_t fold_uint_pair(uint32_t n1, uint32_t n2)                                       $/;"	f	class:Utils
+g_action_name	duplicate_trigger.cpp	/^char g_action_name[dup_action_type_max][32] = {$/;"	v
+g_affix_conf_mgr	global_data.cpp	/^affix_conf_manager_t g_affix_conf_mgr;$/;"	v
+g_area_idx	duplicate_conf.h	/^    uint32_t g_area_idx; \/\/全局的序标$/;"	m	struct:duplicate_born_area_t
+g_born_area_idx	global_data.cpp	/^uint32_t g_born_area_idx = 0;$/;"	v
+g_builder_conf_mgr	global_data.cpp	/^builder_conf_manager_t g_builder_conf_mgr;$/;"	v
+g_cond_name	duplicate_trigger.cpp	/^char g_cond_name[dup_cond_type_max][32] = {$/;"	v
+g_dup_entity_mgr	global_data.cpp	/^dup_entity_mgr_t *g_dup_entity_mgr;$/;"	v
+g_duplicate_conf_mgr	global_data.cpp	/^duplicate_conf_manager_t g_duplicate_conf_mgr;$/;"	v
+g_load_conf_cnt	global_data.cpp	/^uint32_t g_load_conf_cnt;$/;"	v
+g_map_conf_mgr	global_data.cpp	/^map_conf_manager_t g_map_conf_mgr;$/;"	v
+g_pet_conf_mgr	global_data.cpp	/^pet_conf_manager_t g_pet_conf_mgr;$/;"	v
+g_player_manager	global_data.cpp	/^player_manager_t* g_player_manager;$/;"	v
+g_proto_processor	global_data.cpp	/^ProtoProcessor* g_proto_processor;$/;"	v
+g_reconnect_timer	global_data.cpp	/^timer_head_t g_reconnect_timer;$/;"	v
+g_send_buf	player.cpp	/^static char g_send_buf[65536 * 32];$/;"	v	file:
+g_server_config	global_data.cpp	/^server_config_t g_server_config;$/;"	v
+g_skill_conf_mgr	global_data.cpp	/^skill_conf_manager_t g_skill_conf_mgr;$/;"	v
+g_svr_pkg_max_size	global_data.cpp	/^uint32_t g_svr_pkg_max_size = 5000000;$/;"	v
+gen_full_path	dll_iface.cpp	/^const char *gen_full_path(const char *base_path, const char *file_name)$/;"	f
+get_action_name	duplicate_trigger.cpp	/^const char *get_action_name(uint32_t action_type)$/;"	f
+get_artifacial_player_by_uid	player_manager.h	/^	inline player_t *get_artifacial_player_by_uid(uint32_t uid) {$/;"	f	class:player_manager_t
+get_builder_elem_type	builder_conf.h	/^inline pet_elem_type_t get_builder_elem_type(uint32_t builder_id) $/;"	f
+get_builder_id_by_actor_idx	duplicate_entity.cpp	/^uint32_t get_builder_id_by_actor_idx(uint32_t dup_id, uint32_t idx)$/;"	f
+get_cond_name	duplicate_trigger.cpp	/^const char *get_cond_name(uint32_t cond_type) $/;"	f
+get_cur_month_first_time	time_utils.cpp	/^uint32_t TimeUtils::get_cur_month_first_time(time_t time) {$/;"	f	class:TimeUtils
+get_date	utils.h	/^    static inline uint32_t get_date()$/;"	f	class:Utils
+get_days_between	time_utils.cpp	/^int TimeUtils::get_days_between(time_t start, time_t end)$/;"	f	class:TimeUtils
+get_dup_req_power	duplicate_conf.h	/^    uint32_t get_dup_req_power(uint32_t dup_id) {$/;"	f	class:duplicate_conf_manager_t
+get_duplicate_type	duplicate_conf.h	/^    duplicate_battle_type_t get_duplicate_type(uint32_t dup_id) {$/;"	f	class:duplicate_conf_manager_t
+get_effort_sum	pet.h	/^    uint32_t get_effort_sum() {$/;"	f	class:Pet
+get_entity_map_pet_by_create_tm	duplicate_entity.h	/^inline duplicate_map_pet_t *get_entity_map_pet_by_create_tm(duplicate_entity_t *entity, uint32_t create_tm) $/;"	f
+get_entity_one_uid	duplicate_entity.cpp	/^uint32_t dup_entity_mgr_t::get_entity_one_uid(duplicate_entity_t *dup_entity)$/;"	f	class:dup_entity_mgr_t
+get_last_x_time	time_utils.cpp	/^uint32_t TimeUtils::get_last_x_time(time_t begin_time, int x)$/;"	f	class:TimeUtils
+get_line_players	duplicate_entity.cpp	/^std::set<player_t *> * dup_entity_mgr_t::get_line_players($/;"	f	class:dup_entity_mgr_t
+get_next_x_time	time_utils.cpp	/^uint32_t TimeUtils::get_next_x_time(time_t begin_time, int x)$/;"	f	class:TimeUtils
+get_pet_elem_type	pet_conf.h	/^inline pet_elem_type_t get_pet_elem_type(uint32_t pet_id) $/;"	f
+get_pet_id_by_actor_idx	duplicate_entity.cpp	/^uint32_t get_pet_id_by_actor_idx(uint32_t dup_id, uint32_t idx)$/;"	f
+get_pkg_len	dll_iface.cpp	/^extern "C" int get_pkg_len(int fd, const void* avail_data, int avail_len, int isparent)$/;"	f
+get_pkg_len	proto_processor.cpp	/^int ProtoProcessor::get_pkg_len(int fd, const void* avail_data, $/;"	f	class:ProtoProcessor
+get_player_by_uid	player_manager.h	/^	inline player_t *get_player_by_uid(uint32_t uid, bool is_artifacial) {$/;"	f	class:player_manager_t
+get_ppve_entity	duplicate_entity.cpp	/^duplicate_entity_t *dup_entity_mgr_t::get_ppve_entity(uint32_t dup_id)$/;"	f	class:dup_entity_mgr_t
+get_prev_friday_date	time_utils.cpp	/^uint32_t TimeUtils::get_prev_friday_date()$/;"	f	class:TimeUtils
+get_processor	proto_processor.cpp	/^CmdProcessorInterface* ProtoProcessor::get_processor(uint32_t cmd)$/;"	f	class:ProtoProcessor
+get_rand_affix_same_type	affix_conf.h	/^    uint32_t get_rand_affix_same_type(uint32_t type) {$/;"	f	class:affix_conf_manager_t
+get_team_by_type	duplicate_entity.h	/^inline duplicate_actor_team_t get_team_by_type(duplicate_entity_t *entity, uint32_t type, uint32_t create_tm = 0)$/;"	f
+get_today_date	time_utils.cpp	/^uint32_t TimeUtils::get_today_date()$/;"	f	class:TimeUtils
+get_total_player_num	player_manager.h	/^    inline uint32_t get_total_player_num() {$/;"	f	class:player_manager_t
+get_type	duplicate_trigger.h	/^    inline dup_action_type_t get_type() {$/;"	f	class:DupActionBase
+get_type	duplicate_trigger.h	/^    inline dup_cond_type_t get_type() {$/;"	f	class:DupCondBase
+growth_type	builder_conf.h	/^    pet_grow_type_t growth_type; \/\/成长类型$/;"	m	struct:builder_conf_t
+growth_type	pet_conf.h	/^    pet_grow_type_t growth_type; \/\/成长类型$/;"	m	struct:pet_conf_t
+heading	duplicate_conf.h	/^    uint32_t heading; \/\/出生方向$/;"	m	struct:duplicate_actor_t
+heading	duplicate_entity.h	/^    uint32_t heading;$/;"	m	struct:duplicate_map_pet_t
+heading	pet.h	/^    inline int heading() const { return heading_; }$/;"	f	class:Pet
+heading	player.h	/^    uint32_t heading;$/;"	m	struct:player_t
+heading_	pet.h	/^    uint32_t heading_;$/;"	m	class:Pet
+hex2dec	utils.h	/^    static inline uint32_t hex2dec(const char* str)$/;"	f	class:Utils
+hex_buf	utils.cpp	/^static char hex_buf[65536];$/;"	v	file:
+hit_cnt	duplicate_entity.h	/^    uint32_t hit_cnt; \/\/受击次数$/;"	m	struct:duplicate_map_pet_t
+hits	skill_conf.h	/^    uint32_t hits; \/\/有几段伤害$/;"	m	struct:skill_conf_t
+hp	pet.h	/^    inline int hp() const { return hp_; }$/;"	f	class:Pet
+hp_	pet.h	/^    int hp_; \/\/当前血量$/;"	m	class:Pet
+hurt_rate	skill_conf.h	/^    std::vector<uint32_t> hurt_rate; \/\/分段伤害率$/;"	m	struct:skill_conf_t
+id	builder_conf.h	/^    uint32_t id; \/\/精灵ID$/;"	m	struct:builder_conf_t
+id	duplicate_conf.h	/^    uint32_t id; \/\/各种id$/;"	m	struct:duplicate_actor_t
+id	map_conf.h	/^    uint32_t id; \/\/ 地图id$/;"	m	struct:map_conf_t
+id	pet_conf.h	/^    uint32_t id; \/\/精灵ID$/;"	m	struct:pet_conf_t
+inc_player_num	player_manager.h	/^    inline void inc_player_num() {$/;"	f	class:player_manager_t
+init	pet.h	/^    inline void init(uint32_t pet_id, uint32_t pet_level, uint32_t create_tm) {$/;"	f	class:Pet
+init_pet_dynamic	duplicate_trigger.cpp	/^int DupActionActorBorn::init_pet_dynamic($/;"	f	class:DupActionActorBorn
+init_processors	dll_iface.cpp	/^int init_processors()$/;"	f
+init_service	dll_iface.cpp	/^extern "C" int  init_service(int isparent)$/;"	f
+init_type_map	affix_conf.h	/^    bool init_type_map() {$/;"	f	class:affix_conf_manager_t
+instance	singleton.h	/^	static object_type & instance() {$/;"	f	struct:singleton_default
+is_affix_type	affix_conf.h	/^    inline bool is_affix_type(uint32_t id) {$/;"	f	class:affix_conf_manager_t
+is_artifacial	player.h	/^    bool is_artifacial; \/\/是否人造player 不是一个真实的player 默认为false pvep为true$/;"	m	struct:player_t
+is_cool_down	utils.h	/^    inline static bool is_cool_down(uint32_t start_time, uint32_t cd)$/;"	f	class:Utils
+is_day_point	time_utils.cpp	/^bool TimeUtils::is_day_point(time_t time)$/;"	f	class:TimeUtils
+is_level_add	builder_conf.h	/^    uint32_t is_level_add; \/\/是否按等级成长$/;"	m	struct:builder_conf_t
+is_level_add	pet_conf.h	/^    uint32_t is_level_add; \/\/是否按等级成长$/;"	m	struct:pet_conf_t
+is_map_conf_exist	map_conf.h	/^    inline bool is_map_conf_exist(uint32_t map_id) {$/;"	f	class:map_conf_manager_t
+is_parent	skill_conf.h	/^    uint32_t is_parent; \/\/是否父技能(不同等级的子技能参数不同)$/;"	m	struct:skill_conf_t
+is_pet	duplicate_entity.h	/^    uint32_t is_pet;$/;"	m	struct:duplicate_map_pet_t
+is_same_day	time_utils.cpp	/^bool TimeUtils::is_same_day(int32_t time1, int32_t time2)$/;"	f	class:TimeUtils
+is_valid_effort_type	pet_conf.h	/^inline bool is_valid_effort_type(int effort_type)$/;"	f
+is_weekend	time_utils.h	/^    static inline bool is_weekend() {$/;"	f	class:TimeUtils
+kAntiTypeDark	pet_conf.h	/^    kAntiTypeDark = 4,$/;"	e	enum:anti_type_t
+kAntiTypeFire	pet_conf.h	/^    kAntiTypeFire = 1,$/;"	e	enum:anti_type_t
+kAntiTypeForce	pet_conf.h	/^    kAntiTypeForce = 6,$/;"	e	enum:anti_type_t
+kAntiTypeGrass	pet_conf.h	/^    kAntiTypeGrass = 2,$/;"	e	enum:anti_type_t
+kAntiTypeGround	pet_conf.h	/^    kAntiTypeGround = 5,$/;"	e	enum:anti_type_t
+kAntiTypeLight	pet_conf.h	/^    kAntiTypeLight = 3,$/;"	e	enum:anti_type_t
+kAntiTypeWater	pet_conf.h	/^    kAntiTypeWater = 0,$/;"	e	enum:anti_type_t
+kBattleValueHideTypeAntiCrit	pet_conf.h	/^    kBattleValueHideTypeAntiCrit = 1,\/\/防爆，同上$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeAtkSpeed	pet_conf.h	/^    kBattleValueHideTypeAtkSpeed = 8, \/\/攻击速度$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeBlock	pet_conf.h	/^    kBattleValueHideTypeBlock = 4,\/\/格挡值，同上$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeBlockAffectRate	pet_conf.h	/^    kBattleValueHideTypeBlockAffectRate = 7, \/\/格挡加成率$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeBreakBlock	pet_conf.h	/^    kBattleValueHideTypeBreakBlock = 5,\/\/破格值，同上$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeCrit	pet_conf.h	/^    kBattleValueHideTypeCrit = 0,\/\/暴击值，$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeCritAffectRate	pet_conf.h	/^    kBattleValueHideTypeCritAffectRate = 6, \/\/暴击加成率$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeDodge	pet_conf.h	/^    kBattleValueHideTypeDodge = 3,\/\/闪避值，同上$/;"	e	enum:battle_value_hide_type_t
+kBattleValueHideTypeHit	pet_conf.h	/^    kBattleValueHideTypeHit = 2,\/\/命中值，同上$/;"	e	enum:battle_value_hide_type_t
+kBattleValueNormalTypeHp	pet_conf.h	/^    kBattleValueNormalTypeHp = 0, \/\/生命$/;"	e	enum:battle_value_normal_type_t
+kBattleValueNormalTypeNormalAtk	pet_conf.h	/^    kBattleValueNormalTypeNormalAtk = 1, \/\/普攻$/;"	e	enum:battle_value_normal_type_t
+kBattleValueNormalTypeNormalDef	pet_conf.h	/^    kBattleValueNormalTypeNormalDef = 2, \/\/普防$/;"	e	enum:battle_value_normal_type_t
+kBattleValueNormalTypeSkillAtk	pet_conf.h	/^    kBattleValueNormalTypeSkillAtk = 3, \/\/技功$/;"	e	enum:battle_value_normal_type_t
+kBattleValueNormalTypeSkillDef	pet_conf.h	/^    kBattleValueNormalTypeSkillDef = 4, \/\/技防$/;"	e	enum:battle_value_normal_type_t
+kEffortTypeHp	pet_conf.h	/^    kEffortTypeHp = 0,$/;"	e	enum:effort_type_t
+kEffortTypeNormalAtk	pet_conf.h	/^    kEffortTypeNormalAtk = 1,$/;"	e	enum:effort_type_t
+kEffortTypeNormalDef	pet_conf.h	/^    kEffortTypeNormalDef = 2,$/;"	e	enum:effort_type_t
+kEffortTypeSkillAtk	pet_conf.h	/^    kEffortTypeSkillAtk = 3,$/;"	e	enum:effort_type_t
+kEffortTypeSkillDef	pet_conf.h	/^    kEffortTypeSkillDef = 4,$/;"	e	enum:effort_type_t
+kFriday	time_utils.h	/^    kFriday = 5, $/;"	e	enum:__anon2
+kMaxAntiNum	pet_conf.h	/^    kMaxAntiNum,$/;"	e	enum:anti_type_t
+kMaxBattleValueHideTypeNum	pet_conf.h	/^    kMaxBattleValueHideTypeNum,$/;"	e	enum:battle_value_hide_type_t
+kMaxBattleValueTypeNum	pet_conf.h	/^    kMaxBattleValueTypeNum,$/;"	e	enum:battle_value_normal_type_t
+kMaxEffortNum	pet_conf.h	/^    kMaxEffortNum,$/;"	e	enum:effort_type_t
+kMaxPetElemTypeValue	pet_conf.h	/^    kMaxPetElemTypeValue = kPetElemTypeForce, \/\/ 属性数量$/;"	e	enum:pet_elem_type_t
+kMaxPetLevel	pet_conf.h	/^    kMaxPetLevel    = 100,$/;"	e	enum:pet_constant_t
+kMinPetElemTypeValue	pet_conf.h	/^    kMinPetElemTypeValue = 1,$/;"	e	enum:pet_elem_type_t
+kMonday	time_utils.h	/^    kMonday = 1, $/;"	e	enum:__anon2
+kPetElemTypeDark	pet_conf.h	/^    kPetElemTypeDark = 5, \/\/ 暗$/;"	e	enum:pet_elem_type_t
+kPetElemTypeFire	pet_conf.h	/^    kPetElemTypeFire = 2, \/\/ 火 $/;"	e	enum:pet_elem_type_t
+kPetElemTypeForce	pet_conf.h	/^    kPetElemTypeForce = 7, \/\/ 武$/;"	e	enum:pet_elem_type_t
+kPetElemTypeGrass	pet_conf.h	/^    kPetElemTypeGrass = 3, \/\/ 草$/;"	e	enum:pet_elem_type_t
+kPetElemTypeGround	pet_conf.h	/^    kPetElemTypeGround = 6, \/\/ 地$/;"	e	enum:pet_elem_type_t
+kPetElemTypeLight	pet_conf.h	/^    kPetElemTypeLight = 4, \/\/ 光$/;"	e	enum:pet_elem_type_t
+kPetElemTypeWater	pet_conf.h	/^    kPetElemTypeWater = 1, \/\/ 水$/;"	e	enum:pet_elem_type_t
+kPetGrowType1	pet_conf.h	/^    kPetGrowType1      = 1,$/;"	e	enum:pet_grow_type_t
+kPetGrowType2	pet_conf.h	/^    kPetGrowType2      = 2,$/;"	e	enum:pet_grow_type_t
+kPetTalentLevelFive	pet_conf.h	/^    kPetTalentLevelFive = 5,$/;"	e	enum:pet_talent_level_t
+kPetTalentLevelFour	pet_conf.h	/^    kPetTalentLevelFour = 4,$/;"	e	enum:pet_talent_level_t
+kPetTalentLevelFull	pet_conf.h	/^    kPetTalentLevelFull = kPetTalentLevelFive,$/;"	e	enum:pet_talent_level_t
+kPetTalentLevelNone	pet_conf.h	/^    kPetTalentLevelNone = 0,$/;"	e	enum:pet_talent_level_t
+kPetTalentLevelOne	pet_conf.h	/^    kPetTalentLevelOne = 1,$/;"	e	enum:pet_talent_level_t
+kPetTalentLevelThree	pet_conf.h	/^    kPetTalentLevelThree = 3,$/;"	e	enum:pet_talent_level_t
+kPetTalentLevelTwo	pet_conf.h	/^    kPetTalentLevelTwo = 2,$/;"	e	enum:pet_talent_level_t
+kSaturday	time_utils.h	/^    kSaturday = 6,$/;"	e	enum:__anon2
+kSunday	time_utils.h	/^    kSunday = 0, $/;"	e	enum:__anon2
+kThursday	time_utils.h	/^    kThursday = 4, $/;"	e	enum:__anon2
+kTimerTypeBossSHowTimer	timer_procs.h	/^    kTimerTypeBossSHowTimer = 5,$/;"	e	enum:timer_type_t
+kTimerTypeDupCountDownTimer	timer_procs.h	/^    kTimerTypeDupCountDownTimer = 1,$/;"	e	enum:timer_type_t
+kTimerTypeDupDestroyTimer	timer_procs.h	/^    kTimerTypeDupDestroyTimer = 4,$/;"	e	enum:timer_type_t
+kTimerTypeDupMonFlushTimer	timer_procs.h	/^    kTimerTypeDupMonFlushTimer = 2,$/;"	e	enum:timer_type_t
+kTimerTypeDupPhaseTimer	timer_procs.h	/^    kTimerTypeDupPhaseTimer = 3,$/;"	e	enum:timer_type_t
+kTuesday	time_utils.h	/^    kTuesday = 2, $/;"	e	enum:__anon2
+kWednesday	time_utils.h	/^    kWednesday = 3, $/;"	e	enum:__anon2
+last_add_exp_tm	pet.h	/^    inline uint32_t last_add_exp_tm() { return last_add_exp_tm_;}$/;"	f	class:Pet
+last_add_exp_tm_	pet.h	/^    uint32_t last_add_exp_tm_;$/;"	m	class:Pet
+learn_level	skill_conf.h	/^    uint32_t learn_level; \/\/技能习得等级要求$/;"	m	struct:skill_conf_t
+level	builder_conf.h	/^    uint32_t level; \/\/野怪会有等级$/;"	m	struct:builder_conf_t
+level	pet.h	/^    inline uint32_t level() const { return level_;  }$/;"	f	class:Pet
+level	pet_conf.h	/^    uint32_t level; \/\/野怪会有等级$/;"	m	struct:pet_conf_t
+level_	pet.h	/^    uint32_t level_; \/\/等级$/;"	m	class:Pet
+life_counter	duplicate_entity.h	/^    uint32_t life_counter; \/\/野怪计数器$/;"	m	struct:duplicate_entity_t
+life_time	duplicate_conf.h	/^    uint32_t life_time; \/\/出生后的时长，默认为0, 打死才消失$/;"	m	struct:duplicate_actor_t
+life_time	duplicate_entity.h	/^    uint32_t life_time; \/\/出生后的存在时长$/;"	m	struct:duplicate_map_pet_t
+line_id	player.h	/^    uint32_t line_id;       \/\/ 玩家在的副本分线id$/;"	m	struct:player_t
+line_players	duplicate_entity.h	/^    std::map<uint32_t, battle_side_players_t> *line_players; \/\/当前副本上所有玩家的分组信息$/;"	m	struct:duplicate_entity_t
+listen_action	duplicate_trigger.h	/^    std::set<DupActionBase*> listen_action;$/;"	m	class:DupCondBase
+load_action_args	duplicate_trigger.cpp	/^int DupActionActorBorn::load_action_args(xmlNodePtr cur)$/;"	f	class:DupActionActorBorn
+load_action_args	duplicate_trigger.cpp	/^int DupActionBase::load_action_args(xmlNodePtr cur)$/;"	f	class:DupActionBase
+load_action_args	duplicate_trigger.cpp	/^int DupActionEndDup::load_action_args(xmlNodePtr cur)$/;"	f	class:DupActionEndDup
+load_action_args	duplicate_trigger.cpp	/^int DupActionRoleRecover::load_action_args(xmlNodePtr cur)$/;"	f	class:DupActionRoleRecover
+load_action_args	duplicate_trigger.cpp	/^int DupActionStartPhase::load_action_args(xmlNodePtr cur)$/;"	f	class:DupActionStartPhase
+load_action_cond	duplicate_trigger.cpp	/^int DupActionBase::load_action_cond(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupActionBase
+load_action_info	duplicate_trigger.cpp	/^int DupActionBase::load_action_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupActionBase
+load_actor_info	duplicate_trigger.cpp	/^int DupActionActorBorn::load_actor_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupActionActorBorn
+load_actor_info	duplicate_trigger.h	/^    virtual int load_actor_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupActionBase
+load_affix_config	xml_configs.cpp	/^int load_affix_config(xmlNodePtr root)$/;"	f
+load_builder_config	xml_configs.cpp	/^int load_builder_config(xmlNodePtr root)$/;"	f
+load_cond_info	duplicate_trigger.cpp	/^int DupCondBase::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondBase
+load_cond_info	duplicate_trigger.cpp	/^int DupCondBossHpLess::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondBossHpLess
+load_cond_info	duplicate_trigger.cpp	/^int DupCondFrontMonFlushReq::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondFrontMonFlushReq
+load_cond_info	duplicate_trigger.cpp	/^int DupCondIntoArea::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondIntoArea
+load_cond_info	duplicate_trigger.cpp	/^int DupCondMonsterCountLow::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondMonsterCountLow
+load_cond_info	duplicate_trigger.cpp	/^int DupCondMonsterKilled::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondMonsterKilled
+load_cond_info	duplicate_trigger.cpp	/^int DupCondPhaseKillBossMonster::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondPhaseKillBossMonster
+load_cond_info	duplicate_trigger.cpp	/^int DupCondPhaseKillMonsterCount::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondPhaseKillMonsterCount
+load_cond_info	duplicate_trigger.cpp	/^int DupCondPlayerHpLess::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondPlayerHpLess
+load_cond_info	duplicate_trigger.cpp	/^int DupCondUseSkill::load_cond_info(duplicate_t &dup, xmlNodePtr cur)$/;"	f	class:DupCondUseSkill
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondAllPlayerDead
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondAllReady
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondBossShowTimeUp
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondMonFlushTimerUp
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondPhaseTimerUp
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondPlayerDead
+load_cond_info	duplicate_trigger.h	/^    int load_cond_info(duplicate_t &dup, xmlNodePtr cur) {$/;"	f	class:DupCondTimeUp
+load_configs	dll_iface.cpp	/^bool load_configs()$/;"	f
+load_duplicate_config	xml_configs.cpp	/^int load_duplicate_config(xmlNodePtr root)$/;"	f
+load_duplicate_script	xml_configs.cpp	/^int load_duplicate_script(duplicate_t &dup, xmlNodePtr root)$/;"	f
+load_map_config	xml_configs.cpp	/^int load_map_config(xmlNodePtr root)$/;"	f
+load_pet_config	xml_configs.cpp	/^int load_pet_config(xmlNodePtr root)$/;"	f
+load_skill_config	xml_configs.cpp	/^int load_skill_config(xmlNodePtr root)$/;"	f
+load_skill_level_config	xml_configs.cpp	/^int load_skill_level_config(xmlNodePtr root, skill_conf_manager_t &mgr)$/;"	f
+load_xmlconf	xmlutils.h	/^static inline int load_xmlconf(const char* file, int (*parser)(xmlNodePtr cur_node))$/;"	f
+loc	pet.h	/^    inline uint32_t loc() { return loc_;}$/;"	f	class:Pet
+loc_	pet.h	/^    uint32_t loc_;$/;"	m	class:Pet
+main	singleton.h	/^int main()  $/;"	f
+map_conf_manager_t	map_conf.h	/^    map_conf_manager_t() {$/;"	f	class:map_conf_manager_t
+map_conf_manager_t	map_conf.h	/^class map_conf_manager_t {$/;"	c
+map_conf_map_	map_conf.h	/^    std::map<uint32_t, map_conf_t> map_conf_map_;$/;"	m	class:map_conf_manager_t
+map_conf_t	map_conf.h	/^struct map_conf_t {$/;"	s
+map_ids	duplicate_conf.h	/^    std::set<uint32_t> map_ids;$/;"	m	struct:duplicate_t
+max_dp	builder_conf.h	/^    uint32_t max_dp;$/;"	m	struct:builder_conf_t
+max_dp	pet.h	/^    inline uint32_t max_dp() const { return max_dp_; }$/;"	f	class:Pet
+max_dp	pet_conf.h	/^    uint32_t max_dp;$/;"	m	struct:pet_conf_t
+max_dp_	pet.h	/^    uint32_t max_dp_; \/\/最大破击能量$/;"	m	class:Pet
+max_hp	duplicate_entity.h	/^    uint32_t max_hp;$/;"	m	struct:duplicate_map_pet_t
+max_hp	pet.h	/^    inline int max_hp() const { return battle_values_[kBattleValueNormalTypeHp]; }$/;"	f	class:Pet
+max_hp	player.h	/^    uint32_t max_hp;$/;"	m	struct:player_t
+max_line_id	duplicate_entity.h	/^    uint32_t max_line_id;$/;"	m	struct:battle_side_players_t
+max_tp	player.h	/^    uint32_t max_tp; \/\/最大能量值$/;"	m	struct:player_t
+maxhp_	pet.h	/^    int maxhp_; \/\/最大血量$/;"	m	class:Pet
+minute_align_high	time_utils.cpp	/^time_t TimeUtils::minute_align_high(time_t time)$/;"	f	class:TimeUtils
+minute_align_low	time_utils.cpp	/^time_t TimeUtils::minute_align_low(time_t time)$/;"	f	class:TimeUtils
+mode	duplicate_conf.h	/^    uint32_t mode;      \/\/ 副本类型$/;"	m	struct:duplicate_t
+mon_cris_hp	pet.h	/^    inline uint32_t mon_cris_hp() { return mon_cris_hp_;}$/;"	f	class:Pet
+mon_cris_hp_	pet.h	/^    uint32_t mon_cris_hp_;$/;"	m	class:Pet
+mon_type	builder_conf.h	/^    uint32_t mon_type; \/\/野怪会配是否boss$/;"	m	struct:builder_conf_t
+mon_type	duplicate_entity.h	/^    uint32_t mon_type;$/;"	m	struct:duplicate_map_pet_t
+mon_type	pet_conf.h	/^    uint32_t mon_type; \/\/野怪会配是否boss$/;"	m	struct:pet_conf_t
+mon_type_t	pet_conf.h	/^enum mon_type_t {$/;"	g
+mon_vec	duplicate_conf.h	/^    std::vector<uint32_t> mon_vec;$/;"	m	struct:duplicate_t
+mutable_skill_conf_map	skill_conf.h	/^    inline std::map<uint32_t, skill_conf_t> &mutable_skill_conf_map() {$/;"	f	class:skill_conf_manager_t
+no_stat	duplicate_conf.h	/^    uint32_t no_stat; \/\/杀怪后是否计数$/;"	m	struct:duplicate_actor_t
+no_stat	duplicate_entity.h	/^    uint32_t no_stat; \/\/杀怪后是否计数$/;"	m	struct:duplicate_map_pet_t
+normal_hurt_rate	skill_conf.h	/^    uint32_t normal_hurt_rate; \/\/普通伤害率$/;"	m	struct:skill_conf_t
+object_creator	singleton.h	/^		object_creator() { singleton_default<T>::instance(); }$/;"	f	struct:singleton_default::object_creator
+object_creator	singleton.h	/^	struct object_creator {$/;"	s	struct:singleton_default
+object_type	singleton.h	/^	typedef T object_type;$/;"	t	struct:singleton_default
+on_client_conn_closed	dll_iface.cpp	/^extern "C" void on_client_conn_closed(int fd)$/;"	f
+on_fd_closed	dll_iface.cpp	/^extern "C" void on_fd_closed(int fd)$/;"	f
+pack_duplicate_all_object	data_proto_utils.cpp	/^int DataProtoUtils::pack_duplicate_all_object(player_t *player, duplicate_entity_t *entity,$/;"	f	class:DataProtoUtils
+pack_duplicate_map_born_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_duplicate_map_born_pet_info(std::vector<duplicate_map_pet_t> &pet_vec,$/;"	f	class:DataProtoUtils
+pack_duplicate_map_builder_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_duplicate_map_builder_info(duplicate_entity_t *entity,$/;"	f	class:DataProtoUtils
+pack_duplicate_map_monster_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_duplicate_map_monster_info(duplicate_entity_t *entity,$/;"	f	class:DataProtoUtils
+pack_duplicate_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_duplicate_pet_info(duplicate_map_pet_t &dup_pet, $/;"	f	class:DataProtoUtils
+pack_duplicate_player_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_duplicate_player_info(player_t *player, duplicate_entity_t *entity,$/;"	f	class:DataProtoUtils
+pack_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_pet_info(Pet *pet,$/;"	f	class:DataProtoUtils
+pack_pet_rune_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_pet_rune_info(Pet *pet,$/;"	f	class:DataProtoUtils
+pack_player_base_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_base_info(player_t* player,$/;"	f	class:DataProtoUtils
+pack_player_battle_all_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_battle_all_info(player_t *player,$/;"	f	class:DataProtoUtils
+pack_player_battle_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_battle_info(player_t *player,$/;"	f	class:DataProtoUtils
+pack_player_battle_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_battle_pet_info(player_t *player,$/;"	f	class:DataProtoUtils
+pack_player_chisel_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_chisel_pet_info(player_t *player,$/;"	f	class:DataProtoUtils
+pack_player_equip_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_equip_info(player_t *player,$/;"	f	class:DataProtoUtils
+pack_player_switch_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::pack_player_switch_pet_info(player_t *player,$/;"	f	class:DataProtoUtils
+parse_cmessage	cmd_processor_interface.h	/^inline int parse_cmessage($/;"	f
+parse_hour_min_str	time_utils.cpp	/^uint32_t TimeUtils::parse_hour_min_str(const std::string& time_str)$/;"	f	class:TimeUtils
+parse_message	cmd_processor_interface.h	/^inline int parse_message($/;"	f
+patrol_paths	duplicate_conf.h	/^    std::vector<uint32_t> patrol_paths; \/\/出生后的行走轨迹点$/;"	m	struct:duplicate_actor_t
+patrol_paths	duplicate_entity.h	/^    std::vector<uint32_t> patrol_paths;$/;"	m	struct:duplicate_map_pet_t
+pb_log_handler	dll_iface.cpp	/^void pb_log_handler(google::protobuf::LogLevel level,$/;"	f
+pet_conf_exist	pet_conf.h	/^    inline bool pet_conf_exist(uint32_t pet_id) {$/;"	f	class:pet_conf_manager_t
+pet_conf_manager_t	pet_conf.h	/^    pet_conf_manager_t() {$/;"	f	class:pet_conf_manager_t
+pet_conf_manager_t	pet_conf.h	/^class pet_conf_manager_t {$/;"	c
+pet_conf_map_	pet_conf.h	/^    std::map<uint32_t, pet_conf_t> pet_conf_map_;$/;"	m	class:pet_conf_manager_t
+pet_conf_t	pet_conf.h	/^    pet_conf_t() {$/;"	f	struct:pet_conf_t
+pet_conf_t	pet_conf.h	/^struct pet_conf_t {$/;"	s
+pet_constant_t	pet_conf.h	/^enum pet_constant_t {$/;"	g
+pet_elem_type_t	pet_conf.h	/^enum pet_elem_type_t {$/;"	g
+pet_grow_type_t	pet_conf.h	/^enum pet_grow_type_t {$/;"	g
+pet_id	duplicate_entity.h	/^    uint32_t pet_id;$/;"	m	struct:duplicate_map_pet_t
+pet_id	pet.h	/^    inline uint32_t pet_id() const { return pet_id_; }$/;"	f	class:Pet
+pet_id_	pet.h	/^    uint32_t pet_id_; \/\/精灵ID$/;"	m	class:Pet
+pet_level	duplicate_entity.h	/^    uint32_t pet_level;$/;"	m	struct:duplicate_map_pet_t
+pet_talent_level_t	pet_conf.h	/^enum pet_talent_level_t {$/;"	g
+phase	duplicate_entity.h	/^    uint32_t phase;\/\/记录是哪个阶段出生的$/;"	m	struct:duplicate_map_pet_t
+phase_timer	duplicate_entity.h	/^    timer_struct_t *phase_timer;$/;"	m	struct:duplicate_entity_t
+player_dup_state	player.h	/^    player_duplicate_status_t player_dup_state;$/;"	m	struct:player_t
+player_duplicate_side_t	duplicate_entity.h	/^enum player_duplicate_side_t {$/;"	g
+player_duplicate_status_t	duplicate_entity.h	/^enum player_duplicate_status_t {$/;"	g
+player_manager_singleton_t	player_manager.h	/^typedef singleton_default<player_manager_t> player_manager_singleton_t;$/;"	t
+player_manager_t	player_manager.h	/^class player_manager_t {$/;"	c
+player_map	duplicate_entity.h	/^    std::map<uint32_t, std::set<player_t *> > player_map;$/;"	m	struct:battle_side_players_t
+player_t	player.h	/^    player_t() {$/;"	f	struct:player_t
+player_t	player.h	/^struct player_t {$/;"	s
+pos_x	duplicate_entity.h	/^    uint32_t pos_x;$/;"	m	struct:duplicate_map_pet_t
+pos_y	duplicate_entity.h	/^    uint32_t pos_y;$/;"	m	struct:duplicate_map_pet_t
+power	pet.h	/^    inline uint32_t power() const { return power_; }$/;"	f	class:Pet
+power_	pet.h	/^    uint32_t power_; \/\/战斗力$/;"	m	class:Pet
+ppve_entity_map_	duplicate_entity.h	/^    std::map<uint32_t , duplicate_entity_t *> ppve_entity_map_;$/;"	m	class:dup_entity_mgr_t
+proc_duplicate_battle_ready	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_battle_ready($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_change_state	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_change_state($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_exit	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_exit($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_front_mon_flush_req	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_front_mon_flush_req($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_hit_character	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_hit_character($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_leave_map	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_leave_map($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_skill_affect	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_skill_affect($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_switch_fight_pet	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_switch_fight_pet($/;"	f	class:DuplicateRelayCmdProcessor
+proc_duplicate_to_next_phase	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_duplicate_to_next_phase($/;"	f	class:DuplicateRelayCmdProcessor
+proc_errno_from_serv	cmd_processor_interface.h	/^    virtual uint32_t proc_errno_from_serv($/;"	f	class:CmdProcessorInterface
+proc_events	dll_iface.cpp	/^extern "C" void proc_events()$/;"	f
+proc_mcast_pkg	dll_iface.cpp	/^extern "C" void proc_mcast_pkg(const void* data, int len)$/;"	f
+proc_pkg_from_client	cmd_processor_interface.h	/^    virtual int proc_pkg_from_client($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_client	dll_iface.cpp	/^extern "C" int  proc_pkg_from_client(void* data, int len, fdsession_t* fdsess)$/;"	f
+proc_pkg_from_client	duplicate_processor.cpp	/^int DuplicateRelayCmdProcessor::proc_pkg_from_client($/;"	f	class:DuplicateRelayCmdProcessor
+proc_pkg_from_client	duplicate_processor.cpp	/^int DuplicateTrigCmdProcessor::proc_pkg_from_client($/;"	f	class:DuplicateTrigCmdProcessor
+proc_pkg_from_client	duplicate_processor.cpp	/^int EnterDuplicateCmdProcessor::proc_pkg_from_client($/;"	f	class:EnterDuplicateCmdProcessor
+proc_pkg_from_client	duplicate_processor.cpp	/^int RevivalDuplicateCmdProcessor::proc_pkg_from_client($/;"	f	class:RevivalDuplicateCmdProcessor
+proc_pkg_from_client	proto_processor.cpp	/^int ProtoProcessor::proc_pkg_from_client(void* data, int len,$/;"	f	class:ProtoProcessor
+proc_pkg_from_serv	cmd_processor_interface.h	/^    virtual int proc_pkg_from_serv($/;"	f	class:CmdProcessorInterface
+proc_pkg_from_serv	dll_iface.cpp	/^extern "C" void proc_pkg_from_serv(int fd, void* data, int len)$/;"	f
+proc_pkg_from_serv	proto_processor.cpp	/^void ProtoProcessor::proc_pkg_from_serv(int fd, void* data, int len)$/;"	f	class:ProtoProcessor
+prop	xmlutils.h	/^size_t decode_xml_prop_arr_default(T1 (&arr)[len], xmlNodePtr cur, const void* prop, const T2& def)$/;"	v
+proto_base_info	player.h	/^    string proto_base_info; \/\/序列化的玩家proto base_info;$/;"	m	struct:player_t
+proto_battle_info	player.h	/^    string proto_battle_info; \/\/序列化的玩家proto battle_info;$/;"	m	struct:player_t
+proto_chisel_pet_info	player.h	/^    string proto_chisel_pet_info; \/\/序列化的玩家proto chisel_pet_info;$/;"	m	struct:player_t
+proto_equip_info	player.h	/^    string proto_equip_info; \/\/序列化的玩家proto equip_info$/;"	m	struct:player_t
+proto_rune_info	pet.h	/^    inline const string &proto_rune_info() const { return proto_rune_info_; }$/;"	f	class:Pet
+proto_rune_info_	pet.h	/^    string proto_rune_info_;$/;"	m	class:Pet
+quality	pet.h	/^    inline uint32_t quality() { return quality_;}$/;"	f	class:Pet
+quality_	pet.h	/^    uint32_t quality_;$/;"	m	class:Pet
+query	singleton.h	/^	void query(const char *sqlstr) { cout << "exec select " << sqlstr << endl; }$/;"	f	class:SqlDB_t
+rand_select_k	utils.h	/^    inline static int rand_select_k(int low, int high, int k, std::vector<uint32_t>& list)$/;"	f	class:Utils
+rand_select_uniq_m_from_n_with_r	utils.h	/^    static bool rand_select_uniq_m_from_n_with_r(std::map<uint32_t, uint32_t> nr, $/;"	f	class:Utils
+rand_sort	utils.h	/^    static void rand_sort(std::vector<T>& list)$/;"	f	class:Utils
+ready_map_id	duplicate_entity.h	/^    uint32_t ready_map_id; \/\/准备进入的下一个场景$/;"	m	struct:duplicate_entity_t
+register_command	proto_processor.cpp	/^int ProtoProcessor::register_command($/;"	f	class:ProtoProcessor
+register_timers	timer_procs.cpp	/^int register_timers()$/;"	f
+relay_msg_to_player	player.cpp	/^int relay_msg_to_player(player_t* player, uint32_t cmd, const google::protobuf::Message& msg)$/;"	f
+relay_notify_msg_to_entity_except	duplicate_entity.cpp	/^int relay_notify_msg_to_entity_except(duplicate_entity_t *dup_entity, $/;"	f
+relay_notify_msg_to_entity_line_except	duplicate_entity.cpp	/^int relay_notify_msg_to_entity_line_except(duplicate_entity_t *dup_entity, uint32_t line_id,$/;"	f
+relay_notify_msg_to_player	player.cpp	/^int relay_notify_msg_to_player(player_t* player, uint32_t cmd, const google::protobuf::Message& msg)$/;"	f
+reload_configs	mcast_utils.cpp	/^uint32_t McastUtils::reload_configs(const std::string& conf_name)$/;"	f	class:McastUtils
+reload_global_data	dll_iface.cpp	/^extern "C" int reload_global_data()$/;"	f
+reload_xmlconf	xmlutils.h	/^static inline void reload_xmlconf(const char* file, int (*parser)(xmlNodePtr cur_node))$/;"	f
+remove_battle_player	duplicate_entity.cpp	/^int dup_entity_mgr_t::remove_battle_player($/;"	f	class:dup_entity_mgr_t
+remove_skill_conf	skill_conf.h	/^    void remove_skill_conf(uint32_t skill_id) {$/;"	f	class:skill_conf_manager_t
+req_power	builder_conf.h	/^    uint32_t req_power;$/;"	m	struct:builder_conf_t
+req_power	duplicate_conf.h	/^    uint32_t req_power;$/;"	m	struct:duplicate_t
+req_power	duplicate_entity.h	/^    uint32_t req_power; \/\/战力压制时的要求战力$/;"	m	struct:duplicate_map_pet_t
+req_power	pet.h	/^    inline uint32_t req_power() const { return req_power_; }$/;"	f	class:Pet
+req_power	pet_conf.h	/^    uint32_t req_power; \/\/战力压制时的战力(配表或副本表得到)$/;"	m	struct:pet_conf_t
+req_power_	pet.h	/^    uint32_t req_power_; \/\/战力压制时用的战力$/;"	m	class:Pet
+rune_3_unlock_flag	pet.h	/^    inline uint32_t rune_3_unlock_flag() { return rune_3_unlock_flag_;}$/;"	f	class:Pet
+rune_3_unlock_flag_	pet.h	/^    uint32_t rune_3_unlock_flag_;$/;"	m	class:Pet
+same_cond	duplicate_trigger.cpp	/^bool DupCondBase::same_cond(DupCondBase *cond)$/;"	f	class:DupCondBase
+second_at_day_start	time_utils.cpp	/^int TimeUtils::second_at_day_start(int32_t day_offset) {$/;"	f	class:TimeUtils
+second_between_hm	time_utils.cpp	/^int TimeUtils::second_between_hm(uint32_t from_hm, uint32_t to_hm)$/;"	f	class:TimeUtils
+second_to_hm	time_utils.cpp	/^int TimeUtils::second_to_hm(uint32_t hm)$/;"	f	class:TimeUtils
+second_to_next_week	time_utils.cpp	/^int TimeUtils::second_to_next_week()$/;"	f	class:TimeUtils
+select_from_rate_list	utils.cpp	/^uint32_t Utils::select_from_rate_list(std::vector<uint32_t>& list)$/;"	f	class:Utils
+select_n_from_m	utils.cpp	/^void Utils::select_n_from_m(uint32_t begin, uint32_t end, uint32_t n, std::vector<uint32_t>& list)$/;"	f	class:Utils
+send_err_to_fdsess	player.cpp	/^int send_err_to_fdsess(fdsession_t *fdsess, uint32_t cmd, uint32_t uid, uint32_t seq, int err)$/;"	f
+send_err_to_player	player.cpp	/^int send_err_to_player(player_t* player, uint32_t cmd, int err)$/;"	f
+send_msg_to_entity_except	duplicate_entity.cpp	/^int send_msg_to_entity_except(duplicate_entity_t *dup_entity, $/;"	f
+send_msg_to_player	player.cpp	/^int send_msg_to_player(player_t* player, uint32_t cmd, const google::protobuf::Message& msg)$/;"	f
+server_config_t	dll_iface.h	/^struct server_config_t$/;"	s
+set_anti_value	pet.h	/^    inline void set_anti_value(int idx, int val) {$/;"	f	class:Pet
+set_battle_value	pet.h	/^    inline void set_battle_value(int type, uint32_t val) {$/;"	f	class:Pet
+set_battle_value_hide	pet.h	/^    inline void set_battle_value_hide(int type, uint32_t val) {$/;"	f	class:Pet
+set_chisel_pos	pet.h	/^    inline void set_chisel_pos(uint32_t pos) { chisel_pos_ = pos; }$/;"	f	class:Pet
+set_create_tm	pet.h	/^    inline void set_create_tm(uint32_t time) { create_tm_ = time; }$/;"	f	class:Pet
+set_effort_lv	pet.h	/^	inline void set_effort_lv(int idx, int val) {$/;"	f	class:Pet
+set_effort_value	pet.h	/^    inline void set_effort_value(int idx, int val) {$/;"	f	class:Pet
+set_elem_type	pet.h	/^    inline void set_elem_type(uint32_t type) { elem_type_ = (pet_elem_type_t)type; }$/;"	f	class:Pet
+set_exercise_pos	pet.h	/^    inline void set_exercise_pos(uint32_t pos) { exercise_pos_ = pos; }$/;"	f	class:Pet
+set_exercise_tm	pet.h	/^    inline void set_exercise_tm(uint32_t tm) { exercise_tm_ = tm; }$/;"	f	class:Pet
+set_exp	pet.h	/^    inline void set_exp(uint32_t exp) { exp_ = exp; }$/;"	f	class:Pet
+set_exped_cur_hp	pet.h	/^    inline void set_exped_cur_hp(uint32_t hp) { exped_cur_hp_ = hp; }$/;"	f	class:Pet
+set_exped_flag	pet.h	/^    inline void set_exped_flag(uint32_t flag) { exped_flag_ = flag; }$/;"	f	class:Pet
+set_fight_pos	pet.h	/^    inline void set_fight_pos(uint32_t pos) { fight_pos_ = pos; }$/;"	f	class:Pet
+set_heading	pet.h	/^    inline void set_heading(int heading) { heading_ = heading; }$/;"	f	class:Pet
+set_hp	pet.h	/^    inline void set_hp(int hp) { hp_ = hp; }$/;"	f	class:Pet
+set_last_add_exp_tm	pet.h	/^    inline void set_last_add_exp_tm(uint32_t tm) { last_add_exp_tm_ = tm; }$/;"	f	class:Pet
+set_level	pet.h	/^    inline void set_level(uint32_t level) { level_ = level; }$/;"	f	class:Pet
+set_loc	pet.h	/^    inline void set_loc(uint32_t loc) { loc_ = loc; }$/;"	f	class:Pet
+set_max_dp	pet.h	/^    inline void set_max_dp(int val) { max_dp_ = val; }$/;"	f	class:Pet
+set_max_hp	pet.h	/^    inline int set_max_hp(uint32_t maxhp) { $/;"	f	class:Pet
+set_mon_cris_hp	pet.h	/^    inline void set_mon_cris_hp(uint32_t hp) { mon_cris_hp_ = hp; }$/;"	f	class:Pet
+set_pet_id	pet.h	/^    inline void set_pet_id(uint32_t petid) { pet_id_ = petid; }$/;"	f	class:Pet
+set_power	pet.h	/^    inline void set_power(int val) { power_ = val; }$/;"	f	class:Pet
+set_proto_rune_info	pet.h	/^    inline void set_proto_rune_info(const string &proto_rune_info) { proto_rune_info_ = proto_rune_info; }$/;"	f	class:Pet
+set_quality	pet.h	/^    inline void set_quality(uint32_t q) { quality_ = q; }$/;"	f	class:Pet
+set_req_power	pet.h	/^    inline void set_req_power(int val) { req_power_ = val; }$/;"	f	class:Pet
+set_rune_3_unlock_flag	pet.h	/^    inline void set_rune_3_unlock_flag(uint32_t flag) { rune_3_unlock_flag_ = flag; }$/;"	f	class:Pet
+set_state_bytes	pet.h	/^    inline void set_state_bytes(const string &state_bytes) { state_bytes_ = state_bytes; }$/;"	f	class:Pet
+set_talent_level	pet.h	/^    inline void set_talent_level(int level) { talent_level_ = level; }$/;"	f	class:Pet
+set_x_pos	pet.h	/^    inline void set_x_pos(int pos) { x_pos_ = pos; }$/;"	f	class:Pet
+set_y_pos	pet.h	/^    inline void set_y_pos(int pos) { y_pos_ = pos; }$/;"	f	class:Pet
+sex	builder_conf.h	/^    uint32_t sex; \/\/性别$/;"	m	struct:builder_conf_t
+sex	pet_conf.h	/^    uint32_t sex; \/\/性别$/;"	m	struct:pet_conf_t
+show	skill_conf.h	/^    void show() {$/;"	f	class:skill_conf_manager_t
+show_dup	xml_configs.cpp	/^void show_dup(uint32_t dup_id)$/;"	f
+side	player.h	/^    player_duplicate_side_t side;$/;"	m	struct:player_t
+singleton_default	singleton.h	/^struct singleton_default {$/;"	s
+skill_affect_obj_create_tm	duplicate_entity.h	/^    uint32_t skill_affect_obj_create_tm;$/;"	m	struct:duplicate_entity_t
+skill_affect_obj_type	duplicate_entity.h	/^    uint32_t skill_affect_obj_type;$/;"	m	struct:duplicate_entity_t
+skill_conf_exist	skill_conf.h	/^    inline bool skill_conf_exist(uint32_t skill_id) {$/;"	f	class:skill_conf_manager_t
+skill_conf_manager_t	skill_conf.h	/^    skill_conf_manager_t() {$/;"	f	class:skill_conf_manager_t
+skill_conf_manager_t	skill_conf.h	/^class skill_conf_manager_t {$/;"	c
+skill_conf_map_	skill_conf.h	/^    std::map<uint32_t, skill_conf_t> skill_conf_map_;$/;"	m	class:skill_conf_manager_t
+skill_conf_t	skill_conf.h	/^    skill_conf_t() {$/;"	f	struct:skill_conf_t
+skill_conf_t	skill_conf.h	/^struct skill_conf_t {$/;"	s
+skill_hurt_rate	skill_conf.h	/^    uint32_t skill_hurt_rate; \/\/技功伤害率$/;"	m	struct:skill_conf_t
+skill_id	skill_conf.h	/^    uint32_t skill_id; \/\/技能id$/;"	m	struct:skill_conf_t
+skill_ids	builder_conf.h	/^    std::vector<uint32_t> skill_ids;$/;"	m	struct:builder_conf_t
+skill_ids	pet_conf.h	/^    std::vector<uint32_t> skill_ids;$/;"	m	struct:pet_conf_t
+skill_level	skill_conf.h	/^    uint32_t skill_level; \/\/技能等级$/;"	m	struct:skill_conf_t
+skills	player.h	/^    std::vector<uint32_t> skills; \/\/ 玩家装备的技能$/;"	m	struct:player_t
+sp	skill_conf.h	/^    uint32_t sp; \/\/技能消耗魔力$/;"	m	struct:skill_conf_t
+stack_trace	dll_iface.cpp	/^std::string stack_trace()$/;"	f
+start	duplicate_entity.h	/^    uint32_t start;$/;"	m	struct:duplicate_entity_t
+state	duplicate_entity.h	/^    duplicate_entity_status_t state;$/;"	m	struct:duplicate_entity_t
+state_bytes	pet.h	/^    inline const string &state_bytes() const { return state_bytes_; }$/;"	f	class:Pet
+state_bytes	player.h	/^    string state_bytes;$/;"	m	struct:player_t
+state_bytes_	pet.h	/^    string state_bytes_;$/;"	m	class:Pet
+succeed	duplicate_conf.h	/^    uint32_t succeed; \/\/可否连续刷怪$/;"	m	struct:duplicate_born_area_t
+switch_pets	player.h	/^    std::map<uint32_t, Pet> switch_pets; \/\/可切换的精灵(和fight_pets不相交)$/;"	m	struct:player_t
+talent_level	pet.h	/^    inline int talent_level() const { return talent_level_; }$/;"	f	class:Pet
+talent_level_	pet.h	/^    int talent_level_; \/\/天赋等级$/;"	m	class:Pet
+team	duplicate_conf.h	/^    duplicate_actor_team_t team; \/\/敌我类型$/;"	m	struct:duplicate_actor_t
+team	duplicate_entity.h	/^    uint32_t team;$/;"	m	struct:duplicate_map_pet_t
+team	player.h	/^    uint32_t team; \/\/ 玩家team$/;"	m	struct:player_t
+time_limit	duplicate_conf.h	/^    uint32_t time_limit; \/\/副本完成时间限制$/;"	m	struct:duplicate_t
+time_str_to_long	time_utils.cpp	/^int TimeUtils:: time_str_to_long(const char* time_str, uint32_t& time_value)$/;"	f	class:TimeUtils
+time_to_date	time_utils.cpp	/^uint32_t TimeUtils::time_to_date(time_t time)$/;"	f	class:TimeUtils
+time_to_string	time_utils.cpp	/^std::string TimeUtils::time_to_string(time_t time)$/;"	f	class:TimeUtils
+time_up	duplicate_entity.h	/^    bool time_up; \/\/是否时间到$/;"	m	struct:duplicate_entity_t
+timer_head_t	global_data.h	/^struct timer_head_t {      $/;"	s
+timer_interval_t	timer_procs.h	/^enum timer_interval_t {$/;"	g
+timer_list	duplicate_entity.h	/^    list_head_t timer_list;$/;"	m	struct:duplicate_entity_t
+timer_list	global_data.h	/^    list_head_t timer_list;$/;"	m	struct:timer_head_t
+timer_type_t	timer_procs.h	/^enum timer_type_t {$/;"	g
+to_string	utils.cpp	/^std::string Utils::to_string(int n)$/;"	f	class:Utils
+to_string	utils.cpp	/^std::string Utils::to_string(uint32_t n)$/;"	f	class:Utils
+total_player_num_	player_manager.h	/^	int32_t total_player_num_; \/\/ 总人数$/;"	m	class:player_manager_t
+tran_card_level	player.h	/^	uint32_t tran_card_level; 	\/\/携带进副本的变身卡牌星级$/;"	m	struct:player_t
+trig	duplicate_trigger.cpp	/^void DupCondBase::trig(duplicate_entity_t *entity)$/;"	f	class:DupCondBase
+try_destroy_entity	duplicate_entity.cpp	/^void dup_entity_mgr_t::try_destroy_entity(duplicate_entity_t *dup_entity)$/;"	f	class:dup_entity_mgr_t
+type	affix_conf.h	/^    uint32_t type;$/;"	m	struct:affix_conf_t
+type	duplicate_conf.h	/^    duplicate_actor_type_t type; \/\/精灵还是NPC还是角色$/;"	m	struct:duplicate_actor_t
+type	duplicate_entity.h	/^    uint32_t type;$/;"	m	struct:duplicate_map_pet_t
+type	duplicate_trigger.h	/^    dup_action_type_t type;$/;"	m	class:DupActionBase
+type	duplicate_trigger.h	/^    dup_cond_type_t type;$/;"	m	class:DupCondBase
+uid	player.h	/^    uint32_t uid;$/;"	m	struct:player_t
+uid_to_artifacial_player_map_	player_manager.h	/^    uid_to_player_map_t uid_to_artifacial_player_map_; \/\/临时玩家$/;"	m	class:player_manager_t
+uid_to_player_map_	player_manager.h	/^	uid_to_player_map_t uid_to_player_map_;$/;"	m	class:player_manager_t
+uid_to_player_map_iter_t	player_manager.h	/^	typedef uid_to_player_map_t::iterator uid_to_player_map_iter_t;$/;"	t	class:player_manager_t
+uid_to_player_map_t	player_manager.h	/^	typedef std::map<uint32_t, player_t*> uid_to_player_map_t;$/;"	t	class:player_manager_t
+uniq_key	duplicate_conf.h	/^    uint32_t uniq_key; \/\/ 怪的另一种标识 用于前端识别$/;"	m	struct:duplicate_actor_t
+uniq_key	duplicate_entity.h	/^    uint32_t uniq_key; \/\/ 怪的另一种标识 用于前端识别$/;"	m	struct:duplicate_map_pet_t
+unpack_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_pet_info(Pet *pet, const commonproto::pet_info_t &pet_info)$/;"	f	class:DataProtoUtils
+unpack_pet_rune_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_pet_rune_info(Pet *pet,$/;"	f	class:DataProtoUtils
+unpack_player_base_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_base_info(player_t *player, $/;"	f	class:DataProtoUtils
+unpack_player_battle_all_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_battle_all_info(player_t *player,$/;"	f	class:DataProtoUtils
+unpack_player_battle_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_battle_info(player_t *player,$/;"	f	class:DataProtoUtils
+unpack_player_battle_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_battle_pet_info(player_t *player,$/;"	f	class:DataProtoUtils
+unpack_player_chisel_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_chisel_pet_info(player_t *player,$/;"	f	class:DataProtoUtils
+unpack_player_equip_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_equip_info(player_t *player,$/;"	f	class:DataProtoUtils
+unpack_player_switch_pet_info	data_proto_utils.cpp	/^int DataProtoUtils::unpack_player_switch_pet_info(player_t *player,$/;"	f	class:DataProtoUtils
+wait_cmd	player.h	/^    uint32_t wait_cmd;$/;"	m	struct:player_t
+x_pos	pet.h	/^    inline int x_pos() const { return x_pos_; }$/;"	f	class:Pet
+x_pos	player.h	/^    uint32_t x_pos;$/;"	m	struct:player_t
+x_pos_	pet.h	/^    uint32_t x_pos_;$/;"	m	class:Pet
+y_pos	pet.h	/^    inline int y_pos() const { return y_pos_; }$/;"	f	class:Pet
+y_pos	player.h	/^    uint32_t y_pos;$/;"	m	struct:player_t
+y_pos_	pet.h	/^    uint32_t y_pos_;$/;"	m	class:Pet
+~CmdProcessorInterface	cmd_processor_interface.h	/^    virtual ~CmdProcessorInterface() { }$/;"	f	class:CmdProcessorInterface
+~DupActionBase	duplicate_trigger.h	/^    virtual ~DupActionBase() {}$/;"	f	class:DupActionBase
+~DupCondBase	duplicate_trigger.h	/^    virtual ~DupCondBase() {}$/;"	f	class:DupCondBase
+~ProtoProcessor	proto_processor.cpp	/^ProtoProcessor::~ProtoProcessor()$/;"	f	class:ProtoProcessor
+~affix_conf_manager_t	affix_conf.h	/^    ~affix_conf_manager_t() {$/;"	f	class:affix_conf_manager_t
+~builder_conf_manager_t	builder_conf.h	/^    ~builder_conf_manager_t() {$/;"	f	class:builder_conf_manager_t
+~dup_entity_mgr_t	duplicate_entity.h	/^    ~dup_entity_mgr_t() {$/;"	f	class:dup_entity_mgr_t
+~duplicate_conf_manager_t	duplicate_conf.h	/^    ~duplicate_conf_manager_t() {}$/;"	f	class:duplicate_conf_manager_t
+~map_conf_manager_t	map_conf.h	/^    ~map_conf_manager_t() {$/;"	f	class:map_conf_manager_t
+~pet_conf_manager_t	pet_conf.h	/^    ~pet_conf_manager_t() {$/;"	f	class:pet_conf_manager_t
+~skill_conf_manager_t	skill_conf.h	/^    ~skill_conf_manager_t() {$/;"	f	class:skill_conf_manager_t

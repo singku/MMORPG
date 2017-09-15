@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dolphin/client/!svn/ver/1234/trunk/program/common/client/temp
+END
+protoc.exe
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/dolphin/client/!svn/ver/1010/trunk/program/common/client/temp/protoc.exe
+END
+protoc.bat
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/dolphin/client/!svn/ver/1010/trunk/program/common/client/temp/protoc.bat
+END

@@ -1,0 +1,108 @@
+package dbproto;
+
+import "dbproto.data.proto";
+import 'common.proto';
+
+message transaction_info_t {
+    required uint32 transaction_time = 1; //交易时间
+    required uint32 server_no = 2;//区服编号
+    required uint32 account_id = 3;//账号
+    required uint32 s_create_tm = 4; //账号创建时间
+    required uint32 dest_account_id = 5;//收货账号
+    required uint32 d_create_tm = 6; //收货账号的创建时间
+    required channel_type_t channel_id = 7;//渠道号
+    required uint32 pay_gate_trans_id = 8;//渠道交易ID
+    required uint32 product_id = 9;//产品ID
+    required product_type_t product_type = 10;//产品类型
+    required uint32 product_duration = 11;//产品生命期 天数
+    required uint32 product_count = 12;//产品数量
+    optional int32 money_num = 13 [default = 0] ;//钱的变化 单位为分
+    required uint32 result = 14;//成功还是失败 0 成功 1失败
+}
+
+message vip_op_trans_info_t {
+	required uint32 server_no = 1;	//区服编号
+	required uint32 user_id = 2;	//用户米米号
+	required uint32 u_create_tm = 3;	//用户角色创建时间
+	required uint32 cmd_id = 4;	//协议命令
+	required uint32 trade_id  = 5;	//渠道交易id
+	required uint32 apply_time = 6;	//操作时间
+	required uint32 begin_time = 7;	//上一次操作会员有效开始时间
+	required uint32 end_time = 8;	//上一次操作会员有效到期时间
+	required uint32 time_flag = 9;	//
+	required uint32 fee_flag = 10;	//用户充值渠道ID
+	required uint32 action_type = 11;	//操作类型
+	required uint32 time_length = 12;	//
+	required uint32 vip_type = 13;	//
+	required commonproto.player_vip_type_t ct_vip_type = 14;	//赤瞳vip类型
+}
+
+message cs_new_vip_op_trans {
+	required vip_op_trans_info_t info = 1;
+}
+
+message sc_new_vip_op_trans {
+}
+
+message vip_user_info_t {
+	required uint32 server_no = 1;	//区服编号
+	required uint32 user_id = 2;	//用户米米号
+	required uint32 u_create_tm =3;	//用户角色创建时间
+	required uint32 begin_time = 4;	//会员开始时间
+	required uint32 end_time = 5;	//会员到期时间
+	required uint32 time_flag = 6;	//
+	required uint32 fee_flag = 7;	//用户充值渠道ID
+	required uint32 curr_time = 8;	//最近一次操作时间
+	required uint32 vip_type = 9;
+	required commonproto.player_vip_type_t ct_vip_type = 10;	//赤瞳vip类型
+}
+
+message cs_new_vip_user_info {
+	required vip_user_info_t info = 1;
+}
+
+message sc_new_vip_user_info {
+}
+
+message transaction_list_t
+{
+    repeated transaction_info_t trans_list = 1;
+}
+
+message cs_new_transaction {
+    required transaction_info_t info = 1;
+}
+
+message sc_new_transaction {
+    required uint64 transaction_id = 1; //系统auto_increment 生成
+    required transaction_info_t info = 2;
+    optional bool is_duplicate_trans = 3 [default = false];//是否重复交易
+}
+
+message cs_diamond_new_transaction {
+	repeated transaction_info_t info = 1;
+}
+
+message sc_diamond_new_transaction {}
+
+message cs_get_transaction_list {
+    required uint32 userid = 1;
+    required uint32 start_time = 2;
+    required uint32 end_time = 3;
+}
+
+message sc_get_transaction_list {
+    required transaction_list_t list = 1; 
+}
+
+//查看购买商品的交易明细（供客服平台使用）
+message cs_get_buy_pd_trans_list {
+    required uint32 userid = 1;
+    required uint32 start_time = 2;
+    required uint32 end_time = 3;
+	optional uint32 product_id = 4;
+}
+
+message sc_get_buy_pd_trans_list {
+    required transaction_list_t tran_list = 1; 
+}

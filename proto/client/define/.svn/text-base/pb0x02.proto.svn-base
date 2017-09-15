@@ -1,0 +1,164 @@
+package onlineproto;
+
+import "common.proto";
+
+//进入副本地图(副本多个地图的切换也走这条协议)
+message cs_0x0201_duplicate_enter_map
+{
+    required uint32 dup_id = 1; //副本id
+    required uint32 map_id = 2;//地画ID
+    optional uint32 x_pos = 3;//x坐标
+    optional uint32 y_pos = 4;//y坐标
+	optional uint32 heading = 5;//人物方向
+}
+message sc_0x0201_duplicate_enter_map
+{
+    repeated commonproto.battle_player_data_t players = 1; //玩家列表（含自己）
+}
+//通知其他玩家某玩家进入副本(根据副本类型决定是否广播)
+message cs_0x0202_duplicate_notify_enter_map { }
+message sc_0x0202_duplicate_notify_enter_map
+{
+    required commonproto.battle_player_data_t player = 1;
+}
+
+//离开副本地图
+message cs_0x0203_duplicate_leave_map {}
+message sc_0x0203_duplicate_leave_map {}
+//通知某玩家离开(根据副本类型决定是否广播)
+message cs_0x0204_duplicate_notify_leave_map {}
+message sc_0x0204_duplicate_notify_leave_map {
+    repeated uint32 userid_list = 1; //离开的玩家 基本上只有一个
+}
+
+//客户端准备好了
+message cs_0x0205_duplicate_battle_ready {}
+message sc_0x0205_duplicate_battle_ready {}
+//通知其他人XX准备好了(根据副本类型决定是否广播)
+message cs_0x0206_duplicate_notify_battle_ready {}
+message sc_0x0206_duplicate_notify_battle_ready {
+    repeated uint32 userid_list = 1; //准备好的玩家 基本上只有一个
+}
+
+//通知所有玩家该场景中战斗可以开始
+message cs_0x0207_duplicate_notify_battle_start {}
+message sc_0x0207_duplicate_notify_battle_start {}
+
+//退出副本
+message cs_0x0208_duplicate_exit {}
+message sc_0x0208_duplicate_exit {}
+//通知其他人XX退出副本(根据副本类型决定是否广播)
+message cs_0x0209_duplicate_notify_exit {}
+message sc_0x0209_duplicate_notify_exit 
+{
+    repeated uint32 userid_list = 1; //退出的玩家 基本只有一个
+}
+
+//打怪/被怪打
+message cs_0x020A_duplicate_hit_character {
+    required uint32 atk_type = 1; //打的人/pet/mon (type=1玩家 2精灵 3野怪)
+    required uint32 atk_id = 2; //打的人/pet/mon的id
+    required uint32 atk_create_tm = 3; //打的人/pet/mon的创建时间
+    required uint32 def_type = 4; //被打的人的类型(type=1玩家 2精灵 3野怪)
+    required uint32 def_id = 5; //被打的人/pet/mon的id
+    required uint32 def_create_tm = 6; //被打的人/pet/mon的创建时间
+    required uint32 skill_id = 7; //释放的技能id
+    required uint32 damage = 8; //造成的伤害值
+    required bool is_dead = 9; //是否打死
+    optional uint32 x_pos = 10; //x坐标
+    optional uint32 y_pos = 11; //y坐标
+    optional uint32 heading = 12; //朝向
+}
+message sc_0x020A_duplicate_hit_character {}
+//根据副本类型 如果是pvp ppve则需要广播通知打怪
+message cs_0x020B_duplicate_notify_hit_character {}
+message sc_0x020B_duplicate_notify_hit_character {
+    required uint32 atk_type = 1; //打的人/pet/mon (type=1玩家 2精灵 3野怪)
+    required uint32 atk_id = 2; //打的人/pet/mon的id
+    required uint32 atk_create_tm = 3; //打的人/pet/mon的创建时间
+    required uint32 def_type = 4; //被打的人的类型(type=1玩家 2精灵 3野怪)
+    required uint32 def_id = 5; //被打的人/pet/mon的id
+    required uint32 def_create_tm = 6; //被打的人/pet/mon的创建时间
+    required uint32 skill_id = 7; //释放的技能id
+    required uint32 damage = 8; //造成的伤害值
+    required bool is_dead = 9; //是否打死
+    optional uint32 x_pos = 10; //x坐标
+    optional uint32 y_pos = 11; //y坐标
+    optional uint32 heading = 12; //朝向
+}
+
+//当服务器中的怪被杀到一定数量后会刷怪 服务器通知刷怪
+message cs_0x020C_duplicate_notify_monster_born{}
+message sc_0x020C_duplicate_notify_monster_born
+{
+    repeated commonproto.battle_pet_data_t monsters = 1; //怪列表
+}
+
+//满足场景结束条件后服务器通知场景战斗结束
+message cs_0x020D_duplicate_notify_battle_end {}
+message sc_0x020D_duplicate_notify_battle_end
+{
+    required bool win = 1; //是否胜利
+}
+
+//所有场景打完后服务器通知副本结束/副本时间限制到了以后也服务器也会主动结束
+message cs_0x020E_duplicate_notify_end{}
+message sc_0x020E_duplicate_notify_end{}
+
+//客户端发统计信息
+message cs_0x020F_duplicate_stat_info {
+
+}
+message sc_0x020F_duplicate_stat_info {
+
+}
+
+//服务器结算
+message cs_0x0210_duplicate_notify_result {}
+message sc_0x0210_duplicate_notify_result {
+    required bool win = 1;
+    repeated commonproto.prize_elem_t vip_award_elems = 2; //vip宝箱
+    repeated commonproto.prize_elem_t award_elems = 3; //普通宝箱
+    required uint32 star = 4; //通关星级
+    required uint32 time = 5; //通关时间
+}
+
+//客户端(主动)请求服务器开启场景的下一个阶段(同一个场景服务器刷另一波怪)
+//正常回包后服务器会先回通知包0x0213 再回刷怪的通知包
+message cs_0x0211_duplicate_to_next_phase {}
+message sc_0x0211_duplicate_to_next_phase {}
+
+//客户端请求复活
+message cs_0x0212_duplicate_revival {
+    required uint32 type = 1; //1玩家 2精灵
+    required uint32 id = 2;
+    required uint32 create_tm = 3;
+}
+message sc_0x0212_duplicate_revival {
+    required uint32 type = 1; //1玩家 2精灵
+    required uint32 id = 2;
+    required uint32 create_tm = 3;
+}
+
+//服务器通知客户端到下一个阶段(不用客户端主动请求)
+//同时回刷怪包
+message cs_0x0213_duplicate_notify_to_next_phase{}
+message sc_0x0213_duplicate_notify_to_next_phase{
+    required uint32 new_phase = 1; //服务器告知前端现在所处的新阶段
+}
+
+//怪被打死后可能会爆物品
+message cs_0x0214_duplicate_dead_pet_prize_notify{}
+message sc_0x0214_duplicate_dead_pet_prize_notify{
+    required uint32 x_pos = 1; //爆出物品的x坐标
+    required uint32 y_pos = 2; //爆出物品的y坐标
+    repeated commonproto.prize_elem_t display_elems = 3; //展示的掉落
+    required uint32 index = 4; //掉落物品的标识码
+}
+
+message cs_0x0215_duplicate_pick_up_dead_pet_prize{
+    required uint32 index = 1; //要拾取的物品的标识码
+}
+message sc_0x0215_duplicate_pick_up_dead_pet_prize{
+    required uint32 index = 2; //原样返回
+}

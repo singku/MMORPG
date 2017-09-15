@@ -1,0 +1,33 @@
+package dbproto;
+
+//根据nick获得用户名
+message cs_get_user_by_nick
+{
+    required string nick = 1;
+}
+
+message sc_get_user_by_nick
+{
+    required uint32 userid = 1;//为0表示米米号不存在
+    required uint32 u_create_tm = 2; //角色创建时间
+}
+
+//如果已存在，返回错误dberr_nick_already_exist
+message cs_insert_nick_and_user
+{
+    required string nick = 1;
+}
+message sc_insert_nick_and_user{}
+
+//通过nick删除数据。数据不存在返回错误db_err_nick_not_exist。
+message cs_delete_nick_and_user
+{
+    required string nick = 1;
+}
+message sc_delete_nick_and_user{}
+
+//改变用户的昵称
+message cs_change_nick {
+    required string nick = 1;
+}
+message sc_change_nick {}

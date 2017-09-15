@@ -1,0 +1,11 @@
+package dbproto;
+
+import "common.proto";
+
+//
+message cs_save_achieves
+{
+	required commonproto.achieve_info_list_t achv_info = 1;
+}
+
+message sc_save_achieves {}

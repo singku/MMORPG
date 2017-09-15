@@ -1,0 +1,69 @@
+package dbproto;
+
+import "dbproto.data.proto";
+import "common.proto";
+
+message cs_save_mine_info
+{
+	required commonproto.mine_info_t mine_info = 1;
+}
+
+message sc_save_mine_info 
+{
+	required uint64 mine_id = 1;
+}
+
+message cs_get_mine_info
+{
+	required uint32 low_power = 1;
+	required uint32 high_power = 2;
+	required uint32 time_stamp = 3;
+	required uint32 server_id = 4;
+	required uint32 protect_duration = 5;
+	repeated uint32 my_mine_id = 6;	//自己正在开采的矿不要被匹配到
+}
+
+message sc_get_mine_info
+{
+	required commonproto.mine_info_list_t list = 1;
+}
+
+message cs_get_player_mine_info 
+{
+	repeated uint64 mine_id = 1;
+}
+
+message sc_get_player_mine_info
+{
+	optional commonproto.mine_info_list_t list = 1;
+	repeated uint64 expire_mine_ids = 2;	//已经被删除的矿id
+}
+
+message cs_update_mine_info
+{
+	required commonproto.mine_info_t mine_info = 1;
+}
+
+message sc_update_mine_info {}
+
+message cs_del_mine_info
+{
+	repeated uint64 mine_id = 1;
+}
+
+message sc_del_mine_info 
+{
+	repeated uint64 mine_id = 1;
+}
+
+//尝试协防,更新协防人数，自增
+message cs_increment_defender_cnt
+{
+	required uint64 mine_id = 1;
+}
+
+message sc_increment_defender_cnt
+{
+	required bool operate_state = 1;
+	required uint64 mine_id = 2;
+}

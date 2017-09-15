@@ -1,0 +1,128 @@
+package dbproto;
+
+import "common.proto";
+
+// dplan_family_db_xx.family_info_table_x
+message family_info_table_t
+{
+    required uint32 family_id = 1;
+    optional string family_name = 2;
+    optional uint32 construct_value = 3;
+    optional uint32 level = 4;
+    optional string pet_name = 5;
+    optional uint32 pet_level = 6;
+    optional int32  member_num = 7;
+    optional uint32 create_time = 8;
+    optional uint32 dismiss_time = 9;
+    optional uint32 status = 10;
+    optional uint32 join_type = 11;
+    optional uint32 base_join_value = 12;
+    optional uint32 creator_id = 13;
+    optional uint32 u_create_tm = 14;
+    optional string board_msg = 15;
+    optional uint32 last_member_login_time = 16;
+    optional uint32 server_id = 17;
+}
+
+message family_info_change_data_t
+{
+    required uint32 family_id = 1;
+    optional uint32 construct_value = 2;
+    optional uint32 level = 3;
+    optional uint32 pet_level = 4;
+    optional int32  member_num = 5;
+}
+
+// dplan_family_db_xx.family_member_table_x
+message family_member_table_t
+{
+    required uint32 family_id = 1;
+    required uint32 userid = 2;
+    required uint32 u_create_tm = 3;
+    optional uint32 title  = 4;
+    optional uint32 status = 5;
+    optional uint32 join_time = 6;
+    optional uint32 left_construct_value = 7;
+    optional uint32 total_construct_value = 8;
+    optional uint32 last_login_time = 9;
+    optional uint32 last_logout_time = 10;
+    optional uint32 battle_value = 11;
+}
+
+message family_member_change_data_t
+{
+    required uint32 family_id = 1;
+    required uint32 userid = 2;
+    optional int32 left_construct_value = 3;
+    optional int32 total_construct_value = 4;
+    optional int32 battle_value = 5;
+}
+
+// dplan_family_db_xx.family_event_table_x
+message family_event_table_t
+{
+    required uint32 family_id   = 1;
+    required uint32 userid      = 2;
+    required uint32 u_create_tm = 3;
+    required uint32 event_type  = 4;
+    optional uint32 event_status = 5;
+    optional uint32 event_time  = 6;
+}
+
+message family_event_table_change_data_t
+{
+    required uint32 family_id = 1;
+    required uint32 userid = 2;
+    required uint32 event_type = 3;
+    optional int32 event_status = 4;
+    optional int32 event_time = 5;
+}
+
+message raw_data_table_t
+{
+	required uint32 userid = 1;
+    required uint32 u_create_tm = 2;
+	required uint32 rawdata_type = 3;
+	required string rawdata_id = 4;
+	required bytes rawdata = 5;
+}
+
+// dplan_family_db_xx.family_log_table_xx
+// 自增id主键固定传入0
+message family_log_table_t
+{
+	required uint32 log_id      = 1 [default = 0];
+	optional uint32 family_id   = 2;
+	optional uint32 log_type    = 3;
+	optional bytes log_msg      = 4;
+	optional uint32 log_time    = 5;
+}
+
+// dplan_other_db.family_match_info_table_t
+message family_match_info_table_t
+{
+    required uint32 family_id = 1;
+    required uint32 server_id = 2;
+    optional string family_name = 3;
+    optional uint32 total_battle_value = 4;
+    optional uint32 member_num = 5;
+    optional uint32 family_level = 6;
+    optional uint32 join_type = 7;
+    optional uint32 base_join_value = 8;
+    optional uint32 is_full = 9;
+    optional uint32 create_time = 10;
+}
+
+message family_match_info_table_change_data_t
+{
+    required uint32 family_id = 1;
+    optional string family_name = 2;
+    optional uint32 total_battle_value = 3;
+    optional int32  member_num = 4;
+    optional uint32 join_type = 5;
+    optional uint32 base_join_value = 6;
+    optional uint32 is_full = 7;
+    optional uint32 create_time = 8;
+}
+
+

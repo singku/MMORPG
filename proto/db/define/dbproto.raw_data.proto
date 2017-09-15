@@ -1,0 +1,33 @@
+package dbproto;
+import "common.proto";
+import "dbproto.table.proto";
+import "dbproto.data.proto";
+
+message cs_user_raw_data_get
+{
+	required user_raw_data_type_t type = 1;
+    required string buff_id = 2;
+}
+
+message sc_user_raw_data_get
+{
+	optional user_raw_data_type_t type = 1;
+	optional bytes raw_data = 2;
+}
+
+message cs_user_raw_data_update
+{
+	required dbproto.raw_data_table_t raw_data = 1;
+}
+
+message sc_user_raw_data_update
+{}
+
+message cs_user_raw_data_del
+{
+	required user_raw_data_type_t type = 1; //dbproto.data.proto
+    required string buff_id = 2;
+}
+message sc_user_raw_data_del
+{
+}

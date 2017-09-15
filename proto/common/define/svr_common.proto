@@ -1,0 +1,16 @@
+package svrcommproto;
+
+// 重新加载配置文件	
+message mcast_reload_conf
+{		
+    required string conf_name = 1;//配置文件名字
+    required int32 serverid = 2; //id = 0表示全服加载
+}
+
+message mcast_notify
+{
+    required string msg = 1;
+}
+
+
+

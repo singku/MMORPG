@@ -1,0 +1,94 @@
+package dbproto;
+
+import "common.proto";
+import "dbproto.data.proto";
+
+//设置attr数据
+message cs_set_attr
+{
+    repeated commonproto.attr_data_t attrs = 1;
+}
+message sc_set_attr{}
+
+//设置attr数据,只有当前表中value是0或空时更新
+message cs_set_attr_once
+{
+    repeated commonproto.attr_data_t attrs = 1;
+}
+message sc_set_attr_once{}
+
+
+
+//获取attr数据
+message cs_get_attr
+{
+    repeated uint32 type_list = 1;
+}
+message sc_get_attr
+{
+    repeated commonproto.attr_data_t attrs = 1;
+}
+
+message cs_del_attr
+{
+    repeated uint32 attr_types = 1;
+}
+message sc_del_attr {}
+
+// 获取一段区间的attr
+message cs_get_ranged_attr
+{
+    required uint32 low = 1;
+    required uint32 high = 2;
+}
+message sc_get_ranged_attr
+{
+    required commonproto.attr_data_list_t attr_list = 1;
+}
+
+// 指定范围删除attr
+message cs_clear_ranged_attr
+{
+    required uint32 low = 1;
+    required uint32 high = 2;
+}
+message sc_clear_ranged_attr {}
+
+// 增加/减少attr值，如果超过最大值，则为最大值
+message cs_change_attr_value
+{
+    required uint32 type = 1; // 类型
+    required int32 change = 2; // 增加/减少的数值
+    required uint32 max_value = 3; // 最大允许的数值
+    optional bool is_minus = 4 [default = false];
+	optional bool get_new_val = 5 [default = false];
+}
+message sc_change_attr_value {
+	optional uint32 new_value = 1;
+}
+
+
+// 获取全服数据
+message cs_get_global_attr
+{
+    required global_attr_list_t type_list = 1;
+    optional uint32 server_id = 2 [default = 1];
+}
+
+message sc_get_global_attr
+{
+    required global_attr_list_t list = 1;
+}
+
+// 操作全服数据
+message cs_update_global_attr
+{
+    required global_attr_op_list_t list = 1;
+    optional uint32 server_id = 2 [default = 1];
+}
+
+message sc_update_global_attr
+{
+	optional int32 is_succ = 1;//加属性是否成功 
+}
+

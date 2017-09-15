@@ -1,0 +1,72 @@
+proto_path: "./svc_proto"
+group_config: {
+	name: "singku服务器进入测试"
+	peer_addr: "10.1.1.154:1701"
+	max_pkg_len: 32768
+	client_uid_start: 10003
+    client_uid_end: 10100
+	loop_count: 10000
+	action: {
+		request_uniq_name: "login"
+		response: "onlineproto.sc_0x0101_enter_svr"
+		stop_loop_count: 1
+        timeout: 10
+	}
+    action: {
+        request_uniq_name: "enter_map_1"
+        response: "onlineproto.sc_0x0102_enter_map"
+        stop_loop_count: 1
+        timeout: 10
+        min_duration: 500
+    }
+
+    action: {
+        request_uniq_name: "enter_dup"
+        response: "onlineproto.sc_0x0201_duplicate_enter_map"
+        stop_loop_count: 1
+        timeout: 10
+        min_duration: 500
+    }
+
+    action: {
+        request_uniq_name: "Move"
+        stop_loop_count: 100
+        timeout: 10
+        min_duration: 1000
+    }
+}
+
+body: {
+	uniq_name: "login"
+	type_name: "onlineproto.cs_0x0101_enter_svr"
+	text: "uid: 10003 "
+          "session: \"aaaaaaaa\" "
+          "u_create_tm: 1428063771"
+}
+
+body: {
+	uniq_name: "enter_map_1"
+	type_name: "onlineproto.cs_0x0102_enter_map"
+	text: "mapId: 14" " "
+        "x_pos: 1408" " "
+        "y_pos: 643" " "
+        "heading: 0"
+}
+
+body: {
+	uniq_name: "enter_dup"
+	type_name: "onlineproto.cs_0x0201_duplicate_enter_map"
+	text: "dup_id: 900" " "
+        "map_id: 23 " 
+        "x_pos: 1102 " 
+        "y_pos: 389 " 
+        "heading: 189651"
+}
+
+body: {
+    uniq_name: "Move"
+    type_name: "onlineproto.cs_0x0106_player_change_state"
+    text: "type: 1 "
+        "create_tm: 1428063771 "
+        "state_bytes: \"\""
+}

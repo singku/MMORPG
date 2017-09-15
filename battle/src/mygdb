@@ -1,0 +1,4 @@
+#!/bin/bash
+user=`whoami`
+pid=`pgrep -n -U $user dplan_btl`;
+gdb attach $pid

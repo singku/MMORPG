@@ -1,0 +1,22 @@
+登陆192.168.39.49
+cd /opt/taomee/dplan/tools/db_operate/mail_user
+
+执行
+./send_mail.py [mail_file] [user_list_file]
+
+==================================================================================================================================
+参数说明
+mail_file:邮件模板文件,格式如下,可以参考mail_template.txt,删除mailtime行会使用当前时间做邮件时间，attachment就是db里面存的附件字串
+title       家族建设补偿
+content     尊敬的天选者你好，卡奥斯城向你发送家族徽章，以补偿家族体验时带来的瑕疵。
+attachment  1,36001,30;
+mailtime    1431004424
+
+user_list_file:收件人列表,格式如下,可以参考test_user.txt
+444783748 1428464282
+501667806 1428468984
+417927556 1428547150
+417927556 1430340107
+
+最好每次发放用独立目录操作，可参考
+/opt/taomee/dplan/tools/db_operate/mail_user/mail_20150507
